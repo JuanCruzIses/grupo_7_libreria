@@ -1,0 +1,24 @@
+{
+  "name": "Ecommerce",
+  "version": "1.0.0",
+  "description": "1-¿Qué productos o servicios brindará nuestro sitio? \r 2-¿Quién será nuestra audiencia objetivo? \r 3-¿Cómo ajustaremos nuestra oferta a ese público?",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanCruzIses/grupo_9_e-commerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanCruzIses/grupo_9_e-commerce/issues"
+  },
+  "homepage": "https://github.com/JuanCruzIses/grupo_9_e-commerce#readme"
+}
