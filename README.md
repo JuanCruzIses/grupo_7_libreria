@@ -1,3 +1,5 @@
+Link repo: https://github.com/JuanCruzIses/grupo_7_libreria
+
 1-¿Qué productos o servicios brindará nuestro sitio? 
 2-¿Quién será nuestra audiencia objetivo? 
 3-¿Cómo ajustaremos nuestra oferta a ese público?
