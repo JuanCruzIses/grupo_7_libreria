@@ -1,0 +1,46 @@
+.navbar-superior{
+    width: 100%;
+    background-color: #6800b3;
+    height: 80px;
+    opacity: 0.95;
+    display: flex;
+    justify-content: space-between;
+}
+
+navbar-superior img{
+    width: 30%;
+    margin: auto 0 auto 20px;
+}
+
+.botones{
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+}
+
+.botones a i{
+    color: #ffff;
+    align-self: center;
+    font-size: 25px;
+}
+
+.navbar-inferior{
+    background: #6800b3;
+    border-top: 1px solid black;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.barra-buscador{
+    height: 20px;
+    align-self: center;
+}
+
+.navbar-inferior button{
+    align-self: center;
+    height: 24px;
+    border: none;
+}
+
+/*------MAIN------*/

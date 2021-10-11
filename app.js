@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
+const path = require("path")
+const PUERTO = 3000
+app.use(express.static('./public'));
 
-app.listen(3000, () => console.log('Servidor corriendo'));
-app.get('/', function(req,res){
-    res.send('Bienvenidos a la raiz del sitio web')});
+
+app.get('/', function(req,res){res.sendFile(path.join(__dirname, './views/index.html'))});
+
+app.listen(PUERTO, () => console.log('Servidor corriendo'));
