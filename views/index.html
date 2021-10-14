@@ -12,27 +12,139 @@
 </head>
 <body>
     <header>
+
         <div class="navbar-superior">
             <a href="./"><img src="/images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
-        
+            <form action="/buscar" method="get" class="contenedor-buscador">
+                <label for="search-bar">
+                    <input type="text" id="search-bar" placeholder="Nombre del libro o autor">
+                    <button><i class="fas fa-search"></i></button>
+                </label>
+            </form>
             <div class="botones">
-            <a href="#"><i class="fas fa-house-user"></i></a>
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            <a href="#"><i class="fas fa-bars" id="icon-menu"></i></a>
+                <a href="#"><i class="fas fa-house-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-bars" id="icon-menu"></i></a>
             </div>
         </div>
         <div class="navbar-inferior">
-            <input class="barra-buscador" placeholder="Nombre del libro o autor">
-            <button><i class="fas fa-search"></i></button>
+            <h1 class="titulo-logo"></i>El sombrero Loco</h1>
         </div>
     </header>
     <main>
         <section class="carrusel"></section>
-        <section class="productos"></section>
-        <section class="novedades"></section>
+        <section class="productos">
+            <h2>Los más vendidos</h2>
+            <div class="libro">
+                <img src="/images/portadas/al-final-mueren.jpg">
+                <h3>Al final mueren los dos</h3>
+                <p>Silvera, Adam</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/renegados.jpg">
+                <h3>Renegados</h3>
+                <p>Meyer, Marissa</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/harry-potter.jpg">
+                <h3>Harry Potter y la pierda filosofal</h3>
+                <p>Rowling, J. K.</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/caos.jpg">
+                <h3>Caos</h3>
+                <p>Tajes, Magali</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/archivo-sherlock.jpg">
+                <h3>El archivo de Sherlock Holmes</h3>
+                <p>Arthur Conan Doyle</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/asesinato-oriente.jpg">
+                <h3>Asesinato en el Oriente Express</h3>
+                <p>Christie, Agatha</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/armame.jpg">
+                <h3>Á(R)MAME</h3>
+                <p>Larenn, Luz</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/viejas-deudas.jpg">
+                <h3>Viejas deudas</h3>
+                <p>San Román, José L.</p>
+            </div>
+        </section>
+        <section class="productos">
+            <h2>Novedades de la semana</h2>
+            <div class="libro">
+                <img src="/images/portadas/al-final-mueren.jpg">
+                <h3>Al final mueren los dos</h3>
+                <p>Silvera, Adam</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/renegados.jpg">
+                <h3>Renegados</h3>
+                <p>Meyer, Marissa</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/harry-potter.jpg">
+                <h3>Harry Potter y la pierda filosofal</h3>
+                <p>Rowling, J. K.</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/caos.jpg">
+                <h3>Caos</h3>
+                <p>Tajes, Magali</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/archivo-sherlock.jpg">
+                <h3>El archivo de Sherlock Holmes</h3>
+                <p>Arthur Conan Doyle</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/asesinato-oriente.jpg">
+                <h3>Asesinato en el Oriente Express</h3>
+                <p>Christie, Agatha</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/armame.jpg">
+                <h3>Á(R)MAME</h3>
+                <p>Larenn, Luz</p>
+            </div>
+            <div class="libro">
+                <img src="/images/portadas/viejas-deudas.jpg">
+                <h3>Viejas deudas</h3>
+                <p>San Román, José L.</p>
+            </div>
+        </section>
     </main>
     <footer>
-        <section></section>
+        <article>
+            <i class="fas fa-credit-card"></i>
+            <h6 class="textos-footer">Medios de pago</h6>
+            <p class="textos-footer">
+                Contamos con diferentes métodos de pago para que tu único problema sea elegir entre nuestra gran variada oferta literaria!  
+            </p>
+        </article>
+        <article>
+            <i class="fas fa-gift"></i>
+            <h6 class="textos-footer">Elegí regalar lectura!</h6>
+            <p class="textos-footer">
+                Regala distinto! Busca entre nuestras múltiples categorias ese libro ideal para la persona a la que quieras sorprender!
+            </p>
+        </article>
+        <article>
+            <i class="fas fa-user-shield"></i>
+            <h6 class="textos-footer">Seguridad, de principio a fin</h6>
+            <p class="textos-footer">¿No te gusta? ¡Devolvelo! En la libreria El sombrero Loco, no hay nada que no puedas hacer,
+                porque estás siempre protegid@.
+                </p>
+        </article>
+        <article class="copyright">
+            <p class="textos">Copyright © 2021 "El sombrero loco" / Grupo 7</P>
+        </article>
     </footer>
 </body>
 </html>
