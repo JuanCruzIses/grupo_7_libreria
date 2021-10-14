@@ -1,9 +1,9 @@
 ==========PALETA DE COLORES==========
-Violeta: #4b0082
+background violeta: #7d11ca;
 Negro mate: #0d0d0d
 Marron: rgb(160,82,45)
 Crema: rgb(210,180,140)
-
+LOGIN  background-color: #ffffffd2;
 
 
 
