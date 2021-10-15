@@ -4,10 +4,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/login.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" link href="./css/login.css">
+    <link rel="stylesheet" type="text/css" link href="./css/header.css">      
+    <link rel="stylesheet" type="text/css" link href="./css/footer.css"> 
     <title>Document</title>
 </head>
+<header>
+
+    <div class="navbar-superior">
+        <a href="./"><img src="/images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
+        <form action="/buscar" method="get" class="contenedor-buscador">
+            <label for="search-bar">
+                <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
+                <button><i class="fas fa-search"></i></button>
+            </label>
+        </form>
+        <div class="botones">
+            <ul>
+                <li><a href="/register">Creá tu cuenta<i class="far fa-id-card"></i></a></li>
+                <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                <li><a href="#">Mis compras<i class="fas fa-shopping-basket"></i></a></li>
+            </ul>
+            <a href="/login">Ingresá<i class="fas fa-house-user"></i></a>
+            <a href="/carrito"></a>><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-bars" id="icon-menu"></i></a>
+        </div>
+    </div>
+    <div class="navbar-inferior">
+        <h1 class="titulo-logo"></i>El sombrero Loco</h1>
+    </div>
+</header>
 <body>
-    
+    <div class="main-login">
+        <h1 class=cen >Bienvenid@s</h1>
+        <form action="/login" method="POST">
+            <p>
+                <label for="usuario"><i class="fas fa-user"></i></label>
+                <input class="cen" type="text" name="usuario" id="usuario" placeholder="Ingrese Usuario">
+            </p>
+            <p>
+                <label for="password"><i class="fas fa-unlock"></i></label>
+                <input class="cen"type="password" name="password" id="password" placeholder="Ingrese Contraseña">
+            </p>
+            <p>
+                <button type="submit">Login</button>
+            </p>
+        </form>
+    </div>
+
+    <footer>
+        <div class="contenedorfooter">
+            <article>
+                <div>
+                    <i class="far fa-credit-card"></i>
+                </div>
+                <h4>Formas de pago</h4>
+                <p>
+                    Contamos con diferentes métodos de pago para que tu único problema sea elegir entre nuestra gran variada oferta literaria!  
+                </p>
+            </article>
+
+            
+            <article>
+                <div>
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h4>Elegí regalar lectura!</h4>
+                <p>
+                    Regala distinto! Busca entre nuestras múltiples categorias ese libro ideal para la persona a la que quieras sorprender!
+                </p>
+            </article>
+            
+            
+            
+            <article>
+                <div>
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h4>Seguridad, de principio a fin</h4>
+                <p>
+                    ¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer,
+                    porque estás siempre protegid@.
+                </p>
+            </article>
+        </div>
+        <article class="copyright">
+            <p class="textos">Copyright © 2021 "El sombrero loco" / Grupo 7</P>
+        </article>
+    </footer>
+
 </body>
 </html>

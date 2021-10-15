@@ -3,7 +3,7 @@ header{
     height: 250px;
     width: 100%;
     flex-direction: column;
-    background: #6800b3;
+    background: #7d11ca;
 }
 
 .navbar-superior{
@@ -20,10 +20,15 @@ header{
     height: 100%;
 }
 
+.cen{
+    text-align: center;
+    outline:none;
+}
+
 .logotipo {
-    width: 240px;
-    height: 175px;
-    margin-left: 25px;
+    width: 160px;
+    height: 105px;
+    margin-left: 25px,25px,35px,35px;
 }
 
 .navbar-superior form{
@@ -83,6 +88,7 @@ label button{
     font-size: 40px;
     align-self: center;
     margin-top: 10px;
+    font-family:'festive'
 }
 
 

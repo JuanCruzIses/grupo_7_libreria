@@ -1,0 +1,266 @@
+header{
+    display: flex;
+    height: 250px;
+    width: 100%;
+    flex-direction: column;
+    background: #7d11ca;
+}
+
+.navbar-superior{
+    flex-wrap: wrap;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: space-around;
+    opacity: 0.85;
+}
+
+.navbar-superior a{
+    width: 30%;
+    height: 100%;
+}
+
+.cen{
+    text-align: center;
+    outline:none;
+}
+
+.logotipo {
+    width: 160px;
+    height: 105px;
+    margin-left: 25px,25px,35px,35px;
+}
+
+.navbar-superior form{
+    width: 30%;
+}
+
+form label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+label input{
+    width: 80%;
+    height: 40px;
+    align-self: center;
+}
+
+label button{
+    height: 47px;
+    width: 41px;
+    align-self: center;
+    position: relative
+}
+
+.botones{
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+}
+
+.botones a{
+    width: 20%;
+    align-self: center;
+    margin: 0px 20px;
+    display: flex;
+}
+
+.botones a i{
+    color: #ffff;
+    align-self: center;
+    font-size: 45px;
+}
+
+.navbar-inferior{
+    height: 25%;
+    box-shadow: 0px 0px 10px;
+    display: flex;
+}
+
+.titulo-logo{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0px;
+    font-size: 40px;
+    align-self: center;
+    margin-top: 10px;
+    font-family:'festive'
+}
+
+/*BIENVENID@s*/
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #41065c;
+}
+
+h3{
+    font-size: 24px;
+}
+
+p{
+    font-size: 12px;
+}
+
+
+/* ------------ LOGIN ------------- */
+
+
+div.main-login {
+    width: 100%;
+    margin: 30px 36px;
+    padding: 90px 9px;
+    background-color: #ffffffd2;
+    box-shadow: 0px 0px 10px rgb(100 100 100);
+}
+
+.main-login form p {
+    text-align: center;
+    padding: 8px;
+}
+
+div.main-login button {
+    background-color: #b3c6e2;
+    color: #68417a;
+    padding: 6px 14px;
+    border-radius: 7px;
+    font-size: 16px;
+    border: none;
+}
+
+div.main-login button:hover {
+    background-color: #31034d;
+    cursor: pointer;
+}
+
+div.main-login form p input {
+    height: 30px;
+}
+
+.fa-unlock, .fa-user {
+    font-size: 20px;
+    margin: 12px 7px;
+    color: #5b0e6e75;
+}
+
+
+/* ---------- ESTILOS FOOTER ---------------*/
+
+footer {
+    background-color: #ffffffc0;
+    text-align: center;
+    padding: 50px 0;
+    width: 90%;
+    margin: 0 auto;
+}
+
+i.fa-credit-card, i.fa-gift, i.fa-user-shield {
+    color: #68417a;;
+    font-size: 2em;
+}
+
+footer article {
+    margin: 40px 0;
+    color: rgba(133, 127, 127, 0.918);
+}
+
+footer article div {
+    margin-bottom: 9px;
+}
+
+
+/*-------- MEDIA-QUERYS --------- */
+
+@media (min-width: 361px) {
+    .burger-menu {
+        display: block;
+    }
+
+    header nav {
+        display: none; 
+    }
+
+    main section article {
+        /*box-shadow: 0px 0px 10px rgb(100 ,100 ,100 );*/
+        width: 45%;
+    }
+}
+
+@media (min-width: 769px){
+    /*Header*/
+    div.topheader {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    div.respheader {
+        width: 153%;
+    }
+
+    div.form {
+        margin-left: 5px;
+    }
+
+    header ul li a {
+        font-size: 15px;
+    }
+
+    header div.topheader p {
+        padding-top: 12px;
+        font-size: 16px;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header nav ul {
+        display: flex;
+        justify-content: space-around;
+        margin: 15px;
+    }
+
+    header nav ul li a {
+        margin: 7px;
+    }
+
+    header nav ul li a i {
+        color: #0044AA;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    /*Formulario*/
+    div.main-login {
+        width: 95%;
+        margin: 19px 38px
+    }
+}
+
+@media (min-width: 1024px){
+    /*Header*/
+    div.respheader {
+        width: 183%;
+    }
+
+    header div.topheader p {
+        margin-top: 25px;
+        font-size: 19px;
+    }
+
+    header nav {
+        padding: 0px 16px;
+    }
+
+    header nav ul li a {
+        font-size: 17px;
+        margin-right: 9px;
+    }
+}
