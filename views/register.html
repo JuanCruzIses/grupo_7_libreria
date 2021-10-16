@@ -9,7 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="./css/register.css"> 
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.1.2/bootstrap-show-password.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  
+    <link rel="stylesheet" type="text/css" link href="./css/login.css"> 
     <title>El sombrero Loco</title>
 </head>
 <body>
@@ -36,6 +40,41 @@
     </header>
 
     <main>
+        <h2 class=cen >Bienvenid@</h2>
+        <form class="form" method="" action="">
+            <input type="text" class="form-control" placeholder="Nombre real" name="nombre" required/>
+            <input type="text" class="form-control" placeholder="Apellido" name="apellido" required/>
+            <input type="email" class="form-control" placeholder="Su email" name="email" required/>
+             <div class="form-group">
+             <div>
+               <input type="password" class="form-control" placeholder="password" data-toggle="password"  required/>
+                   <div class="input-group-append"></div>
+             
+             </div>
+             </div>
+             <div class="form-group">
+                <div>
+                  <input type="password" class="form-control" placeholder=" Confirma password" data-toggle="Confirma password"  required/>
+                      <div class="input-group-append"></div>
+                
+                </div>
+                </div>
+            <input type="text" class="form-control" placeholder="Provincia" name="Provincia" required/>
+            <input type="text" class="form-control" placeholder="Localidad" name="Localidad" required/>
+            <input type="text" class="form-control" placeholder="Barrio" name="Barrio" required/>
+            <input type="text" class="form-control" placeholder="Calle" name="calle" required/>
+            <input type="text" class="form-control" placeholder="Número" name="número" required/>
+            <input type="text" class="form-control" placeholder="Piso" name="piso" opcional/>
+            <input type="text" class="form-control" placeholder="Entre calle 1" name="Entre calle 1" optional/>
+            <input type="text" class="form-control" placeholder="Entre calle 2" name="Entre calle 2" optional/>
+            
+            <label for="acuerdo">Estoy de acuerdo con terminos y condiciones.</label>
+                <input type="checkbox" name="Acuerdo" value="Acepta">
+            <button>Registrarse</button>
+            <p class="message">Ya estas registrado? <a href="/login">Iniciar Sesión</a></p>
+          </form>
+          <div class="decoracion">
+            <a href="./"><img src="/images/decoraciones/conejoblanco.gif" alt="conejo" class="decoracion"></a>
 
     </main>
 

@@ -7,9 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
-
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.1.2/bootstrap-show-password.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" link href="./css/login.css"> 
+    
+    
     <title>El sombrero Loco</title>
 </head>
 
@@ -32,25 +36,32 @@
             </div>
         </div>
         <div class="navbar-inferior">
-            <h1 class="titulo-logo"></i>El sombrero Loco</h1>
+            <h1 class="titulo-logo">El sombrero Loco</h1>
         </div>
     </header>
 
     <main>
         <h2 class=cen >Bienvenid@</h2>
-        <form action="/login" method="POST" class="form-registro">
-            <p>
-                <label for="usuario"><i class="fas fa-user"></i></label>
-                <input type="text" name="usuario" id="usuario" placeholder="Ingrese Usuario">
-            </p>
-            <p>
-                <label for="password"><i class="fas fa-unlock"></i></label>
-                <input type="password" name="password" id="password" placeholder="Ingrese Contraseña">
-            </p>
-            <p class="contenedor-boton-form">
-                <button type="submit">Login</button>
-            </p>
-        </form>
+        <div class="form">
+            <form class="login-form" method="post" action="" >
+                  <input type="text" class="form-control" placeholder="Nombre de usuario" required/>
+                  <div class="form-group">
+                   <div class="" >
+                  <input type="password" class="form-control" placeholder="password"  data-toggle="password" required/>
+                  <div class="input-group-append">
+                  
+                  </div>
+                  </div>
+                  </div>
+                
+                  <button >Ingresar</button>
+                  <p class="message">No estas registrado? <a href="/register">Crear una cuenta</a></p>
+                </form>
+                </div> 
+                
+                <div class="decoracion">
+                    <a href="./"><img src="/images/decoraciones/conejoblanco.gif" alt="conejo" class="decoracion"></a>
+        
     </main>
 
     <footer>
