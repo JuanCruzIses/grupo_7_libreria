@@ -168,6 +168,7 @@ div.main-login {
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px;
+    border-radius: 5px ;
   }
   .form button {
     font-family: "Roboto", sans-serif;
@@ -182,6 +183,7 @@ div.main-login {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
+    border-radius: 15px;
   }
   .form button:hover,.form button:active,.form button:focus {
     background: #600c68;
@@ -199,7 +201,7 @@ div.main-login {
 .decoracion{
     display: flex;
     position:absolute;
-    right:30px;
+    left:30px;
     bottom:20px;
      width: 200px;
           height: 200px;
