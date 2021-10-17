@@ -198,8 +198,8 @@ div.main-login {
     text-decoration: none;
   }
   
-.decoracion{
-    display: flex;
+ .decoracion{
+    display:flex;
     position:absolute;
     left:30px;
     bottom:20px;
@@ -288,26 +288,38 @@ article i{
         display: none; 
     }
 
-   
+   main .decoracion{
+    visibility: hidden ;
+   }
+}
+
+@media (min-width: 800px) {
+    .burger-menu {
+        display: block;
+    }
+
+    header nav {
+        display: none; 
+    }
+
+   main .decoracion{
+    visibility: hidden ;
+   }
+}
+
+
+
+
+@media (min-width: 1024px){
+    /*Header---*/
+
     main .decoracion{
-        display: none;
-        }
-
+    visibility: visible;
+   }
 }
-
-@media (min-width: 769px){
+@media (min-width: 1920px) {
     /*Header*/
-    
-  
-    .main .decoracion{
-        display: none;
-        }
-}
-
-/*
-@media (min-width: 1024px)
-    /*Header---
-   
-@media (min-width: 1920px) 
-    /*Header*/
- 
+    main .decoracion{
+        visibility: visible;
+       }
+    }
