@@ -98,12 +98,13 @@ body{
 
 main{
     width: 100%;
-    padding: 20px 5% 20px 5%;
+    padding: 50px 5% 50px 5%;
     font-family: 'roboto';
 }
 
 h2 {
-    font-size: 18px
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .description {
