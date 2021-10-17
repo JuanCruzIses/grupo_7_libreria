@@ -24,7 +24,7 @@ header{
 .navbar-superior a{
     width: 100%;
     height: 80px;
-    margin: 10px;
+    margin: 5px 0 0 0;
     text-align: center;
 }
 
@@ -37,6 +37,7 @@ header{
 .contenedor-buscador{
     width: 100%;
     display: flex;
+    margin: 30px 0 0 0;
 }
 
 .contenedor-buscador label{
@@ -127,7 +128,7 @@ main{
 .libro{
     width: 80%;
     margin: 20px auto;
-    height: 250px;
+    height: 300px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -136,28 +137,29 @@ main{
 }
 
 .libro img{
-    width: 90%;
-    height: 75%;
+    width: 65%;
+    height: 80%;
     margin: auto;
-    border: 1px solid grey;
+    border: 1px solid black;
     border-bottom: none;
 }
 
 .libro h3{
-    height: 15%;
-    width: 90%;
+    height: 10%;
+    width: 65%;
     margin: auto;
-    border: 1px solid grey;
+    border: 1px solid black;
     font-size: 100%;
     border-bottom: none;
 }
 
 .libro p{
     height: 10%;
-    width: 90%;
+    width: 65%;
     margin: auto;
-    border: 1px solid grey;
+    border: 1px solid black;
     border-top: none;
+    padding-top: 10px;
 }
 
 
@@ -187,14 +189,51 @@ footer article{
 
 
 
-@media screen and (min-width:425px){
+@media screen and (min-width:450px){
+    section h2{
+        font-size: 40px;
+    }
 
+    .productos{
+        width: 85%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 10px;
+    text-align: center;
+    background-color: #dbb3f7;
+    }
 
+    .libro{
+        width: 40%;
+        margin: 20px auto;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        box-shadow: 0px 0px 5px #6a6a6a;
+        padding: 15px 0px;
+    }
+
+    .libro img{
+        width: 75%;
+    }
+
+    .libro h3{
+        width: 75%;
+    }
+    
+    .libro p{
+        width: 75%;
+    }
 }
 
 
 
-@media screen and (min-width:800px){
+
+/*------------------MEDIA QUERIES: TABLET -----------------*/
+@media screen and (min-width:768px){
     #burger-menu{
         display: none;
     }
@@ -205,37 +244,92 @@ footer article{
 
     header{
         display: flex;
-        height: 250px;
-        width: 100%;
         flex-direction: column;
-        background: #7d11ca;
+        flex-wrap: wrap;
+        background-color: #7d11ca;
+        position: relative;
     }
     
     .navbar-superior{
-        flex-wrap: wrap;
         width: 100%;
-        height: 75%;
-        display: flex;
-        justify-content: space-around;
         opacity: 0.85;
+        display: block;
     }
     
     .navbar-superior a{
-        width: 30%;
-        height: 100%;
-    }
-    
-    .cen{
+        height: 150px;
+        width: 150px;
+        margin: 5px 0 0 0;
         text-align: center;
-        outline:none;
+    }
+
+    .navbar-superior a .logotipo{
+        width: 90px;
+        height: 90px;
+        margin: auto;
+        position: relative;
+        left: 30px;
+    }
+
+    
+    .contenedor-buscador{
+        width: 100%;
+        display: flex;
+        margin: 0px;
+        position: relative;
+    }
+
+    .contenedor-buscador label{
+        display: flex;
+        width: 80%;
+        height: 30px;
+        margin: 15px auto;
     }
     
-    .logotipo {
-        width: 160px;
-        height: 105px;
-        margin-left: 25px,25px,35px,35px;
+    .contenedor-buscador label input{
+        width: 90%;
+        align-self: center;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
     }
-    
+
+    .contenedor-buscador label button{
+        border: none;
+        height: 100%;
+        position: relative;
+        border-radius: 10px;
+        right: 25px;
+    }
+
+    .botones{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        
+    }
+
+    .botones a{
+        width: 20%;
+        align-self: center;
+        display: flex;
+    }
+
+    .botones a i{
+        position: relative;
+        bottom: 5px;
+        align-self: center;
+        font-size: 33px;
+        margin: 0 auto;
+    }
+
+    .navbar-inferior{
+        height: 100px;
+        box-shadow: 0px 0px 10px;
+        position: absolute;
+        bottom: 113px;
+}    
     
     .logotipo:hover {
     -webkit-transform: rotateY(180deg);
@@ -243,54 +337,6 @@ footer article{
     transform: rotateY(180deg);
     transform-style: preserve-3d;}
     
-    .navbar-superior form{
-        width: 30%;
-    }
-    
-    form label{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    
-    label input{
-        width: 90%;
-        height: 40px;
-        align-self: center;
-    }
-    
-    label button{
-        height: 47px;
-        width: 41px;
-        align-self: center;
-        position: relative
-    }
-    
-    .botones{
-        display: flex;
-        width: 30%;
-        justify-content: space-evenly;
-    }
-    
-    .botones a{
-        width: 20%;
-        align-self: center;
-        display: flex;
-    }
-    
-    .botones a i{
-        color: #ffff;
-        align-self: center;
-        font-size: 45px;
-        margin: 0 auto;
-    }
-    
-    .navbar-inferior{
-        height: 100px;
-        box-shadow: 0px 0px 10px;
-        display: flex;
-    }
     
     .titulo-logo{
         width: 100%;
@@ -314,56 +360,47 @@ footer article{
     
     
     /*------MAIN------*/
+    main{
+        top: 0;
+    }
+    
     .carrusel{
-        width: 85%;
-        height: 700px;
+        height: 300px;
         margin: 50px auto;
-        border: 1px solid black;
     }
     
     .productos{
-        display: flex;
-        flex-wrap: wrap;
         justify-content: space-evenly;
         width: 90%;
-        margin: 100px auto;
-        background-color: #ebebeb;
-        flex-direction: row;
-        box-shadow: 0px 0px 10px;
+        margin: 50px auto;
     }
     
     .productos h2{
-        width: 100%;
         font-size: 60px;
-        text-align: center;
-        height: 60px;
-        position: relative;
-        top: -48px;
+        height: 60px;               
         box-shadow: 0px 0px 5px;
+        margin: 0px;
     }
     
-    .productos div{
-        width: 30%;
-        text-align: center;
+    .productos .libro{
+        width: 45%;
+        height: 400px;
         box-shadow: 0px 0px 10px;
-        margin: 35px 10px;
-        display: flex;
-        flex-direction: column;
+        margin: 20px 10px;
     }
     
-    div img{
-        width: 100%;
-        height: 80%;
-        border-bottom: 1px solid #666666;
+    .libro img{
+        width: 70%;
     }
     
-    div h3{
-        font-size: 35px;
-        margin: 10px 0px;
+    .libro h3{
+        width: 70%;
+        font-size: 17px;
     }
     
-    div p{
-        font-size: 35px;
+    .libro p{
+        width: 70%;
+        font-size: 20px;
     }
     
     /*------footer------*/
@@ -371,17 +408,18 @@ footer article{
         background: #6800b3;
         height: 350px;
         justify-content: space-between;
-        width: 100%;
         flex-wrap: wrap;
         display: flex;
         padding: 15px 0;
-        box-shadow: 0px 0px 10px;
+        height: 100px;
+        position: static;
     }
     
     footer article{
         height: 75%;
         width: 30%;
         text-align: center;
+        display: flex;
     }
     
     article i{
@@ -404,4 +442,13 @@ footer article{
         font-size: 30px;
         text-align: center;
 }
+}
+
+
+
+
+
+/*------------------MEDIA QUERIES: LAPTOP -----------------*/
+@media screen and (min-width:1024px){
+
 }
