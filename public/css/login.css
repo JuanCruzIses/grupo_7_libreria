@@ -279,3 +279,35 @@ article i{
 /*--------MEDIA QUERIES MOBILE-------*/
 
 /*--------MEDIA QUERIES TABLET-------*/
+@media (min-width: 361px) {
+    .burger-menu {
+        display: block;
+    }
+
+    header nav {
+        display: none; 
+    }
+
+   
+    main .decoracion{
+        display: none;
+        }
+
+}
+
+@media (min-width: 769px){
+    /*Header*/
+    
+  
+    .main .decoracion{
+        display: none;
+        }
+}
+
+/*
+@media (min-width: 1024px)
+    /*Header---
+   
+@media (min-width: 1920px) 
+    /*Header*/
+ 
