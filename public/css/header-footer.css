@@ -431,6 +431,10 @@ header{
     color:black;
 }
 
-div a{
+footer div a{
+    transition: all 500ms;
+}
+
+header div a{
     transition: all 500ms;
 }
