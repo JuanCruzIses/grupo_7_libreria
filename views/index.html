@@ -8,14 +8,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="./css/index.css">      
+    <link rel="stylesheet" type="text/css" link href="./css/index.css">
+    <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">      
     <title>El sombrero Loco</title>
 </head>
 <body>
     <header>
 
         <div class="navbar-superior">
-            <a href="./"><img src="./images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
+            <a href= "./"><img src="./images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
             <form action="/buscar" method="get" class="contenedor-buscador">
                 <label for="search-bar">
                     <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
@@ -23,9 +24,9 @@
                 </label>
             </form>
             <div class="botones">
-                <a href="/register"><i class="fas fa-user-plus"></i></a>
-                <a href="/login"><i class="fas fa-house-user"></i></a>
-                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+                <a href="/register"><i class="fas fa-user-plus"></i><p>Registrarse</p></a>
+                <a href="/login"><i class="fas fa-house-user"></i><p>Iniciar sesión</p></a>
+                <a href="/carrito"><i class="fas fa-shopping-cart"></i><p class="texto-carrito">Carrito</p></a>
                 <a href="#" id="burger-menu"><i class="fas fa-bars" id="icon-menu"></i></a>
             </div>
         </div>

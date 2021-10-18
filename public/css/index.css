@@ -54,6 +54,8 @@ header{
     border: none;
     border-radius: 5px;
     text-align: center;
+    position: relative;
+    left: 20px;
 }
 
 .contenedor-buscador label button{
@@ -61,7 +63,7 @@ header{
     height: 100%;
     position: relative;
     border-radius: 5px;
-    right: 25px;
+    background-color: #fff;
 }
 
 .botones{
@@ -75,6 +77,7 @@ header{
 .botones a{
     color: #fff;
     font-size: 20px;
+    text-decoration: none;
 }
 
 .navbar-inferior{
@@ -90,6 +93,10 @@ header{
     font-family: 'festive';
     position: relative;
     bottom: 5px;
+}
+
+.botones a p{
+    display: none;
 }
 
 /*-------header-----*/
@@ -240,6 +247,10 @@ footer article{
 
 /*------------------MEDIA QUERIES: TABLET -----------------*/
 @media screen and (min-width:768px){
+    .botones a p{
+        display: block;
+    }
+
     #burger-menu{
         display: none;
     }
@@ -573,4 +584,21 @@ header{
     top: 3px;
 }
 
+}
+
+/*------------------EFECTOS---------------*/
+.libro:hover{
+    box-shadow: 0px 0px 20px black;
+}
+
+.libro{
+    transition: all 1s;
+}
+
+.botones a:hover{
+    color:black;
+}
+
+div a{
+    transition: all 500ms;
 }
