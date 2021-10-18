@@ -139,7 +139,7 @@ main{
 }
 
 .libro img{
-    width: 65%;
+    width: 75%;
     height: 80%;
     margin: auto;
     border: 1px solid black;
@@ -148,7 +148,7 @@ main{
 
 .libro h3{
     height: 10%;
-    width: 65%;
+    width: 75%;
     margin: auto;
     border: 1px solid black;
     font-size: 100%;
@@ -157,7 +157,7 @@ main{
 
 .libro p{
     height: 10%;
-    width: 65%;
+    width: 75%;
     margin: auto;
     border: 1px solid black;
     border-top: none;
@@ -190,7 +190,7 @@ footer article{
 
 
 
-
+/*-----------------MEDIA QUERIES: MOBILE L------------*/
 @media screen and (min-width:450px){
     section h2{
         font-size: 40px;
@@ -228,6 +228,10 @@ footer article{
     
     .libro p{
         width: 75%;
+    }
+
+    footer article{
+        display: none;
     }
 }
 
@@ -386,7 +390,7 @@ footer article{
     
     .productos .libro{
         width: 45%;
-        height: 400px;
+        height: 500px;
         box-shadow: 0px 0px 10px;
         margin: 20px 10px;
     }
@@ -408,20 +412,15 @@ footer article{
     /*------footer------*/
     footer{
         background: #6800b3;
-        height: 350px;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        display: flex;
-        padding: 15px 0;
-        height: 100px;
+        padding: 5px 0;
         position: static;
+        border-top: 1px solid black;
     }
     
     footer article{
-        height: 75%;
-        width: 30%;
-        text-align: center;
         display: flex;
+        flex-direction: column;
+        width: 32%;
     }
     
     article i{
@@ -429,15 +428,13 @@ footer article{
     }
     
     .textos-footer{
-        font-size: 30px;
-        margin: 15px;
+        font-size: 18px;
+        margin-bottom: 5px;
     }
-    
+
     .copyright{
-        height: 25%;
         width: 100%;
-        border-top: 1px solid black;
-        margin: 0px;
+        border-top: 2px solid black;    
     }
     
     .textos{
@@ -452,5 +449,128 @@ footer article{
 
 /*------------------MEDIA QUERIES: LAPTOP -----------------*/
 @media screen and (min-width:1024px){
+header{
+       height: 180px;
+        flex-direction: row;
+}
+
+.navbar-superior{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar-superior a{
+    height: 100px;
+    width: 100%;
+}
+
+.navbar-superior a .logotipo {
+    height: 95px;
+    width: 100px;
+    position: relative;
+    left: -230px;
+}
+
+.contenedor-buscador{
+    width: 60%;
+    margin: 0px;
+}
+
+.contenedor-buscador label{
+    width: 100%;
+    max-width: 760px;
+    height: 30px;
+    margin: 15px auto;
+}
+
+.botones{
+    width: 30%;
+    justify-content: space-evenly;
+    top: 3px;
+}
+
+.navbar-inferior{
+    height: 100px;
+    position: absolute;
+    bottom: 80px;
+}
+
+.titulo-logo{
+    font-size: 80px;
+    left: 70px;
+    bottom: 10px;
+}
+
+/*---------------------MAIN----------------*/
+.productos .libro{
+    width: 30%;
+}
+
+
+/*--------------FOOTER-----------*/
+footer{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+footer article{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.textos-footer {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.textos {
+    font-size: 25px;
+    margin: 5px;
+}
+}
+
+/*------------------MEDIA QUERIES: LAPTOP L -----------------*/
+@media screen and (min-width:1600px){
+header{
+    height: 240px;
+}
+
+.navbar-superior a{
+    height: 130px;
+    bottom: 50px;
+}
+
+.navbar-inferior{
+    height: 130px;
+    position: absolute;
+    bottom: 110px;
+}
+
+.titulo-logo{
+    font-size: 110px;
+    left: 70px;
+    bottom: 20px;
+}
+
+.navbar-superior a .logotipo{
+    height: 130px;
+    width: 130px;
+    position: relative;
+    left: -340px;
+    bottom: 3px;
+}
+
+.contenedor-buscador label{
+    height: 40px;
+}
+
+.botones a i{
+    font-size: 45px;
+    top: 3px;
+}
 
 }
