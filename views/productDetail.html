@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">
     <link rel="stylesheet" type="text/css" link href="./css/productDetail.css">
+          
     <title>El sombrero Loco</title>
 </head>
 <body>
     <header>
 
         <div class="navbar-superior">
-            <a href="./"><img src="/images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
+            <a href= "./"><img src="./images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
             <form action="/buscar" method="get" class="contenedor-buscador">
                 <label for="search-bar">
                     <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
@@ -24,10 +26,10 @@
                 </label>
             </form>
             <div class="botones">
-                <a href="/register"><i class="fas fa-user-plus"></i></a>
-                <a href="/login"><i class="fas fa-house-user"></i></a>
-                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                <a href="#"><i class="fas fa-bars" id="icon-menu"></i></a>
+                <a href="/register"><i class="fas fa-user-plus"></i><p>Registrarse</p></a>
+                <a href="/login"><i class="fas fa-house-user"></i><p>Iniciar sesión</p></a>
+                <a href="/carrito"><i class="fas fa-shopping-cart"></i><p class="texto-carrito">Carrito</p></a>
+                <a href="#" id="burger-menu"><i class="fas fa-bars" id="icon-menu"></i></a>
             </div>
         </div>
         <div class="navbar-inferior">
@@ -70,12 +72,12 @@
             <h2>Reseña del libro <a>Al Final Mueren Los Dos</a></h2>
             <p>Imagina un mundo en el que una organización les avisa a las personas la inminencia de su muerte. Imagina que empezó la cuenta regresiva. Imagina cómo vivirías tu vida en solo un día. ¿Estarías listo para decir adiós? Al final mueren los dos es un canto a la fuerza arrolladora de la vida, que transformará para siempre tu forma de comprender el tiempo, la amistad y el amor.</p>
             <h2>Detalles de <a>Al Final Mueren Los Dos</a></h2>
-            <p>Número de páginas:352<br>
-                Peso:340<br>
-                Formato:Rústica<br>
-                Edición:2018<br>
-                Idioma:Castellano<br>
-                ISBN:9789874132017
+            <p>Número de páginas: 352<br>
+                Peso: 340<br>
+                Formato: Rústica<br>
+                Edición: 2018<br>
+                Idioma: Castellano<br>
+                ISBN: 9789874132017
             </p>
         </div>
     </main>
