@@ -104,7 +104,7 @@ header{
 
 main{
     position: relative;
-    top: 250px;
+    top: 220px;
     box-sizing: border-box;
 }
 
@@ -269,7 +269,6 @@ footer article{
     
     .navbar-superior{
         width: 100%;
-        opacity: 0.85;
         display: block;
     }
     
@@ -588,7 +587,7 @@ header{
 
 /*------------------EFECTOS---------------*/
 .libro:hover{
-    box-shadow: 0px 0px 20px black;
+    box-shadow: 0px 0px 50px black;
 }
 
 .libro{
@@ -601,4 +600,12 @@ header{
 
 div a{
     transition: all 500ms;
+}
+
+form label input{
+    transition: all 500ms;
+}
+
+form label input:hover{
+    box-shadow: 0px 0px 20px;
 }

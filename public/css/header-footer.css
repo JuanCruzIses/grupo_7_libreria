@@ -29,15 +29,15 @@ header{
 }
 
 .navbar-superior a img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: auto;
 }
 
 .contenedor-buscador{
     width: 100%;
     display: flex;
-    margin: 30px 0 0 0;
+    margin: 10px auto 0;
 }
 
 .contenedor-buscador label{
@@ -70,8 +70,8 @@ header{
     width: 100%;
     justify-content: space-around;
     display: flex;
-    margin: 5px;
-    height: 40px;
+    margin-bottom: 5px;
+    height: 30px;
 }
 
 .botones a{
@@ -148,7 +148,6 @@ footer article{
     
     .navbar-superior{
         width: 100%;
-        opacity: 0.85;
         display: block;
     }
     
@@ -203,6 +202,8 @@ footer article{
         display: flex;
         width: 100%;
         justify-content: space-evenly;
+        position: relative;
+        bottom: 5px;
     }
     
     .botones a{
@@ -232,7 +233,7 @@ footer article{
         height: 100px;
         box-shadow: 0px 0px 10px;
         position: absolute;
-        bottom: 113px;
+        bottom: 95px;
 }    
     
     .logotipo:hover {
@@ -338,7 +339,8 @@ header{
 .botones{
     width: 35%;
     justify-content: space-evenly;
-    top: 3px;
+    position: relative;
+    top: 10px;
 }
 
 .botones a p{
@@ -356,6 +358,11 @@ header{
     font-size: 80px;
     left: 70px;
     bottom: 10px;
+}
+
+.texto-carrito{
+    position: relative;
+    left: 5px;
 }
 
 
