@@ -1,4 +1,4 @@
-/*-----------------HEADER---------------*/
+/*-----------------HEADER---------------
 
 
 header{
@@ -108,7 +108,7 @@ label button{
 .botones a i tenlace{
   font-size: 5px;;  
 }
-
+*/
 /*BIENVENID@s*/
 h2 {
     text-align: center;
@@ -291,6 +291,8 @@ article i{
    main .decoracion{
     visibility: hidden ;
    }
+
+   
 }
 
 @media (min-width: 800px) {
