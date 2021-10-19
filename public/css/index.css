@@ -95,15 +95,6 @@ header{
     bottom: 5px;
 }
 
-.botones a p{
-    display: none;
-}
-
-.logotipo:hover {
-    -webkit-transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;}
 /*-------header-----*/
 /*-------main-----*/
 
@@ -352,13 +343,6 @@ footer article{
         bottom: 113px;
 }    
     
-    .logotipo:hover {
-    -webkit-transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;}
-    
-    
     .titulo-logo{
         width: 100%;
         text-align: center;
@@ -366,20 +350,6 @@ footer article{
         align-self: center;
         font-family: 'festive';
     }
-    
-    .logotipo:hover {
-        -webkit-transform: rotateY(180deg);
-        -webkit-transform-style: preserve-3d;
-        transform: rotateY(180deg);
-        transform-style: preserve-3d;
-    }
-        
-    .botones a i tenlace{
-      font-size: 5px;;  
-    }
-    
-    
-    
     /*------MAIN------*/
     main{
         top: 0;

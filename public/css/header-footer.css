@@ -80,6 +80,10 @@ header{
     text-decoration: none;
 }
 
+.botones a p{
+    display: none;
+}
+
 .navbar-inferior{
     width: 100%;
     box-shadow: 0px 0px 10px;
@@ -94,11 +98,7 @@ header{
     position: relative;
     bottom: 5px;
 }
-.logotipo:hover {
-    -webkit-transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;}
+
 
 /*---------------------header------------*/
 /*--------------------footer-------------*/
@@ -128,6 +128,7 @@ footer article{
     footer article{
         display: none;
     }
+
 }
 
 
@@ -219,6 +220,7 @@ footer article{
 
     .botones a p{
         align-self: center;
+        display: flex;
     }
 
     .botones a i{
@@ -241,12 +243,6 @@ footer article{
         bottom: 95px;
 }    
     
-    .logotipo:hover {
-    -webkit-transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;}
-    
     
     .titulo-logo{
         width: 100%;
@@ -254,20 +250,7 @@ footer article{
         font-size: 80px;
         align-self: center;
         font-family: 'festive';
-    }
-    
-    .logotipo:hover {
-        -webkit-transform: rotateY(180deg);
-        -webkit-transform-style: preserve-3d;
-        transform: rotateY(180deg);
-        transform-style: preserve-3d;
-    }
-        
-    .botones a i tenlace{
-      font-size: 5px;;  
-    }
-
-     
+    }     
     /*------footer------*/
     footer{
         background: #6800b3;
