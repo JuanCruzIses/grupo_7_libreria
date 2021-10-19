@@ -135,7 +135,7 @@ footer article{
 
 
 /*------------------MEDIA QUERIES: TABLET -----------------*/
-@media screen and (min-width:768px){
+@media screen and (min-width:726px){
     #burger-menu{
         display: none;
     }

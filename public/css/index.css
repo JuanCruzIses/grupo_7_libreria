@@ -130,9 +130,11 @@ main{
 
 .libro{
     width: 80%;
-    margin: 20px auto;
-    height: 300px;
+    max-width: 270px;
+    margin: auto;
+    height: 340px;
     display: flex;
+    border-radius: 15px;
     flex-direction: row;
     flex-wrap: wrap;
     box-shadow: 0px 0px 5px #6a6a6a;
@@ -142,7 +144,7 @@ main{
 }
 
 .libro img{
-    width: 75%;
+    width: 80%;
     height: 80%;
     margin: auto;
     border: 1px solid black;
@@ -151,7 +153,7 @@ main{
 
 .libro h3{
     height: 10%;
-    width: 75%;
+    width: 80%;
     margin: auto;
     border: 1px solid black;
     font-size: 100%;
@@ -160,7 +162,7 @@ main{
 
 .libro p{
     height: 10%;
-    width: 75%;
+    width: 80%;
     margin: auto;
     border: 1px solid black;
     border-top: none;
@@ -194,13 +196,13 @@ footer article{
 
 
 /*-----------------MEDIA QUERIES: MOBILE L------------*/
-@media screen and (min-width:450px){
+@media screen and (min-width:500px){
     section h2{
         font-size: 40px;
     }
 
     .productos{
-        width: 85%;
+    width: 85%;
     margin: 30px auto;
     display: flex;
     flex-direction: row;
@@ -211,26 +213,21 @@ footer article{
     }
 
     .libro{
-        width: 40%;
-        margin: 20px auto;
-        height: 300px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        box-shadow: 0px 0px 5px #6a6a6a;
-        padding: 15px 0px;
+        width: 45%;
+        height: 350px;
     }
 
     .libro img{
-        width: 75%;
+        width: 80%;
     }
 
     .libro h3{
-        width: 75%;
+        width: 80%;
+        font-size: 18px;
     }
     
     .libro p{
-        width: 75%;
+        width: 80%;
     }
 
     footer article{
@@ -242,7 +239,13 @@ footer article{
 
 
 /*------------------MEDIA QUERIES: TABLET -----------------*/
-@media screen and (min-width:768px){
+@media screen and(min-width: 726px) {
+    main{
+        margin: 30px auto;
+    }    
+}
+
+@media screen and (min-width:726px){
     .botones a p{
         display: block;
     }
@@ -374,24 +377,24 @@ footer article{
     }
     
     .productos .libro{
-        width: 45%;
+        width: 50%;
         height: 500px;
         box-shadow: 0px 0px 10px;
         margin: 20px 10px;
     }
     
     .libro img{
-        width: 70%;
+        width: 90%;
     }
     
     .libro h3{
-        width: 70%;
-        font-size: 17px;
+        width: 90%;
+        font-size: 25px;
     }
     
     .libro p{
-        width: 70%;
-        font-size: 20px;
+        width: 90%;
+        font-size: 25px;
     }
     
     /*------footer------*/
@@ -492,7 +495,6 @@ header{
 .productos .libro{
     width: 30%;
 }
-
 
 /*--------------FOOTER-----------*/
 footer{

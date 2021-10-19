@@ -1,158 +1,38 @@
-/*BIENVENID@s*/
-h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    color: #a3076f;
-    font-family: 'festive';
-}
-
-h3{
-    font-size: 24px;
-}
-
-p{
-    font-size: 12px;
+footer{
+    margin-top: 0px;
 }
 
 
-/* ------------ LOGIN ------------- */
-
-
-div.main-login {
-    width: 100%;
-    margin: 30px 36px;
-    padding: 90px 9px;
-    background-color: #ffffffd2;
-    box-shadow: 0px 0px 10px rgb(100 100 100);
-}
-
-
-.login-page {
-    width: 360px;
-    padding: 8% 0 0;
-    margin: auto;
-  }
-
-.form {
-    position: relative;
-    z-index: 1;
-    background: #FFFFFF;
-    max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  }
-
-  .form-control{
-      text-align: center;
-  }
-  .form input {
-    font-family: "Roboto", sans-serif;
-    outline: 0;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
-    border-radius: 5px ;
-  }
-  .form button {
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    outline: 0;
-    background: #6e066e;
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
-    border-radius: 15px;
-  }
-  .form button:hover,.form button:active,.form button:focus {
-    background: #600c68;
-  }
-  .form .message {
-    margin: 15px 0 0;
-    color: #b3b3b3;
-    font-size: 12px;
-  }
-  .form .message a {
-    color: #a42aa8;
-    text-decoration: none;
-  }
-  
- .decoracion{
-    display:flex;
-    position:absolute;
-    left:30px;
-    bottom:20px;
-     width: 200px;
-          height: 200px;
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
-          animation-name:achicando;
-          animation-duration:1000ms;
-   
-      }
-       
-      
-     
-@keyframes achicando {
-    0% {
-        background-color: none;
+@media screen and (min-width: 726px){
+    footer{
+        background: #6800b3;
+        padding: 5px 0;
+        position: static;
+        border-top: 1px solid black;
     }
     
-    100% {
-        background-color: none;
-        height: 100px;
-        width: 100px;
-        opacity: 0.5;
+    footer article{
+        display: flex;
+        flex-direction: column;
+        width: 32%;
     }
-}
-      
-
-/*________________________MEDIAS*/
-
-
-
-
-/*--------MEDIA QUERIES MOBILE-------*/
-
-/*--------MEDIA QUERIES TABLET-------*/
-@media (min-width: 361px) {
-
-   main .decoracion{
-    visibility: hidden ;
-   }
-}
-
-@media (min-width: 800px) {
-   main .decoracion{
-    visibility: hidden ;
-   }
-}
-
-
-
-
-@media (min-width: 1024px){
-    /*Header---*/
-
-    main .decoracion{
-    visibility: visible;
-   }
-}
-@media (min-width: 1920px) {
-    /*Header*/
-    main .decoracion{
-        visibility: visible;
-       }
-    }
-
     
+    article i{
+        font-size: 55px;
+    }
+    
+    .textos-footer{
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .copyright{
+        width: 100%;
+        border-top: 2px solid black;    
+    }
+    
+    .textos{
+        font-size: 30px;
+        text-align: center;
+}   
+}
