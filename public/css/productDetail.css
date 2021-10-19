@@ -6,7 +6,7 @@ body{
 
 main{
     width: 100%;
-    padding: 50px 5% 50px 5%;
+    padding: 275px 5% 50px 5%;
     font-family: 'roboto';
 }
 
@@ -120,6 +120,10 @@ h2 {
     
     /*------MAIN------*/
 
+    main {
+        padding-top: 50px;
+    }   
+
     h2 {
         font-size: xx-large;
     }
@@ -146,7 +150,7 @@ h2 {
     .description {
         width: 60%;
         padding-top: 20px;
-        margin-left: 5%;
+        padding-left: 5%;
     }
 
     .description .descriptionAutor {
@@ -175,5 +179,58 @@ h2 {
 
 /*------------------MEDIA QUERIES: LAPTOP -----------------*/
 @media screen and (min-width:1024px){
+    body {
+        background-color: #ededed;
+    }
+
+    main {
+        width:70%;
+        max-width: 1184px;
+        min-width: 1024px;
+        margin: 30px auto 50px;
+        padding-top: 50px;
+        background-color: white;
+        border-radius: 10px;
+        border-left: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+    }
+
+    main h2{
+        font-size: 32px;
+    }
+
+    .contDetail {
+        justify-content: space-around;
+    }
+
+    .description{
+        width: 45%;
+    }
+
+    .description p{
+        font-size: 20px;
+    }
+
+    .description a{
+        font-size: 20px;
+    }
+
+    .description .precio {
+        font-size: 32px;
+    }
+
+    .productDetailImg {
+        width: 25%;
+    }
+
+    .productDetailPurchase {
+        width: 30%;
+        right: 12.5%;
+    }
+
+    .detalles p {
+        font-size: 20px;
+        padding: 0px 2% 0px 2%;
+    }
 
 }
