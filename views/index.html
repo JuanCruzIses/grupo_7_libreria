@@ -7,18 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
-
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="./css/header.css">
-    <link rel="stylesheet" type="text/css" link href="./css/index.css">      
-    <link rel="stylesheet" type="text/css" link href="./css/footer.css"> 
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" link href="./css/index.css">
+    <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">      
+    <link rel="icon" href="./images/sombrero-loco.100px.ico">
+    <title>El sombrero Loco</title>
 </head>
 <body>
     <header>
 
         <div class="navbar-superior">
-            <a href="./"><img src="/images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
+            <a href= "./"><img src="./images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
             <form action="/buscar" method="get" class="contenedor-buscador">
                 <label for="search-bar">
                     <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
@@ -26,9 +25,10 @@
                 </label>
             </form>
             <div class="botones">
-                <a href="/login"><i class="fas fa-house-user"></i></a>
-                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                <a href="#"><i class="fas fa-bars" id="icon-menu"></i></a>
+                <a href="/register"><i class="fas fa-user-plus"></i><p>Registrarse</p></a>
+                <a href="/login"><i class="fas fa-house-user"></i><p>Iniciar sesión</p></a>
+                <a href="/carrito"><i class="fas fa-shopping-cart"></i><p class="texto-carrito">Carrito</p></a>
+                <a href="#" id="burger-menu"><i class="fas fa-bars" id="icon-menu"></i></a>
             </div>
         </div>
         <div class="navbar-inferior">
@@ -39,89 +39,89 @@
         <section class="carrusel"></section>
         <section class="productos">
             <h2>Los más vendidos</h2>
-            <div class="libro">
-                <img src="/images/portadas/al-final-mueren.jpg">
+            <a class="libro" href="/productDetail">
+                <img src="./images/portadas/al-final-mueren.jpg">
                 <h3>Al final mueren los dos</h3>
                 <p>Silvera, Adam</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/renegados.jpg">
                 <h3>Renegados</h3>
                 <p>Meyer, Marissa</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/harry-potter.jpg">
-                <h3>Harry Potter y la pierda filosofal</h3>
+                <h3>Harry Potter y la piedra filosofal</h3>
                 <p>Rowling, J. K.</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/caos.jpg">
                 <h3>Caos</h3>
                 <p>Tajes, Magali</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/archivo-sherlock.jpg">
                 <h3>El archivo de Sherlock Holmes</h3>
                 <p>Arthur Conan Doyle</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/asesinato-oriente.jpg">
                 <h3>Asesinato en el Oriente Express</h3>
                 <p>Christie, Agatha</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/armame.jpg">
                 <h3>Á(R)MAME</h3>
                 <p>Larenn, Luz</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/viejas-deudas.jpg">
                 <h3>Viejas deudas</h3>
                 <p>San Román, José L.</p>
-            </div>
+            </a>
         </section>
         <section class="productos">
             <h2>Novedades de la semana</h2>
-            <div class="libro">
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/al-final-mueren.jpg">
                 <h3>Al final mueren los dos</h3>
                 <p>Silvera, Adam</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/renegados.jpg">
                 <h3>Renegados</h3>
                 <p>Meyer, Marissa</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/harry-potter.jpg">
-                <h3>Harry Potter y la pierda filosofal</h3>
+                <h3>Harry Potter y la piedra filosofal</h3>
                 <p>Rowling, J. K.</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/caos.jpg">
                 <h3>Caos</h3>
                 <p>Tajes, Magali</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/archivo-sherlock.jpg">
                 <h3>El archivo de Sherlock Holmes</h3>
                 <p>Arthur Conan Doyle</p>
             </div>
-            <div class="libro">
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/asesinato-oriente.jpg">
                 <h3>Asesinato en el Oriente Express</h3>
                 <p>Christie, Agatha</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/armame.jpg">
                 <h3>Á(R)MAME</h3>
                 <p>Larenn, Luz</p>
-            </div>
-            <div class="libro">
+            </a>
+            <a class="libro" href="/productDetail">
                 <img src="/images/portadas/viejas-deudas.jpg">
                 <h3>Viejas deudas</h3>
                 <p>San Román, José L.</p>
-            </div>
+            </a>
         </section>
     </main>
     

@@ -1,141 +1,240 @@
-header{
-    display: flex;
-    height: 250px;
+/*-------main-----*/
+
+body{
     width: 100%;
-    flex-direction: column;
-    background: #7d11ca;
 }
 
-.navbar-superior{
-    flex-wrap: wrap;
+main{
     width: 100%;
-    height: 75%;
+    padding: 225px 5% 50px 5%;
+    font-family: 'roboto';
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.description {
+    position: relative;
+}
+
+.productDetailImg {
+    width: 100%;
+}
+
+.productDetailImg img {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.description .descriptionAutor {
     display: flex;
-    justify-content: space-around;
-    opacity: 0.85;
+    width: 50%;
 }
 
-.navbar-superior a{
-    width: 30%;
-    height: 100%;
+.description .descriptionEditorial {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50%;
 }
 
-.cen{
+.description .descriptionAutor .autor {
+    padding-left: 5px;
+    color: #7d11ca;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.description .descriptionEditorial .editorial {
+    padding-left: 5px;
+    color: black;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.description .precio {
+    color: rgb(3, 161, 3);
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 15px;
+}
+
+.productDetailPurchase a {
+    text-decoration: none;
+}
+
+.productDetailPurchase .btnComprar {
+    width: 100%;
+    background-color: #3C3D61;
+    margin: 15px auto;
+    font-size: 1.5em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.btnComprar p{
+    width: 100%;
     text-align: center;
-    outline:none;
+    color: white;
+    font-weight: bold;
 }
 
-.logotipo {
-    width: 160px;
-    height: 105px;
-    margin-left: 25px,25px,35px,35px;
-}
-
-
-.logotipo:hover {
--webkit-transform: rotateY(180deg);
--webkit-transform-style: preserve-3d;
-transform: rotateY(180deg);
-transform-style: preserve-3d;}
-
-.navbar-superior form{
-    width: 30%;
-}
-
-form label{
+.productDetailPurchase .btnAgregar {
     width: 100%;
-    height: 100%;
+    background-color: #9B9DCC;
+    margin: 15px auto;
+    font-size: 1.5em;
+    height: 2em;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
-label input{
-    width: 80%;
-    height: 40px;
-    align-self: center;
-}
-
-label button{
-    height: 47px;
-    width: 41px;
-    align-self: center;
-    position: relative
-}
-
-.botones{
-    display: flex;
-    width: 30%;
-    justify-content: flex-end;
-}
-
-.botones a{
-    width: 20%;
-    align-self: center;
-    margin: 0px 20px;
-    display: flex;
-}
-
-.botones a i{
-    color: #ffff;
-    align-self: center;
-    font-size: 45px;
-}
-
-.navbar-inferior{
-    height: 25%;
-    box-shadow: 0px 0px 10px;
-    display: flex;
-}
-
-.titulo-logo{
+.btnAgregar p{
     width: 100%;
-    height: 100%;
     text-align: center;
-    margin: 0px;
-    font-size: 40px;
-    align-self: center;
-    margin-top: 10px;
-    font-family:'festive'
+    color: #3C3D61;
+    font-weight: bold;
 }
 
+.detalles h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
 
+.detalles h2 a {
+    color : #3C3D61;
+}
 
-
-/*------footer------*/
 footer{
-    background: #6800b3;
-    height: 350px;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-    display: flex;
-    padding: 15px 0;
-    box-shadow: 0px 0px 10px;
+    bottom: 0px;
 }
 
-footer article{
-    height: 75%;
-    width: 30%;
-    text-align: center;
+
+
+/*------------------MEDIA QUERIES: TABLET -----------------*/
+@media screen and (min-width:726px){
+    
+    /*------MAIN------*/
+
+    main {
+        padding-top: 50px;
+    }   
+
+    h2 {
+        font-size: xx-large;
+    }
+   
+    .contDetail {
+        display: flex;
+        position: relative;
+    }
+
+    .productDetailImg{
+        width: 40%;
+    }
+
+    .productDetailPurchase {
+        position: absolute;
+        width: 50%;
+        right: 0px;
+        margin-right: 5%;
+        bottom: 0px;
+        margin-bottom: 50px;
+        
+    }
+
+    .description {
+        width: 60%;
+        padding-top: 20px;
+        padding-left: 5%;
+    }
+
+    .description .descriptionAutor {
+        width: 100%;
+    }
+
+    .description .descriptionEditorial {
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .description p{
+        font-size: 24px;
+    }
+
+    .description a{
+        font-size: 24px;
+    }
+    
+    .description .precio {
+        margin-top: 30px;
+        font-size: 42px;
+    }
+    
 }
 
-article i{
-    font-size: 55px;
-}
+/*------------------MEDIA QUERIES: LAPTOP -----------------*/
+@media screen and (min-width:1024px){
+    body {
+        background-color: #ededed;
+    }
 
-.textos-footer{
-    font-size: 30px;
-    margin: 15px;
-}
+    main {
+        width:70%;
+        max-width: 1184px;
+        min-width: 1024px;
+        margin: 30px auto 50px;
+        padding-top: 50px;
+        background-color: white;
+        border-radius: 10px;
+        border-left: 1px solid lightgrey;
+        border-right: 1px solid lightgrey;
+    }
 
-.copyright{
-    height: 25%;
-    width: 100%;
-    border-top: 1px solid black;
-    margin: 0px;
-}
+    main h2{
+        font-size: 32px;
+    }
 
-.textos{
-    font-size: 30px;
-    text-align: center;
+    .contDetail {
+        justify-content: space-around;
+    }
+
+    .description{
+        width: 45%;
+    }
+
+    .description p{
+        font-size: 20px;
+    }
+
+    .description a{
+        font-size: 20px;
+    }
+
+    .description .precio {
+        font-size: 32px;
+    }
+
+    .productDetailImg {
+        width: 25%;
+    }
+
+    .productDetailPurchase {
+        width: 30%;
+        right: 12.5%;
+    }
+
+    .detalles p {
+        font-size: 20px;
+        padding: 0px 2% 0px 2%;
+    }
+
 }

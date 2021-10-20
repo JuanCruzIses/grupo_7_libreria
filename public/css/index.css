@@ -1,186 +1,238 @@
-header{
-    display: flex;
-    height: 250px;
-    width: 100%;
-    flex-direction: column;
-    background: #7d11ca;
-}
-
-.navbar-superior{
-    flex-wrap: wrap;
-    width: 100%;
-    height: 75%;
-    display: flex;
-    justify-content: space-around;
-    opacity: 0.85;
-}
-
-.navbar-superior a{
-    width: 30%;
-    height: 100%;
-}
-
-.cen{
-    text-align: center;
-    outline:none;
-}
-
-.logotipo {
-    width: 160px;
-    height: 105px;
-    margin-left: 25px,25px,35px,35px;
-}
-
-
-.logotipo:hover {
--webkit-transform: rotateY(180deg);
--webkit-transform-style: preserve-3d;
-transform: rotateY(180deg);
-transform-style: preserve-3d;}
-
-.navbar-superior form{
-    width: 30%;
-}
-
-form label{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-label input{
-    width: 80%;
-    height: 40px;
-    align-self: center;
-}
-
-label button{
-    height: 47px;
-    width: 41px;
-    align-self: center;
-    position: relative
-}
-
-.botones{
-    display: flex;
-    width: 30%;
-    justify-content: flex-end;
-}
-
-.botones a{
-    width: 20%;
-    align-self: center;
-    margin: 0px 20px;
-    display: flex;
-}
-
-.botones a i{
-    color: #ffff;
-    align-self: center;
-    font-size: 45px;
-}
-
-.navbar-inferior{
-    height: 25%;
-    box-shadow: 0px 0px 10px;
-    display: flex;
-}
-
-.titulo-logo{
-    width: 100%;
-    height: 100%;
-    text-align: center;
+*{
     margin: 0px;
-    font-size: 40px;
-    align-self: center;
-    margin-top: 10px;
-    font-family:'festive'
+    box-sizing: border-box;
 }
 
-
-/*------MAIN------*/
 .carrusel{
-    width: 85%;
-    height: 700px;
-    margin: 50px auto;
+    display: none;
+}
+
+/*-------main-----*/
+
+main{
+    position: relative;
+    top: 200px;
+    box-sizing: border-box;
+}
+
+.carrusel{
+    width: 75%;
+    height: 150px;
     border: 1px solid black;
+    margin: auto;
 }
 
 .productos{
+    width: 95%;
+    margin: 30px auto;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 90%;
-    margin: 100px auto;
-    flex-direction: row;
     box-shadow: 0px 0px 10px;
+    text-align: center;
+    background-color: #fff;
 }
 
 .productos h2{
+    margin: 0px 0px 20px;
     width: 100%;
-    text-align: center;
-    height: 60px;
-    position: relative;
-    top: -20px;
-    box-shadow: 0px 0px 10px;
+    box-shadow: 0px 0px 5px #7d11ca;
 }
 
-.productos div{
-    width: 20%;
-    text-align: center;
-    border: 1px solid black;
-    margin: 15px 50px;
-}
-
-div img{
-    width: 100%;
-    height: 75%;
-}
-
-div h3{
-    font-size: 2em;
-}
-
-div p{
-    font-size: 1.5em;
-}
-
-/*------footer------*/
-footer{
-    background: #6800b3;
-    height: 350px;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
+.libro{
+    width: 90%;
+    max-width: 270px;
+    margin: 5px auto 10px;
+    height: 340px;
     display: flex;
-    padding: 15px 0;
+    border-radius: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 5px #6a6a6a;
+    padding: 15px 0px;
+    text-decoration: none;
+    color: black;
+}
+
+.libro img{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+.libro h3{
+    height: 10%;
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    font-size: 100%;
+    border-bottom: none;
+}
+
+.libro p{
+    height: 10%;
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    border-top: none;
+    padding-top: 10px;
+}
+
+
+
+
+
+/*-----------------MEDIA QUERIES: MOBILE L------------*/
+@media screen and (min-width:500px){
+    section h2{
+        font-size: 40px;
+    }
+
+    .productos{
+    width: 85%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     box-shadow: 0px 0px 10px;
+    text-align: center;
+    }
+
+    .libro{
+        width: 45%;
+        height: 350px;
+    }
+
+    .libro img{
+        width: 80%;
+    }
+
+    .libro h3{
+        width: 80%;
+        font-size: 18px;
+    }
+    
+    .libro p{
+        width: 80%;
+    }
+
+    footer article{
+        display: none;
+    }
 }
 
-footer article{
-    height: 75%;
+
+
+
+/*------------------MEDIA QUERIES: TABLET -----------------*/
+@media screen and(min-width: 726px) {
+    main{
+        margin: 30px auto;
+    }    
+}
+
+@media screen and (min-width:726px){
+    .botones a p{
+        display: block;
+    }
+
+    #burger-menu{
+        display: none;
+    }
+
+    #icon-menu{
+        display: none;
+    }
+    
+    /*------MAIN------*/
+    main{
+        top: 0;
+    }
+    
+    .carrusel{
+        height: 300px;
+        margin: 50px auto;
+    }
+    
+    .productos{
+        justify-content: space-evenly;
+        width: 90%;
+        margin: 50px auto;
+    }
+    
+    .productos h2{
+        font-size: 60px;
+        height: 60px;               
+        box-shadow: 0px 0px 5px;
+        margin: 0px;
+    }
+    
+    .productos .libro{
+        width: 50%;
+        height: 500px;
+        box-shadow: 0px 0px 10px;
+        margin: 20px 10px;
+    }
+    
+    .libro img{
+        width: 90%;
+    }
+    
+    .libro h3{
+        width: 90%;
+        font-size: 25px;
+    }
+    
+    .libro p{
+        width: 90%;
+        font-size: 25px;
+    }
+    
+    /*------footer------*/
+  
+}
+
+
+
+
+
+/*------------------MEDIA QUERIES: LAPTOP -----------------*/
+@media screen and (min-width:1024px){
+
+/*---------------------MAIN----------------*/
+.productos .libro{
     width: 30%;
-    text-align: center;
+}
 }
 
-article i{
-    font-size: 55px;
+/*------------------MEDIA QUERIES: LAPTOP L -----------------*/
+@media screen and (min-width:1600px){
+
 }
 
-.textos-footer{
-    font-size: 30px;
-    margin: 15px;
+/*------------------EFECTOS---------------*/
+.libro:hover{
+    box-shadow: 0px 0px 50px black;
 }
 
-.copyright{
-    height: 25%;
-    width: 100%;
-    border-top: 1px solid black;
-    margin: 0px;
+.libro{
+    transition: all 1s;
 }
 
-.textos{
-    font-size: 30px;
-    text-align: center;
+.botones a:hover{
+    color:black;
+}
+
+div a{
+    transition: all 500ms;
+}
+
+form label input{
+    transition: all 500ms;
+}
+
+form label input:hover{
+    box-shadow: 0px 0px 20px;
 }

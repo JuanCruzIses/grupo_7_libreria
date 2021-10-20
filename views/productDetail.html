@@ -2,84 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="./css/login.css">
-    <link rel="stylesheet" type="text/css" link href="./css/header.css">      
-    <link rel="stylesheet" type="text/css" link href="./css/footer.css"> 
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">
+    <link rel="stylesheet" type="text/css" link href="./css/productDetail.css">
+          
+    <title>El sombrero Loco</title>
 </head>
 <body>
-<header>
+    <header>
 
-    <div class="navbar-superior">
-        <a href="./"><img src="/images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
-        <form action="/buscar" method="get" class="contenedor-buscador">
-            <label for="search-bar">
-                <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
-                <button><i class="fas fa-search"></i></button>
-            </label>
-        </form>
-        <div class="botones">
-            
-                <a href="/register"><i class="far fa-id-card"><p class="tenlace" >Creá tu cuenta</p></i></a>
-                <a href="/login"><i class="fas fa-house-user"><p class="tenlace">Ingresá</p></i></a>
-                <a href="/carrito"><i class="fas fa-shopping-cart"><p class="tenlace">Mis compras</p></i></a>
-            
-            
-            <!--<a href="#"><i class="fas fa-bars" id="icon-menu"></i></a>-->
-        </div>
-    </div>
-    <div class="navbar-inferior">
-        <h1 class="titulo-logo"></i>El sombrero Loco</h1>
-    </div>
-</header>
-
-<footer>
-    <div class="contenedorfooter">
-        <article>
-            <div>
-                <i class="far fa-credit-card"></i>
+        <div class="navbar-superior">
+            <a href= "./"><img src="./images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
+            <form action="/buscar" method="get" class="contenedor-buscador">
+                <label for="search-bar">
+                    <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
+                    <button><i class="fas fa-search"></i></button>
+                </label>
+            </form>
+            <div class="botones">
+                <a href="/register"><i class="fas fa-user-plus"></i><p>Registrarse</p></a>
+                <a href="/login"><i class="fas fa-house-user"></i><p>Iniciar sesión</p></a>
+                <a href="/carrito"><i class="fas fa-shopping-cart"></i><p class="texto-carrito">Carrito</p></a>
+                <a href="#" id="burger-menu"><i class="fas fa-bars" id="icon-menu"></i></a>
             </div>
-            <h4>Formas de pago</h4>
-            <p>
+        </div>
+        <div class="navbar-inferior">
+            <h1 class="titulo-logo"></i>El sombrero Loco</h1>
+        </div>
+    </header>
+    <main>
+        <h2>AL FINAL MUEREN LOS DOS</h3>
+        <div class="contDetail">
+            <div class="productDetailImg">
+                <img src="/images/portadas/al-final-mueren.jpg" alt="">
+            </div>
+    
+            <div class="description">
+                <div class="descriptionAutor">
+                    <p>Autor:</p>
+                    <a href="" class="autor">Silvera Adam</a>
+                </div>
+                <div class="descriptionEditorial">
+                    <p>Editorial: </p>
+                    <a href="#" class="editorial">PUCK</a>
+                </div>   
+                <p class="precio">$ 1.750</p>
+            </div>
+                
+            <div class="productDetailPurchase">
+                <a href="#">
+                    <div class="btnComprar">
+                        <p>Comprar ahora</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="btnAgregar">
+                        <p>Agregar al Carrito</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="detalles">
+            <h2>Reseña del libro <a>Al Final Mueren Los Dos</a></h2>
+            <p>Imagina un mundo en el que una organización les avisa a las personas la inminencia de su muerte. Imagina que empezó la cuenta regresiva. Imagina cómo vivirías tu vida en solo un día. ¿Estarías listo para decir adiós? Al final mueren los dos es un canto a la fuerza arrolladora de la vida, que transformará para siempre tu forma de comprender el tiempo, la amistad y el amor.</p>
+            <h2>Detalles de <a>Al Final Mueren Los Dos</a></h2>
+            <p>Número de páginas: 352<br>
+                Peso: 340<br>
+                Formato: Rústica<br>
+                Edición: 2018<br>
+                Idioma: Castellano<br>
+                ISBN: 9789874132017
+            </p>
+        </div>
+    </main>
+    <footer>
+        <article>
+            <i class="fas fa-credit-card"></i>
+            <h6 class="textos-footer">Medios de pago</h6>
+            <p class="textos-footer">
                 Contamos con diferentes métodos de pago para que tu único problema sea elegir entre nuestra gran variada oferta literaria!  
             </p>
         </article>
-
-        
         <article>
-            <div>
-                <i class="fas fa-gift"></i>
-            </div>
-            <h4>Elegí regalar lectura!</h4>
-            <p>
+            <i class="fas fa-gift"></i>
+            <h6 class="textos-footer">Elegí regalar lectura!</h6>
+            <p class="textos-footer">
                 Regala distinto! Busca entre nuestras múltiples categorias ese libro ideal para la persona a la que quieras sorprender!
             </p>
         </article>
-        
-        
-        
         <article>
-            <div>
-                <i class="fas fa-user-shield"></i>
-            </div>
-            <h4>Seguridad, de principio a fin</h4>
-            <p>
-                ¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer,
+            <i class="fas fa-user-shield"></i>
+            <h6 class="textos-footer">Seguridad, de principio a fin</h6>
+            <p class="textos-footer">¿No te gusta? ¡Devolvelo! En la libreria El sombrero Loco, no hay nada que no puedas hacer,
                 porque estás siempre protegid@.
-            </p>
+                </p>
         </article>
-    </div>
-    <article class="copyright">
-        <p class="textos">Copyright © 2021 "El sombrero loco" / Grupo 7</P>
-    </article>
-</footer>
+        <article class="copyright">
+            <p class="textos">Copyright © 2021 "El sombrero loco" / Grupo 7</P>
+        </article>
+    </footer>
 
     
 </body>

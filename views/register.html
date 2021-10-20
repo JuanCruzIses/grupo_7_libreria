@@ -9,78 +9,99 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="./css/login.css">
-    <link rel="stylesheet" type="text/css" link href="./css/header.css">      
-    <link rel="stylesheet" type="text/css" link href="./css/footer.css"> 
-    <title>Document</title>
+   
+  
+    <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">
+    <link rel="stylesheet" type="text/css" link href="./css/register.css"> 
+    <title>El sombrero Loco</title>
 </head>
 <body>
-<header>
+    <header>
 
-    <div class="navbar-superior">
-        <a href="./"><img src="/images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
-        <form action="/buscar" method="get" class="contenedor-buscador">
-            <label for="search-bar">
-                <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
-                <button><i class="fas fa-search"></i></button>
-            </label>
-        </form>
-        <div class="botones">
-            
-                <a href="/register"><i class="far fa-id-card"><p class="tenlace" >Creá tu cuenta</p></i></a>
-                <a href="/login"><i class="fas fa-house-user"><p class="tenlace">Ingresá</p></i></a>
-                <a href="/carrito"><i class="fas fa-shopping-cart"><p class="tenlace">Mis compras</p></i></a>
-            
-            
-            <!--<a href="#"><i class="fas fa-bars" id="icon-menu"></i></a>-->
-        </div>
-    </div>
-    <div class="navbar-inferior">
-        <h1 class="titulo-logo"></i>El sombrero Loco</h1>
-    </div>
-</header>
-
-<footer>
-    <div class="contenedorfooter">
-        <article>
-            <div>
-                <i class="far fa-credit-card"></i>
+        <div class="navbar-superior">
+            <a href= "./"><img src="./images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
+            <form action="/buscar" method="get" class="contenedor-buscador">
+                <label for="search-bar">
+                    <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
+                    <button><i class="fas fa-search"></i></button>
+                </label>
+            </form>
+            <div class="botones">
+                <a href="/register"><i class="fas fa-user-plus"></i><p>Registrarse</p></a>
+                <a href="/login"><i class="fas fa-house-user"></i><p>Iniciar sesión</p></a>
+                <a href="/carrito"><i class="fas fa-shopping-cart"></i><p class="texto-carrito">Carrito</p></a>
+                <a href="#" id="burger-menu"><i class="fas fa-bars" id="icon-menu"></i></a>
             </div>
-            <h4>Formas de pago</h4>
-            <p>
+        </div>
+        <div class="navbar-inferior">
+            <h1 class="titulo-logo"></i>El sombrero Loco</h1>
+        </div>
+    </header>
+
+    <main>
+        <h2 class=cen >Bienvenid@</h2>
+        <form class="form" action="/login">
+            <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" required/>
+            <input type="text" class="form-control" placeholder="Apellido" name="apellido" required/>
+            <input type="email" class="form-control" placeholder="Email" name="email" required/>
+             <div class="form-group">
+             <div>
+               <input type="password" class="form-control" placeholder="Contraseña" data-toggle="password"  required/>
+                   <div class="input-group-append"></div>
+             
+             </div>
+             </div>
+             <div class="form-group">
+                <div>
+                  <input type="password" class="form-control" placeholder="Confirma contraseña" data-toggle="Confirma password"  required/>
+                      <div class="input-group-append"></div>
+                
+                </div>
+                </div>
+            <input type="text" class="form-control" placeholder="Provincia" name="Provincia" required/>
+            <input type="text" class="form-control" placeholder="Localidad" name="Localidad" required/>
+            <input type="text" class="form-control" placeholder="Barrio" name="Barrio" required/>
+            <input type="text" class="form-control" placeholder="Calle" name="Calle y número" required/>
+            <input type="text" class="form-control" placeholder="Piso - Departamento" name="Piso" opcional/>
+            <input type="text" class="form-control" placeholder="Entre calle 1" name="Entre calle 1" optional/>
+            <input type="text" class="form-control" placeholder="Entre calle 2" name="Entre calle 2" optional/>
+            
+            <label for="acuerdo">Estoy de acuerdo con terminos y condiciones.</label>
+                <input type="checkbox" name="Acuerdo" value="Acepta">
+                <button>Registrarse</button>
+            <p class="message">Ya estas registrado? <a href="/login">Iniciar Sesión</a></p>
+          </form>
+          <div class="decoracion">
+            <a href="./"><img src="/images/decoraciones/conejoblanco.gif" alt="conejo" class="decoracion"></a>
+
+    </main>
+
+    <footer>
+        <article>
+            <i class="fas fa-credit-card"></i>
+            <h6 class="textos-footer">Medios de pago</h6>
+            <p class="textos-footer">
                 Contamos con diferentes métodos de pago para que tu único problema sea elegir entre nuestra gran variada oferta literaria!  
             </p>
         </article>
-
-        
         <article>
-            <div>
-                <i class="fas fa-gift"></i>
-            </div>
-            <h4>Elegí regalar lectura!</h4>
-            <p>
+            <i class="fas fa-gift"></i>
+            <h6 class="textos-footer">Elegí regalar lectura!</h6>
+            <p class="textos-footer">
                 Regala distinto! Busca entre nuestras múltiples categorias ese libro ideal para la persona a la que quieras sorprender!
             </p>
         </article>
-        
-        
-        
         <article>
-            <div>
-                <i class="fas fa-user-shield"></i>
-            </div>
-            <h4>Seguridad, de principio a fin</h4>
-            <p>
-                ¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer,
+            <i class="fas fa-user-shield"></i>
+            <h6 class="textos-footer">Seguridad, de principio a fin</h6>
+            <p class="textos-footer">¿No te gusta? ¡Devolvelo! En la libreria El sombrero Loco, no hay nada que no puedas hacer,
                 porque estás siempre protegid@.
-            </p>
+                </p>
         </article>
-    </div>
-    <article class="copyright">
-        <p class="textos">Copyright © 2021 "El sombrero loco" / Grupo 7</P>
-    </article>
-</footer>
-
+        <article class="copyright">
+            <p class="textos">Copyright © 2021 "El sombrero loco" / Grupo 7</P>
+        </article>
+    </footer>
     
 </body>
 </html>

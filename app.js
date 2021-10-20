@@ -21,4 +21,4 @@ app.get('/productDetail',(req,res)=>{
     res.sendFile(path.join(__dirname, './views/productDetail.html'))
 })    
 
-app.listen(PUERTO, () => console.log('Servidor corriendo; PUERTO 3000!!'));
+app.listen(PUERTO, () => console.log('Servidor corriendo; PUERTO 3000'));
