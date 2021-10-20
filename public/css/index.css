@@ -3,104 +3,15 @@
     box-sizing: border-box;
 }
 
-header{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    background-color: #7d11ca;
-    position: fixed;
-    z-index: 10;
-    width: 100%;
+.carrusel{
+    display: none;
 }
 
-.navbar-superior{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.navbar-superior a{
-    width: 100%;
-    height: 80px;
-    margin: 5px 0 0 0;
-    text-align: center;
-}
-
-.navbar-superior a img{
-    width: 100px;
-    height: 100px;
-    margin: auto;
-}
-
-.contenedor-buscador{
-    width: 100%;
-    display: flex;
-    margin: 30px 0 0 0;
-}
-
-.contenedor-buscador label{
-    display: flex;
-    width: 80%;
-    height: 20px;
-    margin: auto;
-}
-
-.contenedor-buscador label input{
-    width: 90%;
-    align-self: center;
-    height: 100%;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    position: relative;
-    left: 20px;
-}
-
-.contenedor-buscador label button{
-    border: none;
-    height: 100%;
-    position: relative;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-.botones{
-    width: 100%;
-    justify-content: space-around;
-    display: flex;
-    margin: 5px;
-    height: 40px;
-}
-
-.botones a{
-    color: #fff;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.navbar-inferior{
-    width: 100%;
-    box-shadow: 0px 0px 10px;
-    height: 40px;
-}
-
-.titulo-logo{
-    text-align: center;
-    height: 100%;
-    margin: 0px;
-    font-family: 'festive';
-    position: relative;
-    bottom: 5px;
-}
-
-/*-------header-----*/
 /*-------main-----*/
 
 main{
     position: relative;
-    top: 220px;
+    top: 200px;
     box-sizing: border-box;
 }
 
@@ -112,14 +23,14 @@ main{
 }
 
 .productos{
-    width: 85%;
+    width: 95%;
     margin: 30px auto;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     box-shadow: 0px 0px 10px;
     text-align: center;
-    background-color: #dbb3f7;
+    background-color: #fff;
 }
 
 .productos h2{
@@ -129,9 +40,9 @@ main{
 }
 
 .libro{
-    width: 80%;
+    width: 90%;
     max-width: 270px;
-    margin: auto;
+    margin: 5px auto 10px;
     height: 340px;
     display: flex;
     border-radius: 15px;
@@ -170,28 +81,6 @@ main{
 }
 
 
-/*--------------------footer-------------*/
-
-footer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: #7d11ca;
-    position: relative;
-    bottom: -250px;
-    justify-content: space-around;
-    text-align: center;
-}
-
-footer article{
-    display: none;
-}
-
-.copyright{
-    display: flex;
-}
-
-
 
 
 
@@ -209,7 +98,6 @@ footer article{
     flex-wrap: wrap;
     box-shadow: 0px 0px 10px;
     text-align: center;
-    background-color: #dbb3f7;
     }
 
     .libro{
@@ -257,102 +145,7 @@ footer article{
     #icon-menu{
         display: none;
     }
-
-    header{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        background-color: #7d11ca;
-        position: relative;
-    }
     
-    .navbar-superior{
-        width: 100%;
-        display: block;
-    }
-    
-    .navbar-superior a{
-        height: 150px;
-        width: 150px;
-        margin: 5px 0 0 0;
-        text-align: center;
-    }
-
-    .navbar-superior a .logotipo{
-        width: 90px;
-        height: 90px;
-        margin: auto;
-        position: relative;
-        left: 30px;
-    }
-
-    
-    .contenedor-buscador{
-        width: 100%;
-        display: flex;
-        margin: 0px;
-        position: relative;
-    }
-
-    .contenedor-buscador label{
-        display: flex;
-        width: 80%;
-        height: 30px;
-        margin: 15px auto;
-    }
-    
-    .contenedor-buscador label input{
-        width: 90%;
-        align-self: center;
-        height: 100%;
-        border: none;
-        border-radius: 10px;
-        text-align: center;
-    }
-
-    .contenedor-buscador label button{
-        border: none;
-        height: 100%;
-        position: relative;
-        border-radius: 10px;
-        right: 25px;
-    }
-
-    .botones{
-        display: flex;
-        width: 100%;
-        justify-content: space-evenly;
-        
-    }
-
-    .botones a{
-        width: 20%;
-        align-self: center;
-        display: flex;
-    }
-
-    .botones a i{
-        position: relative;
-        bottom: 5px;
-        align-self: center;
-        font-size: 33px;
-        margin: 0 auto;
-    }
-
-    .navbar-inferior{
-        height: 100px;
-        box-shadow: 0px 0px 10px;
-        position: absolute;
-        bottom: 113px;
-}    
-    
-    .titulo-logo{
-        width: 100%;
-        text-align: center;
-        font-size: 80px;
-        align-self: center;
-        font-family: 'festive';
-    }
     /*------MAIN------*/
     main{
         top: 0;
@@ -398,37 +191,7 @@ footer article{
     }
     
     /*------footer------*/
-    footer{
-        background: #6800b3;
-        padding: 5px 0;
-        position: static;
-        border-top: 1px solid black;
-    }
-    
-    footer article{
-        display: flex;
-        flex-direction: column;
-        width: 32%;
-    }
-    
-    article i{
-        font-size: 55px;
-    }
-    
-    .textos-footer{
-        font-size: 18px;
-        margin-bottom: 5px;
-    }
-
-    .copyright{
-        width: 100%;
-        border-top: 2px solid black;    
-    }
-    
-    .textos{
-        font-size: 30px;
-        text-align: center;
-}
+  
 }
 
 
@@ -437,128 +200,15 @@ footer article{
 
 /*------------------MEDIA QUERIES: LAPTOP -----------------*/
 @media screen and (min-width:1024px){
-header{
-       height: 180px;
-        flex-direction: row;
-}
-
-.navbar-superior{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.navbar-superior a{
-    height: 100px;
-    width: 100%;
-}
-
-.navbar-superior a .logotipo {
-    height: 95px;
-    width: 100px;
-    position: relative;
-    left: -230px;
-}
-
-.contenedor-buscador{
-    width: 60%;
-    margin: 0px;
-}
-
-.contenedor-buscador label{
-    width: 100%;
-    max-width: 760px;
-    height: 30px;
-    margin: 15px auto;
-}
-
-.botones{
-    width: 30%;
-    justify-content: space-evenly;
-    top: 3px;
-}
-
-.navbar-inferior{
-    height: 100px;
-    position: absolute;
-    bottom: 80px;
-}
-
-.titulo-logo{
-    font-size: 80px;
-    left: 70px;
-    bottom: 10px;
-}
 
 /*---------------------MAIN----------------*/
 .productos .libro{
     width: 30%;
 }
-
-/*--------------FOOTER-----------*/
-footer{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-}
-
-footer article{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-}
-
-.textos-footer {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.textos {
-    font-size: 25px;
-    margin: 5px;
-}
 }
 
 /*------------------MEDIA QUERIES: LAPTOP L -----------------*/
 @media screen and (min-width:1600px){
-header{
-    height: 240px;
-}
-
-.navbar-superior a{
-    height: 130px;
-    bottom: 50px;
-}
-
-.navbar-inferior{
-    height: 130px;
-    position: absolute;
-    bottom: 110px;
-}
-
-.titulo-logo{
-    font-size: 110px;
-    left: 70px;
-    bottom: 20px;
-}
-
-.navbar-superior a .logotipo{
-    height: 130px;
-    width: 130px;
-    position: relative;
-    left: -340px;
-    bottom: 3px;
-}
-
-.contenedor-buscador label{
-    height: 40px;
-}
-
-.botones a i{
-    font-size: 45px;
-    top: 3px;
-}
 
 }
 
