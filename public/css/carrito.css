@@ -250,46 +250,76 @@ label button{
 .botones a i tenlace{
   font-size: 5px;;  
 }
-
-
-
-/*------footer------*/
-footer{
-    background: #6800b3;
-    height: 350px;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-    display: flex;
-    padding: 15px 0;
-    box-shadow: 0px 0px 10px;
+h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color:#41065c;
+}
+h1.cen {
+    text-align: center;
+    margin-bottom: 15px;
+    color: black;
 }
 
-footer article{
-    height: 75%;
-    width: 30%;
+h3{
+    font-size: 24px;
+}
+
+p{
+    font-size: 12px;
+}
+table{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    font-size: 50px;
+}
+th,td{
+    border: 2px solid black;
+}
+input.texto{
+    position: relative;
+    
+}
+div.Envio{
+text-align: center;
+font-size: 20px;
+}
+.form-group{
+    padding: 10px;
     text-align: center;
 }
-
-article i{
-    font-size: 55px;
+.form-control{
+    font-size: 20px;
+}
+.envio-form{
+    text-align: center;
+}
+/*------footer------*/
+footer {
+    background-color: #ffffffc0;
+    text-align: center;
+    padding: 50px 0;
+    width: 90%;
+    margin: 0 auto;
 }
 
-.textos-footer{
-    font-size: 30px;
-    margin: 15px;
+i.fa-credit-card, i.fa-gift, i.fa-user-shield {
+    color: #68417a;;
+    font-size: 2em;
 }
 
-.copyright{
-    height: 25%;
-    width: 100%;
-    border-top: 1px solid black;
-    margin: 0px;
+footer article {
+    margin: 40px 0;
+    color: rgba(133, 127, 127, 0.918);
 }
+
 
 .textos{
     font-size: 30px;
     text-align: center;
 }
+
 
 }

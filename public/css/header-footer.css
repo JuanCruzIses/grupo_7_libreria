@@ -11,6 +11,7 @@ header{
     position: fixed;
     z-index: 10;
     width: 100%;
+    top: 0px;
 }
 
 .navbar-superior{
@@ -29,15 +30,15 @@ header{
 }
 
 .navbar-superior a img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: auto;
 }
 
 .contenedor-buscador{
     width: 100%;
     display: flex;
-    margin: 30px 0 0 0;
+    margin: 10px auto 0;
 }
 
 .contenedor-buscador label{
@@ -70,14 +71,18 @@ header{
     width: 100%;
     justify-content: space-around;
     display: flex;
-    margin: 5px;
-    height: 40px;
+    margin-bottom: 5px;
+    height: 30px;
 }
 
 .botones a{
     color: #fff;
     font-size: 20px;
     text-decoration: none;
+}
+
+.botones a p{
+    display: none;
 }
 
 .navbar-inferior{
@@ -94,11 +99,7 @@ header{
     position: relative;
     bottom: 5px;
 }
-.logotipo:hover {
-    -webkit-transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;}
+
 
 /*---------------------header------------*/
 /*--------------------footer-------------*/
@@ -128,13 +129,14 @@ footer article{
     footer article{
         display: none;
     }
+
 }
 
 
 
 
 /*------------------MEDIA QUERIES: TABLET -----------------*/
-@media screen and (min-width:768px){
+@media screen and (min-width:726px){
     #burger-menu{
         display: none;
     }
@@ -153,15 +155,14 @@ footer article{
     
     .navbar-superior{
         width: 100%;
-        opacity: 0.85;
-        display: block;
+        display: flex;
     }
     
     .navbar-superior a{
         height: 150px;
+        position: relative;
         width: 150px;
-        margin: 5px 0 0 0;
-        text-align: center;
+        z-index: 10;
     }
 
     .navbar-superior a .logotipo{
@@ -208,6 +209,8 @@ footer article{
         display: flex;
         width: 100%;
         justify-content: space-evenly;
+        position: relative;
+        bottom: 5px;
     }
     
     .botones a{
@@ -218,6 +221,7 @@ footer article{
 
     .botones a p{
         align-self: center;
+        display: flex;
     }
 
     .botones a i{
@@ -237,14 +241,8 @@ footer article{
         height: 100px;
         box-shadow: 0px 0px 10px;
         position: absolute;
-        bottom: 113px;
+        bottom: 150px;
 }    
-    
-    .logotipo:hover {
-    -webkit-transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;}
     
     
     .titulo-logo{
@@ -253,20 +251,7 @@ footer article{
         font-size: 80px;
         align-self: center;
         font-family: 'festive';
-    }
-    
-    .logotipo:hover {
-        -webkit-transform: rotateY(180deg);
-        -webkit-transform-style: preserve-3d;
-        transform: rotateY(180deg);
-        transform-style: preserve-3d;
-    }
-        
-    .botones a i tenlace{
-      font-size: 5px;;  
-    }
-
-     
+    }     
     /*------footer------*/
     footer{
         background: #6800b3;
@@ -279,24 +264,34 @@ footer article{
         display: flex;
         flex-direction: column;
         width: 32%;
+        color: #e7e4e4;
     }
     
     article i{
-        font-size: 55px;
+        font-size: 25px;
+        color: #e7e4e4;
+        transition: all 500ms;
+    }
+
+    article i:hover{
+        color: #fff
     }
     
     .textos-footer{
-        font-size: 18px;
+        font-size: 15px;
         margin-bottom: 5px;
+        color:#ffff;;
     }
 
     .copyright{
         width: 100%;
-        border-top: 2px solid black;    
+        border-top: 2px solid black;   
+        font-size: 20px; 
+        color: #e7e4e4;
     }
     
     .textos{
-        font-size: 30px;
+        font-size: 10px;
         text-align: center;
 }
 }
@@ -328,6 +323,13 @@ header{
     left: -230px;
 }
 
+
+.logotipo:hover {
+-webkit-transform: rotateY(180deg);
+-webkit-transform-style: preserve-3d;
+transform: rotateY(180deg);
+transform-style: preserve-3d;}
+
 .contenedor-buscador{
     width: 60%;
     margin: 0px;
@@ -343,7 +345,8 @@ header{
 .botones{
     width: 35%;
     justify-content: space-evenly;
-    top: 3px;
+    position: relative;
+    top: 10px;
 }
 
 .botones a p{
@@ -361,6 +364,11 @@ header{
     font-size: 80px;
     left: 70px;
     bottom: 10px;
+}
+
+.texto-carrito{
+    position: relative;
+    left: 5px;
 }
 
 
