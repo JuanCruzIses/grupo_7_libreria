@@ -93,7 +93,48 @@ header{
 /*------------header------------*/
 /*------------main------------*/
 
+input.texto{
+    position: relative;
+    
+}
+div.Envio{
+text-align: center;
+font-size: 20px;
+}
+.form-group{
+    padding: 10px;
+    text-align: center;
+}
+.form-control{
+    font-size: 20px;
+}
+.envio-form{
+    text-align: center;
+}
+div.datos-automaticos{
+    font-size: 25px;
+}
+select.barraPaises{
+    font-size: 20px;
+}
+select.envio{
+    font-size: 30px;
+}
+table{
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+p{
+    font-size: 12px;
+}
 
+th,td{
+    border: 2px solid black;
+}
 
 
 /*------------main------------*/
@@ -116,6 +157,11 @@ footer article{
 
 .copyright{
     display: flex;
+}
+h1.cen {
+    text-align: center;
+    margin-bottom: 15px;
+    color: black;
 }
 
 
@@ -268,34 +314,8 @@ h3{
 p{
     font-size: 12px;
 }
-table{
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-    font-size: 50px;
-}
-th,td{
-    border: 2px solid black;
-}
-input.texto{
-    position: relative;
-    
-}
-div.Envio{
-text-align: center;
-font-size: 20px;
-}
-.form-group{
-    padding: 10px;
-    text-align: center;
-}
-.form-control{
-    font-size: 20px;
-}
-.envio-form{
-    text-align: center;
-}
+
+
 /*------footer------*/
 footer {
     background-color: #ffffffc0;
@@ -315,11 +335,6 @@ footer article {
     color: rgba(133, 127, 127, 0.918);
 }
 
-
-.textos{
-    font-size: 30px;
-    text-align: center;
-}
-
-
-}
+footer article div {
+    margin-bottom: 9px;
+}}
