@@ -7,6 +7,9 @@
     display: none;
 }
 
+#burger-menu{
+    display: none;
+}
 /*-------main-----*/
 
 main{
@@ -30,12 +33,13 @@ main{
     flex-wrap: wrap;
     box-shadow: 0px 0px 10px;
     text-align: center;
-    background-color: #fff;
+    background-color: #f9f0ff;
 }
 
 .productos h2{
     margin: 0px 0px 20px;
     width: 100%;
+    background-color: #ffff;
     box-shadow: 0px 0px 5px #7d11ca;
 }
 
@@ -165,7 +169,6 @@ main{
     .productos h2{
         font-size: 60px;
         height: 60px;               
-        box-shadow: 0px 0px 5px;
         margin: 0px;
     }
     
