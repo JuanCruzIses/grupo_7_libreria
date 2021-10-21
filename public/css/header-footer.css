@@ -264,30 +264,35 @@ footer article{
         display: flex;
         flex-direction: column;
         width: 32%;
-        color:#b06ae2
+        color: #e7e4e4;
     }
     
     article i{
         font-size: 25px;
-        color:#b06ae2c0
+        color: #e7e4e4;
+        transition: all 500ms;
+    }
+
+    article i:hover{
+        color: #fff
     }
     
     .textos-footer{
         font-size: 15px;
         margin-bottom: 5px;
-        color:#b06ae2
+        color:#ffff;;
     }
 
     .copyright{
         width: 100%;
         border-top: 2px solid black;   
         font-size: 20px; 
+        color: #e7e4e4;
     }
     
     .textos{
         font-size: 10px;
         text-align: center;
-        color: rgb(189, 100, 167);  
 }
 }
 
