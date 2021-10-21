@@ -1,7 +1,8 @@
 /*BIENVENID@s*/
 h2 {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 40px;
     color: #a3076f;
     font-family: 'festive';
 }
@@ -37,7 +38,7 @@ div.main-login {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 360px;
+    max-width: 420px;
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
@@ -97,7 +98,7 @@ div.main-login {
           animation-iteration-count: infinite;
           animation-direction: alternate;
           animation-name:achicando;
-          animation-duration:1000ms;
+          animation-duration:1500ms;
    
       }
        
@@ -143,11 +144,19 @@ div.main-login {
 
 @media (min-width: 1024px){
     /*Header---*/
+    h2{
+      font-size: 60px;
+    }
 
     main .decoracion{
     visibility: visible;
    }
+
+   .form {
+     max-width: 520px;
 }
+}
+
 @media (min-width: 1920px) {
     /*Header*/
     main .decoracion{
