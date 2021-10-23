@@ -338,3 +338,10 @@ footer article {
 footer article div {
     margin-bottom: 9px;
 }}
+
+
+ /* --- Nueva fuente especial --- */
+ @font-face {
+    font-family:'mifuente';
+    src:url(../fairytale.ttf)}
+    

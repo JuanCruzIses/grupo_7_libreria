@@ -287,7 +287,7 @@ footer article{
     .copyright{
         width: 100%;
         border-top: 2px solid black;   
-        font-size: 20px; 
+        font-size: 17px; 
         color: #e7e4e4;
     }
     
@@ -446,3 +446,12 @@ footer div a{
 header div a{
     transition: all 500ms;
 }
+
+
+
+ /* --- Nueva fuente especial --- */
+ @font-face {
+    font-family:'mifuente';
+    src:url(../fairytale.ttf)}
+    
+    

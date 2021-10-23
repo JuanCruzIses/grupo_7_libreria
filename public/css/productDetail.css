@@ -10,9 +10,11 @@ main{
     font-family: 'roboto';
 }
 
+/*agregué font personalizada*/ 
 h2 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
+    font-family: 'mifuente';
 }
 
 .description {
@@ -238,3 +240,11 @@ footer{
     }
 
 }
+
+
+ /* --- Nueva fuente especial --- */
+ @font-face {
+    font-family:'mifuente';
+    src:url(../fairytale.ttf)}
+    
+    
