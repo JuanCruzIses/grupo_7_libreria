@@ -1,17 +1,17 @@
 /*-------main-----*/
 
 body{
-    width: 100%;
+    min-width: 320px;
 }
 
 main{
-    width: 100%;
     padding: 225px 5% 50px 5%;
     font-family: 'roboto';
 }
 
+/*agregué font personalizada*/ 
 h2 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
@@ -24,7 +24,6 @@ h2 {
 }
 
 .productDetailImg img {
-    margin-top: 20px;
     width: 100%;
 }
 
@@ -131,14 +130,33 @@ footer{
     h2 {
         font-size: xx-large;
     }
-   
+
     .contDetail {
+        margin-top: 20px;
+        margin-bottom: 100px;
         display: flex;
         position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contDetail .contenedor-titulo {
+        width: 60%;
+        padding-left: 5%;
+        padding-right: 5%;
+        order: 1;
+        height: fit-content;
+        position: absolute;
+        right: 0px;
+    }
+
+    .contDetail  .contenedor-titulo .titulo {
+        position: relative
     }
 
     .productDetailImg{
         width: 40%;
+        order: 0;
     }
 
     .productDetailPurchase {
@@ -146,28 +164,34 @@ footer{
         width: 50%;
         right: 0px;
         margin-right: 5%;
-        bottom: 0px;
-        margin-bottom: 50px;
-        
+        bottom: 0px;       
     }
 
     .description {
         width: 60%;
-        padding-top: 20px;
         padding-left: 5%;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .description .descriptionAutor {
         width: 100%;
+        height: fit-content;
     }
 
     .description .descriptionEditorial {
+        width: 100%;
         position: relative;
-        margin-top: 20px;
+        height: fit-content;
+        margin-top: 15px;
     }
 
     .description p{
         font-size: 24px;
+
     }
 
     .description a{
@@ -175,8 +199,10 @@ footer{
     }
     
     .description .precio {
-        margin-top: 30px;
-        font-size: 42px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 32px;
+        height: fit-content;
     }
     
 }
@@ -204,11 +230,11 @@ footer{
     }
 
     .contDetail {
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .description {
-        width: 45%;
+        width: 60%;
     }
 
     .description p {
@@ -235,12 +261,8 @@ footer{
         display: block;
     }
 
-    .description .precio {
-        font-size: 32px;
-    }
-
     .productDetailImg {
-        width: 25%;
+        width: 35%;
     }
 
     .productDetailPurchase {
@@ -288,3 +310,14 @@ footer{
         display: block;
     }
 }
+
+
+
+ /* --- Nueva fuente especial --- */
+/* 
+ @font-face {
+    font-family:'mifuente';
+    src:url(../fairytale.ttf)}
+/*
+    
+    

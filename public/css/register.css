@@ -3,8 +3,9 @@ h2 {
     text-align: center;
     margin-bottom: 10px;
     font-size: 40px;
-    color: #a3076f;
-    font-family: 'festive';
+    color: #7c0856;
+   font-family: 'mifuente';
+    
 }
 
 h3{
@@ -186,3 +187,7 @@ footer{
 }
 
 }
+@font-face {
+font-family:'mifuente';
+src:url(../fairytale.ttf)}
+
