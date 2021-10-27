@@ -17,27 +17,27 @@
 </head>
 <body>
     <header>
-
-        <div class="navbar-superior">
-            <a href="./"><img src="/images/sombrero-loco-200px.png" alt="Logo" class="logotipo"></a>
+        <div class="contenedor-logo">
+            <a href= "./"><img src="./images/Sombrero-Loco-icono-con-fondo.png" alt="Logo" class="logotipo"></a>
+        </div>
+        <h1 class="titulo-logo"></i>El sombrero Loco</h1>
+        <div class="burger-menu">
+            <i class="fas fa-bars"></i> 
+        </div> 
+        <div class="navbar">
             <form action="/buscar" method="get" class="contenedor-buscador">
                 <label for="search-bar">
-                    <input type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
+                    <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
                     <button><i class="fas fa-search"></i></button>
                 </label>
             </form>
-            <div class="botones">
-                <a href="/register"><i class="fas fa-user-plus"></i></a>
-                <a href="/login"><i class="fas fa-house-user"></i></a>
-                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                <a href="#"><i class="fas fa-bars" id="icon-menu"></i></a>
-            </div>
+            <ul class="botones">
+                <a href="/register"><li><i class="fas fa-user-plus"></i>Registrarse</li></a>
+                <a href="/login"><li><i class="fas fa-house-user"></i>Iniciar sesión</li></a>
+                <a href="/carrito"><li><i class="fas fa-shopping-cart"></i>Carrito</li></a>
+            </ul>
         </div>
-        <div class="navbar-inferior">
-            <h1 class="titulo-logo"></i>El sombrero Loco</h1>
-        </div>
-    </div>
-</header>
+    </header>
 <div class="Pedido">
     <h1 class=cen >1-Pedido</h1>
     <form action="/login" method="POST">

@@ -5,11 +5,10 @@ body{
 }
 
 main{
-    padding: 225px 5% 50px 5%;
+    padding: 25px 5% 50px 5%;
     font-family: 'roboto';
 }
 
-/*agregué font personalizada*/ 
 h2 {
     font-size: 20px;
     margin-bottom: 10px;

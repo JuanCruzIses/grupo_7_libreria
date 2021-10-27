@@ -3,454 +3,120 @@
     box-sizing: border-box;
 }
 
+body{
+    max-width: 100%;
+}
+
 header{
+    width: 100%;
+    background-color: #7d11ca;
+    padding: 8px 16px 8px 16px;
+}
+
+header .navbar{
+    position: absolute;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    background-color: #7d11ca;
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    top: 0px;
+    margin-top: 8px;
+    width: 80%;
+    height: fit-content;
+    background-color: #59158a;
+    left: 0px;
+    z-index: 1000;
+    min-width: 256px;
+    max-width: 360px;
+
 }
 
-.navbar-superior{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+header .contenedor-logo{
+    position: absolute;
+}
+header .contenedor-logo .logotipo {
+    position: relative;
+    width: 45px;
 }
 
-.navbar-superior a{
-    width: 100%;
-    height: 80px;
-    margin: 5px 0 0 0;
+
+header  .titulo-logo{
+    font-family: 'festive';
     text-align: center;
+    line-height: 45px;
+    width: 100%;
+    
 }
 
-.navbar-superior a img{
-    width: 80px;
-    height: 80px;
-    margin: auto;
+header .burger-menu{
+    position: absolute;
+    right: 16px;
+    top: 13.5px;
+}
+
+header .burger-menu i{
+    position: relative;
+    margin: 0px auto 0px auto;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-size: 18px;
+    padding: 8px;
+
+    z-index: 2000;
+}
+
+header .navbar ul.botones{
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+header .navbar ul.botones a{
+    color: white;
+    text-decoration: none;
+    font-family: 'roboto';
+    font-weight: 600;
+    font-size: 20px;
+}
+
+header .navbar ul.botones a li{
+    padding-left: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+    margin-top: 3px;
+}
+
+header .navbar ul.botones a li i{
+    margin-right: 16px;
 }
 
 .contenedor-buscador{
-    width: 100%;
-    display: flex;
-    margin: 10px auto 0;
-}
-
-.contenedor-buscador label{
-    display: flex;
     width: 80%;
-    height: 20px;
     margin: auto;
+
 }
 
-.contenedor-buscador label input{
-    width: 90%;
-    align-self: center;
-    height: 100%;
+.contenedor-buscador input{
+    margin-top: 16px;
+    width: 100%;
+    font-size: 18px;
     border: none;
     border-radius: 5px;
-    text-align: center;
-    position: relative;
-    left: 20px;
 }
 
 .contenedor-buscador label button{
     border: none;
-    height: 100%;
-    position: relative;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-.botones{
-    width: 100%;
-    justify-content: space-around;
-    display: flex;
-    margin-bottom: 5px;
-    height: 30px;
-}
-
-.botones a{
-    color: #fff;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.botones a p{
-    display: none;
-}
-
-.navbar-inferior{
-    width: 100%;
-    box-shadow: 0px 0px 10px;
-    height: 40px;
-}
-
-.titulo-logo{
-    text-align: center;
-    height: 100%;
-    margin: 0px;
-    font-family: 'festive';
-    position: relative;
-    bottom: 5px;
-}
-
-
-/*---------------------header------------*/
-/*--------------------footer-------------*/
-
-footer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: #7d11ca;
-    position: relative;
-    bottom: -250px;
-    justify-content: space-around;
-    text-align: center;
-}
-
-footer article{
-    display: none;
-}
-
-.copyright{
-    display: flex;
-}
-
-
-/*-----------------MEDIA QUERIES: MOBILE L------------*/
-@media screen and (min-width:450px){
-    footer article{
-        display: none;
-    }
-
-}
-
-
-
-
-/*------------------MEDIA QUERIES: TABLET -----------------*/
-@media screen and (min-width:726px){
-    #burger-menu{
-        display: none;
-    }
-
-    #icon-menu{
-        display: none;
-    }
-
-    header{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        background-color: #7d11ca;
-        position: relative;
-    }
-    
-    .navbar-superior{
-        width: 100%;
-        display: flex;
-    }
-    
-    .navbar-superior a{
-        height: 150px;
-        position: relative;
-        width: 150px;
-        z-index: 10;
-    }
-
-    .navbar-superior a .logotipo{
-        width: 90px;
-        height: 90px;
-        margin: auto;
-        position: relative;
-        left: 30px;
-    }
-
-    
-    .contenedor-buscador{
-        width: 100%;
-        display: flex;
-        margin: 0px;
-        top: -30px;
-        position: relative;
-    }
-
-    .contenedor-buscador label{
-        display: flex;
-        width: 80%;
-        height: 30px;
-        margin: 15px auto;
-    }
-    
-    .contenedor-buscador label input{
-        width: 90%;
-        align-self: center;
-        height: 100%;
-        border: none;
-        border-radius: 10px;
-        text-align: center;
-    }
-
-    .contenedor-buscador label button{
-        border: none;
-        height: 100%;
-        position: relative;
-        border-radius: 10px;
-        right: 25px;
-    }
-
-    .botones{
-        display: flex;
-        width: 100%;
-        justify-content: space-evenly;
-        position: relative;
-        bottom: 15px;
-    }
-    
-    .botones a{
-        width: 20%;
-        align-self: center;
-        display: flex;
-    }
-
-    .botones a p{
-        align-self: center;
-        display: flex;
-    }
-
-    .botones a i{
-        position: relative;
-        bottom: 5px;
-        align-self: center;
-        font-size: 33px;
-        margin: 0 auto;
-    }
-
-    .texto-carrito{
-        position: relative;
-        right: 20px;
-    }
-
-    .navbar-inferior{
-        height: 100px;
-        box-shadow: 0px 0px 10px;
-        position: absolute;
-        bottom: 150px;
-}    
-    
-    
-    .titulo-logo{
-        width: 100%;
-        text-align: center;
-        font-size: 80px;
-        align-self: center;
-        font-family: 'festive';
-    }     
-    /*------footer------*/
-    footer{
-        background: #6800b3;
-        padding: 5px 0;
-        position: static;
-        border-top: 1px solid black;
-    }
-    
-    footer article{
-        display: flex;
-        flex-direction: column;
-        width: 32%;
-        color: #e7e4e4;
-    }
-    
-    article i{
-        font-size: 25px;
-        color: #e7e4e4;
-        transition: all 500ms;
-    }
-
-    article i:hover{
-        color: #fff
-    }
-    
-    .textos-footer{
-        font-size: 15px;
-        margin-bottom: 5px;
-        color:#ffff;;
-    }
-
-    .copyright{
-        width: 100%;
-        border-top: 2px solid black;   
-        font-size: 17px; 
-        color: #e7e4e4;
-    }
-    
-    .textos{
-        font-size: 10px;
-        text-align: center;
-}
-}
-
-/*------------------MEDIA QUERIES: LAPTOP -----------------*/
-@media screen and (min-width:1024px){
-header{
-       height: 180px;
-        flex-direction: row;
-}
-
-.navbar-superior{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.navbar-superior a{
-    height: 100px;
-    width: 100%;
-    margin: 0 5px;
-}
-
-.navbar-superior a .logotipo {
-    height: 95px;
-    width: 100px;
-    position: relative;
-    left: -230px;
-}
-
-.contenedor-buscador{
-    width: 60%;
-    margin: 0px;
-    top: 0px;
-}
-
-.contenedor-buscador label{
-    width: 100%;
-    max-width: 760px;
-    height: 30px;
-    margin: 15px auto;
-}
-
-.botones{
-    width: 35%;
-    justify-content: space-evenly;
-    position: relative;
-    top: 10px;
-}
-
-.botones a p{
-    font-size: 15px;
-    margin: 0 8px;
-}
-
-.navbar-inferior{
-    height: 100px;
+    color: rgb(29, 29, 29);
+    background: none;
     position: absolute;
-    bottom: 80px;
-}
-
-.titulo-logo{
-    font-size: 80px;
-    bottom: 10px;
-}
-
-.texto-carrito{
-    position: relative;
-    left: 5px;
+    font-size: 18px;
+    top: 17px;
+    left: calc(80%);
 }
 
 
-/*--------------FOOTER-----------*/
-footer{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-}
-
-footer article{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-}
-
-.textos-footer {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.textos {
-    font-size: 25px;
-    margin: 5px;
-}
-}
-
-/*------------------MEDIA QUERIES: LAPTOP L -----------------*/
-@media screen and (min-width:1600px){
-header{
-    height: 240px;
-}
-
-.navbar-superior a{
-    height: 130px;
-    bottom: 50px;
-}
-
-.navbar-inferior{
-    height: 130px;
-    position: absolute;
-    bottom: 110px;
-}
-
-.titulo-logo{
-    font-size: 110px;
-    left: 70px;
-    bottom: 20px;
-}
-
-.navbar-superior a .logotipo{
-    height: 130px;
-    width: 130px;
-    position: relative;
-    left: -340px;
-    bottom: 3px;
-}
-
-.contenedor-buscador label{
-    height: 40px;
-}
-
-.botones a i{
-    font-size: 45px;
-    top: 3px;
-}
-
-}*/
+/*-----------------MEDIA QUERIES: TABLET ------------*/
 
 
-/*------------------EFECTOS---------------*/
-.botones a:hover{
-    color:black;
-}
-
-footer div a{
-    transition: all 500ms;
-}
-
-header div a{
-    transition: all 500ms;
-}
+/*-----------------MEDIA QUERIES: DESKTOP ------------*/
 
 
-
- /* --- Nueva fuente especial --- */
- @font-face {
-    font-family:'mifuente';
-    src:url(../fairytale.ttf)}
-    
     

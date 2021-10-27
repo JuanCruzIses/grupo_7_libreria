@@ -7,9 +7,6 @@
     display: none;
 }
 
-#burger-menu{
-    display: none;
-}
 /*-------main-----*/
 
 main{
@@ -151,9 +148,6 @@ main{
         display: block;
     }
 
-    #burger-menu{
-        display: none;
-    }
 
     #icon-menu{
         display: none;
