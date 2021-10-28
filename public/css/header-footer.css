@@ -4,9 +4,8 @@
 }
 
 body{
-    max-width: 100%;
+    min-width: 320px;
 }
-
 header{
     width: 100%;
     background-color: #7d11ca;
@@ -115,6 +114,68 @@ header .navbar ul.botones a li i{
 
 /*-----------------MEDIA QUERIES: TABLET ------------*/
 
+@media (min-width: 768px){
+
+
+    header .navbar{
+        position: inherit;
+        width: 100%;
+        background-color: #7d11ca;
+        min-width: none;
+        max-width: none;
+        flex-direction: row;
+        margin-bottom: 8px;
+        margin-top: 0px;
+    }
+
+    header .burger-menu{
+        display: none;
+    }
+
+    header .navbar .contenedor-buscador{
+        width: 40%;
+    }
+
+    header .navbar input{
+        width: 100%;  
+    }
+
+    header .navbar ul{
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    header .navbar ul.botones a li{
+        border-bottom: none;
+        font-size: 14px;
+        padding-left: 0px;
+        margin-left: 16px;
+    }
+
+    header .navbar ul.botones a li i{
+        margin-right: 5px;
+    }
+
+    header .contenedor-buscador{
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    header .contenedor-buscador label{
+        width: 100%;
+    }
+
+    header .contenedor-buscador label button{
+        position: absolute;
+        left: calc(40% - 28px);
+        top: 70px
+    }
+}
 
 /*-----------------MEDIA QUERIES: DESKTOP ------------*/
 
