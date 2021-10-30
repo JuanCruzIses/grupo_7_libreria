@@ -206,7 +206,25 @@ main{
 
 /*------------------MEDIA QUERIES: LAPTOP -----------------*/
 @media screen and (min-width:1024px){
-
+/*-------------AJUSTE MEDIA QUERIES DE HEADER Y FOOTER----------*/
+main{
+    padding-top: 220px;
+  }
+  
+  footer{
+    position: static;
+    margin-top: -50px;
+  }
+  
+  @media (min-width:726px){
+  main{
+    padding-top: 30px;
+  }
+  
+  footer{
+    margin-top: 0px;
+  }
+  
 /*---------------------MAIN----------------*/
 .productos .libro{
     width: 30%;
