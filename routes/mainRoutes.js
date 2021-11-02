@@ -1,9 +1,10 @@
 const express = require('express');
-const app = express;
 const router = express.Router();
 
+//Requiriendo funcionalidad del controlador
 const mainController = require('../controllers/mainController.js');
 
-router.get('/', mainController.producto);
+//Dando ruta al controlador
+router.get('/', mainController.index);
 
 module.exports = router;
