@@ -3,6 +3,12 @@
     box-sizing: border-box;
 }
 
+input:hover {
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75) !important;
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75) !important;
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75) !important;
+}
+
 body{
     min-width: 320px;
 }
@@ -12,11 +18,17 @@ header{
     padding: 8px 16px 8px 16px;
 }
 
+header .contenedor-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 header .navbar{
     position: absolute;
     display: flex;
     flex-direction: column;
-    margin-top: 8px;
+    top: 65px;
     width: 80%;
     height: fit-content;
     background-color: #59158a;
@@ -24,36 +36,29 @@ header .navbar{
     z-index: 1000;
     min-width: 256px;
     max-width: 360px;
-
 }
 
-
-
-header .contenedor-logo{
-    position: absolute;
-}
-header .contenedor-logo .logotipo {
+header .contenedor-logo .logotipo-solo {
     position: relative;
-    width: 45px;
+    height: 45px;
 }
 
-header .cen{
-    text-align: center;
+header .contenedor-logo .logotipo {
+    display: none;
 }
-
+/*
 header  .titulo-logo{
-    font-family: 'festive';
+    font-family: 'Irish Grover', cursive;
     text-align: center;
     line-height: 45px;
     width: 100%;
-    
+    color: white;
+    font-weight: lighter;
+    font-size: 24px;
 }
+*/
 
-header .burger-menu{
-    position: absolute;
-    right: 16px;
-    top: 13.5px;
-}
+
 
 header .burger-menu i{
     position: relative;
@@ -74,8 +79,7 @@ header .navbar ul.botones{
 header .navbar ul.botones a{
     color: white;
     text-decoration: none;
-    font-family: 'roboto';
-    font-weight: 600;
+    font-family: 'roboto';    
     font-size: 20px;
 }
 
@@ -95,32 +99,45 @@ header .navbar ul.botones a li i{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    margin: auto;
-
+    width: 70%;
+    margin-right: 8px;
+    margin-left: 8px;
+    padding-left: 8px;
+    background-color: white;
+    border-radius: 5px;
+    max-width: 340px;
+}
+.contenedor-buscador label{
+    width: 100%;
+    display: flex;
 }
 
 .contenedor-buscador input{
-    margin-top: 16px;
     width: 100%;
     font-size: 18px;
     border: none;
-    border-radius: 5px;
+    outline: none;
+}
+
+.contenedor-buscador input:focus {
+    outline: 0;
 }
 
 .contenedor-buscador label button{
     border: none;
-    color: rgb(29, 29, 29);
+    color: grey;
     background: none;
-    position: absolute;
     font-size: 18px;
-    top: 17px;
-    left: calc(80%);
+    border-left: 1px solid grey;
+    right: 0px;
+    padding-left: 8px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 
-
 /*FOOTER*/
+/*
 footer{
     background-color: #7d11ca;
     text-align: center;
@@ -152,9 +169,6 @@ article i{
     margin: 15px;
 }
 
-
-
-
 .copyright{
     height: 25%;
     width: 100%;
@@ -167,7 +181,7 @@ article i{
     font-size: 15px;
     text-align: center;
 }
-/*
+
 footer {
     background-color: #7d11ca;
     text-align: center;
@@ -197,37 +211,26 @@ footer article div {
 
 @media (min-width: 768px){
 
+    
 
     header .navbar{
         position: inherit;
-        width: 100%;
         background-color: #7d11ca;
-        min-width: none;
-        max-width: none;
         flex-direction: row;
-        margin-bottom: 8px;
         margin-top: 0px;
+        flex-wrap: wrap;
+        width: inherit;
     }
 
     header .burger-menu{
         display: none;
     }
 
-    header .navbar .contenedor-buscador{
-        width: 40%;
-    }
-
-    header .navbar input{
-        width: 100%;  
-    }
-
     header .navbar ul{
-        width: 60%;
+        width: fit-content;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-end;
     }
 
     header .navbar ul.botones a li{
@@ -244,18 +247,35 @@ footer article div {
     header .contenedor-buscador{
         display: flex;
         flex-direction: row;
+        width: 45%;
+        max-width: 400px;
     }
-
-
-    header .contenedor-buscador label{
-        width: 100%;
-    }
-
-    header .contenedor-buscador label button{
-        position: absolute;
-        left: calc(40% - 28px);
-        top: 70px
-    }
+    
 }
 
 /*-----------------MEDIA QUERIES: DESKTOP ------------*/
+
+@media (min-width: 1024px){
+    header .contenedor-header{
+        max-width: 1184px;
+        margin: auto;
+    }
+    header .contenedor-logo .logotipo-solo {
+        display: none;
+    }
+
+    header .contenedor-logo .logotipo {
+        display: inline-block;
+        height: 45px;
+    }
+
+    .contenedor-buscador{
+        width: 45%;
+        max-width: 550px;
+    }
+
+    .contenedor-buscador label button:hover {
+        background-color: #ededed;
+    }
+    
+}

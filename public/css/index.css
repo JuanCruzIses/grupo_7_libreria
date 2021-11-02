@@ -3,6 +3,9 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #ededed;
+}
 .carrusel{
     display: none;
 }
@@ -156,6 +159,7 @@ main{
     /*------MAIN------*/
     main{
         top: 0;
+        margin: auto;
     }
     
     .carrusel{
@@ -223,6 +227,12 @@ main{
   
   footer{
     margin-top: 0px;
+  }
+
+  .productos {
+    width: 90%;
+    max-width: 1184px;
+    margin: 50px auto;
   }
   
 /*---------------------MAIN----------------*/
