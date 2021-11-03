@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
@@ -15,75 +16,16 @@
     <title>El sombrero Loco</title>
 </head>
 <body>
-    <header>      
-        <div class="contenedor-header">
-            <div class="contenedor-logo">
-                <a href= "./"><img src="./images/sombrero-loco-con-nombre.png" alt="Logo" class="logotipo"></a>
-                <a href= "./"><img src="./images/sombrero-loco.png" alt="Logo" class="logotipo-solo"></a>
-            </div>
-            <form action="/buscar" method="get" class="contenedor-buscador">
-                <label for="search-bar">
-                    <input class=cen type="text" id="search-bar" placeholder="Buscar libro, editorial, autor...">
-                    <button><i class="fas fa-search"></i></button>
-                </label>
-            </form>
-            <div class="burger-menu">
-                <i class="fas fa-bars"></i> 
-            </div>   
-        <div class="navbar">    
-            <ul class="botones">
-                <a href="/register"><li><i class="fas fa-user-plus"></i>Registrarse</li></a>
-                <a href="/login"><li><i class="fas fa-user"></i>Iniciar sesión</li></a>
-                <a href="/carrito"><li><i class="fas fa-shopping-cart"></i>Carrito</li></a>
-            </ul>
-        </div>
-        </div>
-    </header>
+    <%- include('./partials/header')  %> 
     <main>
-        <section class="carrusel"></section>
+        <section class="banner"></section>
         <section class="productos">
-            <h2>Los más vendidos</h2>
-            <a class="libro" href="/productDetail/5">
-                <img src="./images/portadas/al-final-mueren.jpg">
-                <h3>Al final mueren los dos</h3>
-                <p>Silvera, Adam</p>
-            </a>
-            <a class="libro" href="/productDetail/6">
-                <img src="/images/portadas/renegados.jpg">
-                <h3>Renegados</h3>
-                <p>Meyer, Marissa</p>
-            </a>
-            <a class="libro" href="/productDetail/7">
-                <img src="/images/portadas/harry-potter.jpg">
-                <h3>Harry Potter y la piedra filosofal</h3>
-                <p>Rowling, J. K.</p>
-            </a>
-            <a class="libro" href="/productDetail/8">
-                <img src="/images/portadas/caos.jpg">
-                <h3>Caos</h3>
-                <p>Tajes, Magali</p>
-            </a>
-            <a class="libro" href="/productDetail/4">
-                <img src="/images/portadas/archivo-sherlock.jpg">
-                <h3>El archivo de Sherlock Holmes</h3>
-                <p>Arthur Conan Doyle</p>
-            </a>
-            <a class="libro" href="/productDetail/3">
-                <img src="/images/portadas/asesinato-oriente.jpg">
-                <h3>Asesinato en el Oriente Express</h3>
-                <p>Christie, Agatha</p>
-            </a>
-            <a class="libro" href="/productDetail/2">
-                <img src="/images/portadas/armame.jpg">
-                <h3>Á(R)MAME</h3>
-                <p>Larenn, Luz</p>
-            </a>
-            <a class="libro" href="/productDetail/1">
-                <img src="/images/portadas/viejas-deudas.jpg">
-                <h3>Viejas deudas</h3>
-                <p>San Román, José L.</p>
-            </a>
+            <h2>Los más vendidos</h2>        
+            <% libros.forEach(libro => { %>
+               <%- include('./partials/productosIndex', {libro})  %> 
+            <% }); %>
         </section>
+
         <section class="productos">
             <h2>Novedades de la semana</h2>
             <a class="libro" href="/productDetail">
@@ -128,33 +70,6 @@
             </a>
         </section>
     </main>
-    
-    <footer>
-        <article>
-            <i class="fas fa-credit-card"></i>
-            <h6 class="textos-footer">Medios de pago</h6>
-            <p class="textos-footer">
-                Contamos con diferentes métodos de pago para que tu único problema sea elegir entre nuestra gran variada oferta literaria!  
-            </p>
-        </article>
-        <article>
-            <i class="fas fa-gift"></i>
-            <h6 class="textos-footer">Elegí regalar lectura!</h6>
-            <p class="textos-footer">
-                Regala distinto! Busca entre nuestras múltiples categorias ese libro ideal para la persona a la que quieras sorprender!
-            </p>
-        </article>
-        <article>
-            <i class="fas fa-user-shield"></i>
-            <h6 class="textos-footer">Seguridad, de principio a fin</h6>
-            <p class="textos-footer">¿No te gusta? ¡Devolvelo! En la libreria El sombrero Loco, no hay nada que no puedas hacer,
-                porque estás siempre protegid@.
-                </p>
-        </article>
-        <article class="copyright">
-            <p class="textos">Copyright © 2021 "El sombrero loco" / Grupo 7</P>
-        </article>
-    </footer>
-    
+    <%- include('./partials/footer')  %>     
 </body>
 </html>

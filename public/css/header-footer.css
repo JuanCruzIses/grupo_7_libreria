@@ -14,7 +14,7 @@ body{
 }
 header{
     width: 100%;
-    background-color: #7d11ca;
+    background-color: #7c0856;
     padding: 8px 16px 8px 16px;
 }
 
@@ -31,7 +31,7 @@ header .navbar{
     top: 65px;
     width: 80%;
     height: fit-content;
-    background-color: #59158a;
+    background-color: #7c0856;;
     left: 0px;
     z-index: 1000;
     min-width: 256px;
@@ -215,7 +215,6 @@ footer article div {
 
     header .navbar{
         position: inherit;
-        background-color: #7d11ca;
         flex-direction: row;
         margin-top: 0px;
         flex-wrap: wrap;
@@ -235,7 +234,7 @@ footer article div {
 
     header .navbar ul.botones a li{
         border-bottom: none;
-        font-size: 14px;
+        font-size: 15px;
         padding-left: 0px;
         margin-left: 16px;
     }

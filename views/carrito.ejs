@@ -10,34 +10,11 @@
 
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" link href="./css/carrito.css">
-    <link rel="stylesheet" type="text/css" link href="./css/header.css"> 
-    <link rel="stylesheet" type="text/css" link href="./css/footer.css"> 
-  
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">   
+    <title>El sombrerero Loco</title>
 </head>
 <body>
-    <header>
-        <div class="contenedor-logo">
-            <a href= "./"><img src="./images/Sombrero-Loco-icono-con-fondo.png" alt="Logo" class="logotipo"></a>
-        </div>
-        <h1 class="titulo-logo"></i>El sombrero Loco</h1>
-        <div class="burger-menu">
-            <i class="fas fa-bars"></i> 
-        </div> 
-        <div class="navbar">
-            <form action="/buscar" method="get" class="contenedor-buscador">
-                <label for="search-bar">
-                    <input class=cen type="text" id="search-bar" placeholder="Qué vas a leer hoy?">
-                    <button><i class="fas fa-search"></i></button>
-                </label>
-            </form>
-            <ul class="botones">
-                <a href="/register"><li><i class="fas fa-user-plus"></i>Registrarse</li></a>
-                <a href="/login"><li><i class="fas fa-house-user"></i>Iniciar sesión</li></a>
-                <a href="/carrito"><li><i class="fas fa-shopping-cart"></i>Carrito</li></a>
-            </ul>
-        </div>
-    </header>
+    <%- include('./partials/header')  %> 
 <div class="Pedido">
     <h1 class=cen >1-Pedido</h1>
     <form action="/login" method="POST">
@@ -140,33 +117,7 @@
     </div>
 </div>
 
-
-<footer>
-    <article>
-        <i class="fas fa-credit-card"></i>
-        <h6 class="textos-footer">Medios de pago</h6>
-        <p class="textos-footer">
-            Contamos con diferentes métodos de pago para que tu único problema sea elegir entre nuestra gran variada oferta literaria!  
-        </p>
-    </article>
-    <article>
-        <i class="fas fa-gift"></i>
-        <h6 class="textos-footer">Elegí regalar lectura!</h6>
-        <p class="textos-footer">
-            Regala distinto! Busca entre nuestras múltiples categorias ese libro ideal para la persona a la que quieras sorprender!
-        </p>
-    </article>
-    <article>
-        <i class="fas fa-user-shield"></i>
-        <h6 class="textos-footer">Seguridad, de principio a fin</h6>
-        <p class="textos-footer">¿No te gusta? ¡Devolvelo! En la libreria El sombrero Loco, no hay nada que no puedas hacer,
-            porque estás siempre protegid@.
-            </p>
-    </article>
-    <article class="copyright">
-        <p class="textos">Copyright © 2021 "El sombrero loco" / Grupo 7</P>
-    </article>
-</footer>
+<%- include('./partials/footer')  %> 
 
 </body>
 </html>

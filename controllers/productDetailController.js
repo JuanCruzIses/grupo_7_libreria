@@ -6,7 +6,7 @@ const libros = [
         precio: 850.00,
         paginas: 208,
         categorias: "Policial",
-        editorial: '',
+        editorial: 'PUCK',
         sinopsis: "Un juez es hallado muerto en su casa, en lo que parece un crimen en ocasión de robo. No será fácil para el subcomisario Muran descubrir lo que realmente ha ocurrido. Dos historias paralelas transcurren entre los violentos años setenta y nuestro pasado reciente. Hay viejas deudas por saldar. Martín Muran sabe que cuanto más tiempo pase, menos probabilidades tiene de resolver un caso. En pocos días recorre lugares, interroga a sospechosos y acude a personas de confianza que lo ayudan a completar el rompecabezas. Siendo muy joven, en una encrucijada de su vida y sin medios económicos, había decidido ingresar a la academia de policía porque necesitaba un sueldo para sostenerse y además le daban la oportunidad de estudiar. Sin embargo, pronto se dio cuenta de que era un rastreador y un cazador nato, y se enamoró de su profesión. En pocos años se transformó en uno de los mejores detectives de homicidios. Muran es un hombre de piel dura, que no transa con el crimen, aunque a veces esto implique lidiar con sus superiores y con el establishment y hasta poner en riesgo su propia vida.",
         img: 'viejas-deudas.jpg'
     },
@@ -17,7 +17,7 @@ const libros = [
         precio: 1270.00,
         paginas: 304,
         categorias: "Policial",
-        editorial: '',
+        editorial: 'BOOKET',
         sinopsis: "Dos mujeres, dos tiempos, un mismo crimen. Sin familia ni amigos y con licencia por estrés, la psicóloga Audrey Jordan se desliza lenta pero segura a la depresión. Hasta que un día, cuando menos se lo espera, un mensaje anónimo y el asesinato de una joven extrañamente parecida a ella le dan la posibilidad de asumir una nueva identidad. ¿Es posible reinventarnos? ¿Puede un giro del destino borrar nuestras acciones y elecciones, y las de nuestros padres? ¿O siempre habrá algo oscuro y persistente que nos persiga? Un thriller que no puede dejar de leerse y mantiene al lector en vilo, narrado con ritmo muy ágil y diálogos inteligentes. Una novela que sostiene el suspenso y la intriga, que se cruzan con conflictos personales que acechan desde el pasado, hasta un final sorprendente.",
         img: 'armame.jpg'
     },
@@ -28,7 +28,7 @@ const libros = [
         precio: 1000.00,
         paginas: 200,
         categorias: "Policial",
-        editorial:'',
+        editorial:'BOOKET',
         sinopsis: "Un grupo de viajeros se ven atrapados en el Orient Express en plena tormenta de nieve. Entre ellos pronto se descubre un cadáver. El asesino tiene que ser uno de los presentes. Al detective más famoso de la historia le corresponde averiguar quién ha cometido el crimen.",
         img:'asesinato-oriente.jpg'
     },
