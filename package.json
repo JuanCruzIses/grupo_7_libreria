@@ -1,24 +1,16 @@
 {
-  "name": "e-commerce",
-  "version": "1.0.0",
-  "description": "1-¿Qué productos o servicios brindará nuestro sitio? \r 2-¿Quién será nuestra audiencia objetivo? \r 3-¿Cómo ajustaremos nuestra oferta a ese público?",
-  "main": "app.js",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {},
+  "name": "grupo-7-libreria",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JuanCruzIses/grupo_9_e-commerce.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JuanCruzIses/grupo_9_e-commerce/issues"
-  },
-  "homepage": "https://github.com/JuanCruzIses/grupo_9_e-commerce#readme"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  }
 }
