@@ -79,7 +79,7 @@ const libros = [
 
 const mainController = {
     index : (req, res) => {
-        res.render('index')
+        res.render('../views/index')
     }
 };
 
