@@ -68,7 +68,7 @@ const libros = [
     {
     id: 8,
     titulo : "CAOS",
-    autor: Tajes, Magali,
+    autor: 'Tajes, Magali',
     precio: 1999.00,
     páginas: 240,
     editorial: "SUDAMERICANA",
