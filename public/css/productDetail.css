@@ -11,7 +11,7 @@ main{
 
 h2 {
     font-size: 20px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .description {
@@ -28,11 +28,13 @@ h2 {
 
 .description .descriptionAutor {
     display: flex;
+    flex-wrap: wrap;
     width: 50%;
 }
 
 .description .descriptionEditorial {
     display: flex;
+    flex-wrap: wrap;
     position: absolute;
     right: 0px;
     top: 0px;
@@ -57,7 +59,7 @@ h2 {
     color: rgb(3, 161, 3);
     font-weight: bold;
     font-size: 2em;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .productDetailPurchase a {
@@ -150,7 +152,8 @@ footer{
     }
 
     .contDetail  .contenedor-titulo .titulo {
-        position: relative
+        position: relative;
+        border-bottom: 1px solid gray;
     }
 
     .productDetailImg{

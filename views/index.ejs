@@ -9,9 +9,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="./css/index.css">
-    <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">      
-    <link rel="icon" href="./images/sombrero-loco.100px.ico">
+    <link rel="stylesheet" type="text/css" link href="/css/index.css">
+    <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">      
+    <link rel="icon" href="/images/sombrero-loco.100px.ico">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
     <title>El sombrero Loco</title>
 </head>
@@ -28,46 +28,9 @@
 
         <section class="productos">
             <h2>Novedades de la semana</h2>
-            <a class="libro" href="/productDetail">
-                <img src="/images/portadas/al-final-mueren.jpg">
-                <h3>Al final mueren los dos</h3>
-                <p>Silvera, Adam</p>
-            </a>
-            <a class="libro" href="/productDetail">
-                <img src="/images/portadas/renegados.jpg">
-                <h3>Renegados</h3>
-                <p>Meyer, Marissa</p>
-            </a>
-            <a class="libro" href="/productDetail">
-                <img src="/images/portadas/harry-potter.jpg">
-                <h3>Harry Potter y la piedra filosofal</h3>
-                <p>Rowling, J. K.</p>
-            </a>
-            <a class="libro" href="/productDetail">
-                <img src="/images/portadas/caos.jpg">
-                <h3>Caos</h3>
-                <p>Tajes, Magali</p>
-            </a>
-            <a class="libro" href="/productDetail">
-                <img src="/images/portadas/archivo-sherlock.jpg">
-                <h3>El archivo de Sherlock Holmes</h3>
-                <p>Arthur Conan Doyle</p>
-            </div>
-            <a class="libro" href="/productDetail">
-                <img src="/images/portadas/asesinato-oriente.jpg">
-                <h3>Asesinato en el Oriente Express</h3>
-                <p>Christie, Agatha</p>
-            </a>
-            <a class="libro" href="/productDetail">
-                <img src="/images/portadas/armame.jpg">
-                <h3>Á(R)MAME</h3>
-                <p>Larenn, Luz</p>
-            </a>
-            <a class="libro" href="/productDetail">
-                <img src="/images/portadas/viejas-deudas.jpg">
-                <h3>Viejas deudas</h3>
-                <p>San Román, José L.</p>
-            </a>
+            <% libros.forEach(libro => { %>
+                <%- include('./partials/productosIndex', {libro})  %> 
+             <% }); %>
         </section>
     </main>
     <%- include('./partials/footer')  %>     

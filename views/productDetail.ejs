@@ -18,36 +18,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="contenedor-header">
-            <div class="contenedor-logo">
-                <a href="/"><img src="../images/sombrero-loco-con-nombre.png" alt="Logo" class="logotipo"></a>
-                <a href="/"><img src="../images/sombrero-loco.png" alt="Logo" class="logotipo-solo"></a>
-            </div>
-            <form action="/buscar" method="get" class="contenedor-buscador">
-                <label for="search-bar">
-                    <input class=cen type="text" id="search-bar" placeholder="Buscar libro, editorial, autor...">
-                    <button><i class="fas fa-search"></i></button>
-                </label>
-            </form>
-            <div class="burger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            <div class="navbar">
-                <ul class="botones">
-                    <a href="/register">
-                        <li><i class="fas fa-user-plus"></i>Registrarse</li>
-                    </a>
-                    <a href="/login">
-                        <li><i class="fas fa-user"></i>Iniciar sesión</li>
-                    </a>
-                    <a href="/carrito">
-                        <li><i class="fas fa-shopping-cart"></i>Carrito</li>
-                    </a>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <%- include('./partials/header') %> 
     <main>
         <div class="contDetail">
             <div class="contenedor-titulo">

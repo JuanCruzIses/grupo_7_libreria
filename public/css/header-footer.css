@@ -46,19 +46,6 @@ header .contenedor-logo .logotipo-solo {
 header .contenedor-logo .logotipo {
     display: none;
 }
-/*
-header  .titulo-logo{
-    font-family: 'Irish Grover', cursive;
-    text-align: center;
-    line-height: 45px;
-    width: 100%;
-    color: white;
-    font-weight: lighter;
-    font-size: 24px;
-}
-*/
-
-
 
 header .burger-menu i{
     position: relative;
