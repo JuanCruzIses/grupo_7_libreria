@@ -77,15 +77,10 @@ const libros = [
 }
 ]
 
-
 const mainController = {
-    producto : (req, res) => {
-        res.render('productDetail', {libros})
-    },
-    buscador : (req, res) => {
+    index : (req, res) => {
+        res.render('index')
+    }
+};
 
-    },
-
-}
-
-module.exports = mainController
+module.exports = mainController;
