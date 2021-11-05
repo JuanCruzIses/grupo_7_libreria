@@ -14,7 +14,6 @@ body{
 
 main{
     position: relative;
-    top: 200px;
     box-sizing: border-box;
 }
 
@@ -72,8 +71,8 @@ main{
 .libro h3{
     height: 10%;
     width: 80%;
-    margin: auto;
-    font-size: 20px;
+    margin: 0 auto 2px;
+    font-size: 18px;
     font-family: 'roboto';
     }
 
@@ -81,10 +80,9 @@ main{
 .libro p{
     height: 10%;
     width: 80%;
-    margin: auto;
-    padding-top: 10px;
+    margin: 10px auto 0;
     font-family: 'roboto';
-    font-size: 5px;
+    font-size: 18px;
     }
 
 
@@ -127,9 +125,6 @@ main{
         width: 80%;
     }
 
-    footer article{
-        display: none;
-    }
 }
 
 
@@ -189,12 +184,13 @@ main{
     
     .libro h3{
         width: 90%;
-        font-size: 25px;
+        font-size: 21px;
     }
     
     .libro p{
         width: 90%;
-        font-size: 25px;
+        font-size: 23px;
+        margin-top: 0px;
     }
     
     /*------footer------*/
