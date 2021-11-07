@@ -12,11 +12,11 @@ input.texto{
     position: relative;
     
 }
-.compras[
-    width: 20%;
-    height: 20%;
-    margin: auto; 
-]
+.compras{
+    width:20%;
+    height:20%;
+    margin:auto; 
+}
 div.Envio{
 text-align: center;
 font-size: 20px;

@@ -18,30 +18,42 @@
     <h1 class=cen >1-Pedido</h1>
     <form action="/login" method="POST">
         <div> 
-<table>
-    
-    <tr><a href= "/"><img src="/images/portadas/al-final-mueren.jpg" alt="Logo" class="compras"></a> </tr>
-        <th>Producto</th>
-        <th>Precio Unitario</th>
-        <th>Cantidad</th>
-        <th>Subtotal</th>
-    </tr>
-    <tr>
-        <td>Titulo</td>
-        <td>$$$</td>
-        <td><input class="texto" type="text"></td>
-        <td>$$$</td>
-    </tr>
-    <tr>
-        <td>Titulo</td>
-        <td>$$$</td>
-        <td>Cantidad</td>
-        <td>$$$</td>
-    </tr>
-
-</table>
-    </form>
-</div>
+            <div id="content" class="columnas">
+                <h2> Carrito 
+                       </h2>
+                <form action="https://demo.codezeel.com/opencart/OPC05/OPC050120/index.php?route=checkout/cart/edit" method="post" enctype="multipart/form-data">
+                  <div class="table-responsive">
+                    <table class="tabla carrito">
+                      <thead>
+                        <tr>
+                          <td class="text-center">Image</td>
+                          <td class="text-left">Producto</td>
+                          <td class="text-left">Cantidad</td>
+                          <td class="text-right">Precio unitario</td>
+                          <td class="text-right">Total</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                                       <tr>
+                        <td class="text-center">
+                            <img src="/images/portadas/<%= libros[id].img %>" alt="">
+                        </td>
+                        <td class="text-left">
+                            <a href="" >
+                                <%= libros[id].titulo %></a></td>
+                       
+                        <td class="text-right"><a href="" >
+                            <%= libros[id].precio %></a></td>
+                   
+                        <td class="text-right"> </td>
+                      </tr>
+                                              </tbody>
+                      
+                    </table>
+                  </div>
+                </form>
+                      <h3> "Si la locura es felicidad, me declaro loco."- El Sombrerero -
+                      </h3>
 
 
     <h1 class="cen">2-Datos personales</h1>
