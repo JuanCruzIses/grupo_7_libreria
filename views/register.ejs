@@ -18,38 +18,21 @@
     <%- include('./partials/header')  %> 
     <main>
         <h2 class=cen >Bienvenid@</h2>
-        <form class="form" action="/login">
+        <form class="form" method="post" action="/login">
             <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" required/>
             <input type="text" class="form-control" placeholder="Apellido" name="apellido" required/>
             <input type="email" class="form-control" placeholder="Email" name="email" required/>
-             <div class="form-group">
-             <div>
-               <input type="password" class="form-control" placeholder="Contraseña" data-toggle="password"  required/>
-                   <div class="input-group-append"></div>
-             
-             </div>
-             </div>
-             <div class="form-group">
-                <div>
-                  <input type="password" class="form-control" placeholder="Confirma contraseña" data-toggle="Confirma password"  required/>
-                      <div class="input-group-append"></div>
-                
-                </div>
-                </div>
-            <input type="text" class="form-control" placeholder="Provincia" name="Provincia" required/>
-            <input type="text" class="form-control" placeholder="Localidad" name="Localidad" required/>
-            <input type="text" class="form-control" placeholder="Calle" name="Calle y número" required/>
-            <input type="text" class="form-control" placeholder="Piso - Departamento" name="Piso" opcional/>
-           
-            
+            <input type="password" class="form-control" placeholder="Contraseña" data-toggle="password" name="contraseña" required/>
+            <input type="password" class="form-control" placeholder="Confirma contraseña" data-toggle="Confirma password" name="confirmaContraseña" required/>
+            <input type="text" class="form-control" placeholder="Provincia" name="provincia" required/>
+            <input type="text" class="form-control" placeholder="Localidad" name="localidad" required/>
+            <input type="text" class="form-control" placeholder="Calle" name="calleYNumero" required/>
+            <input type="text" class="form-control" placeholder="Piso - Departamento" name="piso" opcional/>
             <label for="acuerdo">Estoy de acuerdo con terminos y condiciones.</label>
-                <input type="checkbox" name="Acuerdo" value="Acepta">
+                <input type="checkbox" name="acuerdo" value="Acepta">
                 <button>Registrarse</button>
             <p class="message">Ya estas registrado? <a href="/login">Iniciar Sesión</a></p>
           </form>
-          <div class="decoracion">
-            <a href="./"><img src="/images/decoraciones/conejoblanco.gif" alt="conejo" class="decoracion"></a>
-
     </main>
     <%- include('./partials/footer')  %> 
 </body>
