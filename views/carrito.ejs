@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
@@ -15,124 +18,88 @@
 <body>
     <%- include('./partials/header')  %> 
 <div class="Pedido">
-    <h1 class=cen >1-Pedido</h1>
-    <form action="/login" method="POST">
+    <h1 class=cen >1-Pedido</h1> 
+     <h3 class=frase> "Si la locura es felicidad, me declaro loco."- El Sombrerero -
+                      </h3>
+    
         <div> 
             <div id="content" class="columnas">
-                <h2> Carrito 
-                       </h2>
-                <form action="https://demo.codezeel.com/opencart/OPC05/OPC050120/index.php?route=checkout/cart/edit" method="post" enctype="multipart/form-data">
+                
                   <div class="table-responsive">
-                    <table class="tabla carrito">
+                    <table class="tabla-carrito">
                       <thead>
                         <tr>
-                          <td class="text-center">Image</td>
-                          <td class="text-left">Producto</td>
-                          <td class="text-left">Cantidad</td>
-                          <td class="text-right">Precio unitario</td>
-                          <td class="text-right">Total</td>
+                          <td class="imagen">Portada</td>
+                          <td class="titulo">Título</td>
+                          <td class="cantidad">Cantidad</td>
+                          <td class="precio">Precio unitario</td>
+                          <td class="total">Total</td>
                         </tr>
                       </thead>
                       <tbody>
                                        <tr>
-                        <td class="text-center">
-                            <img src="/images/portadas/<%= libros[id].img %>" alt="">
+                        <td class="compras">
+                            <img class= portada src="/images/portadas/armame.jpg" alt="portadas">
                         </td>
-                        <td class="text-left">
-                            <a href="" >
-                                <%= libros[id].titulo %></a></td>
+                        <td class="titulo">
+                            </td>
                        
-                        <td class="text-right"><a href="" >
-                            <%= libros[id].precio %></a></td>
+                        <td class="precio"></td>
                    
-                        <td class="text-right"> </td>
+                        <td class="total"> </td>
                       </tr>
-                                              </tbody>
+                                             
+                    </tbody>
                       
                     </table>
                   </div>
-                </form>
-                      <h3> "Si la locura es felicidad, me declaro loco."- El Sombrerero -
-                      </h3>
-
+                </div>
+            </div>   
 
     <h1 class="cen">2-Datos personales</h1>
-    <div class="Envio" role="form">
-        <div class="datos-automaticos">
-            <label for="name" class="nombre">Nombre :</label>
-            <div>
-                <label class="control-label"></label>
-            </div>
-        </div>
-        <div class="datos-automaticos">
-            <label for="name" class="Apellido">Apellido :</label>
-            <div>
-                <label class="control-label"></label>
-            </div>
-        </div>
-        <div class="datos-automaticos">
-            <label for="name" class="email">Email :</label>
-            <div>
-                <label class="control-label"></label>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="paisesCombo">País:</label>
-                <div>
-<select class="barraPaises" id="paisesCombo" name="countryId">
-        <option value="AL">Alemania</option>
-        <option value="AR" selected="">Argentina</option>
-        <option value="BR">Brasil</option>
-        <option value="CH">Chile</option>
-</select>
-                </div>
-        </div>
-        <div class="form-group">
-            <label for="provinciasCombo" class="Espacio-a-completar">Provincia:</label>
-            <div>
-<select id="provinciasCombo" name="provinceId" data-default="BA" class="form-control required"><option value="">Seleccione una provincia</option><option value="BA">Buenos Aires</option><option value="CF">Capital Federal</option><option value="CA">Catamarca</option><option value="otra">Otra...</option></select>
-            </div>
-        </div>
-        
-        <div class="form-group">
-                <label for="localidadName" class="Espacio-a-completar">Otra localidad:</label>
-                <div>
-                    <input type="text" class="form-control choice " name="localidadName" placeholder="Si su ciudad no figura arriba, escríbala aquí">
-                </div>
-        </div>
-        <div class="form-group">
-            <label for="address" class="Espacio-a-completar">Dirección:</label>
-            <div>
-                    <input type="text" class="form-control required" name="address" placeholder="Calle, número, apartamento u oficina">
-            </div>
-        </div>
-       <div class="form-group">
-            <label for="zipCode" class="Espacio-a-completar">Código postal:</label>
-            <div>
-                        <input type="text" class="form-control" name="zipCode" placeholder="Código postal" >
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="phone" class="Espacio-a-completar">Teléfono:</label>
-            <div>
-                    <input type="text" class="form-control required" name="phone" placeholder="Número de teléfono">
-            </div>
-        </div>
+
+    <form class="form" method="post" action="/login">
+        <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" required/>
+        <input type="text" class="form-control" placeholder="Apellido" name="apellido" required/>
+        <select class="form-control" id="paisesCombo" name="countryId">
+            <option disabled selected > Seleccione un país</option>
+            <option value="AL">Alemania</option>
+            <option value="AR" >Argentina</option>
+            <option value="BR">Brasil</option>
+            <option value="CH">Chile</option></select>
+        <select class="form-control" id="pciasCombo" name="pciaId">
+            <option disabled selected > Seleccione una provincia</option>
+            <option value="BA">Buenos Aires</option>
+            <option value="CF">Capital Federal</option>
+            <option value="CA">Catamarca</option>
+            <option value="otra">Otra...</option></select>
+        <input type="text" class="form-control" placeholder="Localidad" name="localidad" required/>
+        <input type="text" class="form-control" placeholder="Código Postal" name="CP" required/>
+        <input type="text" class="form-control" placeholder="Teléfono" name="Télefono" required/>
+        <input type="text" class="form-control" placeholder="Calle" name="calleYNumero" required/>
+        <input type="text" class="form-control" placeholder="Piso - Departamento" name="piso" opcional/>
+ 
+            <button>Comprar</button>
+      
+      </form>
+      <h1 class="cen">3-Opciones de envio</h1>
+      <div>
+   <form class="form" method="post" action="/login">
+    <select class="form-control" id="formaEnvio" name="envioId">
+      <option disabled selected > Elija método de pago</option>
+      <option value="Retiro">Retiro por sucursal</option>
+      <option value="Envio">Envio a domicilio</option>
+      <option value="Correo">Retiro por correo</option>
+  </select>
+</form>
+       </div>
+
+     
 </div>
-</div>
-<div class="Main">
-    <h1 class="cen">3-Opciones de envio</h1>
-    <div>
-        <label for="opcionesEnvio"></label>
-            <div class="envio-form">
-<select class="envio" id="formaEnvio" name="envioId">
-    <option value="Retiro" selected="">Retiro por sucursal</option>
-    <option value="Envio">Envio a domicilio</option>
-    <option value="Correo">Retiro por correo</option>
-</select>
-            </div>
-    </div>
-</div>
+
+   
+  
+
 
 <%- include('./partials/footer')  %> 
 
