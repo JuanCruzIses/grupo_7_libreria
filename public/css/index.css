@@ -35,6 +35,16 @@ main{
     background-color: #f9f0ff;
 }
 
+a p.precio-producto {
+    background-color: #7c0856;
+    position: relative;
+    bottom: 102px;
+    left: 67px;
+    height: 5%;
+    color: #ffff;
+    width: 40%;
+}
+
 /*agregué font personalizada*/ 
 .productos h2{
     margin: 0px 0px 20px;
@@ -77,7 +87,7 @@ main{
     }
 
 /*agregué font roboto*/ 
-.libro p{
+.libro p.detalle-producto{
     height: 10%;
     width: 80%;
     margin: 10px auto 0;
