@@ -8,7 +8,7 @@ var logger = require('morgan');
 const indexRouter = require('./routes/indexRoute');
 const loginRouter = require('./routes/loginRoute')
 const registerRouter = require('./routes/registerRoute')
-const productDetailRouter = require('./routes/productDetailRoute');
+const productRouter = require('./routes/productRoute');
 const carritoRouter = require('./routes/carritoRoute')
 const usersRouter = require('./routes/users');
 
@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
-app.use('/productDetail', productDetailRouter);
+app.use('/product', productRouter);
 app.use('/carrito', carritoRouter);
 app.use('/users', usersRouter);
 

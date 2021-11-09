@@ -35,17 +35,6 @@ main{
     background-color: #f9f0ff;
 }
 
-a p.precio-producto {
-    background-color: #7c0856;
-    position: relative;
-    bottom: 102px;
-    left: 67px;
-    height: 5%;
-    color: #ffff;
-    width: 40%;
-}
-
-/*agregué font personalizada*/ 
 .productos h2{
     margin: 0px 0px 20px;
     width: 100%;
@@ -53,7 +42,6 @@ a p.precio-producto {
     box-shadow: 0px 0px 5px #7d11ca;
     background-color: #f7f7f7;
     color: #7c0856;
-
 }
 
 .libro{
@@ -94,8 +82,6 @@ a p.precio-producto {
     font-family: 'roboto';
     font-size: 18px;
     }
-
-
 
 
 
@@ -222,6 +208,7 @@ main{
     position: static;
     margin-top: -50px;
   }
+}
   
   @media (min-width:726px){
   main{
@@ -272,5 +259,4 @@ form label input{
 
 form label input:hover{
     box-shadow: 0px 0px 20px;
-}
 }

@@ -47,7 +47,10 @@ header .contenedor-logo .logotipo {
     display: none;
 }
 
-header .burger-menu i{
+.cen{
+    text-align: center;
+}
+.header .burger-menu i{
     position: relative;
     margin: 0px auto 0px auto;
     background-color: white;
