@@ -6,7 +6,7 @@ const registerController = require('../controllers/registerController.js');
 
 //Dando ruta al controlador
 router.get('/', registerController.vistaRegistro)
-router.get('/', registerController.registrar);
+router.post('/login', registerController.registrar);
 
 
 module.exports = router;

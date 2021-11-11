@@ -24,19 +24,6 @@ header .contenedor-header{
     justify-content: space-between;
 }
 
-header .navbar{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 65px;
-    width: 80%;
-    height: fit-content;
-    background-color: #7c0856;;
-    left: 0px;
-    z-index: 1000;
-    min-width: 256px;
-    max-width: 360px;
-}
 
 header .contenedor-logo .logotipo-solo {
     position: relative;
@@ -50,15 +37,40 @@ header .contenedor-logo .logotipo {
 .cen{
     text-align: center;
 }
-.header .burger-menu i{
-    position: relative;
-    margin: 0px auto 0px auto;
-    background-color: white;
+
+.header .burger-menu label:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+}
+
+#btn-menu{
+  display: none;
+}
+
+header .navbar{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 65px;
+    width: 80%;
+    height: fit-content;
+    background-color: #7c0856;;
+    right: -80%;
+    z-index: 1000;
+    min-width: 256px;
+    max-width: 65vw;
+    border-top: 1px solid #fff;
+    transition: all 0.5s;
+}
+
+#btn-menu:checked ~ .navbar {
+    right: 0;
+}
+
+.burger-button{
+    border: 1px solid black;
     border-radius: 5px;
-    color: black;
-    font-size: 18px;
-    padding: 8px;
-    z-index: 2000;
+    padding: 2px;
 }
 
 header .navbar ul.botones{
@@ -73,16 +85,12 @@ header .navbar ul.botones a{
     font-size: 20px;
 }
 
-header .navbar ul.botones a li{
-    padding-left: 16px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid white;
-    margin-top: 3px;
+header .navbar ul.botones li{
+    padding: 5px 0px 0px 5px;
 }
 
-header .navbar ul.botones a li i{
-    margin-right: 16px;
+header .navbar ul.botones li a i{
+    padding-right: 6px;
 }
 
 .contenedor-buscador{
@@ -181,27 +189,37 @@ footer article div {
 /*-----------------MEDIA QUERIES: TABLET ------------*/
 
 @media (min-width: 768px){
+.burger-button{
+    display: none;
+}
 
-    
+div.contenedor-header{
+    flex-wrap: wrap;
+}
 
-    header .navbar{
-        position: inherit;
-        flex-direction: row;
-        margin-top: 0px;
-        flex-wrap: wrap;
-        width: inherit;
-    }
+div.contenedor-logo{
+    width: 30%;
+    padding-left: 60px;
+}
 
-    header .burger-menu{
-        display: none;
-    }
+header div.contenedor-header form{
+    width: 70%;
+    margin-right: 60px;
+}
 
-    header .navbar ul{
-        width: fit-content;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
+header .navbar{
+    justify-content: center;
+    position: inherit;
+    border: none;
+    width: 100%;
+    max-width: 100%;
+}
+
+header .navbar ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
 
     header .navbar ul.botones a li{
         border-bottom: none;
@@ -238,6 +256,10 @@ footer article div {
 /*-----------------MEDIA QUERIES: DESKTOP ------------*/
 
 @media (min-width: 1024px){
+    label.burger-button{
+        display: none;
+    }
+    
     header .contenedor-header{
         max-width: 1184px;
         margin: auto;

@@ -13,7 +13,7 @@ const registerController = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
-            comtraseña: req.body.comtraseña,
+            contraseña: req.body.contraseña,
             confirmaContraseña: req.body.confirmaContraseña,
             email: req.body.email,
             provincia: req.body.provincia,

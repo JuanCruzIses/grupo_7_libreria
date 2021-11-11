@@ -83,6 +83,15 @@ main{
     font-size: 18px;
     }
 
+.libro p.precio-producto{
+    position: relative;
+    bottom: 92px;
+    left: 40px;
+    width: 75px;
+    background: #7c0856;
+    color: #fff;
+}
+
 
 
 
@@ -133,7 +142,7 @@ main{
     }    
 }
 
-@media screen and (min-width:726px){
+@media screen and (min-width:768px){
     .botones a p{
         display: block;
     }
@@ -187,6 +196,12 @@ main{
         width: 90%;
         font-size: 23px;
         margin-top: 0px;
+    }
+
+    .libro p.precio-producto{
+        bottom: 132px;
+        width: 90px;
+        border: 1px solid #ffff;
     }
     
     /*------footer------*/
