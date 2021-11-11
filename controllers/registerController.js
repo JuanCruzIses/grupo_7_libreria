@@ -8,6 +8,7 @@ const registerController = {
     vistaRegistro : (req, res) => {
         res.render("register")
     },
+
     registrar : (req, res) => {
         const nuevoUsuario = {
             nombre: req.body.nombre,
@@ -15,7 +16,6 @@ const registerController = {
             email: req.body.email,
             contraseña: req.body.contraseña,
             confirmaContraseña: req.body.confirmaContraseña,
-            email: req.body.email,
             provincia: req.body.provincia,
             localidad: req.body.localidad,
             calleYNumero: req.body.calleYNumero,

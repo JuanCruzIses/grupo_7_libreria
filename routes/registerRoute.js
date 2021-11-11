@@ -5,8 +5,9 @@ const router = express.Router();
 const registerController = require('../controllers/registerController.js');
 
 //Dando ruta al controlador
-router.get('/', registerController.vistaRegistro)
-router.post('/login', registerController.registrar);
+router.get('/', registerController.vistaRegistro);
+
+router.post('/', registerController.registrar);
 
 
 module.exports = router;

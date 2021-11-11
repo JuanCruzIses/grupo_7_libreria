@@ -68,7 +68,7 @@ h2 {
 
 .productDetailPurchase .btnComprar {
     width: 100%;
-    background-color: #3C3D61;
+    background-color: #6e066e;
     margin: 15px auto;
     font-size: 1.5em;
     height: 2em;
@@ -86,7 +86,7 @@ h2 {
 
 .productDetailPurchase .btnAgregar {
     width: 100%;
-    background-color: #9B9DCC;
+    background-color: #b946b9;
     margin: 15px auto;
     font-size: 1.5em;
     height: 2em;
@@ -98,7 +98,7 @@ h2 {
 .btnAgregar p{
     width: 100%;
     text-align: center;
-    color: #3C3D61;
+    color: #000;
     font-weight: bold;
 }
 

@@ -1,2 +1,24 @@
-[{}
+[
+    {
+        "nombre": "",
+        "apellido": "",
+        "email": "",
+        "contraseña": "",
+        "confirmaContraseña": "",
+        "provincia": "",
+        "localidad": "",
+        "calleYNumero": "",
+        "piso": ""
+    },
+    {
+        "nombre": "FRANCO",
+        "apellido": "CASANOVA",
+        "email": "franco123casanova123@gmail.com",
+        "contraseña": "adad",
+        "confirmaContraseña": "adad",
+        "provincia": "Campana",
+        "localidad": "Campana",
+        "calleYNumero": "adad",
+        "piso": "adad"
+    }
 ]
