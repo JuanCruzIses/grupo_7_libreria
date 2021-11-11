@@ -20,5 +20,12 @@
         "localidad": "Campana",
         "calleYNumero": "adad",
         "piso": "adad"
+    },
+    {
+        "nombre": "juan ",
+        "apellido": "ises",
+        "email": "juancruzises@gmail.com",
+        "contraseña": "123",
+        "confirmaContraseña": "123"
     }
 ]

@@ -3,6 +3,14 @@
     box-sizing: border-box;
 }
 
+.navbar-desktop{
+    display: none;
+}
+
+.botones-barra-superior{
+    display: none;
+}
+
 input:hover {
     -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75) !important;
     -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75) !important;
@@ -189,56 +197,31 @@ footer article div {
 /*-----------------MEDIA QUERIES: TABLET ------------*/
 
 @media (min-width: 768px){
-.burger-button{
-    display: none;
-}
-
-div.contenedor-header{
-    flex-wrap: wrap;
+.contenedor-header{
+    justify-content: space-around;
 }
 
 div.contenedor-logo{
-    width: 30%;
-    padding-left: 60px;
+    margin-left: 20px;
 }
 
-header div.contenedor-header form{
-    width: 70%;
-    margin-right: 60px;
+.burger-button{
+    height: 30px;
+    width: 30px;
 }
 
-header .navbar{
-    justify-content: center;
-    position: inherit;
-    border: none;
-    width: 100%;
-    max-width: 100%;
+label.burger-button{
+    margin-right: 20px;
 }
 
-header .navbar ul{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+label.burger-button i{
+    height: 40px;
+    font-size: 25px;
+    padding: 0px 0px 1px 1px;
 }
 
-    header .navbar ul.botones a li{
-        border-bottom: none;
-        font-size: 15px;
-        padding-left: 0px;
-        margin-left: 16px;
-    }
 
-    header .navbar ul.botones a li i{
-        margin-right: 5px;
-    }
 
-    header .contenedor-buscador{
-        display: flex;
-        flex-direction: row;
-        width: 45%;
-        max-width: 400px;
-    }
-    
     footer{
         flex-wrap: wrap;
         flex-direction: row;
@@ -256,6 +239,71 @@ header .navbar ul{
 /*-----------------MEDIA QUERIES: DESKTOP ------------*/
 
 @media (min-width: 1024px){
+    header .navbar{
+        display: none;
+    }
+    
+    .navbar-desktop{
+        width: 100%;
+    }
+
+    .botones-barra-superior{
+        width: 30%;
+        margin-right: -20px;
+        display: flex;
+    }
+
+    .botones-barra-superior li{
+        margin-right: 30px;
+        list-style: none;
+    }
+    
+    .botones-barra-superior li a{
+        color: #ffff;
+        text-decoration: none;
+    }
+
+    .botones-barra-superior li a i{
+        margin-right: 2px;
+    }
+
+    .navbar-desktop{
+        display: block;
+    }
+    
+    div.contenedor-logo {
+        margin-left: 20px;
+    }
+
+    .navbar-desktop{
+        margin-top: 15px;
+    }
+    .navbar-desktop ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .navbar-desktop ul li a{
+        margin-right: 30px;
+        color: white;
+        text-decoration: none;
+        font-family: 'roboto';
+        font-size: 15px;
+    }
+
+    .navbar-desktop ul li a i{
+        margin-right: 5px;
+    }
+    
+    .burger-button{
+        display: none;
+    }
+    
+    div.contenedor-header{
+        flex-wrap: wrap;
+    }
+    
     label.burger-button{
         display: none;
     }
@@ -274,8 +322,8 @@ header .navbar ul{
     }
 
     .contenedor-buscador{
-        width: 45%;
-        max-width: 550px;
+        width: 35%;
+        margin-left: 50px;
     }
 
     .contenedor-buscador label button:hover {

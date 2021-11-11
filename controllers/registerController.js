@@ -11,15 +11,11 @@ const registerController = {
 
     registrar : (req, res) => {
         const nuevoUsuario = {
-            nombre: nombre,
+            nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
             contraseña: req.body.contraseña,
             confirmaContraseña: req.body.confirmaContraseña,
-            provincia: req.body.provincia,
-            localidad: req.body.localidad,
-            calleYNumero: req.body.calleYNumero,
-            piso: req.body.piso,
         }
         listaUsuarios.push(nuevoUsuario);
         fs.writeFileSync(usersFilePath, JSON.stringify(listaUsuarios, null))

@@ -85,7 +85,7 @@ main{
 
 .libro p.precio-producto{
     position: relative;
-    bottom: 92px;
+    bottom: 93px;
     left: 40px;
     width: 75px;
     background: #7c0856;
@@ -199,7 +199,7 @@ main{
     }
 
     .libro p.precio-producto{
-        bottom: 132px;
+        bottom: 133px;
         width: 90px;
         border: 1px solid #ffff;
     }
