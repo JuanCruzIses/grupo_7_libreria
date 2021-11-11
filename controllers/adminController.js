@@ -26,12 +26,20 @@ const controller = {
 		}
 		let newProduct = {
 			id: products[products.length - 1].id + 1,
-			...req.body,
+			titulo: req.body.titulo,
+        	autor: req.body.autor,
+        	precio: req.body.precio,
+        	paginas: req.body.paginas,
+        	editorial: req.body.editorial,
+        	categorias: req.body.categorias,
+        	sinopsis: req.body.sinopsis,
+        	img: req.body.img,
+        	seccion: req.body.seccion,
 			img: img
 		};
 		products.push(newProduct)
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		res.redirect('/create');
+		res.redirect('/');
 	},
 
 	// Update - Form to edit

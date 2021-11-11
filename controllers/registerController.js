@@ -11,7 +11,7 @@ const registerController = {
 
     registrar : (req, res) => {
         const nuevoUsuario = {
-            nombre: req.body.nombre,
+            nombre: nombre,
             apellido: req.body.apellido,
             email: req.body.email,
             contraseña: req.body.contraseña,
