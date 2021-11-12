@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" link href="/css/index.css">
+    <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">      
+    <link rel="icon" href="/images/sombrero-loco.100px.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <title>El sombrero Loco</title>
+</head>
+<body>
+    <%- include('./partials/header')  %> 
+    <main>
+        <section class="banner"></section>
+        <section class="productos">
+            <h2>Policiales</h2>        
+            <% libros.forEach(libro => { %>
+                <% if (libro.categorias == "policiales"){ %> 
+                    <%- include('./partials/productosIndex', {libro})  %> 
+                </a>
+                <% } %> 
+            <% }); %>
+        </section>
+
+        <section class="productos">
+            <h2>Juvenil</h2>        
+            <% libros.forEach(libro => { %>
+                <% if (libro.categorias == "Juvenil"){ %> 
+                    <%- include('./partials/productosIndex', {libro})  %> 
+                </a>
+                <% } %> 
+            <% }); %>
+        </section>
+
+        <section class="productos">
+            <h2>Novelas</h2>        
+            <% libros.forEach(libro => { %>
+                <% if (libro.categorias == "novela"){ %> 
+                    <%- include('./partials/productosIndex', {libro})  %> 
+                </a>
+                <% } %> 
+            <% }); %>
+        </section>
+
+    </main>
+    <%- include('./partials/footer')  %>     
+</body>
+</html>

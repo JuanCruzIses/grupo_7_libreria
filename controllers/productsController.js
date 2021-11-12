@@ -3,11 +3,17 @@ const biblioteca = fs.readFileSync('./data/libros.json', 'utf-8')
 const libros = JSON.parse(biblioteca);
 
 const productsController = {
+	//index product
+	index: (req, res) => {
+		res.render('products', {libros : libros})
+	},
+
     //Detalle de un producto
     detail: (req, res) => {
         const id = req.params.id - 1;
         res.render('productDetail', { libros, title: 'Detalle de Producto', id})
     },
+
     //Product detail ---> Comprar ahora
     comprar: (req, res) => {
         const id = req.params.id - 1;

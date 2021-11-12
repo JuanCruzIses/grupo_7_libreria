@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
-app.use('/product', productRouter);
+app.use('/products', productRouter);
 app.use('/carrito', carritoRouter);
 //app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
