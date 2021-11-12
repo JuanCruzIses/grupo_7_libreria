@@ -1,11 +1,10 @@
 /*BIENVENID@s*/
 h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 40px;
-    color: #7c0856;
-   font-family: 'mifuente';
-    
+  color: #302c2a;
+  border-bottom: 5px dashed#7c0856;
+  width: 30%;
+  font-family: 'mifuente';
+  margin: 20px auto 40px;
 }
 
 h3{
