@@ -18,8 +18,11 @@ const storage = multer.diskStorage({
 });
 const upload = multer({storage: storage});
 
+// ************ CREATE *************
+
 router.get('/create', adminController.index); 
-router.post('/', upload.any(), adminController.create); 
+router.post('/create', upload.any(), adminController.create); 
+
 
 
 /*** EDIT ONE PRODUCT 

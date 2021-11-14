@@ -10,7 +10,8 @@ const indexRouter = require('./routes/indexRoute');
 const loginRouter = require('./routes/loginRoute')
 const registerRouter = require('./routes/registerRoute')
 const productRouter = require('./routes/productRoute');
-const carritoRouter = require('./routes/carritoRoute')
+const carritoRouter = require('./routes/carritoRoute');
+
 //const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/adminRoute');
 
@@ -32,6 +33,7 @@ app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/products', productRouter);
 app.use('/carrito', carritoRouter);
+
 //app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 

@@ -19,13 +19,16 @@ const controller = {
 	create: (req, res) => {
 		let img
 		console.log(req.files);
+		let ultimoId = Number(products[products.length -1].id);
+		let nuevoUltimoId = (ultimoId + 1).toString();
+
 		if(req.files[0] != undefined){
 			img = req.files[0].filename
 		} else {
 			img = 'default-image.png'
 		}
 		let newProduct = {
-			id: products[products.length - 1].id + 1,
+			id: nuevoUltimoId,
 			titulo: req.body.titulo,
         	autor: req.body.autor,
         	precio: req.body.precio,
@@ -33,7 +36,6 @@ const controller = {
         	editorial: req.body.editorial,
         	categorias: req.body.categorias,
         	sinopsis: req.body.sinopsis,
-        	img: req.body.img,
         	seccion: req.body.seccion,
 			img: img
 		};
