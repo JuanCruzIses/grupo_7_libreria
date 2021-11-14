@@ -62,7 +62,7 @@ header .navbar{
     top: 65px;
     width: 80%;
     height: fit-content;
-    background-color: #7c0856;;
+    background-color: #7c0856;
     right: -80%;
     z-index: 1000;
     min-width: 256px;
@@ -297,8 +297,8 @@ ul, ol {
 }
 
 .nav {
-    width:500px; /*Le establecemos un ancho*/
-    margin:0 auto; /*Centramos automaticamente*/
+    width:500px; 
+    margin:0 auto; 
 }
 
 .navh > li {
@@ -310,16 +310,18 @@ ul, ol {
     text-decoration:none;
     padding:10px 12px;
     display:block;
+    background-color: #7c0856;
 }
 
 .navh li a:hover {
-    background-color:#6b1752;
+    background-color:#7c0856;
 }
 
 .navh li ul {
     display:none;
     position:absolute;
     min-width:140px;
+    color: blueviolet;
 }
 
 .navh li:hover > ul {
