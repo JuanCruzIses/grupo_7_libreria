@@ -242,10 +242,11 @@ label.burger-button i{
     header .navbar{
         display: none;
     }
-    
-    .navbar-desktop{
-        width: 100%;
+
+    div.contenedor-logo {
+        margin-left: 20px;
     }
+   
 
     .botones-barra-superior{
         width: 30%;
@@ -266,24 +267,19 @@ label.burger-button i{
     .botones-barra-superior li a i{
         margin-right: 2px;
     }
+ /* ----------nav horizontal ----------------*/
+ .navbar-desktop{
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+}
 
-    .navbar-desktop{
-        display: block;
-    }
-    
-    div.contenedor-logo {
-        margin-left: 20px;
-    }
-
-    .navbar-desktop{
-        margin-top: 15px;
-    }
     .navbar-desktop ul{
         list-style: none;
         display: flex;
         justify-content: space-around;
+        
     }
-
     .navbar-desktop ul li a{
         margin-right: 30px;
         color: white;
@@ -295,7 +291,53 @@ label.burger-button i{
     .navbar-desktop ul li a i{
         margin-right: 5px;
     }
+/* nav desplegable*/
+ul, ol {
+    list-style:none;
+}
+
+.nav {
+    width:500px; /*Le establecemos un ancho*/
+    margin:0 auto; /*Centramos automaticamente*/
+}
+
+.navh > li {
+    float:left;
+}
+
+.navh li a {
     
+    text-decoration:none;
+    padding:10px 12px;
+    display:block;
+}
+
+.navh li a:hover {
+    background-color:#6b1752;
+}
+
+.navh li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.navh li:hover > ul {
+    display:block;
+}
+
+.navh li ul li {
+    position:relative;
+}
+
+.navh li ul li ul {
+    right:-140px;
+    top:0px;
+}
+/*fin desplegable*/
+
+    /*------fin nav horizontal*/
+
     .burger-button{
         display: none;
     }
