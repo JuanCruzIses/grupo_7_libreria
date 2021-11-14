@@ -1,6 +1,13 @@
-<a class="libro" href="/product/<%= libro.id %>">
-    <img src="/images/portadas/<%= libro.img %>">
-    <h3><%= libro.titulo %></h3>
-    <p class="detalle-producto"><%= libro.autor %></p>
-    <p class="precio-producto">$<%= libro.precio %></p>
+<a class="libro" href="/products/<%= libro.id %>">
+    <div class="contenedor">
+        <div class="img-precio">
+            <img src="/images/portadas/<%= libro.img %>">
+            <p class="precio-producto">$<%= libro.precio %></p>
+        </div>
+        <div class="descripcion">
+            <h3><%= libro.titulo %></h3>
+            <p class="detalle-producto"><%= libro.autor %></p>
+        </div>    
+    </div> 
+    <p class="precio-producto-res">$<%= libro.precio %></p>
 </a>
