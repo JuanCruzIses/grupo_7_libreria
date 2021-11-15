@@ -51,9 +51,25 @@ header .contenedor-logo .logotipo {
     background-color: rgba(0,0,0,0.3);
 }
 
-#btn-menu{
-  display: none;
-}
+/*----------menu celu desplegable*/
+
+#menu * { list-style:none;}
+#menu li{ line-height:180%;}
+#menu li a{color:rgb(255, 255, 255); text-decoration:none;font-size: 10px;}
+#menu li a:before{ content:"\025b8"; color:#ddd; margin-right:4px;}
+#menu input[name="list"] {
+	position: absolute;
+	left: -1000em;
+	}
+#menu label:before{ content:"\025b8"; margin-right:4px;}
+#menu input:checked ~ label:before{ content:"\025be";}
+#menu .interior{display: none;}
+#menu input:checked ~ ul{display:block;}
+#menu input:checked ~ ul ~ li{display:block;}
+.burger-button {width: 25%;}
+
+
+/* cierre menu*/
 
 header .navbar{
     position: absolute;
@@ -76,9 +92,10 @@ header .navbar{
 }
 
 .burger-button{
-    border: 1px solid black;
+    border: 1px solid rgb(248, 245, 245);
     border-radius: 5px;
     padding: 2px;
+    width: 25%;
 }
 
 header .navbar ul.botones{
@@ -308,7 +325,7 @@ ul, ol {
 .navh li a {
     
     text-decoration:none;
-    padding:10px 12px;
+    padding:5px 6px;
     display:block;
     background-color: #7c0856;
 }
@@ -320,7 +337,7 @@ ul, ol {
 .navh li ul {
     display:none;
     position:absolute;
-    min-width:140px;
+    min-width:100px;
     color: blueviolet;
 }
 
@@ -333,8 +350,9 @@ ul, ol {
 }
 
 .navh li ul li ul {
-    right:-140px;
+    right: -100px;
     top:0px;
+    z-index: 1;
 }
 /*fin desplegable*/
 
