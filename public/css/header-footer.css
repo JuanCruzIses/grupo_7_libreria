@@ -65,8 +65,7 @@ header .navbar{
     background-color: #7c0856;;
     right: -80%;
     z-index: 1000;
-    min-width: 256px;
-    max-width: 65vw;
+    width: 55vw;
     border-top: 1px solid #fff;
     transition: all 0.5s;
 }
@@ -248,7 +247,7 @@ label.burger-button i{
     }
 
     .botones-barra-superior{
-        width: 30%;
+        width: 35%;
         margin-right: -20px;
         display: flex;
     }
@@ -262,7 +261,7 @@ label.burger-button i{
         color: #ffff;
         text-decoration: none;
     }
-
+    
     .botones-barra-superior li a i{
         margin-right: 2px;
     }
@@ -281,7 +280,7 @@ label.burger-button i{
     .navbar-desktop ul{
         list-style: none;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
 
     .navbar-desktop ul li a{
@@ -290,6 +289,10 @@ label.burger-button i{
         text-decoration: none;
         font-family: 'roboto';
         font-size: 15px;
+    }
+
+    .navbar-desktop ul li a:hover{
+        color: black;
     }
 
     .navbar-desktop ul li a i{
