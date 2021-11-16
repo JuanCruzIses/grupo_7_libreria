@@ -76,8 +76,22 @@ ul .interior {
     display: none;
 }
 
-li input .btn-categoria:checked ~ ul .interior {
+.btn-categoria:checked ~ ul.interior {
     display: block
+}
+
+.btn-categoria i{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.btn-categoria p{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 10px;
+    display: inherit;
+    margin-left: 4px;
 }
 
 
