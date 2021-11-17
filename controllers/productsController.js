@@ -2,10 +2,17 @@ const fs = require('fs');
 const biblioteca = fs.readFileSync('./data/libros.json', 'utf-8')
 const libros = JSON.parse(biblioteca);
 
+
 const productsController = {
 	//index product
 	index: (req, res) => {
 		res.render('products', {libros : libros})
+	},
+
+	//Categorias ----> género
+	categorias: (req, res) => {
+		const genero = req.params.genero
+		res.render('productsCategory', { libros : libros , genero : genero } )
 	},
 
     //Detalle de un producto

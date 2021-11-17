@@ -13,4 +13,7 @@ router.get('/:id', productsController.detail);
 /*** CARRITO DE UN PRODUCTO ***/ 
 router.get('/carrito', productsController.comprar);
 
+/*** GÉNERO DE UN PRODUCTO ***/ 
+router.get('/categoria/:genero', productsController.categorias);
+
 module.exports = router;

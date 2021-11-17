@@ -16,6 +16,17 @@ main{
     width: 100%;
 }
 
+.banner{
+    display: flex;
+    justify-content: center;
+}
+
+.banner-img{
+    width: 90vw;
+    min-height: 120px;
+    margin-top: 30px;
+}
+
 h2{
     font-size: 2em;
     width: 100%;
@@ -94,6 +105,10 @@ h3{
         padding-top: 30px;
         background-color: #ededed;
         min-width: 768px;
+    }
+
+    .banner-img{
+        width: 80vw;
     }
 
     .productos{
