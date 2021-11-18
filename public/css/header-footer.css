@@ -55,7 +55,7 @@ header .contenedor-logo .logotipo {
 
 #menu * { list-style:none;}
 #menu li{ line-height:180%;}
-#menu li a{color:rgb(255, 255, 255); text-decoration:none;font-size: 10px;}
+#menu li a{color:rgb(255, 255, 255); text-decoration:none;font-size: 15px; margin:2px;}
 /* #menu li a:before{ content:"\025b8"; color:#ddd; margin-right:4px;} */
 #menu input[name="list"] {
 	position: absolute;
@@ -89,7 +89,7 @@ ul .interior {
 .btn-categoria p{
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 10px;
+    font-size: 15px;
     display: inherit;
     margin-left: 4px;
 }
