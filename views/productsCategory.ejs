@@ -13,42 +13,24 @@
     <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">      
     <link rel="icon" href="/images/sombrero-loco.100px.ico">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
-    <title>El sombrero Loco</title>
+    <title>
+        El sombrero Loco - <%= genero %>
+    </title>
 </head>
+
 <body>
-    <%- include('./partials/header')  %> 
+    <%- include('./partials/header') %> 
     <main>
         <section class="banner"></section>
         <section class="productos">
-            <h2>Policiales</h2>        
+            <h2><%= genero.toUpperCase() %></h2>        
             <% libros.forEach(libro => { %>
-                <% if (libro.categorias == "policiales"){ %> 
+                <% if (libro.categorias == genero){ %> 
                     <%- include('./partials/productosIndex', {libro})  %> 
-                <% } %> 
+                <% } %>
             <% }); %>
-        </section>
-
-        <section class="productos">
-            <h2>Juvenil</h2>        
-            <% libros.forEach(libro => { %>
-                <% if (libro.categorias == "Juvenil"){ %> 
-                    <%- include('./partials/productosIndex', {libro})  %> 
-                </a>
-                <% } %> 
-            <% }); %>
-        </section>
-
-        <section class="productos">
-            <h2>Novelas</h2>        
-            <% libros.forEach(libro => { %>
-                <% if (libro.categorias == "novela"){ %> 
-                    <%- include('./partials/productosIndex', {libro})  %> 
-                </a>
-                <% } %> 
-            <% }); %>
-        </section>
-
+        </section> 
     </main>
-    <%- include('./partials/footer')  %>     
+    <%- include('./partials/footer')  %> 
 </body>
 </html>

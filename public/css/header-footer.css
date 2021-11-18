@@ -370,6 +370,8 @@ ul, ol {
     position:absolute;
     min-width:100px;
     color: blueviolet;
+    z-index: 100;
+    padding-top: 6px;
 }
 
 .navh li:hover > ul {
@@ -416,7 +418,7 @@ ul, ol {
 
     .contenedor-buscador{
         width: 35%;
-        margin-left: 50px;
+        margin-left: 30px;
     }
 
     .contenedor-buscador label button:hover {
