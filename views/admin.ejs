@@ -19,6 +19,7 @@
     <%- include('./partials/header')  %>
 
     <div class="container products-wrapper">
+<<<<<<< HEAD
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Formulario de creación de productos</h2>
@@ -81,6 +82,52 @@
 					<div class="col-12">
 						<label>Guardar producto</label>
 						<input type="submit" class="buy-now-button"></button>
+=======
+		
+				<h2 class="cen">Formulario de creación de productos</h2>
+			
+	
+			<form class="form" action="/admin/create" method="POST" enctype="multipart/form-data">
+				
+					
+						<label for="titulo" class="form-label">Título:</label>
+						<input type="text" id="titulo" name="titulo" placeholder="TÍTULO" class="form-input">
+					
+					
+						<label for="autor" class="form-label">Autor:</label>
+						<input type="text" id="autor" name="autor" placeholder="AUTOR" class="form-input">
+					
+                  
+						<label for="precio" class="form-label">Precio:</label>
+						<input type="number" id="precio" name="precio" placeholder="000" class="form-control">
+					
+						<label for="paginas" class="form-label">Páginas:</label>
+						<input type="number" id="paginas" name="paginas" placeholder="000" class="form-control">
+					
+						<label for="editorial" class="form-label">Editorial:</label>
+						<input type="text" id="editorial" name="editorial" placeholder="EDITORIAL" class="form-control">
+                   
+						<label for="categorias" class="form-label">Categorías:</label>
+						<select class="form-control" id="categorias" name="categorias">
+							<option disabled selected > Seleccione categoría</option>
+							<option value="JUV">Juveníl</option>
+							<option value="INF">Infantil</option>
+							<option value="NOV">Novela</option>
+							<option value="ENS">Ensayo</option>
+							<option value="POE">Poesía</option>
+							<option value="TEA">Teatro</option>
+                    
+						<label for="sinopsis" class="form-label">Sinópsis:</label>
+						<textarea name="sinopsis" id="sinopsis" placeholder="Sinópsis" class="form-control"></textarea>
+				
+						<label for="img" class="form-label">Imagen:</label>
+						<input type="file" name="img" id="img" class="form-control">
+					
+						<label for="seccion" class="form-label">Sección:</label>
+						<input type="text" id="seccion" name="seccion" placeholder="SECCIÓN" class="form-control">
+                   
+						<button type="submit" class="buy-now-button">Guardar producto</button>
+>>>>>>> 87872e36dd5969972134acb230728598d85fb24f
 					</div>
 
 				</div>
