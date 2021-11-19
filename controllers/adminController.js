@@ -3,21 +3,24 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/libros.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+const rutaCreate = "/admin/create"
+const rutaEdit = "admin/edit"
+const rutaDelete = "/admin/delete"
 
 const controller = {
 	// Root - Show all products
-	index: (req, res) => {
-		res.render('admin', {
-			products,
-			toThousand
-		})
+	indexCreate: (req, res) => {
+		const ruta = rutaCreate
+		res.render('admin', { products, ruta : ruta , toThousand } )
 	},
-
 	
 	// Create -  Method to store
 	create: (req, res) => {
 		let img
+		
 		console.log(req.files);
 		let ultimoId = Number(products[products.length -1].id);
 		let nuevoUltimoId = (ultimoId + 1).toString();

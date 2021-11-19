@@ -20,8 +20,14 @@ const upload = multer({storage: storage});
 
 // ************ CREATE *************
 
-router.get('/create', adminController.index); 
+router.get('/create', adminController.indexCreate); 
 router.post('/create', upload.any(), adminController.create); 
+
+
+// ************ EDIT *************
+
+//router.get('/edit', adminController.index); 
+//router.post('/edit', upload.any(), adminController.edit); 
 
 
 
