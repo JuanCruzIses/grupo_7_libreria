@@ -11,6 +11,8 @@ const loginRouter = require('./routes/loginRoute')
 const registerRouter = require('./routes/registerRoute')
 const productRouter = require('./routes/productRoute');
 const carritoRouter = require('./routes/carritoRoute');
+const aboutUsRouter = require('./routes/aboutUsRoute');
+const questionsRouter = require('./routes/questionsRoute');
 
 //const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/adminRoute');
@@ -33,6 +35,8 @@ app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/products', productRouter);
 app.use('/carrito', carritoRouter);
+app.use('/aboutUs', aboutRouter);
+app.use('/questions', questionsRouter);
 
 //app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
