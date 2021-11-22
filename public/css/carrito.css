@@ -1,3 +1,4 @@
+
 *{
     margin: 0px;
     box-sizing: border-box;
@@ -15,6 +16,7 @@
     font-size: 25px;
     text-align: center;
 }
+
 
 
 
@@ -336,12 +338,20 @@
 
 
 
-@media screen and (min-width:768){ 
-    #burger-menu{
+@media screen and (min-width:768px){ 
+  main{
+   
+    margin: auto;
+    padding-top: 30px;
+    background-color: #ededed;
+    min-width: 768px;
+}
+  
+  #burger-menu{
         display: none;
     }
 
     #icon-menu{
         display: none;
     }
-}
+   
