@@ -21,16 +21,20 @@
     <div class="container products-wrapper">
 
 		
-				<h2 class="cen">Formulario de creación de productos</h2>
+				<h2 class="cen">Formulario de edición de productos</h2>
 			
 	
-			<form class="form" action="/admin/create" method="POST" enctype="multipart/form-data">
+			<form class="form" action="/admin/edit" method="PUT" enctype="multipart/form-data">
 				
 					
-						<label for="titulo" class="form-label">Título:</label>
+						<label for="titulo" class="form-label">ID del producto:</label>
+						<input type="text" id="id" name="id" placeholder="Ingrese el número" class="form-input">
+
+                        <p>Escribir los datos a modificar</p>
+                        <br>
+                        <label for="titulo" class="form-label">Título:</label>
 						<input type="text" id="titulo" name="titulo" placeholder="TÍTULO" class="form-input">
-					
-					
+
 						<label for="autor" class="form-label">Autor:</label>
 						<input type="text" id="autor" name="autor" placeholder="AUTOR" class="form-input">
 					

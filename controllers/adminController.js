@@ -6,15 +6,10 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const rutaCreate = "/admin/create"
-const rutaEdit = "admin/edit"
-const rutaDelete = "/admin/delete"
-
 const controller = {
 	// Root - Show all products
 	indexCreate: (req, res) => {
-		const ruta = rutaCreate
-		res.render('admin', { products, ruta : ruta , toThousand } )
+		res.render('admin', { products, toThousand } )
 	},
 	
 	// Create -  Method to store
@@ -48,13 +43,12 @@ const controller = {
 	},
 
 	// Update - Form to edit
-	edit: (req, res) => {
-		let id = req.body.id
-		let productToEdit = products.find(product => product.id == id)
-		res.render('admin', {productToEdit})
+	indexEdit: (req, res) => {
+		res.render('edit')
 	},
+	
 	// Update - Method to update
-/*
+
 	update: (req, res) => {
 		let id = req.body.id;
 		let productToEdit = products.find(product => product.id == id)
@@ -63,12 +57,19 @@ const controller = {
 		if(req.files[0] != undefined){
 			image = req.files[0].filename
 		} else {
-			image = productToEdit.image
+			image = productToEdit.img
 		}
 
 		productToEdit = {
 			id: productToEdit.id,
-			...req.body,
+			titulo: req.body.titulo,
+        	autor: req.body.autor,
+        	precio: req.body.precio,
+        	paginas: req.body.paginas,
+        	editorial: req.body.editorial,
+        	categorias: req.body.categorias,
+        	sinopsis: req.body.sinopsis,
+        	seccion: req.body.seccion,
 			image: image,
 		};
 		
@@ -82,14 +83,14 @@ const controller = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/');
 	},
-*/
+/*
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		let id = req.params.id;
 		let finalProducts = products.filter(product => product.id != id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 		res.redirect('/');
-	}
+	}*/
 };
 
 module.exports = controller;
