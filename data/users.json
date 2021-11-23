@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-[{"nombre":"","apellido":"","email":"","contraseña":"","confirmaContraseña":"","provincia":"","localidad":"","calleYNumero":"","piso":""},{"nombre":"FRANCO","apellido":"CASANOVA","email":"franco123casanova123@gmail.com","contraseña":"adad","confirmaContraseña":"adad","provincia":"Campana","localidad":"Campana","calleYNumero":"adad","piso":"adad"},{"nombre":"juan ","apellido":"ises","email":"juancruzises@gmail.com","contraseña":"123","confirmaContraseña":"123"},{"nombre":"as","apellido":"as","email":"as@gmail.com","contraseña":"as","confirmaContraseña":"as"},{"nombre":"juan","apellido":"ises","email":"juancruzises@gmail.com","contraseña":"12345","confirmaContraseña":"12345"},{"nombre":"Maria","apellido":"Rodriguez","email":"mariarodriguez@gmail.com","contraseña":"12345","confirmaContraseña":"12345"},{"nombre":"Juan","apellido":"Rodriguez","email":"juanrodriguez@gmail.com","contraseña":"12345","confirmaContraseña":"12345"},{"nombre":"Rocio","apellido":"Alvarez","email":"reminem182@gmail.com","contraseña":"rororo","confirmaContraseña":"rororo"},{"nombre":"Sixto","apellido":"Espindola","email":"sixto@gmail.com","contraseña":"sixsixsix","confirmaContraseña":"sixsixsix"}]
-=======
 [
     {
         "nombre": "Juan cruz",
@@ -21,4 +18,3 @@
         "categoria": "users"
     }
 ]
->>>>>>> 2682276fc4108702111badc90c801d8b5f45eeda

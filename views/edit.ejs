@@ -24,10 +24,10 @@
 				<h2 class="cen">Formulario de edición de productos</h2>
 			
 	
-			<form class="form" action="/admin/edit" method="PUT" enctype="multipart/form-data">
+			<form class="form" action="/admin/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
 				
 					
-						<label for="titulo" class="form-label">ID del producto:</label>
+						<label for="titulo" class="form-label">ID del producto a editar:</label>
 						<input type="text" id="id" name="id" placeholder="Ingrese el número" class="form-input">
 
                         <p>Escribir los datos a modificar</p>

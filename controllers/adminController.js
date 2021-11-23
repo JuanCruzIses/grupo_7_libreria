@@ -48,7 +48,6 @@ const controller = {
 	},
 	
 	// Update - Method to update
-
 	update: (req, res) => {
 		let id = req.body.id;
 		let productToEdit = products.find(product => product.id == id)
@@ -69,8 +68,8 @@ const controller = {
         	editorial: req.body.editorial,
         	categorias: req.body.categorias,
         	sinopsis: req.body.sinopsis,
-        	seccion: req.body.seccion,
-			image: image,
+        	img: image,
+			seccion: req.body.seccion			
 		};
 		
 		let newProducts = products.map(product => {
@@ -81,7 +80,7 @@ const controller = {
 		})
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
+		res.redirect('/products');
 	},
 /*
 	// Delete - Delete one product from DB

@@ -27,7 +27,7 @@ router.post('/create', upload.any(), adminController.create);
 // ************ EDIT *************
 
 router.get('/edit', adminController.indexEdit); 
-//router.post('/edit', upload.any(), adminController.edit); 
+router.put('/edit/:id', upload.any(), adminController.update); 
 
 
 
