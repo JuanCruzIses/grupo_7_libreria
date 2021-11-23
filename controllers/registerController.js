@@ -11,6 +11,8 @@ const registerController = {
     },
 
     registrar : (req, res) => {
+        let ultimoId = Number(listaUsuarios[listaUsuarios.length -1]);
+		let nuevoUltimoId = (ultimoId + 1).toString();
 
         let errores = validationResult(req)
         if (req.body.contraseña == req.body.confirmaContraseña && errores.isEmpty() ) {
@@ -20,6 +22,8 @@ const registerController = {
                 email: req.body.email,
                 contraseña: req.body.contraseña,
                 confirmaContraseña: req.body.confirmaContraseña,
+                id: nuevoUltimoId,
+                categoria:"users",
             }
             listaUsuarios.push(nuevoUsuario);
             fs.writeFileSync(usersFilePath, JSON.stringify(listaUsuarios, null))
