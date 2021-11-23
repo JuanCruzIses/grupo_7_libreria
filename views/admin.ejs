@@ -15,11 +15,13 @@
     <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">   
     <title>El sombrerero Loco</title>
 </head>
+<main>
+
+
 <body>
     <%- include('./partials/header')  %>
-
-    <div class="container products-wrapper">
-
+	<h3 class=frase>“Creo que sí, estás demente. Pero te diré un secreto: las mejores personas lo están”. </h3>
+    
 		
 				<h2 class="cen">Formulario de creación de productos</h2>
 			
@@ -28,11 +30,11 @@
 				
 					
 						<label for="titulo" class="form-label">Título:</label>
-						<input type="text" id="titulo" name="titulo" placeholder="TÍTULO" class="form-input">
+						<input type="text" id="titulo" name="titulo" placeholder="TÍTULO (Usar sólo mayúsculas)" class="form-input">
 					
 					
 						<label for="autor" class="form-label">Autor:</label>
-						<input type="text" id="autor" name="autor" placeholder="AUTOR" class="form-input">
+						<input type="text" id="autor" name="autor" placeholder="Autor: Apellido; Nombre" class="form-input">
 					
                   
 						<label for="precio" class="form-label">Precio:</label>
@@ -77,9 +79,10 @@
 				
 			</form>
 		</div>
-	
-
-    <%- include('./partials/footer')  %> 
+		
+	 <%- include('./partials/footer')  %> 
+</main>
+   
 
 </body>
 </html>
