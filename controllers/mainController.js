@@ -1,13 +1,20 @@
 const fs = require('fs');
-const biblioteca = fs.readFileSync('./data/libros.json', 'utf-8')
-const libros = JSON.parse(biblioteca);
+let biblioteca = fs.readFileSync('./data/libros.json', 'utf-8');
+let libros = JSON.parse(biblioteca);
 
-const novedades = libros.filter(libro => libro.seccion === "novedades");
-const masVendidos = libros.filter(libro => libro.seccion === "masVendidos");
+function actualizar(){
+    biblioteca = fs.readFileSync('./data/libros.json', 'utf-8');
+    libros = JSON.parse(biblioteca);
+}
+
+
 
 const mainController = {
     //CONTROLADOR DE VISTAS
     index : (req, res) => {
+        actualizar();
+        const novedades = libros.filter(libro => libro.seccion === "novedades");
+        const masVendidos = libros.filter(libro => libro.seccion === "masVendidos");
         res.render('index', {libros, novedades, masVendidos})
     },
     search: (req, res) => {
