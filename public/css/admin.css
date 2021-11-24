@@ -4,23 +4,70 @@
     box-sizing: border-box;
 }
 /*------------main------------*/
-.pedido .cen{
-    position: relative;
-    margin: 5px;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .frase{
-    font-family: 'Dancing Script', cursive;
-    font-size: 25px;
-    text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
+.title-form-admin{
+  margin-bottom: 10px;
+  margin-top: 15px;
+  text-align: center;
+}
 
+.container-form-admin{
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
 
+.form-admin{
+  position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    min-width: 320px;
+    max-width: 550px;
+    margin: 0 auto 0px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);
+}
 
+.form-admin input{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #e7dae7;
+  width: 100%;
+  border: 0;
+  margin: 15px 0 25px 0;
+  padding: 15px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 5px;
+}
 
+.form-label{
+  font-family: "Roboto", sans-serif;
+  border: 0;
+  font-weight: 600;
+  color: black;
+  margin: 0 0 15px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.form-admin input.submit{
+  width: auto;
+  border: 1px solid;
+  padding: 5px;
+  background: #ffffff;
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
 
 
 /*-------------carrito 1-pedido-------------*/

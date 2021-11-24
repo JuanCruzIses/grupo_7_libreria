@@ -214,5 +214,17 @@
   "sinopsis": "-",
   "seccion": "novedades",
   "img": "img-1637632091563.jpg"
+ },
+ {
+  "id": "19",
+  "titulo": "KAFKA Y LA MUÑECA VIAJERA",
+  "autor": "Sierra, Jordi y Fabra",
+  "precio": "1650",
+  "paginas": "75",
+  "editorial": "SIRUELA",
+  "categorias": "infantil",
+  "sinopsis": "",
+  "img": "img-1637766710726.png",
+  "seccion": "novedades"
  }
 ]

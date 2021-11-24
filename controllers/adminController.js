@@ -7,7 +7,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
-	// Root - Show all products
+	// Vista - Create
 	indexCreate: (req, res) => {
 		res.render('admin', { products, toThousand } )
 	},
@@ -42,7 +42,7 @@ const controller = {
 		res.redirect('/');
 	},
 
-	// Update - Form to edit
+	// Vista - Update
 	indexEdit: (req, res) => {
 		res.render('edit')
 	},
@@ -82,14 +82,19 @@ const controller = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 		res.redirect('/products');
 	},
-/*
+
+	// Vista - Delete
+	indexDelete: (req, res) => {
+		res.render('delete')
+	},
+
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		let id = req.params.id;
+		let id = req.body.id;
 		let finalProducts = products.filter(product => product.id != id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 		res.redirect('/');
-	}*/
+	}
 };
 
 module.exports = controller;

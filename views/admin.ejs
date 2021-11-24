@@ -11,31 +11,29 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="../css/carrito.css">
+    <link rel="stylesheet" type="text/css" link href="../css/admin.css">
     <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">   
     <title>El sombrerero Loco</title>
 </head>
-<main>
+
 
 
 <body>
     <%- include('./partials/header')  %>
-	<h3 class=frase>“Creo que sí, estás demente. Pero te diré un secreto: las mejores personas lo están”. </h3>
-    
-		
-				<h2 class="cen">Formulario de creación de productos</h2>
-			
 	
-			<form class="form" action="/admin/create" method="POST" enctype="multipart/form-data">
-				
+	<main>
+		<h3 class=frase>“Creo que sí, estás demente. Pero te diré un secreto: las mejores personas lo están”. </h3>
+    
+		<h2 class="title-form-admin">Formulario de creación de productos</h2>
+			
+		<div class="container-form-admin">
+			<form class="form-admin" action="/admin/create" method="POST" enctype="multipart/form-data">		
 					
 						<label for="titulo" class="form-label">Título:</label>
-						<input type="text" id="titulo" name="titulo" placeholder="TÍTULO (Usar sólo mayúsculas)" class="form-input">
-					
+						<input type="text" id="titulo" name="titulo" placeholder="Utilizar mayúsculas unicamente" class="form-input">
 					
 						<label for="autor" class="form-label">Autor:</label>
-						<input type="text" id="autor" name="autor" placeholder="Autor: Apellido; Nombre" class="form-input">
-					
+						<input type="text" id="autor" name="autor" placeholder="Apellido, Nombre" class="form-input">
                   
 						<label for="precio" class="form-label">Precio:</label>
 						<input type="number" id="precio" name="precio" placeholder="000" class="form-control">
@@ -44,7 +42,7 @@
 						<input type="number" id="paginas" name="paginas" placeholder="000" class="form-control">
 					
 						<label for="editorial" class="form-label">Editorial:</label>
-						<input type="text" id="editorial" name="editorial" placeholder="EDITORIAL" class="form-control">
+						<input type="text" id="editorial" name="editorial" placeholder="Utilizar mayúsculas unicamente" class="form-control">
                    
 						<label for="categorias" class="form-label">Categorías:</label>
 						<% /* %> <input type="text" id="categorias" name="categorias" class="form-input">  <% */ %>
@@ -57,32 +55,30 @@
 							<option value="policiales">Policiales</option>
 							<option value="teatro">Teatro</option>
 						</select>
-
+					<br>
+					<br>
 						<label for="sinopsis" class="form-label">Sinópsis:</label>
-						<textarea name="sinopsis" id="sinopsis" placeholder="Sinópsis" class="form-control"></textarea>
-				
+						<textarea name="sinopsis" id="sinopsis" class="form-control"></textarea>
+					<br>
+					<br>
 						<label for="img" class="form-label">Imagen:</label>
 						<input type="file" name="img" id="img" class="form-control">
-					
+					<br>
 						<label for="seccion" class="form-label">Sección:</label>
 						<% /* %><input type="text" id="seccion" name="seccion" placeholder="SECCIÓN" class="form-input"><% */ %>
 						<select class="form-control" id="seccion" name="seccion" class="form-input" required>
 							<option disabled selected > Seleccione sección</option>
 							<option value="novedades" >Novedades</option>
 							<option value="masVendidos">Lo mas vendido</option>
+							<option value="sinSeccion">Sin sección</option>
 						</select>
-							
-						<input type="submit" class="buy-now-button"></input>
-
-					
-
-				
+					<br>
+						<input class= submit type="submit" class="buy-now-button"></input>
+	
 			</form>
 		</div>
-		
-	 <%- include('./partials/footer')  %> 
-</main>
-   
+	</main>
 
+	 <%- include('./partials/footer')  %>    
 </body>
 </html>

@@ -164,25 +164,21 @@
                            <div class="divtextizq">Subtotal</div>
                            <div class="divtextder">$$$</div>
                        </div>
-                       <div class="cupon">
-                       <div class="itemdetalles">
-                           
-                           <div> Ingresa tu cupon de descuento</div>
-                        
-                           
-                           
-                         </div> 
-                         <div class="itemdetalles" >
-                           <input type="text" name="cupon" value="Ingrese aqui">
-                         </div>
-                       </div>
-                         <div class="itemdetalles">
-                          
-                             Total
-                             <div></div>
-                           </div>
-                     </div>
-                     </div>
+
+                      <div class="cupon">
+                        <div class="itemdetalles"> 
+                          <div> Ingresa tu cupon de descuento</div>   
+                        </div> 
+                        <div class="itemdetalles" >
+                          <input type="text" name="cupon" placeholder="Ingrese aqui">
+                        </div>
+                      </div>
+                      
+                      <div class="itemdetalles">    
+                             <p>Total</p>
+                      </div>
+                    </div>
+                </div>
                    </div>
                    <script type="text/javascript">
                     $('.minus-btn').on('click', function(e) {
@@ -253,7 +249,7 @@
     <div>
  <form class="form" method="post" action="/login">
   <select class="form-control" id="formaEnvio" name="envioId">
-    <option disabled selected > Elija método de pago</option>
+    <option disabled selected > Elija método de entrega</option>
     <option value="Retiro">Retiro por sucursal</option>
     <option value="Envio">Envio a domicilio</option>
     <option value="Correo">Retiro por correo</option>

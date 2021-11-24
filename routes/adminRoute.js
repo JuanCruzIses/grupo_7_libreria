@@ -35,10 +35,11 @@ router.put('/edit/:id', upload.any(), adminController.update);
 router.get('/edit', router.get('/create', adminController.index); 
 .index); 
 router.patch('/edit', upload.any(),adminController.update); 
+***/
 
-
- DELETE ONE PRODUCT
-router.delete('/edit', adminController.index);
-***/ 
+ // *** DELETE ONE PRODUCT ***
+router.get('/delete', adminController.indexDelete); 
+router.delete('/delete', adminController.destroy);
+ 
 
 module.exports = router;
