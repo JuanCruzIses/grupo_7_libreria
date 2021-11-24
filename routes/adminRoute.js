@@ -26,8 +26,8 @@ router.post('/create', upload.any(), adminController.create);
 
 // ************ EDIT *************
 
-//router.get('/edit', adminController.index); 
-//router.post('/edit', upload.any(), adminController.edit); 
+router.get('/edit', adminController.indexEdit); 
+router.put('/edit/:id', upload.any(), adminController.update); 
 
 
 
@@ -35,10 +35,11 @@ router.post('/create', upload.any(), adminController.create);
 router.get('/edit', router.get('/create', adminController.index); 
 .index); 
 router.patch('/edit', upload.any(),adminController.update); 
+***/
 
-
- DELETE ONE PRODUCT
-router.delete('/edit', adminController.index);
-***/ 
+ // *** DELETE ONE PRODUCT ***
+router.get('/delete', adminController.indexDelete); 
+router.delete('/delete', adminController.destroy);
+ 
 
 module.exports = router;

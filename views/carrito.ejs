@@ -17,258 +17,253 @@
    <title>El sombrerero Loco</title>
 </head>
 <body>
-    <%- include('./partials/header')  %> 
+  <%- include('./partials/header')  %> 
+  <main>
 <div class="Pedido">
-    <h1 class=cen >1-Pedido</h1> 
-     <h3 class=frase> "Si la locura es felicidad, me declaro loco."- El Sombrerero -
-                      </h3>
-    
-                      <div class="contenedorcarrito">
-                        <div class="carrito">
-                        
-                     
-                           <div>
-                           <!-- Titulo -->
-                           <div class="titulo">
-                             Carrito de compras
-                           </div>
-                     <div>
-                           <!-- Libro #1 -->
-                           <div class="tituloproducto">
-                             Al final Mueren los dos
-                           </div>
-                           <div class="item">
-                             
-                     
-                             <div class="image">
-                               <img class="image" src="/images/portadas/al-final-mueren.jpg" alt="">
-                             </div>
-                     
-                             <div class="description">
-                               <span>Al final Mueren los dos</span>
-                               <span>Editorial</span>
-                               <span>ISBN</span>
-                             </div>
-                            
-                             <div class="quantity">
-                               <button class="minus-btn" type="button" name="button">
-                                <img src="/images/minus.svg" alt="">
-                              </button>
-                               <input type="text" name="name" value="1">
-                               <button class="plus-btn" type="button" name="button">
-                                <img src="/images/plus.svg" alt="">
-                              </button>
-                             </div>
-                     
-                             <div class="total-price">$549</div>
-                             <div class="btndelete">
-                               <button class="plus-btn" type="button" name="button">
-                               <img src="/images/delete-svgrepo-com.svg" alt=""></span>
-                             </button>
-                              
-                             </div>
-                           </div>
-                     
-                           <!-- Libro #2 -->
-                           <div class="tituloproducto">
-                             Viejas Deudas
-                           </div>
-                           <div class="item">
-                           
-                     
-                             <div class="image">
-                               <img class="image" src="/images/portadas/viejas-deudas.jpg" alt="">
-                             </div>
-                     
-                             <div class="description">
-                               <span>Viejas Deudas</span>
-                               <span>Editorial</span>
-                               <span>ISBN</span>
-                             </div>
-                     
-                             <div class="quantity">
-                              <button class="minus-btn" type="button" name="button">
-                                <img src="/images/minus.svg" alt="">
-                              </button> 
-                             
-                               <input type="text" name="name" value="1">
-                               <button class="plus-btn" type="button" name="button">
-                                <img src="/images/plus.svg" alt="">
-                              </button>
-                             </div>
-                     
-                             <div class="total-price">$870</div>
-                             <div class="btndelete">
-                               <button class="plus-btn" type="button" name="button">
-                               <img src="/images/delete-svgrepo-com.svg" alt=""></span>
-                             </button>
-                            
-                             </div>
-                           </div>
-                     
-                           <!-- Libro #3 -->
-                           <div class="tituloproducto">
-                             Asesinato en el oriente express
-                           </div>
-                           <div class="item">
-                           
-                             
-                              
-                     
-                             <div class="image">
-                               <img class="image" src="/images/portadas/asesinato-oriente.jpg" alt="">
-                             </div>
-                     
-                             <div class="description">
-                               <span>Asesinato en el oriente express</span>
-                               <span>Editorial</span>
-                               <span>ISBN</span>
-                             </div>
-                     
-                             <div class="quantity">
-                              <button class="minus-btn" type="button" name="button">
-                                <img src="/images/minus.svg" alt="">
-                              </button>
-                               <input type="text" name="name" value="1">
-                               
-                               <button class="plus-btn" type="button" name="button">
-                                <img src="/images/plus.svg" alt="">
-                              </button>
-                             </div>
-                     
-                             <div class="total-price">$349</div>
-                            
-                             <div class="btndelete">
-                               <button class="plus-btn" type="button" name="button">
-                               <img src="/images/delete-svgrepo-com.svg" alt=""></span>
-                             </button>
-                              
-                             </div>
-                           </div>
-                           </div>
-                         </div>
-                          
-                         
-                          
-                         
-                       </div>
-                       <div class="detalles">
-                         <div class="itemdetalles">
-                           
-                           <div class="divtextizq">Cantidad</div> 
-                           <div class="divtextder">N°</div>
-                         </div>
-                         
-                         <div class="itemdetalles">
-                             <div class="divtextizq">Subtotal</div>
-                             <div class="divtextder">$$$</div>
-                         </div>
-                         <div class="cupon">
-                         <div class="itemdetalles">
-                             
-                             <div> Ingresa tu cupon de descuento</div>
-                          
-                             
-                             
-                           </div> 
-                           <div class="itemdetalles" >
-                             <input type="text" name="cupon" value="Ingrese aqui">
-                           </div>
-                         </div>
-                           <div class="itemdetalles">
-                            
-                               Total
-                               <div></div>
-                             </div>
-                       </div>
-                       </div>
-                     </div>
-                     <script type="text/javascript">
-                      $('.minus-btn').on('click', function(e) {
-                        e.preventDefault();
-                        var $this = $(this);
-                        var $input = $this.closest('div').find('input');
-                        var value = parseInt($input.val());
-                
-                        if (value > 1) {
-                          value = value - 1;
-                        } else {
-                          value = 0;
-                        }
-                
-                        $input.val(value);
-                
-                      });
-                
-                      $('.plus-btn').on('click', function(e) {
-                        e.preventDefault();
-                        var $this = $(this);
-                        var $input = $this.closest('div').find('input');
-                        var value = parseInt($input.val());
-                
-                        if (value < 100) {
-                          value = value + 1;
-                        } else {
-                          value =100;
-                        }
-                
-                        $input.val(value);
-                      });
-                
-                      $('.like-btn').on('click', function() {
-                        $(this).toggleClass('is-active');
-                      });
-                    </script> 
+  <h1 class=cen >1-Pedido</h1> 
+   <h3 class=frase> "Si la locura es felicidad, me declaro loco."- El Sombrerero -
+                    </h3>
+  
+                    <div class="contenedorcarrito">
+                      <div class="carrito">
                       
+                   
+                         <div>
+                         <!-- Titulo -->
+                         <div class="titulo">
+                           Carrito de compras
+                         </div>
+                   <div>
+                         <!-- Libro #1 -->
+                         <div class="tituloproducto">
+                           Al final Mueren los dos
+                         </div>
+                         <div class="item">
+                           
+                   
+                           <div class="image">
+                             <img class="image" src="/images/portadas/al-final-mueren.jpg" alt="">
+                           </div>
+                   
+                           <div class="description">
+                             <span>Al final Mueren los dos</span>
+                             <span>Editorial</span>
+                             <span>ISBN</span>
+                           </div>
+                          
+                           <div class="quantity">
+                             <button class="minus-btn" type="button" name="button">
+                              <img src="/images/minus.svg" alt="">
+                            </button>
+                             <input type="text" name="name" value="1">
+                             <button class="plus-btn" type="button" name="button">
+                              <img src="/images/plus.svg" alt="">
+                            </button>
+                           </div>
+                   
+                           <div class="total-price">$549</div>
+                           <div class="btndelete">
+                             <button class="plus-btn" type="button" name="button">
+                             <img src="/images/delete-svgrepo-com.svg" alt=""></span>
+                           </button>
+                            
+                           </div>
+                         </div>
+                   
+                         <!-- Libro #2 -->
+                         <div class="tituloproducto">
+                           Viejas Deudas
+                         </div>
+                         <div class="item">
+                         
+                   
+                           <div class="image">
+                             <img class="image" src="/images/portadas/viejas-deudas.jpg" alt="">
+                           </div>
+                   
+                           <div class="description">
+                             <span>Viejas Deudas</span>
+                             <span>Editorial</span>
+                             <span>ISBN</span>
+                           </div>
+                   
+                           <div class="quantity">
+                            <button class="minus-btn" type="button" name="button">
+                              <img src="/images/minus.svg" alt="">
+                            </button> 
+                           
+                             <input type="text" name="name" value="1">
+                             <button class="plus-btn" type="button" name="button">
+                              <img src="/images/plus.svg" alt="">
+                            </button>
+                           </div>
+                   
+                           <div class="total-price">$870</div>
+                           <div class="btndelete">
+                             <button class="plus-btn" type="button" name="button">
+                             <img src="/images/delete-svgrepo-com.svg" alt=""></span>
+                           </button>
+                          
+                           </div>
+                         </div>
+                   
+                         <!-- Libro #3 -->
+                         <div class="tituloproducto">
+                           Asesinato en el oriente express
+                         </div>
+                         <div class="item">
+                         
+                           
+                            
+                   
+                           <div class="image">
+                             <img class="image" src="/images/portadas/asesinato-oriente.jpg" alt="">
+                           </div>
+                   
+                           <div class="description">
+                             <span>Asesinato en el oriente express</span>
+                             <span>Editorial</span>
+                             <span>ISBN</span>
+                           </div>
+                   
+                           <div class="quantity">
+                            <button class="minus-btn" type="button" name="button">
+                              <img src="/images/minus.svg" alt="">
+                            </button>
+                             <input type="text" name="name" value="1">
+                             
+                             <button class="plus-btn" type="button" name="button">
+                              <img src="/images/plus.svg" alt="">
+                            </button>
+                           </div>
+                   
+                           <div class="total-price">$349</div>
+                          
+                           <div class="btndelete">
+                             <button class="plus-btn" type="button" name="button">
+                             <img src="/images/delete-svgrepo-com.svg" alt=""></span>
+                           </button>
+                            
+                           </div>
+                         </div>
+                         </div>
+                       </div>
+                        
+                       
+                        
+                       
+                     </div>
+                     <div class="detalles">
+                       <div class="itemdetalles">
+                         
+                         <div class="divtextizq">Cantidad</div> 
+                         <div class="divtextder">N°</div>
+                       </div>
+                       
+                       <div class="itemdetalles">
+                           <div class="divtextizq">Subtotal</div>
+                           <div class="divtextder">$$$</div>
+                       </div>
 
-    <h1 class="cen">2-Datos personales</h1>
+                      <div class="cupon">
+                        <div class="itemdetalles"> 
+                          <div> Ingresa tu cupon de descuento</div>   
+                        </div> 
+                        <div class="itemdetalles" >
+                          <input type="text" name="cupon" placeholder="Ingrese aqui">
+                        </div>
+                      </div>
+                      
+                      <div class="itemdetalles">    
+                             <p>Total</p>
+                      </div>
+                    </div>
+                </div>
+                   </div>
+                   <script type="text/javascript">
+                    $('.minus-btn').on('click', function(e) {
+                      e.preventDefault();
+                      var $this = $(this);
+                      var $input = $this.closest('div').find('input');
+                      var value = parseInt($input.val());
+              
+                      if (value > 1) {
+                        value = value - 1;
+                      } else {
+                        value = 0;
+                      }
+              
+                      $input.val(value);
+              
+                    });
+              
+                    $('.plus-btn').on('click', function(e) {
+                      e.preventDefault();
+                      var $this = $(this);
+                      var $input = $this.closest('div').find('input');
+                      var value = parseInt($input.val());
+              
+                      if (value < 100) {
+                        value = value + 1;
+                      } else {
+                        value =100;
+                      }
+              
+                      $input.val(value);
+                    });
+              
+                    $('.like-btn').on('click', function() {
+                      $(this).toggleClass('is-active');
+                    });
+                  </script> 
+                    
 
-    <form class="form" method="post" action="/login">
-        <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" required/>
-        <input type="text" class="form-control" placeholder="Apellido" name="apellido" required/>
-        <select class="form-control" id="paisesCombo" name="countryId">
-            <option disabled selected > Seleccione un país</option>
-            <option value="AL">Alemania</option>
-            <option value="AR" >Argentina</option>
-            <option value="BR">Brasil</option>
-            <option value="CH">Chile</option></select>
-        <select class="form-control" id="pciasCombo" name="pciaId">
-            <option disabled selected > Seleccione una provincia</option>
-            <option value="BA">Buenos Aires</option>
-            <option value="CF">Capital Federal</option>
-            <option value="CA">Catamarca</option>
-            <option value="otra">Otra...</option>
-        </select>
-        <input type="text" class="form-control" placeholder="Localidad" name="localidad" required/>
-        <input type="text" class="form-control" placeholder="Código Postal" name="CP" required/>
-        <input type="text" class="form-control" placeholder="Teléfono" name="Télefono" required/>
-        <input type="text" class="form-control" placeholder="Calle" name="calleYNumero" required/>
-        <input type="text" class="form-control" placeholder="Piso - Departamento" name="piso" opcional/>
- 
-            <button>Comprar</button>
-      
-      </form>
-      <h1 class="cen">3-Opciones de envio</h1>
-      <div>
-   <form class="form" method="post" action="/login">
-    <select class="form-control" id="formaEnvio" name="envioId">
-      <option disabled selected > Elija método de pago</option>
-      <option value="Retiro">Retiro por sucursal</option>
-      <option value="Envio">Envio a domicilio</option>
-      <option value="Correo">Retiro por correo</option>
-  </select>
+  <h1 class="cen">2-Datos personales</h1>
+
+  <form class="form" method="post" action="/login">
+      <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" required/>
+      <input type="text" class="form-control" placeholder="Apellido" name="apellido" required/>
+      <select class="form-control" id="paisesCombo" name="countryId">
+          <option disabled selected > Seleccione un país</option>
+          <option value="AL">Alemania</option>
+          <option value="AR" >Argentina</option>
+          <option value="BR">Brasil</option>
+          <option value="CH">Chile</option></select>
+      <select class="form-control" id="pciasCombo" name="pciaId">
+          <option disabled selected > Seleccione una provincia</option>
+          <option value="BA">Buenos Aires</option>
+          <option value="CF">Capital Federal</option>
+          <option value="CA">Catamarca</option>
+          <option value="otra">Otra...</option>
+      </select>
+      <input type="text" class="form-control" placeholder="Localidad" name="localidad" required/>
+      <input type="text" class="form-control" placeholder="Código Postal" name="CP" required/>
+      <input type="text" class="form-control" placeholder="Teléfono" name="Télefono" required/>
+      <input type="text" class="form-control" placeholder="Calle" name="calleYNumero" required/>
+      <input type="text" class="form-control" placeholder="Piso - Departamento" name="piso" opcional/>
+
+          <button>Comprar</button>
+    
+    </form>
+    <h1 class="cen">3-Opciones de envio</h1>
+    <div>
+ <form class="form" method="post" action="/login">
+  <select class="form-control" id="formaEnvio" name="envioId">
+    <option disabled selected > Elija método de entrega</option>
+    <option value="Retiro">Retiro por sucursal</option>
+    <option value="Envio">Envio a domicilio</option>
+    <option value="Correo">Retiro por correo</option>
+</select>
 </form>
-       </div>
-
-     
-</div>
+     </div>
 
    
-  
+</div>
 
+ 
 
 <%- include('./partials/footer')  %> 
-
+ </main>
 </body>
 </html>
 

@@ -1,3 +1,4 @@
+
 *{
     margin: 0px;
     box-sizing: border-box;
@@ -14,11 +15,8 @@
     font-family: 'Dancing Script', cursive;
     font-size: 25px;
     text-align: center;
+    margin-bottom: 20px;
 }
-
-
-
-
 
 
 /*-------------carrito 1-pedido-------------*/
@@ -44,6 +42,11 @@
     flex-direction:column;
   
   }
+
+  .container-form{
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
   
   .titulo {
     text-align: center;
@@ -53,6 +56,12 @@
     color: #5E6977;
     font-size: 18px;
     font-weight: 400;
+  }
+
+  .title-form{
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
   }
   
   .item {
@@ -212,7 +221,8 @@
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 420px;
+    min-width: 320px;
+    max-width: 550px;
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
@@ -225,33 +235,20 @@
   .form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
-    background: #f2f2f2;
+    background: #e7dae7;
     width: 100%;
     border: 0;
-    margin: 0 0 15px;
+    margin: 15px 0 25px 0;
     padding: 15px;
-    box-sizing: border-box;
     font-size: 14px;
-    border-radius: 5px ;
+    text-align: center;
+    border-radius: 5px;
   }
-  .form label{
-    font-family: "Roboto", sans-serif;
-    outline: 0;
-    background: #f2f2f2;
-    width: 100%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
-    border-radius: 5px ;
-
-    }
  
-  .form select{
+.form select{
     font-family: "Roboto", sans-serif;
     outline: 0;
-    background: #f2f2f2;
+    background: #e7dae7;
     width: 100%;
     border: 0;
     margin: 0 0 15px;
@@ -259,8 +256,9 @@
     box-sizing: border-box;
     font-size: 14px;
     border-radius: 5px ;
-   }    
-  .form button {
+}
+
+.form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -275,6 +273,15 @@
     cursor: pointer;
     border-radius: 15px;
   }
+
+  .form input.submit{
+    width: auto;
+    border: 1px solid;
+    padding: 5px;
+    background: #ffffff;
+    color: black;
+  }
+
   .form button:hover,.form button:active,.form button:focus {
     background: #600c68;
   }
@@ -336,12 +343,20 @@
 
 
 
-@media screen and (min-width:768){ 
-    #burger-menu{
+@media screen and (min-width:768px){ 
+  main{
+   
+    margin: auto;
+    padding-top: 30px;
+    background-color: #ededed;
+    min-width: 768px;
+}
+  
+  #burger-menu{
         display: none;
     }
 
     #icon-menu{
         display: none;
     }
-}
+  }

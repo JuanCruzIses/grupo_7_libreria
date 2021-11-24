@@ -1,0 +1,248 @@
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+/*------------main------------*/
+.frase{
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title-form-admin{
+  margin-bottom: 10px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.container-form-admin{
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.form-admin{
+  position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    min-width: 320px;
+    max-width: 550px;
+    margin: 0 auto 0px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);
+}
+
+.form-admin input{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #e7dae7;
+  width: 100%;
+  border: 0;
+  margin: 15px 0 25px 0;
+  padding: 15px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.form-label{
+  font-family: "Roboto", sans-serif;
+  border: 0;
+  font-weight: 600;
+  color: black;
+  margin: 0 0 15px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.form-admin input.submit{
+  width: auto;
+  border: 1px solid;
+  padding: 5px;
+  background: #ffffff;
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+
+/*-------------carrito 1-pedido-------------*/
+
+.contenedorform{
+    width: 80%;
+    height: auto;
+    margin: 80px auto;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 6px;
+    display: flex;
+    background-color: rgba(194, 160, 226, 0.274);
+    z-index: 10000;
+  }
+  
+  
+  
+  .titulo {
+    text-align: center;
+    height: 60px;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 30px;
+    color: #5E6977;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
+  
+  
+  
+/*-----------FORM DATOS-------------*/
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    width: 80%;
+    margin: auto ;
+   padding:5px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  .form-control{
+      text-align: center;
+  }
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 5px ;
+  }
+  .form label{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 5px ;
+
+    }
+ 
+  .form select{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 5px ;
+   }    
+  .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #6e066e;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  .form button:hover,.form button:active,.form button:focus {
+    background: #600c68;
+  }
+  .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+  }
+  .form .message a {
+    color: #a42aa8;
+    text-decoration: none;
+  }
+
+
+
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .shopping-cart {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+    .item {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .image img {
+      width: 50%;
+    }
+    .image,
+    .quantity,
+    .description {
+      width: 100%;
+      text-align: center;
+      margin: 6px 0;
+    }
+    .buttons {
+      margin-right: 20px;
+    }
+  }
+ /*---------CIERRA CARRITO__________________*/
+/*------------main------------*/
+
+
+
+
+
+
+
+
+@media screen and (min-width:425px){
+
+
+}
+
+
+
+
+
+@media screen and (min-width:768px){ 
+  main{
+   
+    margin: auto;
+    padding-top: 30px;
+    background-color: #ededed;
+    min-width: 768px;
+}
+  
+  #burger-menu{
+        display: none;
+    }
+
+    #icon-menu{
+        display: none;
+    }
+  }

@@ -15,10 +15,10 @@ const mainController = {
     },
     carrito : (req, res) => {
         res.render('carrito')
-    }
+    },
     aboutUs : (req, res) => {
         res.render('aboutUs')
-    }
+    },
     questions : (req, res) => {
         res.render('questions')
     }

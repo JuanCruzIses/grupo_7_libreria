@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" link href="../css/admin.css">
+    <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">   
+    <title>El sombrerero Loco - Delete</title>
+</head>
+<body>
+    <%- include('./partials/header')  %>
+
+    <main>
+        <h2 class="title-form-admin">Formulario de eliminación de productos</h2>		
+
+        <div class="container-form-admin">	
+            <form class="form-admin" action="/admin/delete?_method=DELETE" method="POST" enctype="multipart/form-data">
+	    	    <label for="titulo" class="form-label">ID del producto a eliminar:</label>
+		        <input type="text" id="id" name="id" placeholder="Ingrese el número" class="form-input">				
+            <br>    
+                <input class= submit type="submit">
+            </form>
+        </div>
+    </main>
+
+    <%- include('./partials/footer')  %> 
+</body>
+</html>

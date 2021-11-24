@@ -162,7 +162,7 @@
   "precio": "2790.00",
   "paginas": "424",
   "editorial": "EMECÉ EDITORES",
-  "categorias": "novela",
+  "categorias": "novelas",
   "sinopsis": "Saffron Courtney y Gerhard von Meerbach parecen bendecidos por los dioses: bellos, ricos, enamorados. Pero, a poco de conocerse, Hitler desata sus fuerzas contra Polonia. Dos días más tarde, Gran Bretaña declara la guerra a Alemania y el horror explota en todo el mundo. De un momento al otro, los amantes se ven obligados a separarse y a luchar por sus vidas. Pese a su rechazo por el régimen, Gerhard pelea por Alemania, su patria, con el propósito secreto de hallar la forma de liberarla de Hitler. Pero cuando la unidad militar bajo su comando entra al infierno de la batalla de Stalingrado, comprende que sus chances de sobrevivir son escasas. Mientras tanto Saffron, recrutada por la Dirección de Operaciones Especiales para investigar cómo los nazis han infiltrado las redes aliadas, se convierte en blanco de la persecución del más despiadado de los espías. Enfrentados al mal en sus formas más espantosas, tendrán que tomar la decisión más difícil: sacrificarse por la causa o intentarlo todo para volver a estar juntos. Esperada secuela del gran bestseller Grito de guerra, esta nueva novela de Wilbur Smith retoma la célebre saga Courtney. La guerra de Courtney sumerge a los lectores en una historia épica y vibrante, con el sello inconfundible del maestro de la novela de aventuras.",
   "img": "guerra-de-courtney.jpg",
   "seccion": "novedades"
@@ -186,7 +186,7 @@
   "precio": "2290.00",
   "paginas": "480",
   "editorial": "EDITORIAL PLANETA",
-  "categorias": "novela",
+  "categorias": "novelas",
   "sinopsis": "Una arquitectura exquisita que solo la maestría y la sensibilidad de Alejandro Dolina es capaz de sostener. Luego de la muerte del escritor Sergei Vidal Morozov, su casa editorial le encarga a Franco de Robertis una edición anotada de cuentos póstumos. La elección no es casual: De Robertis ha sido, a lo largo de gran parte de la carrera del reconocido autor, su colaborador más estrecho, un subordinado intelectual –también emocional– en una relación que, como sostiene el propio anotador, tiene “la edad de su memoria”. Sin embargo, una vez lanzado a su métier, las cosas parecen salirse de cauce, y aquello que de entrada estaba planeado como una tarea panegírica cede el paso a una inesperada incontinencia textual. De Robertis destila en sus notas una historia otra que poco parece tener que ver con el libro madre. Una trama subterránea poblada de situaciones inéditas y personajes de lo más variopintos: el mismísimo Morozov y un documental hecho con un grupo de niños actores, amores cruzados, un diamante maldito, traiciones, secretos, celos, luces y sombras. Literaria, teatral, policial, infinita, alucinada, profunda y a la vez divertida: así es Notas al pie, la nueva novela de Alejandro Dolina. Un universo con sus propias reglas que se despliega frente al lector como un juego de cajas chinas. Una arquitectura exquisita que solo la maestría y la sensibilidad del autor de clásicos como Crónicas del Ángel Gris y Cartas marcadas son capaces de sostener.",
   "img": "notas-al-pie.jpg",
   "seccion": "novedades"
@@ -195,11 +195,36 @@
   "id": "17",
   "titulo": "A FUEGO LENTO",
   "autor": "Hawkins, Paula",
-  "precio": "2050",
-  "paginas": "480",
+  "precio": "2350",
+  "paginas": "410",
   "editorial": "PLANETA",
-  "categorias": "novela",
-  "sinopsis": "El descubrimiento del cuerpo de un joven asesinado brutalmente en una casa flotante de Londres desencadena sospechas sobre tres mujeres. Laura es la chica conflictiva que quedó con la víctima la noche en que murió; Carla, aún de luto por la muerte de un familiar, es la tía del joven; y Miriam es la indiscreta vecina que oculta información sobre el caso a la policía. \r\nTres mujeres que no se conocen, pero que tienen distintas conexiones con la víctima. Tres mujeres que, por diferentes razones, viven con resentimiento y que, consciente o inconscientemente, esperan el momento de reparar el daño que se les ha hecho.",
-  "img": "img-1637355043062.jpg"
+  "categorias": "novelas",
+  "sinopsis": "El descubrimiento del cuerpo de un joven asesinado brutalmente en una casa flotante de Londres desencadena sospechas sobre tres mujeres. Laura es la chica conflictiva que quedó con la víctima la noche en que murió; Carla, aún de luto por la muerte de un familiar, es la tía del joven; y Miriam es la indiscreta vecina que oculta información sobre el caso a la policía. \\\\r\\\\nTres mujeres que no se conocen, pero que tienen distintas conexiones con la víctima. Tres mujeres que, por diferentes razones, viven con resentimiento y que, consciente o inconscientemente, esperan el momento de reparar el daño que se les ha hecho.",
+  "img": "img-1637690811010.jpg",
+  "seccion": "novedades"
+ },
+ {
+  "id": "18",
+  "titulo": "CANCIÓN DE NAVIDAD",
+  "autor": "Dickens, Charles",
+  "precio": "1030",
+  "paginas": "",
+  "editorial": "GRIBAUDO ",
+  "categorias": "infantil",
+  "sinopsis": "-",
+  "seccion": "novedades",
+  "img": "img-1637632091563.jpg"
+ },
+ {
+  "id": "19",
+  "titulo": "KAFKA Y LA MUÑECA VIAJERA",
+  "autor": "Sierra, Jordi y Fabra",
+  "precio": "1650",
+  "paginas": "75",
+  "editorial": "SIRUELA",
+  "categorias": "infantil",
+  "sinopsis": "",
+  "img": "img-1637766710726.png",
+  "seccion": "novedades"
  }
 ]
