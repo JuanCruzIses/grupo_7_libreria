@@ -16,5 +16,23 @@
         "confirmaContraseña": "12345",
         "id": "2",
         "categoria": "users"
+    },
+    {
+        "nombre": "Franco",
+        "apellido": "Casanova",
+        "email": "$2a$10$KHaQNsh7e/eLcjHuwDmAYuehKmQYL2qdvl77NA6NWrU4VjMTz2V9q",
+        "contraseña": "12345",
+        "confirmaContraseña": "12345",
+        "id": "3",
+        "categoria": "users"
+    },
+    {
+        "nombre": "Juan ",
+        "apellido": "Perez",
+        "email": "$2a$10$MPFpKprEtBuC9WEWLB91OO5zYIdqwDyuisEk9qSjWHXIJOlOYuuES",
+        "contraseña": "hola123",
+        "confirmaContraseña": "hola123",
+        "id": "4",
+        "categoria": "users"
     }
 ]
