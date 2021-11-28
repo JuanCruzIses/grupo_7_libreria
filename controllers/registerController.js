@@ -1,10 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const {Writable}=require('stream');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
-const listaUsuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+
+function getAllUsers(){
+return JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+}
+
 
 const registerController = {
     vistaRegistro : (req, res) => {
@@ -12,20 +18,29 @@ const registerController = {
     },
 
     registrar : (req, res) => {
+        const listaUsuarios= getAllUsers();
         let ultimoId = Number(listaUsuarios[listaUsuarios.length -1].id);
 		let nuevoUltimoId = (ultimoId + 1).toString();
         let errores = validationResult(req)
-        let usuarioEnBD = listaUsuarios.filter(usuario => usuario.email == req.body.email)
+    
+        const user={
+            email:req.body.email,
+        }
+        const email=req.body.email;
+        const usuarioEnDB=listaUsuarios.find((user)=>{
+            return user.email===email;
+        });
         
-        if (usuarioEnBD){
+         
+        if (usuarioEnDB){
             return res.render('register', {errores: [{msg: 'Este email ya se encuentra registrado'}] })
         }
 
-        if (req.body.contraseña == req.body.confirmaContraseña && errores.isEmpty() ) {
+        else if (req.body.contraseña == req.body.confirmaContraseña && errores.isEmpty() ) {
             const nuevoUsuario = {
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
-                email: bcrypt.hashSync(req.body.email, 10),
+                email: req.body.email,
                 contraseña: req.body.contraseña,
                 confirmaContraseña: req.body.confirmaContraseña,
                 id: nuevoUltimoId,
