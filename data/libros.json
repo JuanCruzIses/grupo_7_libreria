@@ -204,18 +204,6 @@
   "seccion": "novedades"
  },
  {
-  "id": "18",
-  "titulo": "CANCIÓN DE NAVIDAD",
-  "autor": "Dickens, Charles",
-  "precio": "1030",
-  "paginas": "",
-  "editorial": "GRIBAUDO ",
-  "categorias": "infantil",
-  "sinopsis": "-",
-  "seccion": "novedades",
-  "img": "img-1637632091563.jpg"
- },
- {
   "id": "19",
   "titulo": "KAFKA Y LA MUÑECA VIAJERA",
   "autor": "Sierra, Jordi y Fabra",
@@ -226,5 +214,17 @@
   "sinopsis": "",
   "img": "img-1637766710726.png",
   "seccion": "novedades"
+ },
+ {
+  "id": "20",
+  "titulo": "HOLA",
+  "autor": "chau",
+  "precio": "123",
+  "paginas": "123",
+  "editorial": "12312",
+  "categorias": "juveniles",
+  "sinopsis": "asdasdasa",
+  "seccion": "sinSeccion",
+  "img": "img-1637774170622.png"
  }
 ]
