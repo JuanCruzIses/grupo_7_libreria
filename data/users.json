@@ -1,47 +1,34 @@
 [
  {
-  "nombre": "Juan cruz",
-  "apellido": "Ises",
-  "email": "juancruzises@gmail.com",
-  "contraseña": "12345",
-  "confirmaContraseña": "12345",
+  "nombre": "Maria",
+  "apellido": "Alvarez",
+  "email": "marialvarez@gmail.com",
+  "contrasenia": "$2a$12$C2XpGWt9dSlOuMm0TKOD/ekq5Hvt6dJNYGF2zuKssL46Bmcw74iIa",
   "id": "1",
-  "categoria": "admin"
+  "categoria": "users"
  },
  {
-  "nombre": "Rodrigo",
-  "apellido": "Noya",
-  "email": "rodri.noya@gmail.com",
-  "contraseña": "12345",
-  "confirmaContraseña": "12345",
+  "nombre": "Mauro",
+  "apellido": "Dominguez",
+  "email": "maudominguez@gmail.com",
+  "contrasenia": "$2a$12$gwSe996dlCXzyhQjAon/DOhR06RBHIJQI.T.pODwqlS.pD797lZj.",
   "id": "2",
   "categoria": "users"
  },
  {
-  "nombre": "Franco",
-  "apellido": "Casanova",
-  "email": "$2a$10$KHaQNsh7e/eLcjHuwDmAYuehKmQYL2qdvl77NA6NWrU4VjMTz2V9q",
-  "contraseña": "12345",
-  "confirmaContraseña": "12345",
+  "nombre": "Juan cruz",
+  "apellido": "Ises",
+  "email": "juancruzises@gmail.com",
+  "contrasenia": "$2a$12$xYXLedSnyAg4aWDXKJbneuvw6jWfUQuGP5ZNCGqSAxY0SJaTMjJmi",
   "id": "3",
-  "categoria": "users"
+  "categoria": "admin"
  },
  {
-  "nombre": "Juan ",
-  "apellido": "Perez",
-  "email": "$2a$10$MPFpKprEtBuC9WEWLB91OO5zYIdqwDyuisEk9qSjWHXIJOlOYuuES",
-  "contraseña": "hola123",
-  "confirmaContraseña": "hola123",
+  "nombre": "Esteban",
+  "apellido": "Martinez",
+  "email": "estebanmartinez@hotmail.com",
+  "contrasenia": "$2a$12$VOvUdXy3h5jB45q7uvwoSeJDlbngSYal34X/5Rkk/qFCt4Do7EsOC",
   "id": "4",
-  "categoria": "users"
- },
- {
-  "nombre": "a",
-  "apellido": "a",
-  "email": "alvarez.rocio@yahoo.com.ar",
-  "contraseña": "12345",
-  "confirmaContraseña": "12345",
-  "id": "5",
   "categoria": "users"
  }
 ]

@@ -19,7 +19,12 @@
     <main>
         <h2 class=cen>Bienvenid@</h2>
         <div class="form">
-            <form class="login-form" method="post" action="" >
+            <form class="login-form" method="post" action="/login" >
+                <% if (locals.errores ){ 
+                    errores.forEach(error => {%>
+                        <p class="mensaje-error"> <%= error.msg%> </p>
+                        <% }) %>
+                <% } %> 
                   <input type="text" class="form-control" placeholder="Nombre de usuario" required/>
                   <div class="form-group">
                    <div class="" >

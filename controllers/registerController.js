@@ -36,13 +36,12 @@ const registerController = {
             return res.render('register', {errores: [{msg: 'Este email ya se encuentra registrado'}] })
         }
 
-        else if (req.body.contraseña == req.body.confirmaContraseña && errores.isEmpty() ) {
+        else if (req.body.contraseña === req.body.confirmaContraseña && errores.isEmpty() ) {
             const nuevoUsuario = {
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.email,
-                contraseña: req.body.contraseña,
-                confirmaContraseña: req.body.confirmaContraseña,
+                contrasenia: bcrypt.hashSync(req.body.contraseña, 12),
                 id: nuevoUltimoId,
                 categoria:"users",
             }

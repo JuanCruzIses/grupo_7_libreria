@@ -5,6 +5,7 @@ const router = express.Router();
 const loginController = require('../controllers/loginController.js');
 
 //Dando ruta al controlador
-router.get('/', loginController.login);
+router.get('/', loginController.vistaLogin);
+router.post('/', loginController.login)
 
 module.exports = router;
