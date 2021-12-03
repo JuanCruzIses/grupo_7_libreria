@@ -2,24 +2,20 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const { localsName } = require('ejs');
 const {Writable}=require('stream');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
+const usuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
 
 
-function getAllUsers(){
-return JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-}
-
-
-const registerController = {
+const userController = {
     vistaRegistro : (req, res) => {
         res.render("register")
     },
 
     registrar : (req, res) => {
-        const listaUsuarios= getAllUsers();
-        let ultimoId = Number(listaUsuarios[listaUsuarios.length -1].id);
+        let ultimoId = Number(usuarios[usuarios.length -1].id);
 		let nuevoUltimoId = (ultimoId + 1).toString();
         let errores = validationResult(req)
     
@@ -27,7 +23,7 @@ const registerController = {
             email:req.body.email,
         }
         const email=req.body.email;
-        const usuarioEnDB=listaUsuarios.find((user)=>{
+        const usuarioEnDB=usuarios.find((user)=>{
             return user.email===email;
         });
         
@@ -45,15 +41,34 @@ const registerController = {
                 id: nuevoUltimoId,
                 categoria:"users",
             }
-            listaUsuarios.push(nuevoUsuario);
+            usuarios.push(nuevoUsuario);
             fs.writeFileSync(usersFilePath, JSON.stringify(listaUsuarios, null, ' '))
-            res.redirect('/login')
+            res.redirect('/user/login')
         }
         else {
             return res.render ("register", { errores : errores.array(), old : req.body })
-        } 
-         
-        } 
+        }},
+
+        vistaLogin : (req, res) => {
+            res.render('login')
+        },
+    
+        login : (req, res) => {
+            let errores = validationResult(req)
+            console.log(req.body.email)          
+            const usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
+            console.log(usuarioEncontrado)  
+            let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)    
+            
+            if (usuarioEncontrado && verificaContraseñaHash){
+                delete usuarioEncontrado.contrasenia
+                req.session.usuarioLogeado = usuarioEncontrado
+                console.log(req.session)
+                res.redirect("/")
+            } else {
+                return res.render('login', {errores: [{ msg: 'Por favor verifique ingresar correctamente sus datos' }] } ) 
+            }
+        }
 };
 
-module.exports = registerController;
+module.exports = userController;

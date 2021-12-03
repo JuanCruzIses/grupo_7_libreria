@@ -1,5 +1,6 @@
 const createError = require('http-errors');
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -8,8 +9,9 @@ const methodOverride = require('method-override')
 
 //Declarando rutas
 const indexRouter = require('./routes/indexRoute');
-const loginRouter = require('./routes/loginRoute')
-const registerRouter = require('./routes/registerRoute')
+
+///-----Rutas de usuario-------////
+const userRouter = require('./routes/usersRoute')
 const productRouter = require('./routes/productRoute');
 const carritoRouter = require('./routes/carritoRoute');
 const aboutUsRouter = require('./routes/aboutUsRoute');
@@ -29,18 +31,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
+app.use(session({ secret: "Somos el sombrero loco",
+                  resave: false,
+                  saveUninitialized: false}))
+
 
 //Uso de rutas
 app.use('/', indexRouter);
-app.use('/login', loginRouter);
-app.use('/register', registerRouter);
+app.use('/user', userRouter)
 app.use('/products', productRouter);
 app.use('/carrito', carritoRouter);
 app.use('/aboutUs', aboutUsRouter);
 app.use('/questions', questionsRouter);
-
-//app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 
 

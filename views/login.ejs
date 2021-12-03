@@ -8,9 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">
-    <link rel="stylesheet" type="text/css" link href="./css/register.css"> 
-    <link rel="stylesheet" type="text/css" link href="./css/login.css">
+    <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">
+    <link rel="stylesheet" type="text/css" link href="../css/register.css"> 
+    <link rel="stylesheet" type="text/css" link href="../css/login.css">
     <title>El sombrero Loco</title>
 </head>
 
@@ -19,22 +19,22 @@
     <main>
         <h2 class=cen>Bienvenid@</h2>
         <div class="form">
-            <form class="login-form" method="post" action="/login" >
+            <form class="login-form" method="post" action="/user/login" >
                 <% if (locals.errores ){ 
                     errores.forEach(error => {%>
                         <p class="mensaje-error"> <%= error.msg%> </p>
                         <% }) %>
                 <% } %> 
-                  <input type="text" class="form-control" placeholder="Nombre de usuario" required/>
+                  <input name="email" type="text" class="form-control" placeholder="Nombre de usuario" required/>
                   <div class="form-group">
                    <div class="" >
-                  <input type="password" class="form-control" placeholder="password"  data-toggle="password" required/>
+                  <input name="contraseña" type="password" class="form-control" placeholder="Contraseña"  data-toggle="password" required/>
                   
                   </div>
                   </div>
                 
                   <button >Ingresar</button>
-                  <p class="message">No estas registrado? <a href="/register">Crear una cuenta</a></p>
+                  <p class="message">No estas registrado? <a href="/user/register">Crear una cuenta</a></p>
                 </form>
                 </div> 
     </main>

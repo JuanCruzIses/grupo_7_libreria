@@ -30,5 +30,13 @@
   "contrasenia": "$2a$12$VOvUdXy3h5jB45q7uvwoSeJDlbngSYal34X/5Rkk/qFCt4Do7EsOC",
   "id": "4",
   "categoria": "users"
+ },
+ {
+  "nombre": "Maximiliano",
+  "apellido": "Villalva",
+  "email": "maxiv@yahoo.com.ar",
+  "contrasenia": "$2a$12$gmav6WzG8IDVuJZCwuTt6e6g.HhQ5KG28VxIspevXB1iIKNrXHs5e",
+  "id": "5",
+  "categoria": "users"
  }
 ]

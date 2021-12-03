@@ -10,15 +10,15 @@
 
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
    
-    <link rel="stylesheet" type="text/css" link href="./css/register.css"> 
-    <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">
+    <link rel="stylesheet" type="text/css" link href="../css/register.css"> 
+    <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">
     <title>El sombrero Loco</title>
 </head>
 <body>
     <%- include('./partials/header')  %> 
     <main>
         <h2 class=cen >Bienvenid@</h2>
-        <form class="form" method="post" action="/register">
+        <form class="form" method="post" action="/user/register">
             <% if (locals.errores ){ 
                     errores.forEach(error => {%>
                         <p class="mensaje-error"> <%= error.msg%> </p>
@@ -37,7 +37,7 @@
             <label for="acuerdo">Estoy de acuerdo con terminos y condiciones.</label>
                 <input type="checkbox" name="acuerdo" value="Acepta" required>
                 <button>Registrarse</button>
-            <p class="message">Ya estas registrado? <a href="/login">Iniciar Sesión</a></p>
+            <p class="message">Ya estas registrado? <a href="/user/login">Iniciar Sesión</a></p>
           </form>
     </main>
     <%- include('./partials/footer')  %> 
