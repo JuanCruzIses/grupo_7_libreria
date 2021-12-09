@@ -192,3 +192,15 @@ footer{
 
 }
 
+
+
+/*----------------PROFILE-------------*/
+.title-profile{
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 30px;
+};
+
+form p.profile-parraf{
+  color: red;
+}

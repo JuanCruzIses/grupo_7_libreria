@@ -12,7 +12,8 @@ router.post('/register', validateRegister , userController.registrar);
 //----------LOGIN-------//
 router.get('/login', loggedMiddlewares ,userController.vistaLogin);
 router.post('/login', userController.login)
-
-
+//----------PROFILE-------//
+router.get('/profile', userController.vistaProfile);
+router.put('/profile/:id', userController.editProfile)
 
 module.exports = router;

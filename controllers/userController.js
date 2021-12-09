@@ -63,12 +63,42 @@ const userController = {
             if (usuarioEncontrado && verificaContraseñaHash){
                 delete usuarioEncontrado.contrasenia
                 req.session.usuarioLogeado = usuarioEncontrado
-                console.log(req.session)
                 res.redirect("/")
             } else {
                 return res.render('login', {errores: [{ msg: 'Por favor verifique ingresar correctamente sus datos' }] } ) 
             }
-        }
+        },
+
+        vistaProfile : (req, res) => {
+            res.render('profile', {usuarioLogeado : req.session.usuarioLogeado})
+            
+        },
+
+        editProfile: (req, res) => {
+		let userToEdit = usuarios.filter(usuario => usuario.email == req.session.usuarioLogeado.email)
+        console.log(userToEdit)
+		newUserData = {
+			nombre: req.body.nombre,
+			apellido: req.body.apellido,
+            email: userToEdit.email,
+        	contrasenia: req.body.nuevaContraseña,
+            id: userToEdit.id,
+            categoria: userToEdit.categoria 
+        	};
+        console.log(newUserData)
+		
+		let newUser = usuarios.map(usuario => {
+            let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, userToEdit.contrasenia)   
+			if (verificaContraseñaHash){
+				return usuarios = {...newUserData};}
+            return usuarios
+		})
+
+		fs.writeFileSync(usersFilePath, JSON.stringify(newUser, null, ' '));
+		res.redirect('/profile'); 
+        },
+        
+    
 };
 
 module.exports = userController;

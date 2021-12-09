@@ -30,13 +30,6 @@ router.get('/edit', adminController.indexEdit);
 router.put('/edit/:id', upload.any(), adminController.update); 
 
 
-
-/*** EDIT ONE PRODUCT 
-router.get('/edit', router.get('/create', adminController.index); 
-.index); 
-router.patch('/edit', upload.any(),adminController.update); 
-***/
-
  // *** DELETE ONE PRODUCT ***
 router.get('/delete', adminController.indexDelete); 
 router.delete('/delete', adminController.destroy);
