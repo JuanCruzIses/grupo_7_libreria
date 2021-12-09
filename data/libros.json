@@ -204,7 +204,7 @@
   "seccion": "novedades"
  },
  {
-  "id": "19",
+  "id": "18",
   "titulo": "KAFKA Y LA MUÑECA VIAJERA",
   "autor": "Sierra, Jordi y Fabra",
   "precio": "1650",
@@ -214,17 +214,5 @@
   "sinopsis": "",
   "img": "img-1637766710726.png",
   "seccion": "novedades"
- },
- {
-  "id": "20",
-  "titulo": "HOLA",
-  "autor": "chau",
-  "precio": "123",
-  "paginas": "123",
-  "editorial": "12312",
-  "categorias": "juveniles",
-  "sinopsis": "asdasdasa",
-  "seccion": "sinSeccion",
-  "img": "img-1637774170622.png"
  }
 ]

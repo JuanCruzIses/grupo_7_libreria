@@ -21,7 +21,7 @@
 <body>
     <%- include('./partials/header')  %> 
     <main>
-        <h1 class="title-profile">¡Hola <%=usuarioLogeado.nombre%> <%=usuarioLogeado.apellido%>!</h1>
+        <h1 class="title-profile">¡Hola <%=locals.usuarioLogeado.nombre%> <%=locals.usuarioLogeado.apellido%>!</h1>
 
         <section>
             <form class="form" action="/user/profile/:id?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -31,13 +31,13 @@
                 <br>
 
                 <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" name="nombre" class="form-control" value="<%=usuarioLogeado.nombre%>">
+                <input type="text" name="nombre" class="form-control" value="<%=locals.usuarioLogeado.nombre%>">
 
                 <label for="apellido" class="form-label">Apellido:</label>
-                <input type="text" name="apellido" class="form-control" value="<%=usuarioLogeado.apellido%>">
+                <input type="text" name="apellido" class="form-control" value="<%=locals.usuarioLogeado.apellido%>">
 
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" name="email" class="form-control" value="<%=usuarioLogeado.email%>">
+                <input type="email" name="email" class="form-control" value="<%=locals.usuarioLogeado.email%>">
 
                 <label for="contraseña" class="form-label">Contraseña actual:</label>
                 <input type="password" name="contraseña" class="form-control" placeholder="Ingrese su contraseña actual">

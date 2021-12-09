@@ -35,7 +35,11 @@ app.use(methodOverride('_method'));
 app.use(session({ secret: "Somos el sombrero loco",
                   resave: false,
                   saveUninitialized: false}))
-
+                  
+///-----Requiriendo middleware de usuario logeado----///
+const userLoggedMiddlewares = require('./middlewares/userLoggedMiddlewares')
+//Uso de middlewares
+app.use(userLoggedMiddlewares);
 
 //Uso de rutas
 app.use('/', indexRouter);
@@ -45,6 +49,8 @@ app.use('/carrito', carritoRouter);
 app.use('/aboutUs', aboutUsRouter);
 app.use('/questions', questionsRouter);
 app.use('/admin', adminRouter);
+
+
 
 
 // catch 404 and forward to error handler

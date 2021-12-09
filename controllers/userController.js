@@ -54,10 +54,8 @@ const userController = {
         },
     
         login : (req, res) => {
-            let errores = validationResult(req)
-            console.log(req.body.email)          
+            let errores = validationResult(req)          
             const usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
-            console.log(usuarioEncontrado)  
             let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)    
             
             if (usuarioEncontrado && verificaContraseñaHash){
@@ -70,7 +68,7 @@ const userController = {
         },
 
         vistaProfile : (req, res) => {
-            res.render('profile', {usuarioLogeado : req.session.usuarioLogeado})
+            res.render('profile')
             
         },
 
