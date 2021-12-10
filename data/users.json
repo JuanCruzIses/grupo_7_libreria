@@ -1,42 +1,8 @@
-[
- {
-  "nombre": "Maria",
-  "apellido": "Alvarez",
-  "email": "marialvarez@gmail.com",
-  "contrasenia": "$2a$12$C2XpGWt9dSlOuMm0TKOD/ekq5Hvt6dJNYGF2zuKssL46Bmcw74iIa",
-  "id": "1",
-  "categoria": "users"
- },
- {
-  "nombre": "Mauro",
-  "apellido": "Dominguez",
-  "email": "maudominguez@gmail.com",
-  "contrasenia": "$2a$12$gwSe996dlCXzyhQjAon/DOhR06RBHIJQI.T.pODwqlS.pD797lZj.",
-  "id": "2",
-  "categoria": "users"
- },
- {
-  "nombre": "Juan cruz",
-  "apellido": "Ises",
-  "email": "juancruzises@gmail.com",
-  "contrasenia": "$2a$12$xYXLedSnyAg4aWDXKJbneuvw6jWfUQuGP5ZNCGqSAxY0SJaTMjJmi",
-  "id": "3",
-  "categoria": "admin"
- },
- {
-  "nombre": "Esteban",
-  "apellido": "Martinez",
-  "email": "estebanmartinez@hotmail.com",
-  "contrasenia": "$2a$12$VOvUdXy3h5jB45q7uvwoSeJDlbngSYal34X/5Rkk/qFCt4Do7EsOC",
-  "id": "4",
-  "categoria": "users"
- },
- {
-  "nombre": "Maximiliano",
-  "apellido": "Villalva",
-  "email": "maxiv@yahoo.com.ar",
-  "contrasenia": "$2a$12$gmav6WzG8IDVuJZCwuTt6e6g.HhQ5KG28VxIspevXB1iIKNrXHs5e",
-  "id": "5",
-  "categoria": "users"
- }
-]
+{
+ "nombre": "Jorge",
+ "apellido": "Perez",
+ "email": "jorgeperez@gmail.com",
+ "contrasenia": "$2a$12$BVhWuoJNPEYPjj7RdXt0COup6uO9fWaBfQmza1sn0/TIRE1WYMpDa",
+ "id": "6",
+ "categoria": "users"
+}

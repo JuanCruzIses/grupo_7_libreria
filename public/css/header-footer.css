@@ -291,13 +291,12 @@ label.burger-button i{
    
 
     .botones-barra-superior{
-        width: 35%;
-        margin-right: -20px;
+        margin-right: -50px;
         display: flex;
     }
 
     .botones-barra-superior li{
-        margin-right: 30px;
+        margin-right: 25px;
         list-style: none;
     }
     
@@ -418,7 +417,7 @@ ul, ol {
 
     .contenedor-buscador{
         width: 35%;
-        margin-left: 30px;
+        margin: auto;
     }
 
     .contenedor-buscador label button:hover {

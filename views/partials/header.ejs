@@ -75,14 +75,16 @@
  </nav>
         
         <div class="botones-barra-superior">
-            <% if(!locals.isLogged){ %>
-                <li><a href="/user/register"><i class="fas fa-user-plus"></i>Registrarse</a></li>
-                <li><a href="/user/login"><i class="fas fa-user"></i>Iniciar sesión</a></li>
+            <% if(locals.isLogged){ %>
                 <li><a href="/carrito"><i class="fas fa-shopping-cart"></i>Carrito</a></li>
-            <% } else {%>
                 <li><a href="/user/profile"><i class="fas fa-house-user"></i><%= locals.usuarioLogeado.nombre%></a></li>
+                <li><a href="/user/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            <% } else {%>
+                <li><a href="/user/register"><i class="fas fa-user-plus"></i>Register</a></li>
+                <li><a href="/user/login"><i class="fas fa-user"></i>Login</a></li>
                 <li><a href="/carrito"><i class="fas fa-shopping-cart"></i>Carrito</a></li>
             <% } %>
+            <% console.log(locals.isLogged) %>
                         
         </div>
         <div>

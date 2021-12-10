@@ -42,7 +42,7 @@ const userController = {
                 categoria:"users",
             }
             usuarios.push(nuevoUsuario);
-            fs.writeFileSync(usersFilePath, JSON.stringify(listaUsuarios, null, ' '))
+            fs.writeFileSync(usersFilePath, JSON.stringify(nuevoUsuario, null, ' '))
             res.redirect('/user/login')
         }
         else {
@@ -55,11 +55,11 @@ const userController = {
     
         login : (req, res) => {
             let errores = validationResult(req)          
-            const usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
+            var usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
+            console.log(usuarioEncontrado)
             let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)    
             
             if (usuarioEncontrado && verificaContraseñaHash){
-                delete usuarioEncontrado.contrasenia
                 req.session.usuarioLogeado = usuarioEncontrado
                 res.redirect("/")
             } else {
@@ -67,19 +67,26 @@ const userController = {
             }
         },
 
+        logout : (req, res) => {
+            delete req.session.usuarioLogeado;
+            console.log(req.session.usuarioLogeado)
+            console.log("Usuario cerro sesión")
+            return res.redirect("/user/login")
+        },
+
         vistaProfile : (req, res) => {
-            res.render('profile')
-            
+            user : req.session.usuarioLogeado; 
+            res.render('profile');
         },
 
         editProfile: (req, res) => {
-		let userToEdit = usuarios.filter(usuario => usuario.email == req.session.usuarioLogeado.email)
+		let userToEdit = usuarios.filter(usuario => usuario.email == user.email)
         console.log(userToEdit)
 		newUserData = {
-			nombre: req.body.nombre,
-			apellido: req.body.apellido,
-            email: userToEdit.email,
-        	contrasenia: req.body.nuevaContraseña,
+			nombre: req.body.nombreProfile,
+			apellido: req.body.apellidoProfile,
+            email: userToEdit.emailProfile,
+        	contrasenia: req.body.nuevaContraseñaProfile,
             id: userToEdit.id,
             categoria: userToEdit.categoria 
         	};
