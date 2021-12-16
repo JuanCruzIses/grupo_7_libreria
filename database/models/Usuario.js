@@ -10,22 +10,22 @@ module.exports = (sequelize, dataTypes) => {
             notNull: true
         },
         usuario_nombre : {
-            type: dataTypes.VARCHAR(20),
+            type: dataTypes.STRING(20),
             notNull: true
         }, 
         usuario_apellido : {
-            type: dataTypes.VARCHAR(20),
+            type: dataTypes.STRING(20),
             notNull: true
         },
         usuario_imagen: {
-            type: dataTypes.VARCHAR(20),
+            type: dataTypes.STRING(20),
         },
         usuario_email: {
-            type : dataTypes.VARCHAR(20),
+            type : dataTypes.STRING(20),
             notNull : true
         },
         usuario_contraseña : {
-            type : dataTypes.VARCHAR(20),
+            type : dataTypes.STRING(20),
             notNull : true
         },
         usuario_rol_id: {

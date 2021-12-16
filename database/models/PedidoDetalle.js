@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
                 key: 'libro_id'}
         },
         pedidoDetalle_descripcion: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         pedidoDetalle_cantidad: {
             type: dataTypes.INTEGER,

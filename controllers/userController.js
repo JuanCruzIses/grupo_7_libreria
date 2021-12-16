@@ -7,7 +7,9 @@ const {Writable}=require('stream');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const usuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
-
+let db = require("../database/models");
+const Sequelize = require("sequelize")
+const Op = Sequelize.Op
 
 const userController = {
     vistaRegistro : (req, res) => {
@@ -15,36 +17,43 @@ const userController = {
     },
 
     registrar : (req, res) => {
-        let ultimoId = Number(usuarios[usuarios.length -1].id);
+        let ultimoId = db.Usuario.findAll()
+            .then(function(usuarios){
+                let id = usuarios.length -1;
+                return id
+            })
+        //let ultimoId = Number(usuarios[usuarios.length -1].id);
 		let nuevoUltimoId = (ultimoId + 1).toString();
         let errores = validationResult(req)
     
-        const user={
-            email:req.body.email,
-        }
-        const email=req.body.email;
-        const usuarioEnDB=usuarios.find((user)=>{
-            return user.email===email;
-        });
+        const email = req.body.email;
+        const usuarioEnDB = db.Usuario.findOne({where: {email : {[Op.like] : req.body.email} }})
+            .then(function(usuario){
+                return usuario
+            })
+        //const usuarioEnDB = usuarios.find((user)=>{
+        //    return user.email===email;});
         
-         
         if (usuarioEnDB){
             return res.render('register', {errores: [{msg: 'Este email ya se encuentra registrado'}] })
         }
 
         else if (req.body.contraseña === req.body.confirmaContraseña && errores.isEmpty() ) {
             const nuevoUsuario = {
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.email,
-                contrasenia: bcrypt.hashSync(req.body.contraseña, 12),
-                id: nuevoUltimoId,
-                categoria:"users",
+                usuario_id: nuevoUltimoId,
+                usuario_nombre: req.body.nombre,
+                usuario_apellido: req.body.apellido,
+                usuario_imagen: req.body.imagen,
+                usuario_email: req.body.email,
+                usuario_contraseña: bcrypt.hashSync(req.body.contraseña, 12),
+                usuario_rol_id: 1,
             }
-            usuarios.push(nuevoUsuario);
-            fs.writeFileSync(usersFilePath, JSON.stringify(nuevoUsuario, null, ' '))
+            db.Usuario.create({nuevoUsuario: nuevoUsuario})
+            //usuarios.push(nuevoUsuario);
+            //fs.writeFileSync(usersFilePath, JSON.stringify(nuevoUsuario, null, ' '))
             res.redirect('/user/login')
         }
+        
         else {
             return res.render ("register", { errores : errores.array(), old : req.body })
         }},

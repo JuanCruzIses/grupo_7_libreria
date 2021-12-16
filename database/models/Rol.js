@@ -5,12 +5,11 @@ module.exports = (sequelize, dataTypes) => {
         rol_id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
             unique: true,
             notNull: true
         },
         rol_descripcion: {
-            type: dataTypes.VARCHAR(20),
+            type: dataTypes.STRING(20),
         } 
     };
 

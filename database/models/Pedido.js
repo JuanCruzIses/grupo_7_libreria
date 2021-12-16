@@ -16,13 +16,13 @@ module.exports = (sequelize, dataTypes) => {
                 key: 'usuario_id'}
         },
         pedido_direccion: {
-            type: dataTypes.VARCHAR(60),
+            type: dataTypes.STRING(60),
         },
         pedido_precio: {
             type: dataTypes.DECIMAL,
         },
         pedido_metodo_pago: {
-            type: dataTypes.VARCHAR(60),
+            type: dataTypes.STRING(60),
         },
     };
 

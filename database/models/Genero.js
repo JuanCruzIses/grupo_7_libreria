@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
             notNull: true
         },
         genero_descripcion : {
-            type: dataTypes.VARCHAR(30),
+            type: dataTypes.STRING(30),
         } 
     };
 

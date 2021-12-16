@@ -10,10 +10,10 @@ module.exports = (sequelize, dataTypes) => {
             notNull: true
         },
         autor_nombre: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         autor_apellido: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         autor_biografia: {
             type: dataTypes.TEXT,

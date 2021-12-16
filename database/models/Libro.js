@@ -28,10 +28,10 @@ module.exports = (sequelize, dataTypes) => {
                 key: 'autor_id'}
         },
         libro_titulo: {
-            type: dataTypes.VARCHAR(60)
+            type: dataTypes.STRING(60)
         },
         libro_imagen: {
-            type: dataTypes.VARCHAR(60)
+            type: dataTypes.STRING(60)
         },
         libro_sinopsis: {
             type: dataTypes.TEXT
