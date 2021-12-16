@@ -34,7 +34,7 @@ main{
 }
 
 .banner-img{
-    width: 90vw;
+    width: 100%;
     min-height: 120px;
     margin-top: 30px;
 }
@@ -120,7 +120,7 @@ h3{
     }
 
     .banner-img{
-        width: 80vw;
+        width: 100%;
     }
 
     .productos{
