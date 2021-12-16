@@ -1,8 +1,8 @@
 {
- "nombre": "Jorge",
- "apellido": "Perez",
- "email": "jorgeperez@gmail.com",
- "contrasenia": "$2a$12$BVhWuoJNPEYPjj7RdXt0COup6uO9fWaBfQmza1sn0/TIRE1WYMpDa",
- "id": "6",
+ "nombre": "Tomas",
+ "apellido": "Ramirez",
+ "email": "tomram@gmail.com",
+ "contrasenia": "$2a$12$pQEsjeHymIJunA8uB/pBQ.SYk3b.aIC567Dc3UmQRb8i9wjUFdFiG",
+ "id": "2",
  "categoria": "users"
 }
