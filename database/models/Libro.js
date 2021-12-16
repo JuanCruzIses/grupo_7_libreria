@@ -30,6 +30,9 @@ module.exports = (sequelize, dataTypes) => {
         libro_titulo: {
             type: dataTypes.VARCHAR(60)
         },
+        libro_imagen: {
+            type: dataTypes.VARCHAR(60)
+        },
         libro_sinopsis: {
             type: dataTypes.TEXT
         },

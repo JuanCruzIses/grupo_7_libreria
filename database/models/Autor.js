@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
         autor_apellido: {
             type: dataTypes.VARCHAR(100),
         },
-        autor_nombre : {
+        autor_biografia: {
             type: dataTypes.TEXT,
         },
     };

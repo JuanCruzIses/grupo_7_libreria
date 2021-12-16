@@ -17,6 +17,9 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.VARCHAR(20),
             notNull: true
         },
+        usuario_imagen: {
+            type: dataTypes.VARCHAR(20),
+        },
         usuario_email: {
             type : dataTypes.VARCHAR(20),
             notNull : true
