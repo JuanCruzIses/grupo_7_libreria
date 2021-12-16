@@ -39,8 +39,11 @@ module.exports = (sequelize, dataTypes) => {
         libro_paginas: {
             type: dataTypes.INTEGER
         },
-        libro_editorial: {
-            type: dataTypes.VARCHAR(50),
+        libro_editorial_id: {
+            type: dataTypes.INTEGER,
+            references: {
+                model: 'Editorial',
+                key: 'editorial_id'}
         },  
         libro_precio: {
             type: dataTypes.DECIMAL
