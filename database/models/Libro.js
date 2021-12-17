@@ -1,3 +1,9 @@
+const Editorial = require('./Editorial');
+const Autor = require('./Autor');
+const Subgenero = require('./Subgenero');
+const PedidoDetalle = require('./PedidoDetalle');
+const Genero = require('./Genero');
+
 module.exports = (sequelize, dataTypes) => {
     let alias = "Libro";
 
@@ -60,6 +66,41 @@ module.exports = (sequelize, dataTypes) => {
 
 
     const Libro = sequelize.define(alias, cols, config)
+
+    Libro.associate = function(){
+        Libro.belongsTo(PedidoDetalle, {
+            as: "pedido_detalle_libro",
+            foreignKey: "pedidoDetalle_libro_id"
+        })
+    }
+
+    Libro.associate = function(){
+        Libro.hasMany(Genero, {
+            as: "libro_genero",
+            foreignKey: "libro_genero_id"
+        })
+    }
+
+    Libro.associate = function(){
+        Libro.hasMany(Subgenero, {
+            as: "libro_subgenero",
+            foreignKey: "libro_subgenero_id"
+        })
+    }
+
+    Libro.associate = function(){
+        Libro.hasMany(Autor, {
+            as: "libro_autor",
+            foreignKey: "libro_autor_id"
+        })
+    }
+
+    Libro.associate = function(){
+        Libro.hasMany(Editorial, {
+            as: "libro_editorial",
+            foreignKey: "libro_editorial_id"
+        })
+    }
 
     return Libro
 }

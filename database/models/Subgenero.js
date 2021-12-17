@@ -1,3 +1,5 @@
+const Libro = require('./Libro');
+
 module.exports = (sequelize, dataTypes) => {
     let alias = "Subgenero";
 
@@ -21,6 +23,13 @@ module.exports = (sequelize, dataTypes) => {
 
 
     const Subgenero = sequelize.define(alias, cols, config)
+
+    Subgenero.associate = function(){
+        Subgenero.belongsTo(Libro, {
+            as: "libro_subgenero",
+            foreignKey: "libro_subgenero_id"
+        })
+    }
 
     return Subgenero
 }

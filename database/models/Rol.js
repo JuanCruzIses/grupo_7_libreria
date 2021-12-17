@@ -1,3 +1,5 @@
+const Usuario = require('./Usuario');
+
 module.exports = (sequelize, dataTypes) => {
     let alias = "Rol";
 
@@ -20,6 +22,13 @@ module.exports = (sequelize, dataTypes) => {
 
 
     const Rol = sequelize.define(alias, cols, config)
+
+    Rol.associate = function(){
+        Rol.belongsTo(Usuario, {
+            as: "usuarios_roles",
+            foreignKey: "usuario_rol_id"
+        })
+    }
 
     return Rol
 }

@@ -1,3 +1,6 @@
+const Libro = require('./Libro');
+const Pedido = require('./Pedido');
+
 module.exports = (sequelize, dataTypes) => {
     let alias = "PedidoDetalle";
 
@@ -41,5 +44,18 @@ module.exports = (sequelize, dataTypes) => {
 
     const PedidoDetalle = sequelize.define(alias, cols, config)
 
+    PedidoDetalle.associate = function(){
+        PedidoDetalle.belongsTo(Pedido, {
+            as: "pedido_detalle",
+            foreignKey: "pedidoDetalle_pedido_id"
+        })
+    }
+    
+    PedidoDetalle.associate = function(){
+        PedidoDetalle.belongsTo(Libro, {
+            as: "pedido_detalle_libro",
+            foreignKey: "pedidoDetalle_libro_id"
+        })
+    }
     return PedidoDetalle
 }

@@ -1,3 +1,6 @@
+const PedidoDetalle = require('./PedidoDetalle');
+const Usuario = require('./Usuario');
+
 module.exports = (sequelize, dataTypes) => {
     let alias = "Pedido";
 
@@ -33,6 +36,21 @@ module.exports = (sequelize, dataTypes) => {
 
 
     const Pedido = sequelize.define(alias, cols, config)
+
+    Pedido.associate = function(){
+        Pedido.hasMany(Usuario, {
+            as: "usuarios_pedidos",
+            foreignKey: "pedido_usuario_id"
+        })
+    }
+
+    
+    Pedido.associate = function(){
+        Pedido.belongsTo(PedidoDetalle, {
+            as: "pedido_detalle",
+            foreignKey: "pedidoDetalle_pedido_id"
+        })
+    }
 
     return Pedido
 }

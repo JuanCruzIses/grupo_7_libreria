@@ -1,3 +1,6 @@
+const Libro = require('./Libro');
+
+
 module.exports = (sequelize, dataTypes) => {
     let alias = "Genero";
 
@@ -18,10 +21,16 @@ module.exports = (sequelize, dataTypes) => {
         tablename: "Genero",
         timestamps: false
     };
-
-
+    
     const Genero = sequelize.define(alias, cols, config)
-
+    
+    Genero.associate = function(){
+        Genero.belongsTo(Libro, {
+            as: "libro_genero",
+            foreignKey: "libro_genero_id"
+        })
+    }
+    
     return Genero
 }
 
