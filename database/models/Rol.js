@@ -16,16 +16,16 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tablename: "Rol",
+        tablename: "Roles",
         timestamps: false
     };
 
 
     const Rol = sequelize.define(alias, cols, config)
 
-    Rol.associate = function(){
-        Rol.belongsTo(Usuario, {
-            as: "usuarios_roles",
+    Rol.associate = function(models){
+        Rol.belongsTo(models.Usuario, {
+            as: "usuarios",
             foreignKey: "usuario_rol_id"
         })
     }

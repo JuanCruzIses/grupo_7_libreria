@@ -27,12 +27,13 @@ CREATE TABLE  Libros  (
  libro_sinopsis  TEXT,
  libro_publicacion  DATE,
  libro_paginas  INT,
- libro_editorial  VARCHAR(50),
+ libro_editorial_id  VARCHAR(50),
  libro_precio  DECIMAL,
 PRIMARY KEY( libro_id ),
 FOREIGN KEY ( libro_genero_id ) REFERENCES  Generos  ( genero_id ),
 FOREIGN KEY ( libro_subgenero_id ) REFERENCES  Subgeneros  ( subgenero_id ),
 FOREIGN KEY ( libro_autor_id ) REFERENCES  Autores  ( autor_id )
+FOREIGN KEY (  libro_editorial_id ) REFERENCES  Editoriales  (editorial_id )
 );
 
 CREATE TABLE  Roles  (
@@ -45,6 +46,7 @@ CREATE TABLE  Usuarios  (
  usuario_id  INT AUTO_INCREMENT UNIQUE NOT NULL,
  usuario_nombre  VARCHAR(20) NOT NULL,
  usuario_apellido  VARCHAR(20) NOT NULL,
+ usuario_imagen VARCHAR(100) NOT NULL,
  usuario_email  VARCHAR(30) NOT NULL,
  usuario_contraseña  VARCHAR(20) NOT NULL,
  usuario_rol_id  INT not NULL,
@@ -71,3 +73,9 @@ CREATE TABLE  pedidoDetalles (
 PRIMARY KEY( pedidoDetalle_id ),
 FOREIGN KEY ( pedidoDetalle_pedido_id ) REFERENCES Pedidos ( pedido_id ),
 foreign key (pedidoDetalle_libro_id) references Libros (libro_id));
+
+CREATE TABLE  Editoriales  (
+ editorial_id  INT AUTO_INCREMENT NOT NULL UNIQUE,
+ editorial_descripcion  VARCHAR(50), 
+PRIMARY KEY(Editorial_id) 
+);

@@ -30,24 +30,24 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tablename: "Pedido",
+        tablename: "Pedidos",
         timestamps: false
     };
 
 
     const Pedido = sequelize.define(alias, cols, config)
 
-    Pedido.associate = function(){
-        Pedido.hasMany(Usuario, {
-            as: "usuarios_pedidos",
+    Pedido.associate = function(models){
+        Pedido.hasMany(models.Usuario, {
+            as: "pedidos",
             foreignKey: "pedido_usuario_id"
         })
     }
 
     
-    Pedido.associate = function(){
-        Pedido.belongsTo(PedidoDetalle, {
-            as: "pedido_detalle",
+    Pedido.associate = function(models){
+        Pedido.belongsTo(models.PedidoDetalle, {
+            as: "pedidos",
             foreignKey: "pedidoDetalle_pedido_id"
         })
     }

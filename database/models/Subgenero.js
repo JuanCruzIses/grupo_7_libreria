@@ -17,16 +17,16 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tablename: "Subgenero",
+        tablename: "Subgeneros",
         timestamps: false
     };
 
 
     const Subgenero = sequelize.define(alias, cols, config)
 
-    Subgenero.associate = function(){
-        Subgenero.belongsTo(Libro, {
-            as: "libro_subgenero",
+    Subgenero.associate = function(models){
+        Subgenero.belongsTo(models.Libro, {
+            as: "libros",
             foreignKey: "libro_subgenero_id"
         })
     }

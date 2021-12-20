@@ -5,11 +5,14 @@ const bcrypt = require('bcryptjs');
 const { localsName } = require('ejs');
 const {Writable}=require('stream');
 
+/*
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const usuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
+*/
+
 let db = require("../database/models");
-const Sequelize = require("sequelize")
-const Op = Sequelize.Op
+const { Op } = require("sequelize");
+const sequelize = db.sequelize;
 
 const userController = {
     vistaRegistro : (req, res) => {

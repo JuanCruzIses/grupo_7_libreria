@@ -2,7 +2,7 @@ const Rol = require('./Rol');
 const Pedido = require('./Pedido');
 
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Usuarios";
+    let alias = "Usuario";
 
     let cols = {
         usuario_id : {
@@ -41,26 +41,26 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tablename: "Usuario",
+        tablename: "Usuarios",
         timestamps: false
     };
 
 
     const Usuario = sequelize.define(alias, cols, config)
 
-    Usuario.associate = function(){
-        Usuario.hasMany(Rol, {
-            as: "usuarios_roles",
+    Usuario.associate = function(models){
+        Usuario.hasMany(models.Rol, {
+            as: "roles",
             foreignKey: "usuario_rol_id"
         })
     }
     
-    Usuario.associate = function(){
-        Usuario.belongsTo(Pedido, {
-            as: "usuarios_pedidos",
+    /*Usuario.associate = function(models){
+        Usuario.belongsTo(models.Pedido, {
+            as: "pedidos",
             foreignKey: "pedido_usuario_id"
         })
     }
-
+]*/
     return Usuario
 }
