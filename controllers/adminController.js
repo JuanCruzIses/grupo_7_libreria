@@ -3,6 +3,10 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/libros.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const db = require('../database/models')
+const sequelize = db.sequelize
+const { Op } = require("sequelize");
+const Libro = require('../database/models/Libro');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -50,37 +54,44 @@ const controller = {
 	// Update - Method to update
 	update: (req, res) => {
 		let id = req.body.id;
-		let productToEdit = products.find(product => product.id == id)
+		// let productToEdit = products.find(product => product.id == id)
+		
 		let image
-
 		if(req.files[0] != undefined){
 			image = req.files[0].filename
 		} else {
-			image = productToEdit.img
+			image = null
 		}
 
+		Libro.update(
 		productToEdit = {
-			id: productToEdit.id,
-			titulo: req.body.titulo,
-        	autor: req.body.autor,
-        	precio: req.body.precio,
-        	paginas: req.body.paginas,
-        	editorial: req.body.editorial,
-        	categorias: req.body.categorias,
-        	sinopsis: req.body.sinopsis,
-        	img: image,
-			seccion: req.body.seccion			
-		};
-		
-		let newProducts = products.map(product => {
-			if (product.id == productToEdit.id) {
-				return product = {...productToEdit};
-			}
-			return product;
+			libro_id: id,
+			libro_genero_id: req.body.categorias,
+			// libro_subgenero_id : NO TIENE INPUT CREADO EN EL FORM
+        	libro_autor_id: req.body.autor,
+			libro_titulo: req.body.titulo,
+        	libro_imagen: image,
+        	libro_sinopsis: req.body.sinopsis,
+        	// libro_publicacion : NO TIENE INPUT CREADO EN EL FORM
+        	libro_paginas: req.body.paginas,
+        	libro_editorial: req.body.editorial,
+			libro_precio: req.body.precio,
+			// seccion: req.body.seccion			
+		},
+		{
+			where: {libro_id : id}
 		})
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/products');
+			.then(()=>{
+				return res.redirect('/products') })
+				.catch(error => console.log(error));
+		
+		// let newProducts = products.map(product => {
+		// 	if (product.id == productToEdit.id) {
+		// 		return product = {...productToEdit};
+		// 	}
+		// 	return product;
+		// })
+		// fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
 	},
 
 	// Vista - Delete

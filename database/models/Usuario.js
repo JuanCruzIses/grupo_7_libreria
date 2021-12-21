@@ -20,14 +20,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(20),
             notNull: true
         },
-        usuario_imagen: {
-            type: dataTypes.STRING(20),
-        },
         usuario_email: {
             type : dataTypes.STRING(20),
             notNull : true
         },
-        usuario_contraseña : {
+        usuario_contrasenia : {
             type : dataTypes.STRING(20),
             notNull : true
         },
@@ -37,8 +34,11 @@ module.exports = (sequelize, dataTypes) => {
             references: {
                 model: 'Roles',
                 key: 'rol_id'}
+            },
+        usuario_imagen: {
+            type: dataTypes.STRING(40),
         }
-    }
+        }
 
     let config = {
         tablename: "Usuarios",

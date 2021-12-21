@@ -10,15 +10,18 @@ const methodOverride = require('method-override')
 //Declarando rutas
 const indexRouter = require('./routes/indexRoute');
 
+///-----Rutas de APIS-------////
+const userAPIRouter = require('./routes/api/userAPIRouter');
+const productsAPIRouter = require('./routes/api/productsAPIRouter');
+
 ///-----Rutas de usuario-------////
 const userRouter = require('./routes/usersRoute')
 const productRouter = require('./routes/productRoute');
 const carritoRouter = require('./routes/carritoRoute');
 const aboutUsRouter = require('./routes/aboutUsRoute');
 const questionsRouter = require('./routes/questionsRoute');
-
-//const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/adminRoute');
+
 
 const app = express();
 
@@ -50,6 +53,10 @@ app.use('/aboutUs', aboutUsRouter);
 app.use('/questions', questionsRouter);
 app.use('/admin', adminRouter);
 
+
+//Uso de rutas APIS
+app.use('/api/users', userAPIRouter)
+app.use('/api/products', productsAPIRouter)
 
 
 

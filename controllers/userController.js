@@ -1,18 +1,19 @@
-const fs = require('fs');
+// const fs = require('fs');
+// const usersFilePath = path.join(__dirname, '../data/users.json');
+// const usuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
+
 const path = require('path');
+
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require('sequelize');
+
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const { localsName } = require('ejs');
 const {Writable}=require('stream');
+const { Console } = require('console');
 
-/*
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const usuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
-*/
-
-let db = require("../database/models");
-const { Op } = require("sequelize");
-const sequelize = db.sequelize;
 
 const userController = {
     vistaRegistro : (req, res) => {
@@ -20,20 +21,17 @@ const userController = {
     },
 
     registrar : (req, res) => {
-        let ultimoId = db.Usuario.findAll()
-            .then(function(usuarios){
-                let id = usuarios.length -1;
-                return id
-            })
-        //let ultimoId = Number(usuarios[usuarios.length -1].id);
-		let nuevoUltimoId = (ultimoId + 1).toString();
         let errores = validationResult(req)
-    
-        const email = req.body.email;
-        const usuarioEnDB = db.Usuario.findOne({where: {email : {[Op.like] : req.body.email} }})
-            .then(function(usuario){
-                return usuario
-            })
+        // let ultimoId = db.Usuario.findOne({where: {usuario_id : Usuario.length-1} })
+        //         .then((usuario) =>{
+        //             return usuario
+        //         }).catch(error => console.log(error))
+        
+		// let nuevoUltimoId = (ultimoId + 1).toString();
+        
+        const usuarioEnDB = db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
+            .then(usuarioEncontrado => {return usuarioEncontrado} )
+        
         //const usuarioEnDB = usuarios.find((user)=>{
         //    return user.email===email;});
         
@@ -43,15 +41,14 @@ const userController = {
 
         else if (req.body.contraseña === req.body.confirmaContraseña && errores.isEmpty() ) {
             const nuevoUsuario = {
-                usuario_id: nuevoUltimoId,
                 usuario_nombre: req.body.nombre,
                 usuario_apellido: req.body.apellido,
-                usuario_imagen: req.body.imagen,
                 usuario_email: req.body.email,
-                usuario_contraseña: bcrypt.hashSync(req.body.contraseña, 12),
-                usuario_rol_id: 1,
+                usuario_contrasenia: bcrypt.hashSync(req.body.contraseña, 12),
+                usuario_rol_id: 2,
+                // usuario_imagen: req.body.imagen,
             }
-            db.Usuario.create({nuevoUsuario: nuevoUsuario})
+            Usuario.create({nuevoUsuario: nuevoUsuario})
             //usuarios.push(nuevoUsuario);
             //fs.writeFileSync(usersFilePath, JSON.stringify(nuevoUsuario, null, ' '))
             res.redirect('/user/login')
