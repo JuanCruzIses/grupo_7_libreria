@@ -25,13 +25,11 @@ const userController = {
         
 		// let nuevoUltimoId = (ultimoId + 1).toString();
         
-        const usuarioEnDB = await db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
+        let usuarioEnDB = await db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
            /* .then(usuarioEncontrado => {return usuarioEncontrado} */ //funciona con o sin esta linea
         
         //const usuarioEnDB = usuarios.find((user)=>{
         //    return user.email===email;});
-        
-      
 
         if (!resultadoValidacion.errors.length && !usuarioEnDB && req.body.contraseña === req.body.confirmaContraseña ) {
             db.Usuario.create({
@@ -44,7 +42,7 @@ const userController = {
                 usuario_rol_id: 2,
                 
             }).then(function(Usuario) {
-                req.session.userLogged = Usuario;
+                // req.session.userLogged = Usuario;
                 res.redirect('/user/login')
             })
         }
@@ -70,56 +68,60 @@ const userController = {
             res.render('login')
         },
     
-        login : (req, res) => {
+        login : async (req, res) => {
             let errores = validationResult(req)          
-            var usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
-            console.log(usuarioEncontrado)
-            let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)    
             
+            // var usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
+            let usuarioEncontrado = await db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
+
+            // let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)
+            let usuarioContraseña = usuarioEncontrado.usuario_contrasenia
+            let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, usuarioContraseña)    
+        
             if (usuarioEncontrado && verificaContraseñaHash){
                 req.session.usuarioLogeado = usuarioEncontrado
                 res.redirect("/")
-            } else {
-                return res.render('login', {errores: [{ msg: 'Por favor verifique ingresar correctamente sus datos' }] } ) 
-            }
+                } else {
+                    return res.render('login', {errores: [{ msg: 'Por favor verifique ingresar correctamente sus datos' }] } ) 
+                }
         },
 
         logout : (req, res) => {
             delete req.session.usuarioLogeado;
-            console.log(req.session.usuarioLogeado)
             console.log("Usuario cerro sesión")
             return res.redirect("/user/login")
         },
 
         vistaProfile : (req, res) => {
-            user : req.session.usuarioLogeado; 
             res.render('profile');
         },
 
-        editProfile: (req, res) => {
-		let userToEdit = usuarios.filter(usuario => usuario.email == user.email)
-        console.log(userToEdit)
-		newUserData = {
-			nombre: req.body.nombreProfile,
-			apellido: req.body.apellidoProfile,
-            email: userToEdit.emailProfile,
-        	contrasenia: req.body.nuevaContraseñaProfile,
-            id: userToEdit.id,
-            categoria: userToEdit.categoria 
-        	};
-        console.log(newUserData)
-		
-		let newUser = usuarios.map(usuario => {
-            let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, userToEdit.contrasenia)   
-			if (verificaContraseñaHash){
-				return usuarios = {...newUserData};}
-            return usuarios
-		})
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(newUser, null, ' '));
-		res.redirect('/profile'); 
+        editProfile: async (req, res) => {
+		// let userToEdit = usuarios.filter(usuario => usuario.email == user.email)
+        // let userToEdit = await db.Usuario.findOne({ where: {usuario_email : {[Op.like] : user.usuario_email} }})
+        const user = req.session.usuarioLogeado;
+        console.log(user)
+		db.Usuario.update ({
+            usuario_nombre: req.body.nombreProfile,
+            usuario_apellido: req.body.apellidoProfile,
+            // usuario_imagen: req.body.imagenProfile,
+            usuario_email: req.body.emailProfile,
+            usuario_contrasenia: req.body.nuevaContraseñaProfile,
         },
+        {
+            where: {usuario_id : user.usuario_id}
+        }).catch(error => console.log(error))
         
+		// let newUser = usuarios.map(usuario => {
+        //     let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, userToEdit.contrasenia)   
+		//  	if (verificaContraseñaHash){
+		//  		return usuarios = {...newUserData};}
+        //         return usuarios
+		// })
+
+		// fs.writeFileSync(usersFilePath, JSON.stringify(newUser, null, ' '));
+		 res.redirect('/user/profile'); 
+        }
     
 };
 

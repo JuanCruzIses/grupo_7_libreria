@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
             notNull : true
         },
         usuario_contrasenia : {
-            type : dataTypes.STRING(20),
+            type : dataTypes.STRING(60),
             notNull : true
         },
         usuario_rol_id: {
