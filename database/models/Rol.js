@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Rol.associate = function(models){
         Rol.belongsTo(models.Usuario, {
-            as: "usuarios",
+            as: "usuario",//aca tiene que ir el nombre de alias que esta en usuario.js
             foreignKey: "usuario_rol_id"
         })
     }

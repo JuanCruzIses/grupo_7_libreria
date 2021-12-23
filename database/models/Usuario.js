@@ -55,7 +55,7 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
     
-    /*Usuario.associate = function(models){
+    /*Usuario.associate = function(models){//comentado ya que trae problemas veremos mas adelante si esta bien asociado 
         Usuario.belongsTo(models.Pedido, {
             as: "pedidos",
             foreignKey: "pedido_usuario_id"

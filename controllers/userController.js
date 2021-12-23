@@ -1,7 +1,3 @@
-// const fs = require('fs');
-// const usersFilePath = path.join(__dirname, '../data/users.json');
-// const usuarios = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'))
-
 const path = require('path');
 
 const db = require('../database/models');
@@ -20,8 +16,8 @@ const userController = {
         res.render("register")
     },
 
-    registrar : (req, res) => {
-        let errores = validationResult(req)
+    registrar : async (req, res) => {
+        let resultadoValidacion = validationResult(req)
         // let ultimoId = db.Usuario.findOne({where: {usuario_id : Usuario.length-1} })
         //         .then((usuario) =>{
         //             return usuario
@@ -29,34 +25,46 @@ const userController = {
         
 		// let nuevoUltimoId = (ultimoId + 1).toString();
         
-        const usuarioEnDB = db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
-            .then(usuarioEncontrado => {return usuarioEncontrado} )
+        const usuarioEnDB = await db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
+           /* .then(usuarioEncontrado => {return usuarioEncontrado} */ //funciona con o sin esta linea
         
         //const usuarioEnDB = usuarios.find((user)=>{
         //    return user.email===email;});
         
-        if (usuarioEnDB){
-            return res.render('register', {errores: [{msg: 'Este email ya se encuentra registrado'}] })
-        }
+      
 
-        else if (req.body.contraseña === req.body.confirmaContraseña && errores.isEmpty() ) {
-            const nuevoUsuario = {
+        if (!resultadoValidacion.errors.length && !usuarioEnDB && req.body.contraseña === req.body.confirmaContraseña ) {
+            db.Usuario.create({
+                
                 usuario_nombre: req.body.nombre,
                 usuario_apellido: req.body.apellido,
+                usuario_imagen: 'demo',
                 usuario_email: req.body.email,
                 usuario_contrasenia: bcrypt.hashSync(req.body.contraseña, 12),
                 usuario_rol_id: 2,
-                // usuario_imagen: req.body.imagen,
-            }
-            Usuario.create({nuevoUsuario: nuevoUsuario})
-            //usuarios.push(nuevoUsuario);
-            //fs.writeFileSync(usersFilePath, JSON.stringify(nuevoUsuario, null, ' '))
-            res.redirect('/user/login')
+                
+            }).then(function(Usuario) {
+                req.session.userLogged = Usuario;
+                res.redirect('/user/login')
+            })
         }
-        
+         
         else {
-            return res.render ("register", { errores : errores.array(), old : req.body })
-        }},
+           
+        
+        if (usuarioEnDB){
+            return res.render('register', {errores: [{msg: 'Este email ya se encuentra registrado'}],old : req.body })
+        }
+        if (req.body.contraseña != req.body.confirmaContraseña){
+            return res.render('register', {errores: [{msg: 'Las contraseñas no coinciden'}],old : req.body })
+        }
+ else {
+                
+    return res.render ("register", { errores : resultadoValidacion.array(), old : req.body })
+            }
+        }
+    
+    },
 
         vistaLogin : (req, res) => {
             res.render('login')
@@ -116,3 +124,4 @@ const userController = {
 };
 
 module.exports = userController;
+
