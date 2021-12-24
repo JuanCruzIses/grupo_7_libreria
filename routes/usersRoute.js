@@ -16,7 +16,7 @@ router.post('/login', userController.login)
 //----------LOGOUT-------//
 router.get('/logout', userController.logout);
 //----------PROFILE-------//
-router.get('/profile', notLoggedMiddlewares, userController.vistaProfile);
+router.get('/profile/:id', notLoggedMiddlewares, userController.vistaProfile);
 router.post('/profile/:id', userController.editProfile)
 
 module.exports = router;

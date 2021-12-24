@@ -100,18 +100,23 @@ const userController = {
 		// let userToEdit = usuarios.filter(usuario => usuario.email == user.email)
         // let userToEdit = await db.Usuario.findOne({ where: {usuario_email : {[Op.like] : user.usuario_email} }})
         const user = req.session.usuarioLogeado;
+        // let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, user.usuario_contrasenia)
         console.log(user)
-		db.Usuario.update ({
-            usuario_nombre: req.body.nombreProfile,
-            usuario_apellido: req.body.apellidoProfile,
-            // usuario_imagen: req.body.imagenProfile,
-            usuario_email: req.body.emailProfile,
-            usuario_contrasenia: req.body.nuevaContraseñaProfile,
-        },
-        {
-            where: {usuario_id : user.usuario_id}
-        }).catch(error => console.log(error))
-        
+
+        // if (verificaContraseñaHash){
+	        db.Usuario.update ({
+                usuario_id: user.usuario_id,
+                usuario_nombre: req.body.nombreProfile,
+                usuario_apellido: req.body.apellidoProfile,
+                usuario_email: req.body.emailProfile,
+                // usuario_contrasenia: bcrypt.hashSync(req.body.nuevaContraseñaProfile, 12),
+                usuario_rol_id: 2,
+                usuario_imagen: req.body.imagenProfile
+            },
+            {
+                where: {usuario_id : user.usuario_id}
+            }).catch(error => console.log(error))
+        // }
 		// let newUser = usuarios.map(usuario => {
         //     let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, userToEdit.contrasenia)   
 		//  	if (verificaContraseñaHash){
@@ -120,7 +125,7 @@ const userController = {
 		// })
 
 		// fs.writeFileSync(usersFilePath, JSON.stringify(newUser, null, ' '));
-		 res.redirect('/user/profile'); 
+		res.redirect('/user/profile'); 
         }
     
 };

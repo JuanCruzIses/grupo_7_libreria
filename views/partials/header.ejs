@@ -77,7 +77,7 @@
         <div class="botones-barra-superior">
             <% if(locals.isLogged){ %>
                 <li><a href="/carrito"><i class="fas fa-shopping-cart"></i>Carrito</a></li>
-                <li><a href="/user/profile"><i class="fas fa-house-user"></i><%= locals.usuarioLogeado.usuario_nombre%></a></li>
+                <li><a href="/user/profile/<%=locals.usuarioLogeado.usuario_id%>"><i class="fas fa-house-user"></i><%= locals.usuarioLogeado.usuario_nombre%></a></li>
                 <li><a href="/user/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
             <% } else {%>
                 <li><a href="/user/register"><i class="fas fa-user-plus"></i>Register</a></li>
