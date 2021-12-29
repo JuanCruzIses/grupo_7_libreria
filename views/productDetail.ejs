@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">
     <link rel="stylesheet" type="text/css" link href="../css/productDetail.css">
     <title>
-        <%= title %> - <%= libros[id].titulo %>
+        <%= libro.libro_titulo %>
     </title>
 </head>
 
@@ -22,33 +22,35 @@
         <div class="contDetail">
             <div class="contenedor-titulo">
                 <h2 class="titulo">
-                    <%= libros[id].titulo %>
+                    <%= libro.libro_titulo %>
                 </h2>
             </div>
             <div class="productDetailImg">
-                <img src="/images/portadas/<%= libros[id].img %>" alt="">
+                <img src="/images/portadas/<%= libro.libro_imagen %>" alt="">
             </div>
 
             <div class="description">
                 <div class="descriptionAutor">
                     <p>Autor:</p>
                     <a href="" class="autor">
-                        <%= libros[id].autor %>
+                        <%= libro.libro_autor_id %>
                     </a>
                 </div>
                 <div class="descriptionEditorial">
                     <p>Editorial: </p>
                     <a href="#" class="editorial">
-                        <%= libros[id].editorial %>
+                        <%= libro.libro_editorial %>
                     </a>
+                    <br>
                 </div>
+                <p>Número de páginas: <%= libro.libro_paginas %></p>
                 <p class="precio">
-                    $ <%= libros[id].precio %>
+                    $ <%= libro.libro_precio %>
                 </p>
             </div>
 
             <div class="productDetailPurchase">
-                <a href="/product/carrito/<%= libros[id].id %> ">
+                <a href="/product/carrito/<%= libro.libro_id %> ">
                     <div class="btnComprar">
                         <p>Comprar ahora</p>
                     </div>
@@ -62,20 +64,10 @@
         </div>
         <div class="detalles">
             <h2>Sinopsis del libro <a>
-                    <%= libros[id].titulo %>
+                    <%= libro.libro_titulo %>
                 </a></h2>
             <p>
-                <%= libros[id].sinopsis %>
-            </p>
-            <h2>Detalles de <a>
-                    <%= libros[id].titulo %>
-                </a></h2>
-            <p>Número de páginas: <%= libros[id].paginas %><br>
-                    Peso: 340<br>
-                    Formato: Rústica<br>
-                    Edición: 2018<br>
-                    Idioma: Castellano<br>
-                    ISBN: 9789874132017
+                <%= libro.libro_sinopsis %>
             </p>
         </div>
     </main>

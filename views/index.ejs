@@ -26,14 +26,14 @@
         </section>
         <section class="productos">
             <h2>Los más vendidos</h2>        
-            <% masVendidos.forEach(libro => { %>
+            <% libros.forEach(libro => { %>
                <%- include('./partials/productosIndex', {libro})  %> 
             <% }); %>
         </section>
 
         <section class="productos">
             <h2>Novedades de la semana</h2>
-            <% novedades.forEach(libro => { %>
+            <% libros.forEach(libro => { %>
                 <%- include('./partials/productosIndex', {libro})  %> 
              <% }); %>
         </section>

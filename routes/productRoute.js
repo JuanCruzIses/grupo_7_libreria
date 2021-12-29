@@ -10,10 +10,11 @@ router.get('/', productsController.index)
 /*** DETALLE DE UN PRODUCTO ***/ 
 router.get('/:id', productsController.detail);
 
+/*** GÉNERO DE UN PRODUCTO ***/ 
+router.get('/genero/:idGenero', productsController.generos);
+
 /*** CARRITO DE UN PRODUCTO ***/ 
 router.get('/carrito', productsController.comprar);
 
-/*** GÉNERO DE UN PRODUCTO ***/ 
-router.get('/categoria/:genero', productsController.categorias);
 
 module.exports = router;

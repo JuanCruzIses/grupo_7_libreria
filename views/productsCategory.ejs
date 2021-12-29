@@ -14,7 +14,7 @@
     <link rel="icon" href="/images/sombrero-loco.100px.ico">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
     <title>
-        El sombrero Loco - <%= genero %>
+        El sombrero Loco
     </title>
 </head>
 
@@ -23,13 +23,8 @@
     <main>
         <section class="banner"></section>
         <section class="productos">
-            <h2><%= genero.toUpperCase() %></h2>        
-            <% libros.forEach(libro => { %>
-                <% if (libro.categorias == genero){ %> 
-                    <%- include('./partials/productosIndex', {libro})  %> 
-                <% } %>
-
-                
+            <% libros.forEach(libro => { %> 
+                    <%- include('./partials/productosIndex', {libro})  %>                 
             <% }); %>
            
         </section> 

@@ -1,30 +1,48 @@
-const fs = require('fs');
-let biblioteca = fs.readFileSync('./data/libros.json', 'utf-8');
-let libros = JSON.parse(biblioteca);
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require('sequelize');
 
-function actualizar(){
-    biblioteca = fs.readFileSync('./data/libros.json', 'utf-8');
-    libros = JSON.parse(biblioteca);
-}
+// const fs = require('fs');
+// let biblioteca = fs.readFileSync('./data/libros.json', 'utf-8');
+// let libros = JSON.parse(biblioteca);
+
+// // function actualizar(){
+// //     biblioteca = fs.readFileSync('./data/libros.json', 'utf-8');
+// //     libros = JSON.parse(biblioteca);
+// }
 
 const productsController = {
 	//index product
-	index: (req, res) => {
-		res.render('products', {libros : libros})
+	index: async (req, res) => {
+		const libros = await db.Libro.findAll()
+			.then(function(libros){
+				res.render('products', {libros : libros} )
+		})
 	},
-
-	//Categorias ----> género
-	categorias: (req, res) => {
-		const genero = req.params.genero
-		res.render('productsCategory', { libros : libros , genero : genero } )
-	},
-
+	
     //Detalle de un producto
-    detail: (req, res) => {
-		actualizar();
-        const id = req.params.id - 1;
-        res.render('productDetail', { libros, title: 'Detalle de Producto', id})
-    },
+    detail: async (req, res) => {
+		// actualizar();
+		// res.render('productDetail', { libros, title: 'Detalle de Producto', id})
+		const id = req.params.id;
+		const libros = await db.Libro.findByPk(id)
+		.then(function(libro){
+			res.render('productDetail', {libro : libro , id : id} ) })        
+			.catch(error => console.log(error))
+		},
+		
+	//Categorias ----> género
+	generos: async (req, res) => {
+		const idGenero = req.params.idGenero;
+		// const generos = await db.Genero.findAll()
+		// 	.then(function(genero){
+		// 		res.send ({genero})
+		// 	});
+		const libros = await db.Libro.findAll({where: {libro_genero_id : idGenero} })
+			.then(function(libros){
+			res.render('productsCategory', {libros : libros , idGenero : idGenero} ) })
+				.catch(error => console.log(error))
+		},
 
     //Product detail ---> Comprar ahora
     comprar: (req, res) => {

@@ -36,27 +36,21 @@ module.exports = (sequelize, dataTypes) => {
         libro_titulo: {
             type: dataTypes.STRING(60)
         },
-        libro_imagen: {
-            type: dataTypes.STRING(60)
-        },
         libro_sinopsis: {
             type: dataTypes.TEXT
-        },
-        libro_publicacion: {
-            type: dataTypes.DATE
         },
         libro_paginas: {
             type: dataTypes.INTEGER
         },
-        libro_editorial_id: {
-            type: dataTypes.INTEGER,
-            references: {
-                model: 'Editorial',
-                key: 'editorial_id'}
+        libro_editorial: {
+            type: dataTypes.STRING(50),
         },  
         libro_precio: {
             type: dataTypes.DECIMAL
-        } 
+        }, 
+        libro_imagen: {
+            type: dataTypes.STRING(60)
+        }
     };
 
     let config = {
