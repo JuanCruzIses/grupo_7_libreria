@@ -27,7 +27,7 @@ router.post('/create', adminController.create);
 // ************ EDIT *************
 
 router.get('/edit', adminController.indexEdit); 
-router.put('/edit/:id', upload.any(), adminController.update); 
+router.post('/edit', upload.any(), adminController.update); 
 
 
  // *** DELETE ONE PRODUCT ***

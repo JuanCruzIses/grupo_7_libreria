@@ -52,7 +52,7 @@ const controller = {
 	
 	// Update - Method to update
 	update: (req, res) => {
-		let id = req.body.id;
+		// let id = req.body.id;
 		// let productToEdit = products.find(product => product.id == id)
 		
 		let image
@@ -63,22 +63,19 @@ const controller = {
 		}
 
 		db.Libro.update(
-		productToEdit = {
-			libro_id: id,
+		{
 			libro_genero_id: req.body.categorias,
 			// libro_subgenero_id : NO TIENE INPUT CREADO EN EL FORM
         	libro_autor_id: req.body.autor,
 			libro_titulo: req.body.titulo,
         	libro_imagen: image,
         	libro_sinopsis: req.body.sinopsis,
-        	// libro_publicacion : NO TIENE INPUT CREADO EN EL FORM
         	libro_paginas: req.body.paginas,
         	libro_editorial: req.body.editorial,
-			libro_precio: req.body.precio,
-			// seccion: req.body.seccion			
+			libro_precio: req.body.precio,		
 		},
 		{
-			where: {libro_id : id}
+			where: {libro_id : req.body.id}
 		})
 			.then(()=>{
 				return res.redirect('/products') })

@@ -22,7 +22,7 @@
 		<h2 class="title-form-admin">Formulario de edición de productos</h2>
 
     	<div class="container-form-admin">			
-			<form class="form-admin" action="/admin/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
+			<form class="form-admin" action="/admin/edit" method="POST" enctype="multipart/form-data">
 				
 					
 						<label for="titulo" class="form-label">ID del producto a editar:</label>
@@ -49,13 +49,11 @@
 						<label for="categorias" class="form-label">Categorías:</label>
 						<% /* %> <input type="text" id="categorias" name="categorias" class="form-input">  <% */ %>
 						<select class="form-control" id="categorias" name="categorias">
-							<option disabled selected > Seleccione categoría</option>
-							<option value="juveniles">Juveníl</option>
-							<option value="infantil">Infantil</option>
-							<option value="novelas">Novela</option>
-							<option value="ensayos">Ensayo</option>
-							<option value="policiales">Policiales</option>
-							<option value="teatro">Teatro</option>
+							<option value="1">Policiales</option>
+							<option value="2">Juveniles</option>
+							<option value="3">Humor</option>
+							<option value="4">Novelas</option>
+							<option value="5">Infantiles</option>
 						</select>
 					<br>
 					<br>
@@ -66,14 +64,16 @@
 						<label for="img" class="form-label">Imagen:</label>
 						<input type="file" name="img" id="img" class="form-control">
 					<br>
+						<% /* %>
 						<label for="seccion" class="form-label">Sección:</label>
-						<% /* %><input type="text" id="seccion" name="seccion" placeholder="SECCIÓN" class="form-input"><% */ %>
+						<input type="text" id="seccion" name="seccion" placeholder="SECCIÓN" class="form-input">
 						<select class="form-control" id="seccion" name="seccion" class="form-input" required>
 							<option disabled selected > Seleccione sección</option>
 							<option value="novedades" >Novedades</option>
 							<option value="masVendidos">Lo mas vendido</option>
 						</select>
-					<br>		
+					<br>
+					<% */ %>		
 						<input class= submit type="submit" class="buy-now-button"></input>
 
 					
