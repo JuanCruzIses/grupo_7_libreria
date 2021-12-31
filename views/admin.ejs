@@ -27,51 +27,40 @@
 		<h2 class="title-form-admin">Formulario de creación de productos</h2>
 			
 		<div class="container-form-admin">
-			<form class="form-admin" action="/admin/create" method="POST" enctype="multipart/form-data">		
+			<form class="form-admin" method="post" action="/admin/create">		
 					
-						<label for="titulo" class="form-label">Título:</label>
-						<input type="text" id="titulo" name="titulo" placeholder="Utilizar mayúsculas unicamente" class="form-input">
+						<label for="libro_titulo" class="form-label">Título:</label>
+						<input type="text" id="libro_titulo" name="libro_titulo" placeholder="Utilizar mayúsculas unicamente" class="form-input">
 					
-						<label for="autor" class="form-label">Autor:</label>
-						<input type="text" id="autor" name="autor" placeholder="Apellido, Nombre" class="form-input">
+						<label for="libro_autor" class="form-label">Número de autor:</label>
+						<input type="text" id="libro_autor" name="libro_autor" placeholder="N° de autor en base de datos" class="form-input">
                   
-						<label for="precio" class="form-label">Precio:</label>
-						<input type="number" id="precio" name="precio" placeholder="000" class="form-control">
+						<label for="libro_precio" class="form-label">Precio:</label>
+						<input type="number" id="libro_precio" name="libro_precio" placeholder="000" class="form-control">
 					
-						<label for="paginas" class="form-label">Páginas:</label>
-						<input type="number" id="paginas" name="paginas" placeholder="000" class="form-control">
+						<label for="libro_paginas" class="form-label">Páginas:</label>
+						<input type="number" id="libro_paginas" name="libro_paginas" placeholder="000" class="form-control">
 					
-						<label for="editorial" class="form-label">Editorial:</label>
-						<input type="text" id="editorial" name="editorial" placeholder="Utilizar mayúsculas unicamente" class="form-control">
+						<label for="libro_editorial" class="form-label">Editorial:</label>
+						<input type="text" id="libro_editorial" name="libro_editorial" placeholder="Utilizar mayúsculas unicamente" class="form-control">
                    
-						<label for="categorias" class="form-label">Categorías:</label>
-						<% /* %> <input type="text" id="categorias" name="categorias" class="form-input">  <% */ %>
-						<select class="form-control" id="categorias" name="categorias">
-							<option disabled selected > Seleccione categoría</option>
-							<option value="juveniles">Juveníl</option>
-							<option value="infantil">Infantil</option>
-							<option value="novelas">Novela</option>
-							<option value="ensayos">Ensayo</option>
-							<option value="policiales">Policiales</option>
-							<option value="teatro">Teatro</option>
+						<label for="libro_generos" class="form-label">Género:</label>
+						<select class="form-control" id="libro_generos" name="libro_generos">
+							<option disabled selected > Seleccione catgéneroegoría</option>
+							<option value="1">Policiales</option>
+							<option value="2">Juveniles</option>
+							<option value="3">Humor</option>
+							<option value="4">Novelas</option>
+							<option value="5">Infantiles</option>
 						</select>
 					<br>
 					<br>
-						<label for="sinopsis" class="form-label">Sinópsis:</label>
-						<textarea name="sinopsis" id="sinopsis" class="form-control"></textarea>
+						<label for="libro_sinopsis" class="form-label">Sinópsis:</label>
+						<textarea name="libro_sinopsis" id="libro_sinopsis" class="form-control"></textarea>
 					<br>
 					<br>
 						<label for="img" class="form-label">Imagen:</label>
 						<input type="file" name="img" id="img" class="form-control">
-					<br>
-						<label for="seccion" class="form-label">Sección:</label>
-						<% /* %><input type="text" id="seccion" name="seccion" placeholder="SECCIÓN" class="form-input"><% */ %>
-						<select class="form-control" id="seccion" name="seccion" class="form-input" required>
-							<option disabled selected > Seleccione sección</option>
-							<option value="novedades" >Novedades</option>
-							<option value="masVendidos">Lo mas vendido</option>
-							<option value="sinSeccion">Sin sección</option>
-						</select>
 					<br>
 						<input class= submit type="submit" class="buy-now-button"></input>
 	

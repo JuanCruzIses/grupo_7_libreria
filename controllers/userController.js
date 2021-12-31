@@ -115,7 +115,10 @@ const userController = {
             },
             {
                 where: {usuario_id : user.usuario_id}
-            }).catch(error => console.log(error))
+            })
+            .then(function(libro){
+                res.redirect('/user/profile')}); 
+ 
         // }
 		// let newUser = usuarios.map(usuario => {
         //     let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, userToEdit.contrasenia)   
@@ -125,7 +128,6 @@ const userController = {
 		// })
 
 		// fs.writeFileSync(usersFilePath, JSON.stringify(newUser, null, ' '));
-		res.redirect('/user/profile'); 
         }
     
 };

@@ -2,13 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/libros.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const db = require('../database/models')
 const sequelize = db.sequelize
 const { Op } = require("sequelize");
-const Libro = require('../database/models/Libro');
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 	// Vista - Create
@@ -17,33 +15,34 @@ const controller = {
 	},
 	
 	// Create -  Method to store
-	create: (req, res) => {
+	create: async (req, res) => {
 		let img
+		// let ultimoId = Number(products[products.length -1].id);
+		// let nuevoUltimoId = (ultimoId + 1).toString();
+		// console.log(req.files)
+		// if(req.files[0] != undefined){
+		// 	img = req.files[0].filename
+		// } else {
+		// 	img = 'default-image.png'
+		// }
 		
-		console.log(req.files);
-		let ultimoId = Number(products[products.length -1].id);
-		let nuevoUltimoId = (ultimoId + 1).toString();
+		console.log(req.body)
+		db.Libro.create({
 
-		if(req.files[0] != undefined){
-			img = req.files[0].filename
-		} else {
-			img = 'default-image.png'
-		}
-		let newProduct = {
-			id: nuevoUltimoId,
-			titulo: req.body.titulo,
-        	autor: req.body.autor,
-        	precio: req.body.precio,
-        	paginas: req.body.paginas,
-        	editorial: req.body.editorial,
-        	categorias: req.body.categorias,
-        	sinopsis: req.body.sinopsis,
-        	seccion: req.body.seccion,
-			img: img
-		};
-		products.push(newProduct)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		res.redirect('/');
+			libro_genero_id : req.body.libro_generos,			
+			libro_autor_id : req.body.libro_autor,		
+        	libro_titulo : req.body.libro_titulo,			
+        	libro_sinopsis: req.body.libro_sinopsis,		
+        	libro_paginas: req.body.libro_paginas,		
+        	libro_editorial: req.body.libro_editorial,	
+        	libro_precio : req.body.libro_precio,			
+        	libro_imagen: req.body.img
+		})	.catch(error => console.log(error))
+			.then(function(Libro){
+			res.redirect('/admin/create');
+		});
+		// products.push(newProduct)
+		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 	},
 
 	// Vista - Update
