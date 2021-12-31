@@ -62,7 +62,7 @@ const controller = {
 			image = null
 		}
 
-		Libro.update(
+		db.Libro.update(
 		productToEdit = {
 			libro_id: id,
 			libro_genero_id: req.body.categorias,
@@ -101,10 +101,14 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		let id = req.body.id;
-		let finalProducts = products.filter(product => product.id != id);
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-		res.redirect('/');
 		console.log(id)
+		db.Libro.destroy({
+			where : {libro_id : id}
+		})
+		.catch(error => console.log(error))
+		res.redirect('/') 
+		// let finalProducts = products.filter(product => product.id != id);
+		// fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 	}
 };
 

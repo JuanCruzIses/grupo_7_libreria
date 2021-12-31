@@ -32,7 +32,7 @@ router.put('/edit/:id', upload.any(), adminController.update);
 
  // *** DELETE ONE PRODUCT ***
 router.get('/delete', adminController.indexDelete); 
-router.delete('/delete', adminController.destroy);
+router.post('/delete', adminController.destroy);
  
 
 module.exports = router;
