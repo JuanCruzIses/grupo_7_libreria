@@ -49,7 +49,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL
         }, 
         libro_imagen: {
-            type: dataTypes.STRING(60)
+            type: dataTypes.STRING(100)
         }
     };
 

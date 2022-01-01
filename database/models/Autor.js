@@ -14,6 +14,9 @@ module.exports = (sequelize, dataTypes) => {
         autor_nombre: {
             type: dataTypes.STRING(100),
         },
+        autor_apellido: {
+            type: dataTypes.STRING(100),
+        },
         autor_biografia: {
             type: dataTypes.TEXT,
         },
