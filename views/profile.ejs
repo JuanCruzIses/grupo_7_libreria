@@ -12,8 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="../css/register.css"> 
+    <link rel="stylesheet" type="text/css" link href="/css/aboutUs.css"> 
+    <link rel="stylesheet" type="text/css" link href="/css/register.css"> 
     <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">      
     <link rel="icon" href="/images/sombrero-loco.100px.ico">
     <title>El sombrero Loco</title>
@@ -21,11 +23,13 @@
 <body>
     <%- include('./partials/header')  %> 
     <main>
-        <h1 class="title-profile">¡Hola <%=locals.usuarioLogeado.usuario_nombre%> <%=locals.usuarioLogeado.usuario_apellido%>!</h1>
-
+        <h1 class="cen">¡Hola <%=locals.usuarioLogeado.usuario_nombre%> <%=locals.usuarioLogeado.usuario_apellido%>!</h1>
+        
+            <h2 class="frase-profile">"El secreto querid@ <%=locals.usuarioLogeado.usuario_nombre%>, es rodearse de personas que te hagan sonreir el corazón"</h2>
+            + 
         <section>
             <form class="form" action="/user/profile/<%=locals.usuarioLogeado.usuario_id %>" method="POST" enctype="multipart/form-data">
-                <h3>Editar perfil</h3>
+                <h3 class="cen">Editar perfil</h3>
                 <br>
                 <p class="profile-parraf">*Para editar alguno de los campos se debe modificar la información deseada y enviar el formulario</p>
                 <br>
