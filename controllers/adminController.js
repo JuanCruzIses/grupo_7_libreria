@@ -15,8 +15,8 @@ const controller = {
 	},
 	
 	// Create -  Method to store
-	create: async (req, res) => {
-		let img
+	create: async (req, res) => {		
+		
 		// let ultimoId = Number(products[products.length -1].id);
 		// let nuevoUltimoId = (ultimoId + 1).toString();
 		// console.log(req.files)
@@ -26,7 +26,7 @@ const controller = {
 		// 	img = 'default-image.png'
 		// }
 		
-		console.log(req.body)
+		//console.log(req.body)
 		db.Libro.create({
 
 			libro_genero_id : req.body.libro_generos,			
@@ -35,8 +35,9 @@ const controller = {
         	libro_sinopsis: req.body.libro_sinopsis,		
         	libro_paginas: req.body.libro_paginas,		
         	libro_editorial: req.body.libro_editorial,	
-        	libro_precio : req.body.libro_precio,			
-        	libro_imagen: req.body.img
+        	libro_precio : req.body.libro_precio,
+			// variable global de nombre de imagen en /middlewares/portadasMiddleware.js			
+        	libro_imagen: PORTADA_NAME
 		})	.catch(error => console.log(error))
 			.then(function(Libro){
 			res.redirect('/admin/create');

@@ -27,8 +27,8 @@
 		<h2 class="title-form-admin">Formulario de creación de productos</h2>
 			
 		<div class="container-form-admin">
-			<form class="form-admin" method="post" action="/admin/create">		
-					
+			<form action="/admin/create" method="POST" enctype="multipart/form-data" accept=".jpg, .png" class="form-admin">	
+									
 						<label for="libro_titulo" class="form-label">Título:</label>
 						<input type="text" id="libro_titulo" name="libro_titulo" placeholder="Utilizar mayúsculas unicamente" class="form-input">
 					
@@ -46,7 +46,7 @@
                    
 						<label for="libro_generos" class="form-label">Género:</label>
 						<select class="form-control" id="libro_generos" name="libro_generos">
-							<option disabled selected > Seleccione catgéneroegoría</option>
+							<option disabled selected > Seleccione Género</option>
 							<option value="1">Policiales</option>
 							<option value="2">Juveniles</option>
 							<option value="3">Humor</option>
@@ -60,7 +60,7 @@
 					<br>
 					<br>
 						<label for="img" class="form-label">Imagen:</label>
-						<input type="file" name="img" id="img" class="form-control">
+						<input type="file" accept=".jpg, .png" name="img" id="img" class="form-control">
 					<br>
 						<input class= submit type="submit" class="buy-now-button"></input>
 	

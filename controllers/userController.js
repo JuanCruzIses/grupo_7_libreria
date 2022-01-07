@@ -117,7 +117,7 @@ const userController = {
                 where: {usuario_id : user.usuario_id}
             })
             .then(function(libro){
-                res.redirect('/user/profile')}); 
+                res.redirect('/user/profile/' + user.usuario_id)}); 
  
         // }
 		// let newUser = usuarios.map(usuario => {
