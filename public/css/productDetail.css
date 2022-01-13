@@ -188,7 +188,7 @@ footer{
         width: 100%;
         position: relative;
         height: fit-content;
-        margin-top: 15px;
+        margin-top: 10px;
     }
 
     .description p{
@@ -236,6 +236,7 @@ footer{
     }
 
     .description {
+        margin-top: -80px;
         width: 60%;
     }
 

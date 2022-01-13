@@ -153,7 +153,6 @@ h3{
 
     .contenedor{
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
         height: max-content;
         justify-content: space-evenly;

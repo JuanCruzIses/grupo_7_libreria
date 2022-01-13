@@ -48,20 +48,16 @@ const userController = {
         }
          
         else {
-           
-        
-        if (usuarioEnDB){
-            return res.render('register', {errores: [{msg: 'Este email ya se encuentra registrado'}],old : req.body })
-        }
-        if (req.body.contraseña != req.body.confirmaContraseña){
-            return res.render('register', {errores: [{msg: 'Las contraseñas no coinciden'}],old : req.body })
-        }
- else {
-                
-    return res.render ("register", { errores : resultadoValidacion.array(), old : req.body })
+            if (usuarioEnDB){
+                return res.render('register', {errores: [{msg: 'Este email ya se encuentra registrado'}],old : req.body })
+            }
+            if (req.body.contraseña != req.body.confirmaContraseña){
+                return res.render('register', {errores: [{msg: 'Las contraseñas no coinciden'}],old : req.body })
+            }
+            else {        
+                return res.render ("register", { errores : resultadoValidacion.array(), old : req.body })
             }
         }
-    
     },
 
         vistaLogin : (req, res) => {
@@ -96,28 +92,28 @@ const userController = {
             res.render('profile');
         },
 
-        editProfile: async (req, res) => {
+        editProfile: (req, res) => {
 		// let userToEdit = usuarios.filter(usuario => usuario.email == user.email)
         // let userToEdit = await db.Usuario.findOne({ where: {usuario_email : {[Op.like] : user.usuario_email} }})
-        const user = req.session.usuarioLogeado;
+        
         // let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, user.usuario_contrasenia)
-        console.log(user)
-
+        const user = req.session.usuarioLogeado;
+        console.log(req.body)
         // if (verificaContraseñaHash){
-	        db.Usuario.update ({
-                usuario_id: user.usuario_id,
-                usuario_nombre: req.body.nombreProfile,
-                usuario_apellido: req.body.apellidoProfile,
-                usuario_email: req.body.emailProfile,
+	    db.Usuario.update(
+            {
+                usuario_nombre: req.body.nombre,
+                usuario_apellido: req.body.apellido,
+                usuario_email: req.body.email
                 // usuario_contrasenia: bcrypt.hashSync(req.body.nuevaContraseñaProfile, 12),
-                usuario_rol_id: 2,
-                usuario_imagen: req.body.imagenProfile
+                // usuario_imagen: req.body.imagenProfile
             },
             {
                 where: {usuario_id : user.usuario_id}
             })
-            .then(function(libro){
-                res.redirect('/user/profile')}); 
+                .then(()=>{
+                    return res.redirect('/user/profile/' + user.usuario_id)})
+                    .catch(error => console.log(error));; 
  
         // }
 		// let newUser = usuarios.map(usuario => {

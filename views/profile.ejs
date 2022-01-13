@@ -13,9 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
+    <!-- <link rel="icon" href="/images/sombrero-loco.100px.ico"> -->
     <link rel="stylesheet" type="text/css" link href="../css/register.css"> 
-    <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">      
-    <link rel="icon" href="/images/sombrero-loco.100px.ico">
+    <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">
     <title>El sombrero Loco</title>
 </head>
 <body>
@@ -24,28 +24,28 @@
         <h1 class="title-profile">¡Hola <%=locals.usuarioLogeado.usuario_nombre%> <%=locals.usuarioLogeado.usuario_apellido%>!</h1>
 
         <section>
-            <form class="form" action="/user/profile/<%=locals.usuarioLogeado.usuario_id %>" method="POST" enctype="multipart/form-data">
+            <form class="form" action="/user/profile/<%=locals.usuarioLogeado.usuario_id%>" method="POST" enctype="multipart/form-data">
                 <h3>Editar perfil</h3>
                 <br>
                 <p class="profile-parraf">*Para editar alguno de los campos se debe modificar la información deseada y enviar el formulario</p>
                 <br>
 
                 <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" name="nombreProfile" class="form-control" value="<%=locals.usuarioLogeado.usuario_nombre%>">
+                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="<%=locals.usuarioLogeado.usuario_nombre%>">
 
                 <label for="apellido" class="form-label">Apellido:</label>
-                <input type="text" name="apellidoProfile" class="form-control" value="<%=locals.usuarioLogeado.usuario_apellido%>">
+                <input type="text" name="apellido" id="apellido" class="form-control" placeholder="<%=locals.usuarioLogeado.usuario_apellido%>">
 
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" name="emailProfile" class="form-control" value="<%=locals.usuarioLogeado.usuario_email%>">
+                <input type="email" name="email" id="email" class="form-control" placeholder="<%=locals.usuarioLogeado.usuario_email%>">
 
                 <label for="contraseña" class="form-label">Contraseña actual:</label>
-                <input type="password" name="contraseñaProfile" class="form-control" placeholder="Ingrese su contraseña actual">
+                <input type="password" name="contraseña" id="contraseña" class="form-control" placeholder="Ingrese su contraseña actual">
 
                 <label for="nuevaContraseña" class="form-label">Nueva contraseña:</label>
-                <input type="password" name="nuevaContraseñaProfile" class="form-control" placeholder="Ingrese su contraseña nueva">
+                <input type="password" name="nuevaContraseña" id="nuevaContraseña" class="form-control" placeholder="Ingrese su contraseña nueva">
 
-                <input type="submit" value="ENVIAR">
+                <input class= submit type="submit" class="buy-now-button"></input>
             </form>
         </section>
 
