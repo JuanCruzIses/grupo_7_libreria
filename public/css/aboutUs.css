@@ -18,6 +18,15 @@
     font-size: 25px;
     text-align: center;
   }
+
+  .frase-profile{
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+    text-align: center;
+    width: 90%;
+    margin: 15px;
+  }
+ 
   .deco{
     text-decoration: none;
     color: #000;

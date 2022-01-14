@@ -7,27 +7,20 @@ const path = require('path');
 // ************ Controller Require ************
 const adminController = require('../controllers/adminController');
 
-// ************ Multer ************ 
-const storage = multer.diskStorage({
-    destination:function(req,file,cb){
-        cb(null, 'public/images/portadas');
-    },
-    filename: function(req,file,cb){
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-    }
-});
-const upload = multer({storage: storage});
+// ************ MiddleWares Require ************
+
+const portadasMulter = require('../middlewares/portadasMulter');
 
 // ************ CREATE *************
 
 router.get('/create', adminController.indexCreate); 
-router.post('/create', upload.single(), adminController.create); 
+router.post('/create', portadasMulter.single('img'), adminController.create); 
 
 
 // ************ EDIT *************
 
 router.get('/edit', adminController.indexEdit); 
-router.post('/edit', upload.any(), adminController.update); 
+router.post('/edit', portadasMulter.single('img'), adminController.update); 
 
 
  // *** DELETE ONE PRODUCT ***

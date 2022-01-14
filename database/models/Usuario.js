@@ -21,11 +21,11 @@ module.exports = (sequelize, dataTypes) => {
             notNull: true
         },
         usuario_email: {
-            type : dataTypes.STRING(20),
+            type : dataTypes.STRING(50),
             notNull : true
         },
         usuario_contrasenia : {
-            type : dataTypes.STRING(60),
+            type : dataTypes.STRING(20),
             notNull : true
         },
         usuario_rol_id: {
@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
                 key: 'rol_id'}
             },
         usuario_imagen: {
-            type: dataTypes.STRING(40),
+            type: dataTypes.STRING(100),
         }
         }
 

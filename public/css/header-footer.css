@@ -196,18 +196,19 @@ footer{
 .contenedor-logo-footer{
     width: 30%;
     margin-top: 2.5px;
-    margin-left: 15px;
+    position: relative;
+    left: 30px;
 }
 
 
 .contenedor-logo-footer img{
-    width: 100%;
+    width: 70%;
 }
 .contactanos{
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 2.5px auto 0px auto;
+    margin: auto auto auto auto;
 }
 
 .contactanos div{
@@ -321,6 +322,7 @@ footer{
     justify-content: space-around;
 }
 
+
 div.contenedor-logo{
     margin-left: 20px;
 }
@@ -346,10 +348,44 @@ footer{
     flex-direction: row;
 }
 
-.footer-seccion-3 div{
-    display: block;
+.contenedor-logo-footer {
+    width: 30%;
+    margin-top: 2.5px;
+    position: relative;
+    left: 80px;
 }
 
+.footer-seccion-3{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.footer-seccion-3 div{
+    display: block;
+    text-align: center;
+    width: 45vw;
+    border-radius: 15px;
+    border: 1px dashed white;
+    padding: 10px;
+}
+
+.footer-seccion-3 div i{
+    color: white;
+    font-size: 20px;
+    text-decoration: underline;
+    padding-bottom: 5px;
+}
+
+.footer-seccion-3 div p{
+    color: white;
+    font-size: 14px;
+}
+
+.footer-seccion-3 article div{
+    border: none;
+}
 footer article{
     width: 32%;
 }
@@ -362,6 +398,10 @@ footer article.copyright{
 /*-----------------MEDIA QUERIES: DESKTOP ------------*/
 
 @media (min-width: 1024px){
+    .contactanos h4 {
+        font-size: 30px;
+    }
+    
     header .navbar{
         display: none;
     }
@@ -388,6 +428,12 @@ footer article.copyright{
     
     .botones-barra-superior li a i{
         margin-right: 2px;
+    }
+
+    .contenedor-logo-footer img {
+        width: 50%;
+        position: relative;
+        left: 30px;
     }
 
  /* ----------nav horizontal ----------------*/
