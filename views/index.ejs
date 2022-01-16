@@ -16,13 +16,19 @@
     <link rel="stylesheet" type="text/css" link href="/css/index.css">
     <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">      
     <link rel="icon" href="/images/sombrero-loco.100px.ico">
+    <link rel="stylesheet" type="text/css" href="/css/slider.css">
     <title>El sombrero Loco</title>
 </head>
 <body>
     <%- include('./partials/header')  %> 
     <main>
-        <section class="banner">
-            <img src="./images/banners/banner-navidad.png" class="banner-img">
+        <div class="container-slider">
+            <div class="slider" id='contSlider'>
+            </div>
+            <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+            <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+        </div>
+        </div>
         </section>
         <section class="productos">
             <h2>Los más vendidos</h2>        
@@ -57,6 +63,10 @@
         
         });</script>
     </main>
-    <%- include('./partials/footer')  %>     
+
+    <%- include('./partials/footer')  %>
+
+
+    <script src="/js/slider.js"></script> 
 </body>
 </html>
