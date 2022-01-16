@@ -29,7 +29,7 @@ const productsController = {
 		.then(function(libro){
 			res.render('productDetail', {libro : libro , id : id} ) })        
 			.catch(error => console.log(error))
-		},
+	},
 		
 	//Categorias ----> género
 	generos: async (req, res) => {
@@ -42,7 +42,7 @@ const productsController = {
 			.then(function(libros){
 			res.render('productsCategory', {libros : libros , idGenero : idGenero} ) })
 				.catch(error => console.log(error))
-		},
+	},
 
     //Product detail ---> Comprar ahora
     comprar: (req, res) => {
