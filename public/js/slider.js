@@ -78,14 +78,23 @@ function Derecha() {
 
 };
 
-btnRight.addEventListener('click', function(){
+function DarTransicion(){
     slider.style.transitionProperty = 'margin-left'
     slider.style.transitionDuration = '0.5s';
+};
+
+btnRight.addEventListener('click', function(){
+    DarTransicion()
     Izquierda();  
 });
 
 btnLeft.addEventListener('click', function(){
-    slider.style.transitionProperty = 'margin-left'
-    slider.style.transitionDuration = '0.5s';
+    DarTransicion()
     Derecha();
 });
+
+setInterval(() => {
+    DarTransicion();
+    Izquierda();
+}, 5000);
+
