@@ -1,3 +1,4 @@
+<script src="../js/header-footer.js"></script>
 <header>      
     <div class="contenedor-header">
         <div class="contenedor-logo">
@@ -16,60 +17,106 @@
         <input type="checkbox" name="list" id="btn-menu">
         <label class="burger-button" for="btn-menu">
             <i class="fas fa-bars"></i>
-        </label> 
-        <nav class="navbar">
-            <ul class="botones">
-                <li>
-                    <input type="checkbox" name="list">
-                    <label for="nivel2-1">
-                        <a href="/user/register"><i class="fas fa-user-plus"></i>Registrarse</a>
-                    </label>
-                </li>
-                <li>
-                    <input type="checkbox" name="list">
-                    <label for="nivel2-1">
-                        <a href="/user/login"><i class="fas fa-user"></i>Iniciar sesión</a>
-                    </label>
-                </li>
-                <li>
-                    <input type="checkbox" name="list">
-                    <label for="nivel2-1">
-                        <a href="/carrito"><i class="fas fa-shopping-cart"></i>Carrito</a>
-                    </label>
-                </li>
-                <li>
-                    <input type="checkbox" name="list" id="nivel2-1">
-                    <label for="nivel2-1" class="btn-categoria">
-                       <p><i class="fas fa-book-reader"></i>Categorias</p>
-                    </label>
-                    <ul class="interior">
-                        <li>
-                            <a href="/products/genero/1">Policiales</a>
-                        </li>
-                        <li>
-                            <a href="/products/genero/2">Juveniles</a>
-                        </li>
-                        <li>
-                            <a href="/products/genero/3">Humor</a>
-                        </li>
-                        <li>
-                            <a href="/products/genero/4">Novelas</a>
-                        </li>
-                        <li>
-                            <a href="/products/genero/5">Infantiles</a>
-                        </li>
-                    </ul>
-                </li>
-                
-    </li>
-    <li><input type="checkbox" name="list"><label for="nivel2-1"><a href='/aboutUs'><i class="fas fa-users"></i>Sobre nosotros</a></li></label>
-    <li><input type="checkbox" name="list"><label for="nivel2-1"><a href='/questions'><i class="fas fa-question-circle"></i>Preguntas frecuentes</a></li></label>
-       </ul>
-    </li>
-    
-    
- </ul>
- </nav>
+        </label>
+        <% if(locals.isLogged){ %>
+            <nav class="navbar">
+                <ul class="botones">
+                    <li><a href="/user/profile/<%=locals.usuarioLogeado.usuario_id%>"><i class="fas fa-house-user"></i><%= locals.usuarioLogeado.usuario_nombre%></a></li>
+                    <li>
+                        <input type="checkbox" name="list">
+                        <label for="nivel2-1">
+                            <a href="/carrito"><i class="fas fa-shopping-cart"></i>Carrito</a>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="list" id="nivel2-1">
+                        <label for="nivel2-1" class="btn-categoria">
+                           <p><i class="fas fa-book-reader"></i>Categorias</p>
+                        </label>
+                        <ul class="interior">
+                            <li>
+                                <a href="/products/genero/1">Policiales</a>
+                            </li>
+                            <li>
+                                <a href="/products/genero/2">Juveniles</a>
+                            </li>
+                            <li>
+                                <a href="/products/genero/3">Humor</a>
+                            </li>
+                            <li>
+                                <a href="/products/genero/4">Novelas</a>
+                            </li>
+                            <li>
+                                <a href="/products/genero/5">Infantiles</a>
+                            </li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <input type="checkbox" name="list"><label for="nivel2-1"><a href='/aboutUs'><i class="fas fa-users"></i>Sobre nosotros</a>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="list"><label for="nivel2-1"><a href='/questions'><i class="fas fa-question-circle"></i>Preguntas frecuentes</a>
+                    </li>
+                    <li><a href="/user/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+        <% } else {%>
+            <nav class="navbar">
+                <ul class="botones">
+                    <li>
+                        <input type="checkbox" name="list">
+                        <label for="nivel2-1">
+                            <a href="/user/register"><i class="fas fa-user-plus"></i>Registrarse</a>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="list">
+                        <label for="nivel2-1">
+                            <a href="/user/login"><i class="fas fa-user"></i>Iniciar sesión</a>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="list">
+                        <label for="nivel2-1">
+                            <a href="/carrito"><i class="fas fa-shopping-cart"></i>Carrito</a>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="list" id="nivel2-1">
+                        <label for="nivel2-1" class="btn-categoria">
+                           <p><i class="fas fa-book-reader"></i>Categorias</p>
+                        </label>
+                        <ul class="interior">
+                            <li>
+                                <a href="/products/genero/1">Policiales</a>
+                            </li>
+                            <li>
+                                <a href="/products/genero/2">Juveniles</a>
+                            </li>
+                            <li>
+                                <a href="/products/genero/3">Humor</a>
+                            </li>
+                            <li>
+                                <a href="/products/genero/4">Novelas</a>
+                            </li>
+                            <li>
+                                <a href="/products/genero/5">Infantiles</a>
+                            </li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <input type="checkbox" name="list"><label for="nivel2-1"><a href='/aboutUs'><i class="fas fa-users"></i>Sobre nosotros</a>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="list"><label for="nivel2-1"><a href='/questions'><i class="fas fa-question-circle"></i>Preguntas frecuentes</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>            
+        <% } %> 
         
         <div class="botones-barra-superior">
             <% if(locals.isLogged){ %>
@@ -81,10 +128,11 @@
                 <li><a href="/user/login"><i class="fas fa-user"></i>Login</a></li>
                 <li><a href="/carrito"><i class="fas fa-shopping-cart"></i>Carrito</a></li>
             <% } %>
-            <% console.log(locals.isLogged) %>
                         
         </div>
         <div>
+
+               
         <nav class="navbar-desktop">
             <ul class="navh">
                 <li><a href="/products"><i class="fas fa-book-reader"></i>Categorias</a>
