@@ -186,142 +186,62 @@ header .navbar ul.botones li a i{
 
 /*FOOTER*/
 footer{
-    background-color: #7c0856;
-}
-
-.footer-seccion-1{
-    display: flex;
-}
-
-.contenedor-logo-footer{
-    width: 30%;
-    margin-top: 2.5px;
-    position: relative;
-    left: 30px;
-}
-
-
-.contenedor-logo-footer img{
-    width: 70%;
-}
-.contactanos{
     display: flex;
     flex-direction: column;
+    background-color: #7c0856;
+    padding: 15px 0px 5px;
+    ;
+}
+
+footer article{
     text-align: center;
-    margin: auto auto auto auto;
-}
-
-.contactanos div{
-    display: flex;
-    color: #ffff;
-    margin: 1.5px 0;
-}
-
-.contactanos h4{
-    color: #ffff;
-    text-align: center;
-    margin-bottom: 2.5px;
-    text-decoration: underline;
-}
-
-.contactanos div i{
-    margin-right: 3px;
-}
-
-.contactanos div p{
-    font-size: 14px;
-}
-
-.linea-footer{
-    border-top: 1px solid white;
     width: 90%;
-    margin: 10px auto;
+    padding-bottom: 7px;
+    margin: auto;
 }
 
-.footer-seccion-2{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 7px 0px;
+article i{
+    color: rgb(225 223 225);
+    font-size: 15px;
 }
 
-.footer-seccion-2 div{
-    width: 45vw;
-    color: #ffff;
-    margin: 2.5px 0;
+article.copyright{
+    margin-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
+    color: rgb(225 223 225);
+    border-top: 1px solid #bb3c91;
 }
 
-.footer-seccion-2 div a{
-    color: #ffff;
-    text-decoration: none;
-    margin-left: 3px;
-    font-size: 13px;
-}
-
-.footer-seccion-2 div a i{
-    margin-right: 2.5px;
-}
-
-.footer-seccion-3{
-    display: flex;
-}
-
-
-.footer-seccion-3 div{
-    display: none;
-}
-
-.footer-seccion-3 article{
-    margin: 0 auto;
-}
-
-.redes-footer{
-    color: #ffff;
-    margin: 5px 1.5px 2.5px;
-    text-align: center;
-}
-
-.redes-footer a{
-    color: #ffff;
-}
-
-.redes-footer a i{
-    font-size: 20px;
-    margin: 0 2.5px 3px;
+.textos-footer {
+    color: rgb(216, 120, 219);
+    font-size: 10px;
 }
 
 .copyright{
-    text-align: center;
-    font-size: 13px;
     border-top: 1px solid black;
+    margin: 2px;
+    text-align: center;
+    color: rgb(225 223 225);
 }
 
-/*-----------------MEDIA QUERIES: 450W ------------*/
-@media (min-width: 450px){
-    .contactanos h4{
-        font-size: 18px;
-    }
-
-    .contactanos div p{
-        font-size: 20px;
-    }
-
-    .footer-seccion-2 div a {
-        font-size: 17px;
-    }
-
-    .redes-footer a i{
-        font-size: 25px;
-    }
+/*footer article {
+    margin: 40px 0;
+    color: rgb(187, 147, 182);
 }
+
+footer article div {
+    margin-bottom: 9px;
+}
+*/
+
+
 /*-----------------MEDIA QUERIES: TABLET ------------*/
-@media (min-width: 700px){
+
+@media (min-width: 768px){
 .contenedor-header{
     justify-content: space-around;
 }
-
 
 div.contenedor-logo{
     margin-left: 20px;
@@ -343,65 +263,24 @@ label.burger-button i{
 }
 
 
-footer{
-    flex-wrap: wrap;
-    flex-direction: row;
-}
 
-.contenedor-logo-footer {
-    width: 30%;
-    margin-top: 2.5px;
-    position: relative;
-    left: 80px;
-}
+    footer{
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 
-.footer-seccion-3{
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+    footer article{
+        width: 32%;
+    }
 
-
-.footer-seccion-3 div{
-    display: block;
-    text-align: center;
-    width: 45vw;
-    border-radius: 15px;
-    border: 1px dashed white;
-    padding: 10px;
-}
-
-.footer-seccion-3 div i{
-    color: white;
-    font-size: 20px;
-    text-decoration: underline;
-    padding-bottom: 5px;
-}
-
-.footer-seccion-3 div p{
-    color: white;
-    font-size: 14px;
-}
-
-.footer-seccion-3 article div{
-    border: none;
-}
-footer article{
-    width: 32%;
-}
-
-footer article.copyright{
-    width: 100%;
-}
+    footer article.copyright{
+        width: 100%;
+    }
 }
 
 /*-----------------MEDIA QUERIES: DESKTOP ------------*/
 
 @media (min-width: 1024px){
-    .contactanos h4 {
-        font-size: 30px;
-    }
-    
     header .navbar{
         display: none;
     }
@@ -428,12 +307,6 @@ footer article.copyright{
     
     .botones-barra-superior li a i{
         margin-right: 2px;
-    }
-
-    .contenedor-logo-footer img {
-        width: 50%;
-        position: relative;
-        left: 30px;
     }
 
  /* ----------nav horizontal ----------------*/

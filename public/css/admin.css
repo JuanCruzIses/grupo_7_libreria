@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 /*------------main------------*/
+#libro_titulo {
+  text-transform: uppercase;
+}
+
 .frase{
   font-family: 'Dancing Script', cursive;
   font-size: 25px;
@@ -181,9 +185,7 @@
     text-decoration: none;
   }
 
-#libro_titulo {
-  text-transform: uppercase;
-}
+
 
 
   /* Responsive */

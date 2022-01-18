@@ -13,15 +13,15 @@ body{
 /**** MOBILE ****/
 
 .ir-arriba {
-    display: none;
-    padding: 10px;
-    background: #490657;
-    font-size: 25px;
-    color: rgb(221, 52, 213);
-    cursor: pointer;
-    position: fixed;
-    bottom: 250px;
-    right: 10px;
+	display:none;
+	padding:20px;
+	background:#490657;
+	font-size:20px;
+	color:rgb(221, 52, 213);
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
 }
 
 /*-------main-----*/
@@ -48,6 +48,7 @@ h2{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding-bottom: 30px;
     width: 100%;
     background-color: #FFF;
@@ -142,6 +143,7 @@ h3{
 
     .contenedor{
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         height: max-content;
         justify-content: space-evenly;
