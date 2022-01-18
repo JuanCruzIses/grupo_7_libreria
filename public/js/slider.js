@@ -59,8 +59,7 @@ function Derecha() {
     contador--;
     console.log(contador)
     if (derecha == 1 && banners.length > 0 && contador < banners.length && contador >= 0){
-        slider.style.transitionProperty = 'margin-left'
-        slider.style.transitionDuration = '0.5s';
+        
         slider.style.marginLeft = ('-' + 100 * contador + '%')
 
         izquierda = 1;

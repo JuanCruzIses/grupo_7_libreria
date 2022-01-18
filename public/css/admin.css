@@ -181,7 +181,9 @@
     text-decoration: none;
   }
 
-
+#libro_titulo {
+  text-transform: uppercase;
+}
 
 
   /* Responsive */
