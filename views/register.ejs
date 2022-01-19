@@ -18,20 +18,20 @@
     <%- include('./partials/header')  %> 
     <main>
         <h2 class=cen >Bienvenid@</h2>
-        <form class="form" method="post" action="/user/register" id='form'>
-            <p class="mensaje-error"> </p>
+        <form class="form" method="post" action="/user/register">
+            <p class="mensaje-error" id="mensaje-error"></p>
             <% if (locals.errores ){ 
                     errores.forEach(error => {%>
                         <p class="mensaje-error"> <%= error.msg%> </p>
                 <% }) %>
             <% } %> 
-            <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" maxlength="20" value="<%= locals.old && old.nombre %>" />
+            <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" value="<%= locals.old && old.nombre %>" />
 
-            <input type="text" class="form-control" placeholder="Apellido" name="apellido" maxlength="20" value="<%= locals.old && old.apellido %>" />
+            <input type="text" class="form-control" placeholder="Apellido" name="apellido" value="<%= locals.old && old.apellido %>" />
 
             <input type="email" class="form-control" placeholder="Email" name="email" value="<%= locals.old && old.email %>" required/>
-            
-            <input type="password" class="form-control" placeholder="Contraseña" data-toggle="password" name="contraseña" id="password" required/>
+
+            <input type="password" class="form-control" placeholder="Contraseña" data-toggle="password" name="contraseña"  id="password" required/>
 
             <input type="password" class="form-control" placeholder="Confirma contraseña" data-toggle="Confirma password" name="confirmaContraseña" id='confirmPassword' required/>
             
@@ -41,7 +41,7 @@
             <p class="message">Ya estas registrado? <a href="/user/login">Iniciar Sesión</a></p>
           </form>
     </main>
-    <%- include('./partials/footer')  %> 
-    <script src="/js/register.js"></script>
+    <%- include('./partials/footer')  %>
+    <script src="/js/register.js"></script> 
 </body>
 </html>

@@ -20,12 +20,12 @@ const controller = {
 
 		// let ultimoId = Number(products[products.length -1].id);
 		// let nuevoUltimoId = (ultimoId + 1).toString();
-		console.log(req.files)
-		if(req.files[0] != undefined){
-		img = req.files[0].filename
-		} else {
-			img = 'demo.png'
-		};
+		// console.log(req.files)
+		// if(req.files[0] != undefined){
+		// 	img = req.files[0].filename
+		// } else {
+		// 	img = 'default-image.png'
+		// }
 		
 		//console.log(req.body)
 

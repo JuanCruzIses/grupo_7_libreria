@@ -10,15 +10,12 @@ const userController = require('../controllers/userController.js');
 //----------REGISTER-------//
 router.get('/register', loggedMiddlewares, userController.vistaRegistro);
 router.post('/register', validateRegister , userController.registrar);
-
 //----------LOGIN-------//
 router.get('/login', loggedMiddlewares ,userController.vistaLogin);
 router.post('/login', userController.login)
-
 //----------LOGOUT-------//
 router.get('/logout', userController.logout);
-
-//----------EDIT PROFILE-------//
+//----------PROFILE-------//
 router.get('/profile/:id', notLoggedMiddlewares, userController.vistaProfile);
 router.post('/profile/:id', userController.editProfile)
 

@@ -1,7 +1,7 @@
 const password = document.querySelector('#password');
 const confirmPassword = document.querySelector('#confirmPassword')
 const Form = document.querySelector('#form');
-const p = document.querySelector('.mensaje-error');
+const p = document.querySelector('#mensaje-error');
 
 let contador = 0;
 function contar(){
@@ -37,5 +37,3 @@ confirmPassword.addEventListener('blur', function(e){
         p.innerText = '';
     }
 })
-
-
