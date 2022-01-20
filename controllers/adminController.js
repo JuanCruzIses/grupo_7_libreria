@@ -58,20 +58,22 @@ const controller = {
 		// let id = req.body.id;
 		// let productToEdit = products.find(product => product.id == id)
 		
-		let image
-		if(req.files[0] != undefined){
-			image = req.files[0].filename
-		} else {
-			image = null
-		}
+		// let image
+		// if(req.files[0] != undefined){
+		// 	image = req.files[0].filename
+		// } else {
+		// 	image = null
+		// }
 
+		console.log(req.body)
 		db.Libro.update(
 		{
 			libro_genero_id: req.body.categorias,
 			// libro_subgenero_id : NO TIENE INPUT CREADO EN EL FORM
         	libro_autor_id: req.body.autor,
 			libro_titulo: req.body.titulo,
-        	libro_imagen: image,
+        	// libro_imagen: image,
+			libro_imagen: req.file.filename,
         	libro_sinopsis: req.body.sinopsis,
         	libro_paginas: req.body.paginas,
         	libro_editorial: req.body.editorial,
