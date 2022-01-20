@@ -139,6 +139,7 @@ footer{
         position: relative;
         flex-direction: row;
         flex-wrap: wrap;
+        min-height: 450px;
     }
 
     .contDetail .contenedor-titulo {
@@ -154,6 +155,7 @@ footer{
     .contDetail  .contenedor-titulo .titulo {
         position: relative;
         border-bottom: 1px solid gray;
+        order: +1;
     }
 
     .productDetailImg{
@@ -162,11 +164,9 @@ footer{
     }
 
     .productDetailPurchase {
-        position: absolute;
-        width: 50%;
-        right: 0px;
+        width: 60%;
         margin-right: 5%;
-        bottom: 0px;       
+        margin: auto;
     }
 
     .description {
@@ -177,6 +177,7 @@ footer{
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
+        align-self: flex-end;
     }
 
     .description .descriptionAutor {
@@ -233,6 +234,7 @@ footer{
 
     .contDetail {
         justify-content: space-between;
+        flex-direction: row;
     }
 
     .description {
@@ -267,10 +269,6 @@ footer{
         width: 35%;
     }
 
-    .productDetailPurchase {
-        width: 30%;
-        right: 12.5%;
-    }
 
     .detalles p {
         font-size: 20px;
