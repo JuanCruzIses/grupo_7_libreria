@@ -101,8 +101,9 @@ const userController = {
         // let userToEdit = await db.Usuario.findOne({ where: {usuario_email : {[Op.like] : user.usuario_email} }})
         const user = req.session.usuarioLogeado;
         // let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, user.usuario_contrasenia)
-        console.log(user)
-
+            console.log(req.body)
+            console.log(user)
+            
         // if (verificaContraseñaHash){
 	        db.Usuario.update ({
                 usuario_id: user.usuario_id,
@@ -110,16 +111,18 @@ const userController = {
                 usuario_apellido: req.body.apellidoProfile,
                 usuario_email: req.body.emailProfile,
                 // usuario_contrasenia: bcrypt.hashSync(req.body.nuevaContraseñaProfile, 12),
-                usuario_rol_id: 2,
+                usuario_rol_id: user.usuario_rol_id,
                 usuario_imagen: req.body.imagenProfile
             },
             {
                 where: {usuario_id : user.usuario_id}
             })
             .then(function(libro){
-                res.redirect('/user/profile/' + user.usuario_id)}); 
- 
+                res.redirect('/user/profile/' + user.usuario_id)});
+                // req.session.usuarioLogeado = await db.Usuario.findByPk(req.params.id)
+                
         // }
+        
 		// let newUser = usuarios.map(usuario => {
         //     let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, userToEdit.contrasenia)   
 		//  	if (verificaContraseñaHash){

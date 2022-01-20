@@ -29,6 +29,7 @@ const productsController = {
 		.then(function(libro){
 			res.render('productDetail', {libro : libro , id : id} ) })        
 			.catch(error => console.log(error))
+		console.log(libros)
 	},
 		
 	//Categorias ----> género
