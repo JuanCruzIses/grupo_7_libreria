@@ -60,6 +60,12 @@
                     </a>
                 </div>
             </div>
+            <% if(locals.usuarioLogeado && locals.usuarioLogeado.usuario_rol_id === 1){ %>
+                <div class="buttons-admin">
+                    <a href="/admin/edit/<%= libro.libro_id %>"><button>EDITAR</button></a>
+                    <a href="/admin/delete/<%= libro.libro_id %>"><button>ELIMINAR</button></a>
+                </div>
+            <% } %> 
         </div>
         <div class="detalles">
             <h2>Sinopsis del libro <a>

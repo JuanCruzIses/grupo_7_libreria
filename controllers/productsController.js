@@ -27,7 +27,7 @@ const productsController = {
 		const id = req.params.id;
 		const libros = await db.Libro.findByPk(id)
 		.then(function(libro){
-			res.render('productDetail', {libro : libro , id : id} ) })        
+			res.render('productDetail', {libro : libro} ) })        
 			.catch(error => console.log(error))
 		console.log(libros)
 	},

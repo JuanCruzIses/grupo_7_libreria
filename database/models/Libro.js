@@ -50,7 +50,10 @@ module.exports = (sequelize, dataTypes) => {
         }, 
         libro_imagen: {
             type: dataTypes.STRING(100)
-        }
+        },
+        libro_stock : {
+            type: dataTypes.INTEGER,
+        },
     };
 
     let config = {

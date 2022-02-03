@@ -1,4 +1,3 @@
-<script src="../js/header-footer.js"></script>
 <header>      
     <div class="contenedor-header">
         <div class="contenedor-logo">
@@ -57,7 +56,14 @@
                     <li>
                         <input type="checkbox" name="list"><label for="nivel2-1"><a href='/questions'><i class="fas fa-question-circle"></i>Preguntas frecuentes</a>
                     </li>
-                    <li><a href="/user/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                    <% if(locals.usuarioLogeado && locals.usuarioLogeado.usuario_rol_id === 1){ %>
+                        <li> 
+                            <a href="/admin/create"><i class="fas fa-plus-circle"></i>Crear producto</a>
+                        </li>
+                    <% } %> 
+                    <li>
+                        <a href="/user/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -160,6 +166,11 @@
                 <li>
                     <a href="/questions"><i class="fas fa-question-circle"></i>Preguntas frecuentes</a>
                 </li>
+                <% if(locals.usuarioLogeado && locals.usuarioLogeado.usuario_rol_id === 1){ %>
+                    <li> 
+                        <a href="/admin/create"><i class="fas fa-plus-circle"></i>Crear producto</a>
+                    </li>
+                <% } %> 
             </ul>
         </nav>
     </div>

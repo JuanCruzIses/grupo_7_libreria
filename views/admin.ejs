@@ -30,19 +30,19 @@
 			<form action="/admin/create" method="POST" enctype="multipart/form-data" accept=".jpg, .png" class="form-admin">	
 									
 						<label for="libro_titulo" class="form-label">Título:</label>
-						<input type="text" id="libro_titulo" name="libro_titulo" placeholder="Utilizar mayúsculas unicamente" class="form-input">
+						<input type="text" id="libro_titulo" name="libro_titulo" class="form-input">
 					
 						<label for="libro_autor" class="form-label">Número de autor:</label>
 						<input type="text" id="libro_autor" name="libro_autor" placeholder="N° de autor en base de datos" class="form-input">
                   
 						<label for="libro_precio" class="form-label">Precio:</label>
-						<input type="number" id="libro_precio" name="libro_precio" placeholder="000" class="form-control">
+						<input type="number" id="libro_precio" name="libro_precio" class="form-control">
 					
 						<label for="libro_paginas" class="form-label">Páginas:</label>
-						<input type="number" id="libro_paginas" name="libro_paginas" placeholder="000" class="form-control">
+						<input type="number" id="libro_paginas" name="libro_paginas" class="form-control">
 					
 						<label for="libro_editorial" class="form-label">Editorial:</label>
-						<input type="text" id="libro_editorial" name="libro_editorial" placeholder="Utilizar mayúsculas unicamente" class="form-control">
+						<input type="text" id="libro_editorial" name="libro_editorial" class="form-control">
                    
 						<label for="libro_generos" class="form-label">Género:</label>
 						<select class="form-control" id="libro_generos" name="libro_generos">
@@ -62,7 +62,11 @@
 						<label for="img" class="form-label">Imagen:</label>
 						<input type="file" accept=".jpg, .png" name="img" id="img" class="form-control">
 					<br>
-						<input class= submit type="submit" class="buy-now-button"></input>
+					<label for="libro_stock" class="form-label">Stock:</label>
+					<input type="number" id="libro_stock" name="libro_stock" class="form-control">
+					<br>
+					
+					<input class= submit type="submit" class="buy-now-button"></input>
 	
 			</form>
 		</div>

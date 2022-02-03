@@ -94,6 +94,7 @@ const userController = {
 
         vistaProfile : (req, res) => {
             res.render('profile');
+            console.log(req.session)
         },
 
         editProfile: async (req, res) => {
