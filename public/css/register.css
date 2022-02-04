@@ -1,7 +1,7 @@
 /*BIENVENID@s*/
 h2 {
   color: #302c2a;
-  border-bottom: 5px dashed#7c0856;
+  border-bottom: 5px solid #7c0856;
   width: 5em;
   font-size: 3em;
   font-family: 'mifuente';
@@ -40,7 +40,7 @@ div.main-login {
     z-index: 1;
     background: #FFFFFF;
     max-width: 420px;
-    margin: 0 auto 100px;
+    margin: 50px auto 100px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);

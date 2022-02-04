@@ -65,6 +65,7 @@ const userController = {
     },
 
         vistaLogin : (req, res) => {
+            console.log(req.cookies)
             res.render('login')
         },
     
@@ -77,9 +78,15 @@ const userController = {
             // let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)
             let usuarioContraseña = usuarioEncontrado.usuario_contrasenia
             let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, usuarioContraseña)    
-        
+            
+            if(req.body.recordarme != undefined){
+                res.cookie('recordarme', usuarioEncontrado.usuario_email, { maxAge: 100000 })
+                console.log(req.cookies.recordarme)
+            }
+
             if (usuarioEncontrado && verificaContraseñaHash){
                 req.session.usuarioLogeado = usuarioEncontrado
+                console.log(req.cookies)
                 res.redirect("/")
                 } else {
                     return res.render('login', {errores: [{ msg: 'Por favor verifique ingresar correctamente sus datos' }] } ) 

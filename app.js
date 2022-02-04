@@ -37,12 +37,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(session({ secret: "Somos el sombrero loco",
                   resave: false,
-                  saveUninitialized: false}))
+                  saveUninitialized: false}));
+
                   
-///-----Requiriendo middleware de usuario logeado----///
+///-----Requiriendo middlewares----///
 const userLoggedMiddlewares = require('./middlewares/userLoggedMiddlewares')
+const recordameMiddleware = require('./middlewares/recordameMiddleware')
+
 //Uso de middlewares
 app.use(userLoggedMiddlewares);
+app.use(recordameMiddleware);
+
 
 //Uso de rutas
 app.use('/', indexRouter);
