@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" link href="./css/carrito.css">
+  <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+  <title>El sombrerero Loco</title>
+</head>
+
+<body>
+  <%- include('./partials/header') %>
+
+
+    <% if (totalPrice) { %>
+
+      <main>
+        <div class="Pedido">
+          <h1 class=cen>Compras Realizadas</h1>
+          <h3 class=frase> "Si la locura es felicidad, me declaro loco."- El Sombrerero -
+          </h3>
+          
+          <div class="carrito">
+            <div>
+              <!-- Titulo -->
+              <div class="titulo">
+                Compras Realizadas
+              </div>
+              <div>
+
+                <div class="col text-center" style="display:grid;
+                align-items: center;">
+                <!-- Libro #1 -->
+                <% pedidos.forEach(pedido=>{ %>
+                  <div style="padding: 5px;">
+                    <form action="/detallesdepedidos/<%= pedido.pedido_id %>" method="POST" id="formulario">
+                      <input style="display:none" type="number" name="nroorden" value="<%= pedido.pedido_id %>">
+                      <button style="background: #6e066e;" class="btn btn-success" type="submit">
+                        <p>#Orden de Compra N° <%= pedido.pedido_id %>
+                        </p>
+                      </button>
+                    </form>
+                  </div>
+
+                  <% }) %>
+                </div>
+                  <div class="col text-center" style="display:grid;
+                  align-items: center;">
+          
+          
+                    <div style="padding: 5px;">
+                      <a style="background: #9B9DCC;" class="btn btn-warning" href="/carrito" role="button"> Volver al Carrito</a>
+          
+          
+          
+                    </div>
+          
+          
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <% } else { %>
+        <main>
+          <div class="Pedido">
+            <div class="carrito" style="height: 300px;">
+              <div class="col text-center" style="display:grid;
+        align-items: center;">
+                <h3>"¡Ups! Aun no realizaste ninguna compra"</h3>
+                <div style="padding: 5px;">
+                  <a style="background: #6e066e;" class="btn btn-success" href="/" role="button">Empezar a comprar</a>
+                </div>
+                <div style="padding: 5px;">
+                  <a style="background: #9B9DCC;" class="btn btn-warning" href="/carrito" role="button"> Volver a
+                    Carrito</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <% } %>
+          <%- include('./partials/footer') %>
+</body>
+
+</html>
