@@ -54,9 +54,17 @@
                         </div>
                     </a>
                     <a href="#">
-                        <div class="btnAgregar">
-                            <p>Agregar al Carrito</p>
+                        <div>
+                            <form action="/carrito/add/<%= libro.libro_id %>" method="POST" id="formulario">
+
+
+                                <input style="display:none" type="number" name="cantidad" id="compra" value="1">
+                                <button class="btnAgregar" type="submit">
+                                    <p>Agregar al Carrito</p>
+                                </button>
+                            </form>
                         </div>
+
                     </a>
                 </div>
             </div>

@@ -18,9 +18,12 @@ const productsAPIRouter = require('./routes/api/productsAPIRouter');
 const userRouter = require('./routes/usersRoute')
 const productRouter = require('./routes/productRoute');
 const carritoRouter = require('./routes/carritoRoute');
+const pedidosRouter = require('./routes/pedidosRoute');
+const detallesdepedidosRouter = require('./routes/detallespedidosRoute');
 const aboutUsRouter = require('./routes/aboutUsRoute');
 const questionsRouter = require('./routes/questionsRoute');
 const adminRouter = require('./routes/adminRoute');
+const apiRouter = require('./routes/api');
 
 
 const app = express();
@@ -49,6 +52,8 @@ app.use('/', indexRouter);
 app.use('/user', userRouter)
 app.use('/products', productRouter);
 app.use('/carrito', carritoRouter);
+app.use('/pedidos', pedidosRouter);
+app.use('/detallesdepedidos', detallesdepedidosRouter);
 app.use('/aboutUs', aboutUsRouter);
 app.use('/questions', questionsRouter);
 app.use('/admin', adminRouter);
@@ -57,7 +62,7 @@ app.use('/admin', adminRouter);
 //Uso de rutas APIS
 app.use('/api/users', userAPIRouter)
 app.use('/api/products', productsAPIRouter)
-
+app.use('/api', apiRouter);
 
 
 // catch 404 and forward to error handler

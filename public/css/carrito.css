@@ -35,11 +35,12 @@
   .carrito {
     width: 800px;
     height: auto;
-
+    margin: 20px auto;
     box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
     border-radius: 6px;
     display: flex;
     flex-direction:column;
+    background-color: rgba(194, 160, 226, 0.274);
   
   }
 
@@ -66,7 +67,7 @@
   
   .item {
     padding: 20px 30px;
-    height: 120px;
+    height: auto;
     display: flex;
   }
   
@@ -150,7 +151,7 @@
   /* Product Description */
   .description {
     padding-top: 10px;
-    margin-right: 60px;
+    margin-right: 0px;
     width: 115px;
   }
   
@@ -185,7 +186,7 @@
     font-weight: 300;
   }
   
-  button[class*=btn] {
+  button[class*=btns] {
     width: 30px;
     height: 30px;
     background-color:  #f8bbf867;
@@ -193,10 +194,18 @@
     border: none;
     cursor: pointer;
   }
-  .minus-btn img {
+  button[class*=btm] {
+    width: 30px;
+    height: 30px;
+    background-color:  #f8bbf867;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  .minus-btm img {
     margin-bottom: 3px;
   }
-  .plus-btn img {
+  .plus-btm img {
     margin-top: 2px;
   }
   button:focus,
@@ -220,13 +229,12 @@
 .form {
     position: relative;
     z-index: 1;
-    background: #FFFFFF;
     min-width: 320px;
     max-width: 550px;
-    margin: 0 auto 100px;
-    padding: 45px;
+    margin: 0 auto 0px;
+    padding: 5px;
     text-align: center;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+   
   }
 
   .form-control{
@@ -246,13 +254,14 @@
   }
  
 .form select{
+  text-align: center;
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #e7dae7;
     width: 100%;
     border: 0;
     margin: 0 0 15px;
-    padding: 15px;
+    padding: 0px;
     box-sizing: border-box;
     font-size: 14px;
     border-radius: 5px ;
@@ -323,6 +332,18 @@
     .buttons {
       margin-right: 20px;
     }
+
+    .carrito {
+      width: auto;
+      height: auto;
+      margin: 20px auto;
+      box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+      border-radius: 6px;
+      display: flex;
+      flex-direction:column;
+      background-color: rgba(194, 160, 226, 0.274);
+    
+    }
   }
  /*---------CIERRA CARRITO__________________*/
 /*------------main------------*/
@@ -348,6 +369,7 @@
    
     margin: auto;
     padding-top: 30px;
+    padding: 1px;
     background-color: #ededed;
     min-width: 768px;
 }
