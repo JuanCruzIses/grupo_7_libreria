@@ -234,6 +234,7 @@ footer{
 
 .contactanos div i{
     margin-right: 3px;
+    place-self: center;
 }
 
 .contactanos div p{
@@ -269,7 +270,7 @@ footer{
 }
 
 .footer-seccion-2 div a i{
-    margin-right: 2.5px;
+    margin-right: 5px;
 }
 
 .footer-seccion-3{
@@ -302,6 +303,7 @@ footer article div{
 .redes-footer a i{
     font-size: 20px;
     margin: 0 2.5px 3px;
+    align-self: center;
 }
 
 .copyright{
@@ -330,7 +332,7 @@ footer article div{
     }
 }
 /*-----------------MEDIA QUERIES: TABLET ------------*/
-@media (min-width: 700px){
+@media (min-width: 768px){
 .contenedor-header{
     justify-content: space-around;
 }
@@ -418,7 +420,7 @@ footer article{
 footer article div{
     margin: 0px;
 }
-footer .footer-seccion-1{
+ .footer-seccion-1{
     order: -2;
     width: 45%;
     margin:0px;
@@ -426,17 +428,54 @@ footer .footer-seccion-1{
     justify-content: space-between;
 }
 
-footer .footer-seccion-1 h4{
+ .footer-seccion-1 h4{
     margin-bottom: 15px;
+    font-weight: 400;
 }
 }
 
 /*-----------------MEDIA QUERIES: DESKTOP ------------*/
 
 @media (min-width: 1024px){
+
+    .linea-footer{
+        display: none;
+    }
+
+    footer article{
+        order:0;
+    }
+
     .contactanos h4 {
         font-size: 30px;
     }
+    .footer-seccion-1{
+        order: -1;
+    }
+    .footer-seccion-2{
+        justify-content: space-around;
+        width: 100%;
+        order: -3;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-seccion-2 div{
+        width: fit-content;
+    }
+
+    .footer-seccion-3{
+        order: -2;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    .footer-seccion-3 div{
+        width: 30%;
+        border: none;
+    };
     
     header .navbar{
         display: none;
