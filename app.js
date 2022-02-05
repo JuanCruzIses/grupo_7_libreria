@@ -17,6 +17,7 @@ const productsAPIRouter = require('./routes/api/productsAPIRouter');
 ///-----Rutas de usuario-------////
 const userRouter = require('./routes/usersRoute')
 const productRouter = require('./routes/productRoute');
+const libroListRouter = require('./routes/libroListRoute')
 const carritoRouter = require('./routes/carritoRoute');
 const pedidosRouter = require('./routes/pedidosRoute');
 const detallesdepedidosRouter = require('./routes/detallespedidosRoute');
@@ -51,6 +52,7 @@ app.use(userLoggedMiddlewares);
 app.use('/', indexRouter);
 app.use('/user', userRouter)
 app.use('/products', productRouter);
+app.use('/libroList', libroListRouter);
 app.use('/carrito', carritoRouter);
 app.use('/pedidos', pedidosRouter);
 app.use('/detallesdepedidos', detallesdepedidosRouter);

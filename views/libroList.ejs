@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" link href="/css/index.css">
+    <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">      
+    <link rel="icon" href="/images/sombrero-loco.100px.ico">
+    <link rel="stylesheet" type="text/css" href="/css/slider.css">
+    <title>El sombrero Loco</title>
+</head>
+<body>
+
+    <%- include('./partials/header')  %> 
+    <% if (a) { %>
+    <main>
+      
+        
+        
+        <section class="productos">
+            <h2>Libros encontrados "<span style="color: red;"><%= a %></span>"</h2>        
+            <% libros.forEach(libro => { %>
+               <%- include('./partials/productosIndex', {libro})  %> 
+            <% }); %>
+        </section>
+
+        
+      
+
+        <span class="ir-arriba fa fa-arrow-circle-up" aria-hidden="true"></span>
+       <script>
+        $(document).ready(function(){
+
+            $('.ir-arriba').click(function(){
+                $('body, html').animate({
+                    scrollTop: '0px'
+                }, 300);
+            });
+        
+            $(window).scroll(function(){
+                if( $(this).scrollTop() > 0 ){
+                    $('.ir-arriba').slideDown(300);
+                } else {
+                    $('.ir-arriba').slideUp(300);
+                }
+            });
+        
+        });</script>
+    </main>
+    
+
+    <% } else { %>
+        <main>
+
+            <section class="productos">
+                <h2>Libros encontrados "<span style="color: red;"><%= a %></span>"</h2>        
+                       
+          <div class="Pedidos" style="display: flex;align-items: center;">
+           
+      
+              <div class="col text-center" style="display:grid;align-items: center;margin-top: 25%;margin-bottom:25%;">
+                    <h3>"¡Ups! No se encontraron resultados"</h3>           
+              </div>
+           
+          </div>
+            </section>
+        </main>
+        <% } %>
+
+        
+    <%- include('./partials/footer')  %>
+
+
+    <script src="/js/sliderproductosvistos.js"></script> 
+</body>
+</html>

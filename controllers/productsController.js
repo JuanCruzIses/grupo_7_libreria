@@ -12,6 +12,24 @@ const { Op } = require('sequelize');
 // }
 
 const productsController = {
+	buscar: async function (req, res, next) {
+		//let librosx = await db.Libro.findAll() variable para agregar mas productos librosx foreach
+		let libroSearch = req.query.libro;
+		const libros = await db.Libro.findAll({
+
+			where: {
+				libro_titulo: { [Op.like]: '%' + libroSearch + '%' }
+			}
+		})
+		let a = 0;
+		libros.forEach(libro => {
+			a = libros.length
+		})
+		console.log(a)
+		return res.render("libroList", { libros: libros, a/*librosx:librosx */ });
+
+
+	},
 	//index product
 	index: async (req, res) => {
 		const libros = await db.Libro.findAll()
