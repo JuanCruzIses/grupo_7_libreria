@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -12,39 +14,101 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-   <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" link href="/css/index.css">
-    <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">      
+    <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">
+    <link rel="stylesheet" type="text/css" link href="./css/carrito.css">      
     <link rel="icon" href="/images/sombrero-loco.100px.ico">
-    <link rel="stylesheet" type="text/css" href="/css/slider.css">
     <title>El sombrero Loco</title>
 </head>
 <body>
 
     <%- include('./partials/header')  %> 
     
-    <main>
+    <main style="width: 800px;align-items: center;margin-top:10px;margin-bottom: 10px;border-radius: 10px;">
       
         
         
-        <section class="productos">
-            <h2>Preguntas Frecuentes</h2>        
-            
+        <section  style="padding-top:10px;background-color: white;">
+            <h2 style="text-align: center;padding-top:10px;">Preguntas Frecuentes</h2>        
+           
+            <div style="width: 800px;align-items: center;">
+               
+                <div class="accordion" id="accordionExample">
+                    <% questions.forEach(question => { %>
+  
+                    <div class="accordion-item">
+                      <h2  class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree<%- question.id  %>" aria-expanded="false" aria-controls="collapseThree">
+                           <p style="font-weight: bold;"><%- question.questions_pregunta  %> </p> 
+                        </button>
+                      </h2>
+                      <div id="collapseThree<%- question.id  %>" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p><%- question.questions_respuesta  %></p>
+                         </div>
+                      </div>
+                    </div>
+                    <% }); %>
+                  </div>
+               
+               
+               
+               
+               
+               
+               
+             
+            </div>
+            <div  style="width: 800px;text-align: center;padding: 10px" >
+               
+                <% if(locals.usuarioLogeado && locals.usuarioLogeado.usuario_rol_id === 1){ %>
+                     
+                        <button style="background: #6e066e;" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle"></i>Crear Pregunta</a></button>
+                    
+                <% } %> 
+
+            </div>
         </section>
+     
+     
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Completa los siguientes campos</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form"  id=form action="/questions/crearquestions" method="POST" >
+                        <input type="text" class="form-control" placeholder="Pregunta" name="pregunta" required/>
+                        <textarea  class="form-control" placeholder="Respuesta" name="respuesta"  rows="6" required/></textarea>
+                        <div class="modal-footer">
+                        
+                          <button type="submit" class="btn btn-primary" >Agregar Questions</button>
+                      
+                        </div>
+                      </form>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+         
 
-        
-      
-
-        <span class="ir-arriba fa fa-arrow-circle-up" aria-hidden="true"></span>
-      
+    
+       
     </main>
-    
 
     
+    
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   
         
     <%- include('./partials/footer')  %>
-
+  
 
   
 </body>
