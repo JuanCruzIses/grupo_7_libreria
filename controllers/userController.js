@@ -80,7 +80,7 @@ const userController = {
             let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, usuarioContraseña)    
             
             if(req.body.recordarme != undefined){
-                res.cookie('recordarme', usuarioEncontrado.usuario_email, { maxAge: 100000 })
+                res.cookie('recordarme', usuarioEncontrado.usuario_email, { maxAge: 1000 })
                 console.log(req.cookies.recordarme)
             }
 
