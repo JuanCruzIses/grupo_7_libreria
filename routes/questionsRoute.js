@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-//Requiriendo funcionalidad del controlador
-const mainController = require('../controllers/mainController.js');
+
+const questionsController = require('../controllers/questionsController.js');
 
 //Dando ruta al controlador
-router.get('/', mainController.questions);
+router.get('/', questionsController.listQuestions);
+router.post('/crearquestions', questionsController.addQuestions);
 
 module.exports = router;
