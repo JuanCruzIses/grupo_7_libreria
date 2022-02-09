@@ -18,8 +18,8 @@
         <label class="burger-button" for="btn-menu">
             <i class="fas fa-bars"></i>
         </label>
+        <nav class="navbar" id="menu-desplegable">
         <% if(locals.isLogged){ %>
-            <nav class="navbar">
                 <ul class="botones">
                     <li><a href="/user/profile/<%=locals.usuarioLogeado.usuario_id%>"><i class="fas fa-house-user"></i><%= locals.usuarioLogeado.usuario_nombre%></a></li>
                     <li>
@@ -68,9 +68,7 @@
                 </ul>
             </li>
         </ul>
-    </nav>
         <% } else {%>
-            <nav class="navbar">
                 <ul class="botones">
                     <li>
                         <input type="checkbox" name="list">
@@ -121,9 +119,9 @@
                     </li>
                 </ul>
             </li>
-        </ul>
-    </nav>            
-        <% } %> 
+        </ul> 
+        <% } %>
+    </nav> 
         
         <div class="botones-barra-superior">
             <% if(locals.isLogged){ %>
@@ -175,4 +173,5 @@
             </ul>
         </nav>
     </div>
+    <script src="/js/desplegable.js"></script> 
 </header>

@@ -64,8 +64,6 @@ header .contenedor-logo .logotipo {
 /* #menu label:before{ content:"\025b8"; margin-right:4px;} */
 /* #menu input:checked ~ label:before{ content:"\025be";}  */
 /* #menu .interior{display: none;} */
-#menu input:checked ~ ul{display:block;}
-#menu input:checked ~ ul ~ li{display:block;}
 .burger-button {width: 25%;}
 
 #btn-menu{
@@ -74,10 +72,6 @@ header .contenedor-logo .logotipo {
 
 ul .interior {
     display: none;
-}
-
-.btn-categoria:checked ~ ul.interior {
-    display: block
 }
 
 .btn-categoria i{
@@ -99,21 +93,17 @@ ul .interior {
 
 header .navbar{
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     top: 65px;
     width: 80%;
     height: fit-content;
     background-color: #7c0856;
-    right: -80%;
+    right: 0px;
     z-index: 1000;
     width: 55vw;
     border-top: 1px solid #fff;
     transition: all 0.5s;
-}
-
-#btn-menu:checked ~ .navbar {
-    right: 0;
 }
 
 .burger-button{
@@ -436,7 +426,14 @@ footer article div{
 
 /*-----------------MEDIA QUERIES: DESKTOP ------------*/
 
-@media (min-width: 1024px){
+@media (min-width: 900px){
+    #menu-desplegable{
+        display: none;
+    }
+
+    nav .navbar{
+        display: none;
+    }
 
     .linea-footer{
         display: none;
