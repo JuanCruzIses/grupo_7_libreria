@@ -65,40 +65,39 @@ module.exports = (sequelize, dataTypes) => {
     const Libro = sequelize.define(alias, cols, config)
 
     Libro.associate = function(models){
-        Libro.belongsTo(models.PedidoDetalle, {
-            as: "pedidoDetalles",
-            foreignKey: "pedidoDetalle_libro_id"
-        })
-    }
-   
-    Libro.associate = function(models){
-        Libro.hasMany(models.Genero, {
-            as:'Generos',
-            foreignKey:"libro_genero_id"
-        })
-    }
-    
-    Libro.associate = function(models){
-        Libro.hasMany(models.Subgenero, {
-            as:'subgeneros',
-            foreignKey:"libro_subgenero_id"
-        })
-    }
-    
-    Libro.associate = function(models){
-        Libro.hasMany(models.Autor, {
+        // Libro.belongsTo(models.PedidoDetalle, {
+        //     as: "pedidoDetalles",
+        //     foreignKey: "pedidoDetalle_libro_id"
+        // })
+        Libro.belongsTo(models.Autor, {
             as:'autores',
-            foreignKey:"libro_autor_id"
-           
+            foreignKey:"libro_autor_id"     
         })
     }
    
-    Libro.associate = function(models){
-        Libro.hasMany(models.Editorial, {
-            as:'editoriales',
-            foreignKey:"libro_editorial_id"
-        })
-    }
+    // Libro.associate = function(models){
+    //     Libro.hasMany(models.Genero, {
+    //         as:'Generos',
+    //         foreignKey:"libro_genero_id"
+    //     })
+    // }
+    
+    // Libro.associate = function(models){
+    //     Libro.hasMany(models.Subgenero, {
+    //         as:'subgeneros',
+    //         foreignKey:"libro_subgenero_id"
+    //     })
+    // }
+    
+    // Libro.associate = function(models){
+    // }
+   
+    // Libro.associate = function(models){
+    //     Libro.hasMany(models.Editorial, {
+    //         as:'editoriales',
+    //         foreignKey:"libro_editorial_id"
+    //     })
+    // }
 
     return Libro
 }

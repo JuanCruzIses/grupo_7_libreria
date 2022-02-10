@@ -14,17 +14,17 @@ module.exports = (sequelize, dataTypes) => {
         autor_nombre: {
             type: dataTypes.STRING(100),
         },
-        autor_apellido: {
-            type: dataTypes.STRING(100),
-        },
         autor_biografia: {
             type: dataTypes.TEXT,
         },
     };
 
     let config = {
-        tablename: "Autores",
-        timestamps: false
+        tableName: "autores",
+        timestamps: false,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at'
+
     };
 
 
@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
     
     
     Autor.associate = function(models){
-        Autor.belongsTo(models.Libro, {
+        Autor.hasMany(models.Libro, {
             as: "libro_autor",
             foreignKey: "libro_autor_id"
         })

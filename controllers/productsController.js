@@ -39,15 +39,16 @@ const productsController = {
 	},
 	
     //Detalle de un producto
-    detail: async (req, res) => {
+    detail: (req, res) => {
 		// actualizar();
 		// res.render('productDetail', { libros, title: 'Detalle de Producto', id})
 		const id = req.params.id;
-		const libros = await db.Libro.findByPk(id)
-		.then(function(libro){
-			res.render('productDetail', {libro : libro} ) })        
-			.catch(error => console.log(error))
-		console.log(libros)
+		db.Libro.findByPk(id, {
+			include: [{association: 'autores'}]
+		})
+		.then(libro => res.render('productDetail', {libro : libro}))
+		//.then(res.render('productDetail', libro))
+		.catch(error => console.log(error))
 	},
 		
 	//Categorias ----> género
