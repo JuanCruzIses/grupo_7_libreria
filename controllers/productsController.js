@@ -13,20 +13,36 @@ const { Op } = require('sequelize');
 
 const productsController = {
 	buscar: async function (req, res, next) {
-		//let librosx = await db.Libro.findAll() variable para agregar mas productos librosx foreach
-		let libroSearch = req.query.libro;
-		const libros = await db.Libro.findAll({
-
-			where: {
-				libro_titulo: { [Op.like]: '%' + libroSearch + '%' }
+		
+		let libroSearch =  req.query.libro;
+		
+		const Autor = await db.Autor.findOne({
+			where:{
+				autor_nombre: { [Op.like]: '%' + libroSearch + '%' }
 			}
 		})
+
+		//let librosx = await db.Libro.findAll() variable para agregar mas productos librosx foreach
+		
+		const libros = await db.Libro.findAll({
+			where:{
+				[Op.or]:[{libro_titulo : {
+				  [Op.like]: '%' +  libroSearch + '%'
+				}}, {libro_autor_id : {
+				  [Op.like]: '%' + Autor.autor_id + '%'
+				}}],
+				
+			   }
+			
+		})
+		console.log(Autor.autor_nombre)
+	
 		let a = 0;
 		libros.forEach(libro => {
 			a = libros.length
 		})
 		console.log(a)
-		return res.render("libroList", { libros: libros, a/*librosx:librosx */ });
+		return res.render("libroList", { libros: libros, a, Autor/*librosx:librosx */ });
 
 
 	},
