@@ -29,7 +29,7 @@
                 <img src="/images/portadas/<%= libro.libro_imagen %>" alt="">
             </div>
 
-            <div class="description">
+            <div class="description" style="margin-top: 5px;">
                 <div class="descriptionAutor">
                     <p>Autor:</p>
                     <a href="" class="autor">
@@ -48,11 +48,14 @@
                     $ <%= libro.libro_precio %>
                 </p>
                 <div class="productDetailPurchase">
-                    <a href="/product/carrito/<%= libro.libro_id %> ">
-                        <div class="btnComprar">
-                            <p>Comprar ahora</p>
-                        </div>
-                    </a>
+                   
+                   <div>
+                    <form action="/carrito/add/<%= libro.libro_id %>" method="POST" id="formulario">
+                        <input style="display:none" type="number" name="cantidad" id="compra" value="1">
+                        <button class="btnComprar" type="submit">
+                           <p>Comprar ahora</p>
+                     </form>
+                       </div>
                     <a href="#">
                         <div>
                             <form action="/carrito/add/<%= libro.libro_id %>" method="POST" id="formulario">
