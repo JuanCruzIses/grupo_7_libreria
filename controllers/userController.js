@@ -80,13 +80,11 @@ const userController = {
             let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, usuarioContraseña)    
             
             if(req.body.recordarme != undefined){
-                res.cookie('recordarme', usuarioEncontrado.usuario_email, { maxAge: 1000 })
-                console.log(req.cookies.recordarme)
+                res.cookie('recordarme', usuarioEncontrado.usuario_email)
             }
 
             if (usuarioEncontrado && verificaContraseñaHash){
                 req.session.usuarioLogeado = usuarioEncontrado
-                console.log(req.cookies)
                 res.redirect("/")
                 } else {
                     return res.render('login', {errores: [{ msg: 'Por favor verifique ingresar correctamente sus datos' }] } ) 
@@ -95,7 +93,11 @@ const userController = {
 
         logout : (req, res) => {
             delete req.session.usuarioLogeado;
-            console.log("Usuario cerro sesión")
+            let usuarioRecordado 
+            if(req.cookies.recordarme){
+                usuarioRecordado = req.cookies.recordarme;
+            }
+            console.log(usuarioRecordado)
             return res.redirect("/user/login")
         },
 
@@ -114,13 +116,12 @@ const userController = {
             
         // if (verificaContraseñaHash){
 	        db.Usuario.update ({
-                usuario_id: user.usuario_id,
                 usuario_nombre: req.body.nombreProfile,
                 usuario_apellido: req.body.apellidoProfile,
                 usuario_email: req.body.emailProfile,
+                usuario_imagen: req.file.filename,
                 // usuario_contrasenia: bcrypt.hashSync(req.body.nuevaContraseñaProfile, 12),
-                usuario_rol_id: user.usuario_rol_id,
-                usuario_imagen: req.body.imagenProfile
+                // usuario_rol_id: user.usuario_rol_id,
             },
             {
                 where: {usuario_id : user.usuario_id}

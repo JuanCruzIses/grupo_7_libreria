@@ -337,14 +337,10 @@ div.contenedor-logo{
     width: 30px;
 }
 
-label.burger-button{
-    margin-right: 20px;
-}
-
 label.burger-button i{
     height: 40px;
-    font-size: 25px;
-    padding: 0px 0px 1px 1px;
+    font-size: 20px;
+    padding: 5px 0px;
 }
 
 

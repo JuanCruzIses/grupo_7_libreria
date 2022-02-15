@@ -42,12 +42,15 @@
 
                 <label for="email" class="form-label">Email:</label>
                 <input type="email" name="emailProfile" class="form-control" value="<%=locals.usuarioLogeado.usuario_email%>">
+                
+                <label for="img" class="form-label">Imagen de perfil:</label>
+                <input type="file" accept=".jpg, .png" name="img" id="img" class="form-control">
 
-                <label for="contraseña" class="form-label">Contraseña actual:</label>
+                <!-- <label for="contraseña" class="form-label">Contraseña actual:</label>
                 <input type="password" name="contraseñaProfile" class="form-control" placeholder="Ingrese su contraseña actual">
 
                 <label for="nuevaContraseña" class="form-label">Nueva contraseña:</label>
-                <input type="password" name="nuevaContraseñaProfile" class="form-control" placeholder="Ingrese su contraseña nueva">
+                <input type="password" name="nuevaContraseñaProfile" class="form-control" placeholder="Ingrese su contraseña nueva"> -->
 
                 <input type="submit" value="ENVIAR">
             </form>
