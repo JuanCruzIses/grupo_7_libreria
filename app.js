@@ -46,11 +46,11 @@ app.use(session({ secret: "Somos el sombrero loco",
                   
 ///-----Requiriendo middlewares----///
 const userLoggedMiddlewares = require('./middlewares/userLoggedMiddlewares')
-// const recordameMiddleware = require('./middlewares/recordameMiddleware')
+//const recordameMiddleware = require('./middlewares/recordameMiddleware')
 
-//Uso de middlewares
+// Uso de middlewares
 app.use(userLoggedMiddlewares);
-// app.use(recordameMiddleware);
+//app.use(recordameMiddleware);
 
 
 //Uso de rutas
