@@ -65,7 +65,6 @@ const userController = {
     },
 
         vistaLogin : (req, res) => {
-            console.log(req.cookies)
             res.render('login')
         },
     
