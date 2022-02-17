@@ -17,6 +17,59 @@ const carritoController = {
     },
 
 
+    addc: async (req, res, next) => {
+        let libro = await db.Libro.findByPk(req.params.id);
+
+        let libroencarrito = await db.Item.findOne({
+            where: {
+                [Op.and]: [
+                    { product_name: { [Op.like]: libro.libro_titulo } },
+                    { user_id: { [Op.like]: req.session.usuarioLogeado.usuario_id } },
+                    { order_id: null }
+
+
+                ]
+            }
+        });
+
+
+
+
+        if (!libroencarrito) {
+            await db.Item.create({
+                item_libro_id:libro.libro_id,
+                product_name: libro.libro_titulo,
+                unit_price: Number(libro.libro_precio),
+                subtotal: Number(req.body.cantidad) * Number(libro.libro_precio),
+                quantity: Number(req.body.cantidad),
+                image: libro.libro_imagen,
+                user_id: Number(req.session.usuarioLogeado.usuario_id),
+            })
+        }
+
+        else {
+            let quantityencontrado = (libroencarrito.quantity) + 1;
+            let preciounitarioencontrado = (libroencarrito.unit_price)
+            if (libroencarrito) {
+                db.Item.update({
+                    quantity: quantityencontrado,
+                    subtotal: Number(quantityencontrado) * Number(preciounitarioencontrado)
+                },
+                    {
+                        where: {
+                            [Op.and]: [
+                                { product_name: { [Op.like]: libro.libro_titulo } },
+                                { user_id: { [Op.like]: req.session.usuarioLogeado.usuario_id } }
+
+                            ]
+                        }
+                    })
+            }
+        }
+    },
+
+
+
     addProduct: async (req, res, next) => {
         let libro = await db.Libro.findByPk(req.params.id);
 

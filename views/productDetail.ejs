@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">
     <link rel="stylesheet" type="text/css" link href="../css/productDetail.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>
         <%= libro.libro_titulo %>
     </title>
@@ -58,11 +59,11 @@
                        </div>
                     <a href="#">
                         <div>
-                            <form action="/carrito/add/<%= libro.libro_id %>" method="POST" id="formulario">
+                            <form action="/carrito/addc/<%= libro.libro_id %>" method="POST" id="formularioadd">
 
 
                                 <input style="display:none" type="number" name="cantidad" id="compra" value="1">
-                                <button class="btnAgregar" type="submit">
+                                <button class="btnAgregar" type="submit" id="agregar">
                                     <p>Agregar al Carrito</p>
                                 </button>
                             </form>
@@ -88,5 +89,6 @@
         </div>
     </main>
     <%- include('./partials/footer')  %> 
+    <script src="/js/alertaddCarrito.js"></script>
 </body>
 </html>

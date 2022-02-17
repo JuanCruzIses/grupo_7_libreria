@@ -22,6 +22,8 @@
     <link rel="stylesheet" type="text/css" link href="./css/carrito.css">
     <link rel="stylesheet" type="text/css" link href="./css/header-footer.css">   
     <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script> 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
    <title>El sombrerero Loco</title>
 </head>
 <body>
@@ -82,8 +84,8 @@
                          </div>
                            <div class="btndelete">
 
-                            <form method="POST" action="/carrito/item/delete/<%= item.id %>">
-                              <button class="plus-btns" type="submit"> 
+                            <form method="POST" action="/carrito/item/delete/<%= item.id %>" id="borrarlibro" data-id="<%= item.id %>">
+                              <button class="plus-btns" type="submit" id="borrar" data-id="<%= item.id %>"> 
                                 <img src="/images/delete-svgrepo-com.svg" alt="">
                               </button>
                             </form>
@@ -131,42 +133,28 @@
                     
                 
                    
-                   <script type="text/javascript">
-                    $('.minus-btm').on('click', function(e) {
-                      e.preventDefault();
-                      var $this = $(this);
-                      var $input = $this.closest('div').find('input');
-                      var value = parseInt($input.val());
-              
-                      if (value > 1) {
-                        value = value - 1;
-                      } else {
-                        value = 0;
-                      }
-              
-                      $input.val(value);
-              
-                    });
-              
-                    $('.plus-btm').on('click', function(e) {
-                      e.preventDefault();
-                      var $this = $(this);
-                      var $input = $this.closest('div').find('input');
-                      var value = parseInt($input.val());
-              
-                      if (value < 100) {
-                        value = value + 1;
-                      } else {
-                        value =100;
-                      }
-              
-                      $input.val(value);
-                    });
-              
-                    $('.like-btn').on('click', function() {
-                      $(this).toggleClass('is-active');
-                    });
-                  </script> 
+                     <script type="text/javascript">
+
+                      $('.plus-btm').click(function () {
+                              if ($(this).prev().val() < 100) {
+                              $(this).prev().val(+$(this).prev().val() + 1);
+                          /*  $.ajax("http://localhost:3000/api/carrito/update",{
+                        type: "POST",
+                        url: "dosomething.php?id=" + id + "&newvalue=" + newVal,
+                        success: function() {
+                          $button.parent().find("input").val(newVal);
+                        }
+                      });*/
+                            
+                              }
+                      });
+                      $('.minus-btm').click(function () {
+                              if ($(this).next().val() > 1) {
+                              if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+                              }
+                      });
+                      
+                                        </script> 
 
 
 <!-- Modal -->
@@ -326,6 +314,7 @@
   </main>
   <% } %>
   <%- include('./partials/footer')  %> 
+  <script src="/js/deleteLibro.js"></script>
 </body>
 </html>
 
