@@ -427,6 +427,10 @@ footer article div{
         display: none;
     }
 
+    .padre{
+        position: relative;
+    }
+
     nav .navbar{
         display: none;
     }
@@ -560,7 +564,6 @@ ul, ol {
     text-align: center;
     z-index: 100;
     padding-top: 6px;
-    left: 10px;
 }
 
 .navh li:hover > ul {
@@ -635,9 +638,7 @@ ul, ol {
 
 /*----------------------MEDIAQUERIES 1200 PX------------------*/
 @media (min-width: 1100px) {
-.navh li ul {
-    left: 70px;
-}
+
 }
 
 
