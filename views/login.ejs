@@ -24,7 +24,13 @@
                         <p class="mensaje-error"> <%= error.msg%> </p>
                         <% }) %>
                 <% } %> 
-                  <input name="email" type="text" class="form-control" placeholder="Email de usuario" required/>
+                
+                <% if(infoUsuario != undefined){ %>
+                    <input name="email" type="text" class="form-control" value="<%=infoUsuario.usuario_email%>" required/>
+                <% } else { %>
+                    <input name="email" type="text" class="form-control" placeholder="Email de usuario" required/>
+                <% } %>
+                  
                   <div class="form-group">
                         <input name="contraseña" type="password" class="form-control" placeholder="Contraseña"  data-toggle="password" required/>
                   </div>

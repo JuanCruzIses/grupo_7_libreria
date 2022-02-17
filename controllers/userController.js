@@ -65,11 +65,14 @@ const userController = {
     },
 
         vistaLogin : (req, res) => {
+            let infoUsuario
             if (req.cookies.recordarme){
-                req.session.usuarioLogeado = req.cookies.recordarme;
-                res.redirect("/")
-            }else{
-                res.render('login')
+                let infoUsuario = req.cookies.recordarme;
+                res.render('login', {infoUsuario : infoUsuario})
+                console.log(infoUsuario)
+            } else {
+                let infoUsuario = undefined;
+                res.render('login', {infoUsuario : infoUsuario})
             }
         },
     
@@ -83,7 +86,7 @@ const userController = {
                 let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, usuarioContraseña)    
 
                 if(req.body.recordarme != undefined){
-                    res.cookie('recordarme', usuarioEncontrado, {maxAge:10000000000})
+                    res.cookie('recordarme', usuarioEncontrado, {maxAge:10000})
                 }
 
                 console.log(req.cookies.recordarme)
@@ -100,11 +103,6 @@ const userController = {
 
         logout : (req, res) => {
             delete req.session.usuarioLogeado;
-            let usuarioRecordado 
-            if(req.cookies.recordarme){
-                usuarioRecordado = req.cookies.recordarme;
-            }
-            console.log(usuarioRecordado)
             return res.redirect("/user/login")
         },
 
