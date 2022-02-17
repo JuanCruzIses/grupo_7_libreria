@@ -28,7 +28,12 @@
             <h2 class="frase-profile">"El secreto querid@ <%=locals.usuarioLogeado.usuario_nombre%>, es rodearse de personas que te hagan sonreir el corazón"</h2>
             + 
         <section>
-            <form class="form" action="/user/profile/<%=locals.usuarioLogeado.usuario_id %>" method="POST">
+            <form class="form" action="/user/profile/<%=locals.usuarioLogeado.usuario_id %>" method="POST" enctype="multipart/form-data" accept=".jpg, .png">
+                
+                <div class="imagen-usuario">
+                    <img src="/images/profileImages/<%=locals.usuarioLogeado.usuario_imagen%>">
+                </div>
+
                 <h3 class="cen">Editar perfil</h3>
                 <br>
                 <p class="profile-parraf">*Para editar alguno de los campos se debe modificar la información deseada y enviar el formulario</p>
@@ -45,7 +50,7 @@
                 
                 <label for="img" class="form-label">Imagen de perfil:</label>
                 <input type="file" accept=".jpg, .png" name="img" id="img" class="form-control">
-
+                
                 <!-- <label for="contraseña" class="form-label">Contraseña actual:</label>
                 <input type="password" name="contraseñaProfile" class="form-control" placeholder="Ingrese su contraseña actual">
 

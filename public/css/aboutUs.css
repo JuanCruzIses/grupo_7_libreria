@@ -3,6 +3,12 @@
     box-sizing: border-box;
   }
   /*------------main------------*/
+  div.imagen-usuario img{
+    border-radius: 80%;
+    width: 150px;
+    height: 150px;
+  }
+
   .body{
     height: auto;
   }
