@@ -17,6 +17,10 @@ const adminMiddlewares = require('../middlewares/adminMiddlewares')
 router.get('/create', adminMiddlewares, adminController.indexCreate); 
 router.post('/create', portadasMulter.single('img'), adminController.create); 
 
+// ************ CREATE *************
+
+router.get('/addAuthor', adminMiddlewares, adminController.indexAuthor); 
+router.post('/addAuthor', portadasMulter.single('img'), adminController.addAuthor); 
 
 // ************ EDIT *************
 

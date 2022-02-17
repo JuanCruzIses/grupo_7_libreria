@@ -86,7 +86,7 @@ const userController = {
                 let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, usuarioContraseña)    
 
                 if(req.body.recordarme != undefined){
-                    res.cookie('recordarme', usuarioEncontrado, {maxAge:10000})
+                    res.cookie('recordarme', usuarioEncontrado, {maxAge : 100000})
                 }
 
                 console.log(req.cookies.recordarme)
@@ -111,20 +111,31 @@ const userController = {
             console.log(req.session)
         },
 
-        editProfile: async (req, res) => {
+        editProfile: (req, res) => {
 		// let userToEdit = usuarios.filter(usuario => usuario.email == user.email)
         // let userToEdit = await db.Usuario.findOne({ where: {usuario_email : {[Op.like] : user.usuario_email} }})
         const user = req.session.usuarioLogeado;
         // let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, user.usuario_contrasenia)
             
         // if (verificaContraseñaHash){
+        if(req.file == undefined){
+            db.Usuario.update ({
+                usuario_nombre: req.body.nombreProfile,
+                usuario_apellido: req.body.apellidoProfile,
+                usuario_email: req.body.emailProfile,
+            },
+            {
+                where: {usuario_id : user.usuario_id}
+            })
+            .catch(error => console.log(error))
+            .then(function(libro){
+                res.redirect('/user/profile/' + user.usuario_id)}); 
+        } else {
 	        db.Usuario.update ({
                 usuario_nombre: req.body.nombreProfile,
                 usuario_apellido: req.body.apellidoProfile,
                 usuario_email: req.body.emailProfile,
                 usuario_imagen: req.file.filename,
-                // usuario_contrasenia: bcrypt.hashSync(req.body.nuevaContraseñaProfile, 12),
-                // usuario_rol_id: user.usuario_rol_id,
             },
             {
                 where: {usuario_id : user.usuario_id}
@@ -132,6 +143,7 @@ const userController = {
             .catch(error => console.log(error))
             .then(function(libro){
                 res.redirect('/user/profile/' + user.usuario_id)});
+            }
                 // req.session.usuarioLogeado = await db.Usuario.findByPk(req.params.id)
                 
         // }

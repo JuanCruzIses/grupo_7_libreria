@@ -8,6 +8,20 @@
   text-transform: uppercase;
 }
 
+.autores-li{
+  padding: 15px;
+  border: 1px solid;
+  border-bottom: none;
+}
+
+.autores-h3{
+  margin-bottom: 15px;
+}
+
+.ol-autores{
+  padding-left: 0px;
+}
+
 .frase{
   font-family: 'Dancing Script', cursive;
   font-size: 25px;

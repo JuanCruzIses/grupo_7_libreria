@@ -13,21 +13,38 @@
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" link href="../../css/admin.css">
     <link rel="stylesheet" type="text/css" link href="../../css/header-footer.css">   
-    <title>El sombrerero Loco - Delete</title>
+    <title>El sombrerero Loco - Agregar autor</title>
 </head>
 <body>
     <%- include('./partials/header')  %>
 
     <main>
-        <h2 class="title-form-admin">Formulario de eliminación de productos</h2>		
+        <h2 class="title-form-admin">Formulario de incorporación de autores</h2>		
 
         <div class="container-form-admin">	
-            <form class="form-admin" action="/admin/delete/:id" method="post">
-	    	    <label for="titulo" class="form-label">ID del producto a eliminar:</label>
-		        <input type="number" id="id" name="id" value=<%=id%> class="form-input">				
+            <form class="form-admin" action="/admin/addAuthor" method="post">
+
+	    	    <label for="autor_nombre" class="form-label">Nombre del autor:</label>
+		        <input type="text" id="autor_nombre" name="autor_nombre" class="form-input">				
             <br>    
+            
+	    	    <label for="autor_biografia" class="form-label">Biografía del autor:</label>
+		        <textarea type="text" id="autor_biografia" name="autor_biografia" class="form-input"></textarea>
+            <br>
                 <input class="submit" type="submit">
             </form>
+        </div>
+
+        <div class="form-admin">
+            <ol class="ol-autores">
+                <h3 class="autores-h3">Lista de autores en Base de Datos</h3>
+                <% autores.forEach(autor => { %>
+                <li class='autores-li'>
+                        <p>ID del autor:<b> <%= autor.autor_id %> </b> </p>
+                        <p>Nombre del autor:<b> <%= autor.autor_nombre %> </b> </p>
+                </li>
+                <% }); %>
+            </ol>
         </div>
     </main>
 
