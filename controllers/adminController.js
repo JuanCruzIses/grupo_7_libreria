@@ -115,6 +115,26 @@ const controller = {
 		res.redirect('/') 
 		// let finalProducts = products.filter(product => product.id != id);
 		// fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+	},
+
+	// Vista - Add Author
+	indexAuthor: async (req, res) => {
+		const autores = await db.Autor.findAll()
+			.then(function(autores){
+				res.render('addAuthor', {autores : autores} )}
+			)
+	},
+
+	// AddAuthor - Agregar un autor a DB
+	addAuthor: (req, res) => {
+		db.Autor.create({
+			autor_nombre : req.body.autor_nombre,			
+			autor_biografia : req.body.autor_biografia
+		})	.catch(error => console.log(error))
+			.then(function(){
+			console.log('Autor_Creado');
+			res.redirect('/admin/create');
+		});
 	}
 };
 

@@ -3,12 +3,25 @@
     box-sizing: border-box;
   }
   /*------------main------------*/
+  div.imagen-usuario img{
+    border-radius: 80%;
+    width: 150px;
+    height: 150px;
+  }
+
   .body{
     height: auto;
   }
+
+  .cent{
+    position: relative;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 15px;
+  }
+
   .cen{
     position: relative;
-    margin: 5px;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
@@ -28,6 +41,7 @@
   }
  
   .deco{
+    margin: auto;
     text-decoration: none;
     color: #000;
     width: 90%;
@@ -112,7 +126,7 @@
       .der{
         display: flex;
         flex-direction: row;
-         margin-bottom: 30px;
+        margin: 20px auto;
         width: 90%;
         margin: auto;
         box-sizing: border-box;

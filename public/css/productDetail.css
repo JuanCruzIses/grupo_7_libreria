@@ -11,7 +11,6 @@ main{
 
 h2 {
     font-size: 20px;
-    padding-bottom: 10px;
 }
 
 .description {
@@ -177,7 +176,7 @@ footer{
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
-        align-self: flex-end;
+        align-self: center;
     }
 
     .description .descriptionAutor {
