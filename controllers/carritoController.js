@@ -44,7 +44,16 @@ const carritoController = {
                 quantity: Number(req.body.cantidad),
                 image: libro.libro_imagen,
                 user_id: Number(req.session.usuarioLogeado.usuario_id),
+            }).then(function (item) {
+                setTimeout(doSomething, 3000);
+
+                function doSomething() {
+                    res.redirect("back")
+                }
+              
             })
+
+           
         }
 
         else {
@@ -63,6 +72,13 @@ const carritoController = {
 
                             ]
                         }
+                    }).then(function (item) {
+                        setTimeout(doSomething, 3000);
+        
+                        function doSomething() {
+                            res.redirect("back")
+                        }
+                      
                     })
             }
         }

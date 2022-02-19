@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
                 product_name
             }
 
-            fetch("http://localhost:3000/api/carrito/update", {
+            fetch("http://localhost:3030/api/carrito/update", {
                 method: "POST",
                 body: JSON.stringify(body),
                 headers: {
