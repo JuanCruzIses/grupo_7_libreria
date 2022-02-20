@@ -21,6 +21,11 @@ addquestions.addEventListener('click', (e) => {
         confirmButtonText: 'Sí',
         cancelButtonText: 'No',
         background:  'rgba(206, 177, 233, 0.925)',
+        backdrop: `
+        url("/images/decoraciones/gatoo.gif")
+ left top
+ no-repeat
+`
       })
      .then((result) => {
         if (result.isConfirmed) {

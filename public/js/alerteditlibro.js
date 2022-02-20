@@ -30,6 +30,11 @@ addquestions.addEventListener('click', (e) => {
                 timer:5000,
                 showConfirmButton:false,
                 background:  'rgba(206, 177, 233, 0.925)',
+                backdrop: `
+                url("/images/decoraciones/gatoo.gif")
+         left top
+         no-repeat
+       `
               })
 
             const elForm = document.getElementById('formedit')
