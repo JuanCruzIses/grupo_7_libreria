@@ -11,7 +11,16 @@ const userAPIController = {
                 total: users.length,
                 url: 'api/users'
             },
-            data: users
+            data: users.map(user => {
+                return{
+                    id: user.usuario_id,
+                    usuario: user.usuario_nombre,
+                    apellido:user.usuario_apellido,
+                    email: user.usuario_email,
+                    image: "/images/profileImages/" + user.usuario_email,
+                    
+                }
+            })
             }
             res.json(response)
         })

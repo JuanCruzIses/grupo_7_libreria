@@ -3,17 +3,16 @@ function submitForm(form) {
     submitFormFunction.call(form);
 }
 
-const eliminarLibro = document.querySelectorAll('form#borrarlibro button#borrar');
+const addquestions = document.getElementById('agregar');
 
 
-
-for (var i = 0; i < eliminarLibro.length; i++) {
-eliminarLibro[i].addEventListener('click', (e) => {
-
+addquestions.addEventListener('click', (e) => {
     e.preventDefault()
+
+
     Swal.fire({
 	
-        html: '¿Estas seguro que quieres eliminar este producto?',
+        html: '¿Seguro que deseas agregar una nueva Pregunta?',
         
 		icon: 'question',
         showCancelButton: true,
@@ -23,9 +22,9 @@ eliminarLibro[i].addEventListener('click', (e) => {
         cancelButtonText: 'No'
       }).then((result) => {
         if (result.isConfirmed) {
-            const elForm = document.getElementById('borrarlibro')
+            const elForm = document.getElementById('formquest')
             submitForm(elForm)
         }
     })
+
 })
-  }

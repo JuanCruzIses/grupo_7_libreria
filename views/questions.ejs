@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" link href="/css/header-footer.css">
     <link rel="stylesheet" type="text/css" link href="./css/carrito.css">      
     <link rel="icon" href="/images/sombrero-loco.100px.ico">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>El sombrero Loco</title>
 </head>
 <body>
@@ -81,12 +82,12 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="form"  id=form action="/questions/crearquestions" method="POST" >
+                    <form class="form"  id="formquest" action="/questions/crearquestions" method="POST" >
                         <input type="text" class="form-control" placeholder="Pregunta" name="pregunta" required/>
                         <textarea  class="form-control" placeholder="Respuesta" name="respuesta"  rows="6" required/></textarea>
                         <div class="modal-footer">
                         
-                          <button type="submit" class="btn btn-primary" >Agregar Questions</button>
+                          <button type="submit" class="btn btn-primary" id="agregar" >Agregar Questions</button>
                       
                         </div>
                       </form>
@@ -110,6 +111,6 @@
     <%- include('./partials/footer')  %>
   
 
-  
+    <script src="/js/alertaddquestion.js"></script>
 </body>
 </html>

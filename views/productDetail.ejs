@@ -30,7 +30,7 @@
                 <img src="/images/portadas/<%= libro.libro_imagen %>" alt="">
             </div>
 
-            <div class="description" style="margin-top: 5px;">
+            <div class="description" ><!-- con style="margin-top: 5px; o style="margin-top: auto;" se puede arreglar si anda mal-->
                 <div class="descriptionAutor">
                     <p>Autor:</p>
                     <a href="" class="autor">
@@ -89,6 +89,8 @@
         </div>
     </main>
     <%- include('./partials/footer')  %> 
+    <% if(locals.isLogged){ %>
     <script src="/js/alertaddCarrito.js"></script>
+    <% } %>
 </body>
 </html>
