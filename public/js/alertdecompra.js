@@ -3,7 +3,7 @@ function submitForm(form) {
     submitFormFunction.call(form);
 }
 
-const addquestions = document.getElementById('agregar');
+const addquestions = document.getElementById('sicomprar');
 
 
 addquestions.addEventListener('click', (e) => {
@@ -12,15 +12,12 @@ addquestions.addEventListener('click', (e) => {
 
     Swal.fire({
 	
-        html: '¿Seguro que deseas editar este libro ?',
+        html: '¿Seguro que deseas realizar esta compra?',
         
 		icon: 'question',
         showCancelButton: true,
        
        
-        confirmButtonText: 'Sí',
-        cancelButtonText: 'No',
-        background:  'rgba(206, 177, 233, 0.925)',
         confirmButtonText: 'Sí',
         cancelButtonText: 'No',
         background:  'rgba(206, 177, 233, 0.925)',
@@ -34,14 +31,13 @@ addquestions.addEventListener('click', (e) => {
         if (result.isConfirmed) {
             Swal.fire({
                 icon: 'success',
-                title: 'El Libro se editó correctamente',
+                title: 'Este pedido ha sido realizado.',
                 timer:5000,
                 showConfirmButton:false,
-                background:  'rgba(206, 177, 233, 0.925)',
-                
+                background:  'rgba(206, 177, 233, 0.925)'
               })
 
-            const elForm = document.getElementById('formedit')
+            const elForm = document.getElementById('formcarrito')
             setTimeout(doSomething, 3000);
         
                         function doSomething() {

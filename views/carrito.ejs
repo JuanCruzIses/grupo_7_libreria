@@ -164,7 +164,7 @@
       <div class="modal-body">
         <div id="datospersonales">
         
-        <form name="f1" class="form"  action="/carrito/order/add" method="POST">
+        <form name="f1" class="form"  action="/carrito/order/add" method="POST" id="formcarrito">
           <input type="text" class="form-control" placeholder="Nombre completo" name="nombre" required/>
           <input type="text" class="form-control" placeholder="Apellido" name="apellido" required/>
           <select class="form-control" id="paisesCombo" name="countryId">
@@ -249,7 +249,7 @@
           </script>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver a Carrito</button>
-            <button type="submit" class="btn btn-primary">Realizar Compra</button>
+            <button type="submit" class="btn btn-primary" id="sicomprar">Realizar Compra</button>
           </div>
         </form>
       </div>
@@ -309,6 +309,7 @@
   <% } %>
   <%- include('./partials/footer')  %> 
   <script src="/js/deleteLibro.js"></script>
+  <script src='/js/alertdecompra.js'></script>
 </body>
 </html>
 
