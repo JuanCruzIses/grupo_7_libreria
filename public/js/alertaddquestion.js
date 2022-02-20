@@ -19,7 +19,8 @@ addquestions.addEventListener('click', (e) => {
        
        
         confirmButtonText: 'Sí',
-        cancelButtonText: 'No'
+        cancelButtonText: 'No',
+        background:  'rgba(206, 177, 233, 0.925)'
       }).then((result) => {
         if (result.isConfirmed) {
             const elForm = document.getElementById('formquest')

@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" link href="../../css/admin.css">
     <link rel="stylesheet" type="text/css" link href="../../css/header-footer.css">   
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>El sombrerero Loco</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
 		<h2 class="title-form-admin">Formulario de edición de productos</h2>
 
     	<div class="container-form-admin">			
-			<form class="form-admin" action="/admin/edit/<%=libroEdit.libro_id%>" method="POST" enctype="multipart/form-data">
+			<form class="form-admin" action="/admin/edit/<%=libroEdit.libro_id%>" method="POST" enctype="multipart/form-data" id="formedit">
                         <p>Escribir los datos a modificar</p>
                         <br>
                         <label for="titulo" class="form-label">Título:</label>
@@ -71,7 +72,7 @@
 						</select>
 					<br>
 					<% */ %>		
-						<input class= submit type="submit" class="buy-now-button"></input>
+						<input class= submit type="submit" class="buy-now-button"  id="agregar"></input>
 
 					
 
@@ -81,5 +82,6 @@
 	</main>	
 
 <%- include('./partials/footer')  %> 
+<script src='/js/alerteditlibro.js'></script>  
 </body>
 </html>

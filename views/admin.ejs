@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" link href="../css/admin.css">
     <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">   
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>El sombrerero Loco</title>
 </head>
 
@@ -27,7 +28,7 @@
 		<h2 class="title-form-admin">Formulario de creación de productos</h2>
 			
 		<div class="container-form-admin">
-			<form action="/admin/create" method="POST" enctype="multipart/form-data" accept=".jpg, .png" class="form-admin">	
+			<form action="/admin/create" method="POST" enctype="multipart/form-data" accept=".jpg, .png" class="form-admin" id="formadmin">	
 									
 						<label for="libro_titulo" class="form-label">Título:</label>
 						<input type="text" id="libro_titulo" name="libro_titulo" class="form-input">
@@ -66,7 +67,7 @@
 					<input type="number" id="libro_stock" name="libro_stock" class="form-control">
 					<br>
 					
-					<input class= submit type="submit" class="buy-now-button"></input>
+					<input class= submit type="submit" class="buy-now-button" id="agregar"></input>
 	
 			</form>
 		</div>
@@ -74,5 +75,6 @@
 
 	 <%- include('./partials/footer')  %> 
 	 <script src='/js/admin.js'></script>     
+	 <script src='/js/alertnewlibro.js'></script>  
 </body>
 </html>
