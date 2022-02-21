@@ -10,16 +10,25 @@
 
 .autores-li{
   padding: 15px;
-  border: 1px solid;
-  border-bottom: none;
+  border: solid;
+  border-bottom: 0.5px solid;
+  border-top: 0.5px solid;
+  width: 50%;
+  margin: 0px;
+  border-right: 1px solid;
+  border-left: 1px solid;
 }
 
 .autores-h3{
+  width: 100%;
   margin-bottom: 15px;
 }
 
 .ol-autores{
   padding-left: 0px;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .frase{
@@ -46,7 +55,7 @@
     background: #FFFFFF;
     min-width: 320px;
     max-width: 550px;
-    margin: 0 auto 0px;
+    margin: 0 auto 50px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);

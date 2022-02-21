@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/129dcb97cd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" link href="../css/header-footer.css">
     <link rel="stylesheet" type="text/css" link href="../css/register.css"> 
+    <link rel="icon" href="images/sombrero-loco.100px.ico">
     <title>El sombrero Loco</title>
 </head>
 
@@ -19,16 +20,14 @@
         <h2 class=cen>Bienvenid@</h2>
         <div class="form">
             <form class="login-form" method="post" action="/user/login" >
-                <% if (locals.errores ){ 
-                    errores.forEach(error => {%>
-                        <p class="mensaje-error"> <%= error.msg%> </p>
-                        <% }) %>
+                <% if (errores){ %>
+                    <p class="mensaje-error"> <%= errores%> </p>
                 <% } %> 
                 
-                <% if(infoUsuario != undefined){ %>
-                    <input name="email" type="text" class="form-control" value="<%=infoUsuario.usuario_email%>" required/>
-                <% } else { %>
+                <% if(infoUsuario == null){ %>
                     <input name="email" type="text" class="form-control" placeholder="Email de usuario" required/>
+                <% } if(infoUsuario != undefined){ %>
+                    <input name="email" type="text" class="form-control" value="<%=infoUsuario.usuario_email%>" required/>
                 <% } %>
                   
                   <div class="form-group">

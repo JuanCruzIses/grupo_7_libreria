@@ -65,38 +65,48 @@ const userController = {
     },
 
         vistaLogin : (req, res) => {
-            let infoUsuario
             if (req.cookies.recordarme){
+                let errores = undefined;
                 let infoUsuario = req.cookies.recordarme;
-                res.render('login', {infoUsuario : infoUsuario})
+                res.render('login', {infoUsuario , errores})
                 console.log(infoUsuario)
             } else {
-                let infoUsuario = undefined;
-                res.render('login', {infoUsuario : infoUsuario})
+                let infoUsuario = null;
+                let errores = undefined;
+                res.render('login', {infoUsuario , errores})
             }
         },
     
         login : async (req, res) => {
                 let errores = validationResult(req)          
-                
-                // var usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
-                let usuarioEncontrado = await db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
-                // let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)
-                let usuarioContraseña = usuarioEncontrado.usuario_contrasenia
-                let verificaContraseñaHash =  bcrypt.compareSync(req.body.contraseña, usuarioContraseña)    
 
+                //------------COOKIES PARA RECORDAR USUARIO-----------
                 if(req.body.recordarme != undefined){
                     res.cookie('recordarme', usuarioEncontrado, {maxAge : 100000})
                 }
+                //----------------------------------------------------
 
-                console.log(req.cookies.recordarme)
+                // var usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
+                // let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)
+
+                let usuarioEncontrado = await db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
+                let usuarioContraseña = ''
+
+                if(usuarioEncontrado){
+                    usuarioContraseña = usuarioEncontrado.usuario_contrasenia
+                }
+
+                let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioContraseña)
+
 
                 if (usuarioEncontrado && verificaContraseñaHash){
                     req.session.usuarioLogeado = usuarioEncontrado
                     res.redirect("/")
-                    } else {
-                        return res.render('login', {errores: [{ msg: 'Por favor verifique ingresar correctamente sus datos' }] } ) 
-                    }
+                } else {
+                    let infoUsuario = null
+                    let errores = 'Por favor verifique ingresar correctamente sus datos'
+                    return res.render('login', {errores , infoUsuario} ) 
+                }
             
 
         },

@@ -26,6 +26,27 @@ const userAPIController = {
         })
         .catch(error => console.log(error))
     },
+
+    ultimo: (req, res) => {
+        db.Usuario.findAll({order:[["usuario_id", "DESC"]], limit:1})
+        .then(function (user) {
+            user[0].setDataValue("endpoint", "/api/users/lastUser/" + user.length)
+
+            let apiResponse= {
+                meta: {
+                    status: 200,
+                    url:"/api/users/lastUser",
+                    total: user.length
+                },
+                data: user
+            }
+            res.json(apiResponse)
+        })
+        .catch(function(error){
+            res.json({status:500})
+        })
+    },
+
     create : (req, res) => {
         Usuario.create(
             {
