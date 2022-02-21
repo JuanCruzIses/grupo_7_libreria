@@ -79,19 +79,21 @@ const userController = {
     
         login : async (req, res) => {
                 let errores = validationResult(req)          
-
+                
+    
+                // let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)
+                
+                // var usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
+                
+                let usuarioEncontrado = await db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
+                let usuarioContraseña = ''
+                
                 //------------COOKIES PARA RECORDAR USUARIO-----------
                 if(req.body.recordarme != undefined){
                     res.cookie('recordarme', usuarioEncontrado, {maxAge : 100000})
                 }
                 //----------------------------------------------------
-
-                // var usuarioEncontrado = usuarios.find(usuario => usuario.email == req.body.email)
-                // let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, usuarioEncontrado.contrasenia)
-
-                let usuarioEncontrado = await db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
-                let usuarioContraseña = ''
-
+                
                 if(usuarioEncontrado){
                     usuarioContraseña = usuarioEncontrado.usuario_contrasenia
                 }
