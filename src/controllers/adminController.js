@@ -1,17 +1,20 @@
 const fs = require('fs');
 const path = require('path');
-const productsFilePath = path.join(__dirname, '../data/libros.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+// const productsFilePath = path.join(__dirname, '../data/libros.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const db = require('../database/models')
+const db = require('../../database/models');
 const sequelize = db.sequelize
 const { Op } = require("sequelize");
 
 const controller = {
 	// Vista - Create
-	indexCreate: (req, res) => {
-		res.render('admin', { products, toThousand } )
+	indexCreate: async (req, res) => {
+	const products = await db.Libro.findAll()
+		.then(function(libros){
+			res.render('admin', { products, toThousand } )
+		})
 	},
 	
 	// Create -  Method to store

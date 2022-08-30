@@ -23,6 +23,7 @@
     "morgan": "~1.9.1",
     "multer": "^1.4.3",
     "mysql2": "^2.3.3",
+    "netlify-lambda": "^2.0.15",
     "parser": "^0.1.4",
     "sequelize": "^6.12.0-beta.3",
     "session": "^0.1.0",

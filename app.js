@@ -11,21 +11,21 @@ const cors = require("cors");
 
 
 ///-----Rutas de APIS-------////
-const userAPIRouter = require('./routes/api/userAPIRouter');
-const productsAPIRouter = require('./routes/api/productsAPIRouter');
+const userAPIRouter = require('./src/routes/api/userAPIRouter');
+const productsAPIRouter = require('./src/routes/api/productsAPIRouter');
 
 //Declarando rutas
-const indexRouter = require('./routes/indexRoute');
-const userRouter = require('./routes/usersRoute')
-const productRouter = require('./routes/productRoute');
-const libroListRouter = require('./routes/libroListRoute')
-const carritoRouter = require('./routes/carritoRoute');
-const pedidosRouter = require('./routes/pedidosRoute');
-const detallesdepedidosRouter = require('./routes/detallespedidosRoute');
-const aboutUsRouter = require('./routes/aboutUsRoute');
-const questionsRouter = require('./routes/questionsRoute');
-const adminRouter = require('./routes/adminRoute');
-const apiRouter = require('./routes/api');
+const indexRouter = require('./src/routes/indexRoute');
+const userRouter = require('./src/routes/usersRoute')
+const productRouter = require('./src/routes/productRoute');
+const libroListRouter = require('./src/routes/libroListRoute')
+const carritoRouter = require('./src/routes/carritoRoute');
+const pedidosRouter = require('./src/routes/pedidosRoute');
+const detallesdepedidosRouter = require('./src/routes/detallespedidosRoute');
+const aboutUsRouter = require('./src/routes/aboutUsRoute');
+const questionsRouter = require('./src/routes/questionsRoute');
+const adminRouter = require('./src/routes/adminRoute');
+const apiRouter = require('./src/routes/api');
 
 
 const app = express();
@@ -59,7 +59,7 @@ app.use(session({
 
 
 ///-----Requiriendo middlewares----///
-const userLoggedMiddlewares = require('./middlewares/userLoggedMiddlewares')
+const userLoggedMiddlewares = require('./src/middlewares/userLoggedMiddlewares')
 //const recordameMiddleware = require('./middlewares/recordameMiddleware')
 
 // Uso de middlewares
