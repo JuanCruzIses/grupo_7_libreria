@@ -13,7 +13,7 @@ const controller = {
 	indexCreate: async (req, res) => {
 	const products = await db.Libro.findAll()
 		.then(function(libros){
-			res.render('admin', { products, toThousand } )
+			res.render('admin', { libros } )
 		})
 	},
 	

@@ -1,9 +1,7 @@
 [build]
-    command = "npm run build"
-    publish = "/build"
-    base = "/"
+    functions="functions"
 
 [[redirects]]
-    from = "/*"
-    to = "/index.ejs"
-    status = 200
+    to="/.netlify/functions/:splat"
+    from="*"
+    status=200
