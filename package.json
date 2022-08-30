@@ -3,17 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "node ./bin/www build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "build-script": "^0.0.1",
     "cookie": "^0.4.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "errorhandler": "^1.5.1",
-    "express": "^4.17.2",
+    "express": "^4.18.1",
     "express-session": "^1.17.2",
     "express-validator": "^6.13.0",
     "http-errors": "~1.6.3",
