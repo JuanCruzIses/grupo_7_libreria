@@ -69,7 +69,6 @@ const userController = {
                 let errores = undefined;
                 let infoUsuario = req.cookies.recordarme;
                 res.render('login', {infoUsuario , errores})
-                console.log(infoUsuario)
             } else {
                 let infoUsuario = null;
                 let errores = undefined;

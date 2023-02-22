@@ -2,29 +2,41 @@ const db = require('../../../database/models');
 
 const productsAPIController = {
     list: (req, res) => {
-        db.Libro.findAll()
-        .then(products => {
+        try{
+
+            db.Libro.findAll()
+            .then(products => {
+                const response = {
+                    meta: {
+                        status: 200,
+                        total: products.length,
+                        url: 'api/products'
+                    },
+                    data: products.map(product => {
+                        return{
+                            id: product.libro_id,
+                            titulo: product.libro_titulo,
+                            editorial:product.libro_editorial,
+                            stock: product.libro_stock,
+                            precio: product.libro_precio,
+                            image: "/images/profileImages/" + product.usuario_email,
+                            
+                        }
+                    })
+                }
+                res.json(response)
+            })
+            .catch(error => console.log(error))
+        }catch(error){
             const response = {
             meta: {
-                status: 200,
-                total: products.length,
-                url: 'api/products'
-            },
-            data: products.map(product => {
-                return{
-                    id: product.libro_id,
-                    titulo: product.libro_titulo,
-                    editorial:product.libro_editorial,
-                    stock: product.libro_stock,
-                    precio: product.libro_precio,
-                    image: "/images/profileImages/" + product.usuario_email,
-                    
-                }
-            })
+                status: 400,
+                error: error,
+                url: 'api/v1/products'
             }
-            res.json(response)
-        })
-        .catch(error => console.log(error))
+        }
+        res.json(response)
+        }
     },
 
     ultimo: (req, res) => {
