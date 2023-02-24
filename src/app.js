@@ -1,6 +1,7 @@
+const express = require('express')
+const session = require('express-session')
+const app = express()
 const createError = require('http-errors');
-const express = require('express');
-const session = require('express-session');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -11,25 +12,24 @@ const cors = require("cors");
 
 
 ///-----Rutas de APIS-------////
-const userAPIRouter = require('./src/routes/api/userAPIRouter');
-const productsAPIRouter = require('./src/routes/api/productsAPIRouter');
+const userAPIRouter = require('./routes/api/userAPIRouter');
+const productsAPIRouter = require('./routes/api/productsAPIRouter');
 
 //Declarando rutas
-const indexRouter = require('./src/routes/indexRoute');
-const userRouter = require('./src/routes/usersRoute')
-const productRouter = require('./src/routes/productRoute');
-const libroListRouter = require('./src/routes/libroListRoute')
-const carritoRouter = require('./src/routes/carritoRoute');
-const pedidosRouter = require('./src/routes/pedidosRoute');
-const detallesdepedidosRouter = require('./src/routes/detallespedidosRoute');
-const aboutUsRouter = require('./src/routes/aboutUsRoute');
-const questionsRouter = require('./src/routes/questionsRoute');
-const adminRouter = require('./src/routes/adminRoute');
-const apiRouter = require('./src/routes/api')
+const indexRouter = require('./routes/indexRoute');
+const userRouter = require('./routes/usersRoute')
+const productRouter = require('./routes/productRoute');
+const libroListRouter = require('./routes/libroListRoute')
+const carritoRouter = require('./routes/carritoRoute');
+const pedidosRouter = require('./routes/pedidosRoute');
+const detallesdepedidosRouter = require('./routes/detallespedidosRoute');
+const aboutUsRouter = require('./routes/aboutUsRoute');
+const questionsRouter = require('./routes/questionsRoute');
+const adminRouter = require('./routes/adminRoute');
+const apiRouter = require('./routes/api')
 
 
 
-const app = express();
 //Cors para integrar Api al Dasboard de React
 app.use(cors())
 app.use((req, res, next) => {
@@ -60,7 +60,7 @@ app.use(session({
 
 
 ///-----Requiriendo middlewares----///
-const userLoggedMiddlewares = require('./src/middlewares/userLoggedMiddlewares')
+const userLoggedMiddlewares = require('./middlewares/userLoggedMiddlewares');
 //const recordameMiddleware = require('./middlewares/recordameMiddleware')
 
 // Uso de middlewares
@@ -82,25 +82,25 @@ app.use('/admin', adminRouter);
 
 
 //Uso de rutas APIS
-app.use('/api/users', userAPIRouter)
-app.use('/api/products', productsAPIRouter)
-app.use('/api', apiRouter);
+// app.use('/api/users', userAPIRouter)
+// app.use('/api/products', productsAPIRouter)
+// app.use('/api', apiRouter);
 
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
+// // catch 404 and forward to error handler
+// app.use(function (req, res, next) {
+//   next(createError(404));
+// });
 
-// error handler
-app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// // error handler
+// app.use(function (err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+//   // render the error page
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
 
 module.exports = app;
