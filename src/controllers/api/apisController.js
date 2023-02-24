@@ -1,8 +1,7 @@
-const db = require('../../../database/models');
-const bcrypt = require("bcryptjs");
+import { pool } from '../db.js'
+const promisePool = pool.promise();
 
-const apis = {
-    updateCart: async function (req, res) {
+export const updateCart = async function (req, res) {
         await db.Item.update({
             subtotal: Number(req.body.quantity) * Number(req.body.unit_price),
             quantity: Number(req.body.quantity),
@@ -23,6 +22,3 @@ const apis = {
 
         res.json(item)
     }
-}
-
-module.exports = apis

@@ -1,11 +1,10 @@
-const express = require('express');
-const router = express.Router();
+import {Router} from 'express';
+const router = Router();
 
-
-const questionsController = require('../controllers/questionsController.js');
+import { listQuestions, addQuestions } from '../controllers/questionsController.js';
 
 //Dando ruta al controlador
-router.get('/', questionsController.listQuestions);
-router.post('/crearquestions', questionsController.addQuestions);
+router.get('/', listQuestions);
+router.post('/crearquestions', addQuestions);
 
-module.exports = router;
+export default router

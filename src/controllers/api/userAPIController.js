@@ -1,8 +1,8 @@
-const db = require('../../../database/models');
-const bcrypt = require('bcryptjs');
+import { pool } from '../db.js'
+const promisePool = pool.promise();
+import bcrypt from 'bcryptjs';
 
-const userAPIController = {
-    list: (req, res) => {
+export const list = async (req, res) => {
         db.Usuario.findAll()
         .then(users => {
             const response = {
@@ -25,9 +25,9 @@ const userAPIController = {
             res.json(response)
         })
         .catch(error => console.log(error))
-    },
+    }
 
-    ultimo: (req, res) => {
+export const ultimo = async (req, res) => {
         db.Usuario.findAll({order:[["usuario_id", "DESC"]], limit:1})
         .then(function (user) {
             user[0].setDataValue("endpoint", "/api/users/lastUser/" + user.length)
@@ -45,9 +45,9 @@ const userAPIController = {
         .catch(function(error){
             res.json({status:500})
         })
-    },
+    }
 
-    create : (req, res) => {
+export const create = async (req, res) => {
         Usuario.create(
             {
                 usuario_nombre: req.body.nombre,
@@ -70,6 +70,4 @@ const userAPIController = {
                 .catch(error => console.log(error))
         )
     }
-}
 
-module.exports = userAPIController;

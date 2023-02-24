@@ -1,16 +1,15 @@
-const express = require('express');
-const router = express.Router();
+import {Router} from 'express';
+const router = Router();
 
 //Requiriendo funcionalidad del controlador
-const carritoController = require('../controllers/carritoController.js');
-const userLoggedcarrito = require("../middlewares/authMiddleware");
+import { carrito, addProduct, addc, addOrder, destroyItem } from '../controllers/carritoController.js';
+import {authMiddleware} from"../middlewares/authMiddleware.js";
 //Dando ruta al controlador
-router.get('/', userLoggedcarrito, carritoController.carrito);
-router.post("/add/:id", userLoggedcarrito, carritoController.addProduct);
-router.post("/addc/:id", userLoggedcarrito, carritoController.addc);
-router.post("/order/add", userLoggedcarrito, carritoController.addOrder);
-router.post("/item/delete/:id", carritoController.destroyItem);
+// router.get('/', authMiddleware, carrito);
+// router.post("/add/:id", authMiddleware, addProduct);
+// router.post("/addc/:id", authMiddleware, addc);
+// router.post("/order/add", authMiddleware, addOrder);
+// router.post("/item/delete/:id", destroyItem);
 
 
-
-module.exports = router;
+export default router;

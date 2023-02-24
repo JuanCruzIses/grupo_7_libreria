@@ -1,13 +1,10 @@
-const db = require('../../database/models');
-const { Op } = require('sequelize');
-const pedidosdetallesController = {
+import { pool } from '../db.js'
+const promisePool = pool.promise();
 
-    listardetallesPedidos: async (req, res) => {
+export const listardetallesPedidos = async (req, res) => {
         let pedido = req.params.id;
         console.log(req.params.id)
         let items = await db.Item.findAll({
-
-
             where: {
                 user_id: Number(req.session.usuarioLogeado.usuario_id),
                 order_id: Number(pedido)//{ [Op.ne] :null},order_id:req.params.id
@@ -22,8 +19,4 @@ const pedidosdetallesController = {
         console.log(nroorden)
 
         return res.render("detallesdepedidos", { items, nroorden, totalPrice });
-    },
-};
-
-module.exports = pedidosdetallesController;
-
+    }

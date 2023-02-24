@@ -1,12 +1,9 @@
-// const app = require('./src/app')
+// import app from './src/app.js'
 
-import express from 'express'
-const app = express()
-const port = process.env.PORT || 3000
+// // app.use("/", (req, res)=>{
+// //     res.json({message: "Esta andando esto"})
+// // })
 
-app.use("/", (req, res)=>{
-    res.json({message: "Esta andando esto"})
-})
 
-app.listen(port)
-console.log(`Listen on PORT ${port}`)
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

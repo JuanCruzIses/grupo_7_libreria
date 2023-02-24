@@ -1,20 +1,18 @@
-const express = require('express');
-const router = express.Router();
+import {Router} from 'express';
+const router = Router();
 
-// ************ Controller Require ************
-const productsController = require('../controllers/productsController');
+import {index, detail, generos, comprar} from '../controllers/productsController.js';
 
 //VISTA DE TODOS LOS PRODUCTOS
-router.get('/', productsController.index)
+router.get('/', index)
 
 /*** DETALLE DE UN PRODUCTO ***/ 
-router.get('/:id', productsController.detail);
+router.get('/:id', detail);
 
 /*** GÉNERO DE UN PRODUCTO ***/ 
-router.get('/genero/:idGenero', productsController.generos);
+router.get('/genero/:idGenero', generos);
 
 /*** CARRITO DE UN PRODUCTO ***/ 
-router.get('/carrito', productsController.comprar);
+router.get('/carrito', comprar);
 
-
-module.exports = router;
+export default router

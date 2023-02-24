@@ -1,41 +1,24 @@
-// const fs = require('fs');
-// let biblioteca = fs.readFileSync('./data/libros.json', 'utf-8');
-// let libros = JSON.parse(biblioteca);
-// function actualizar(){
-//     biblioteca = fs.readFileSync('./data/libros.json', 'utf-8');
-//     libros = JSON.parse(biblioteca);
-// }
+import { pool } from '../db.js'
+const promisePool = pool.promise();
 
-const db = require('../../database/models');
-const sequelize = db.sequelize;
-const { Op } = require('sequelize');
+export const index = async (req, res) => {
+    await promisePool.query(`SELECT * FROM libros`)
+    .then(([rows]) => {
+        if (rows) {
+        const libros = rows
+		res.render('index', {libros:libros} ) 
+        }
+    })
+}
 
-
-
-const mainController = {
-    //CONTROLADOR DE VISTAS
-    index : async (req, res) => {
-        // actualizar();
-        // const novedades = libros.filter(libro => libro.seccion === "novedades");
-        // const masVendidos = libros.filter(libro => libro.seccion === "masVendidos");
-        const libros = await db.Libro.findAll()
-			.then(function(libros){
-				res.render('index', {libros : libros} ) 
-                } )
-        },
-    search: (req, res) => {
-        
-    },
-    carrito : (req, res) => {
+export const carrito = async (req, res) => {
         res.render('carrito')
-    },
-    aboutUs : (req, res) => {
+    }
+
+export const aboutUs = async (req, res) => {
         res.render('aboutUs')
-    },
-    questions : (req, res) => {
+    }
+
+export const questions = (req, res) => {
         res.render('questions')
     }
-};
-
-
-module.exports = mainController;

@@ -1,7 +1,7 @@
-const db = require('../../database/models');
-const { Op } = require('sequelize');
-const carritoController = {
-    carrito: async (req, res) => {
+import { pool } from '../db.js'
+const promisePool = pool.promise();
+
+export const carrito = async (req, res) => {
         let items = await db.Item.findAll({
 
             where: {
@@ -14,10 +14,10 @@ const carritoController = {
             totalPrice += item.subtotal
         })
         return res.render("carrito", { items, totalPrice });
-    },
+    }
 
 
-    addc: async (req, res, next) => {
+export const addc = async (req, res, next) => {
         let libro = await db.Libro.findByPk(req.params.id);
 
         let libroencarrito = await db.Item.findOne({
@@ -31,10 +31,6 @@ const carritoController = {
                 ]
             }
         });
-
-
-
-
         if (!libroencarrito) {
             await db.Item.create({
                 item_libro_id:libro.libro_id,
@@ -82,11 +78,11 @@ const carritoController = {
                     })
             }
         }
-    },
+    }
 
 
 
-    addProduct: async (req, res, next) => {
+export const addProduct = async (req, res, next) => {
         let libro = await db.Libro.findByPk(req.params.id);
 
         let libroencarrito = await db.Item.findOne({
@@ -100,10 +96,6 @@ const carritoController = {
                 ]
             }
         });
-
-
-
-
         if (!libroencarrito) {
             await db.Item.create({
                 item_libro_id:libro.libro_id,
@@ -141,21 +133,22 @@ const carritoController = {
                     })
             }
         }
-    },
+    }
 
 
 
 
 
-    destroyItem: async (req, res) => {
+export const destroyItem = async (req, res) => {
         await db.Item.destroy({
             where: {
                 id: req.params.id
             }
         });
         res.redirect("/carrito")
-    },
-    addOrder: async (req, res) => {
+    }
+
+export const addOrder = async (req, res) => {
 
         let items = await db.Item.findAll({
             where: {
@@ -181,20 +174,5 @@ const carritoController = {
                 order_id: null
             }
         })
-       
-     /*  let libro = await db.Libro.findByPk(req.params.id);
-        await db.Libro.update({
-            libro_stock: Number(libro.libro_stock)-Number(quantityencontrado)
-        }, {
-            where: {
-                libro_titulo: libroencarrito.product_name
-            }
-        })*/
-
         return res.redirect("/")
     }
-
-};
-
-
-module.exports = carritoController;

@@ -1,36 +1,16 @@
-const path = require('path');
-
-const db = require('../../database/models');
-const sequelize = db.sequelize;
-const { Op } = require('sequelize');
-
-const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
-const { localsName } = require('ejs');
-const {Writable}=require('stream');
-const { Console } = require('console');
+import { pool } from '../db.js'
+const promisePool = pool.promise();
+import { validationResult } from 'express-validator';
+import bcrypt from 'bcryptjs';
 
 
-const userController = {
-    vistaRegistro : (req, res) => {
+export const vistaRegistro = (req, res) => {
         res.render("register")
-    },
+    }
 
-    registrar : async (req, res) => {
+export const registrar = async (req, res) => {
         let resultadoValidacion = validationResult(req)
-        // let ultimoId = db.Usuario.findOne({where: {usuario_id : Usuario.length-1} })
-        //         .then((usuario) =>{
-        //             return usuario
-        //         }).catch(error => console.log(error))
-        
-		// let nuevoUltimoId = (ultimoId + 1).toString();
-        
         let usuarioEnDB = await db.Usuario.findOne({where: {usuario_email : {[Op.like] : req.body.email} }})
-           /* .then(usuarioEncontrado => {return usuarioEncontrado} */ //funciona con o sin esta linea
-        
-        //const usuarioEnDB = usuarios.find((user)=>{
-        //    return user.email===email;});
-
         if (!resultadoValidacion.errors.length && !usuarioEnDB && req.body.contraseña === req.body.confirmaContraseña ) {
             db.Usuario.create({
                 
@@ -62,9 +42,9 @@ const userController = {
             }
         }
     
-    },
+    }
 
-        vistaLogin : (req, res) => {
+export const vistaLogin = (req, res) => {
             if (req.cookies.recordarme){
                 let errores = undefined;
                 let infoUsuario = req.cookies.recordarme;
@@ -74,9 +54,9 @@ const userController = {
                 let errores = undefined;
                 res.render('login', {infoUsuario , errores})
             }
-        },
+        }
     
-        login : async (req, res) => {
+export const login = async (req, res) => {
                 let errores = validationResult(req)          
                 
     
@@ -110,19 +90,19 @@ const userController = {
                 }
             
 
-        },
+        }
 
-        logout : (req, res) => {
+export const logout = (req, res) => {
             delete req.session.usuarioLogeado;
             return res.redirect("/user/login")
-        },
+        }
 
-        vistaProfile : (req, res) => {
+export const vistaProfile = (req, res) => {
             res.render('profile');
             console.log(req.session)
-        },
+        }
 
-        editProfile: (req, res) => {
+export const editProfile = (req, res) => {
 		// let userToEdit = usuarios.filter(usuario => usuario.email == user.email)
         // let userToEdit = await db.Usuario.findOne({ where: {usuario_email : {[Op.like] : user.usuario_email} }})
         const user = req.session.usuarioLogeado;
@@ -155,21 +135,5 @@ const userController = {
             .then(function(libro){
                 res.redirect('/user/profile/' + user.usuario_id)});
             }
-                // req.session.usuarioLogeado = await db.Usuario.findByPk(req.params.id)
-                
-        // }
-        
-		// let newUser = usuarios.map(usuario => {
-        //     let verificaContraseñaHash = bcrypt.compareSync(req.body.contraseña, userToEdit.contrasenia)   
-		//  	if (verificaContraseñaHash){
-		//  		return usuarios = {...newUserData};}
-        //         return usuarios
-		// })
-
-		// fs.writeFileSync(usersFilePath, JSON.stringify(newUser, null, ' '));
         }
     
-};
-
-module.exports = userController;
-

@@ -1,13 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const userAPIController = require('../../controllers/api/userAPIController');
+import {Router} from 'express';
+const router = Router();
+import {create, ultimo, list} from '../../controllers/api/userAPIController.js';
 
-router.get('/', userAPIController.list);
-
-//Ulitmo Producto
-router.get('/lastUser', userAPIController.ultimo);
-
-// router.post('/create', userAPIController.create)
+router.get('/', list);
+router.get('/lastUser', ultimo);
+router.post('/create', create)
 // router.delete('/delete/:id', userAPIController.destroy);
 
-module.exports = router;
+export default router;

@@ -1,4 +1,4 @@
-function userLoggedMiddlewares(req, res, next) {
+export const userLoggedMiddlewares = (req, res, next)=>{
   console.log("middleware funcionando")
 
     if (req.session.usuarioLogeado){
@@ -9,5 +9,3 @@ function userLoggedMiddlewares(req, res, next) {
     }
     next();
 } 
-
-module.exports = userLoggedMiddlewares

@@ -1,16 +1,11 @@
-const express = require('express');
-const router = express.Router();
+import {Router} from 'express';
+const router = Router();
 
-//Requiriendo funcionalidad del controlador
-const pedidosController = require('../controllers/pedidosController.js');
-const userLoggedcarrito = require("../middlewares/authMiddleware");
+import {listarPedidos} from '../controllers/pedidosController.js';
+import {authMiddleware} from "../middlewares/authMiddleware.js";
 //Dando ruta al controlador
 
-router.get('/', userLoggedcarrito, pedidosController.listarPedidos);
+// router.get('/', authMiddleware, listarPedidos);
 
 
-
-
-
-
-module.exports = router;
+export default router

@@ -1,26 +1,27 @@
-const express = require('express');
-const router = express.Router();
-const validateRegister = require('../middlewares/validateRegister')
-const loggedMiddlewares = require('../middlewares/loggedMiddlewares')
-const notLoggedMiddlewares = require('../middlewares/notLoggedMiddleware')
+import {Router} from 'express';
+const router = Router();
+
+import {validateRegister} from '../middlewares/validateRegister.js'
+import {loggedMiddlewares} from '../middlewares/loggedMiddlewares.js'
+import {notLoggedMiddlewares} from '../middlewares/notLoggedMiddleware.js'
 
 // Requiriendo funcionalidad de los controladores //
-const userController = require('../controllers/userController.js');
+import { vistaRegistro, registrar, vistaLogin, login, logout, vistaProfile, editProfile } from '../controllers/userController.js';
 
 // ************ MiddleWares Require ************
-const profileImages = require('../middlewares/profileImages');
+import { upload } from '../middlewares/profileImages.js';
 
 
 //----------REGISTER-------//
-router.get('/register', loggedMiddlewares, userController.vistaRegistro);
-router.post('/register', validateRegister, userController.registrar);
+// router.get('/register', upload, vistaRegistro);
+// router.post('/register', validateRegister, registrar);
 //----------LOGIN-------//
-router.get('/login', loggedMiddlewares ,userController.vistaLogin);
-router.post('/login', userController.login)
+// router.get('/login', loggedMiddlewares ,vistaLogin);
+router.post('/login', login)
 //----------LOGOUT-------//
-router.get('/logout', userController.logout);
+router.get('/logout', logout);
 //----------PROFILE-------//
-router.get('/profile/:id', notLoggedMiddlewares, userController.vistaProfile);
-router.post('/profile/:id', profileImages.single('img'), userController.editProfile);
+// router.get('/profile/:id', notLoggedMiddlewares, vistaProfile);
+// router.post('/profile/:id', upload.single('img'), editProfile);
 
-module.exports = router;
+export default router

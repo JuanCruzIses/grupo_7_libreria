@@ -1,13 +1,14 @@
-const db = require('../../database/models');
-const { Op } = require('sequelize');
-const questionsController = {
-    listQuestions: async (req, res) => {
+import { pool } from '../db.js'
+const promisePool = pool.promise();
+
+export const listQuestions = async (req, res) => {
         const questions = await db.Question.findAll()
             .then(function(questions){
                 res.render('questions', {questions : questions} )
         })
-    },
-    addQuestions: async (req, res) => {
+    }
+
+export const addQuestions = async (req, res) => {
     await db.Question.create({
 
         questions_pregunta: req.body.pregunta,
@@ -18,6 +19,3 @@ const questionsController = {
         res.redirect("/questions")
     })
 }
-
-}
-module.exports = questionsController;

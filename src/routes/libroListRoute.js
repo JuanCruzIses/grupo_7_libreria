@@ -1,13 +1,10 @@
-const express = require('express');
-const router = express.Router();
+import {Router} from 'express';
+const router = Router();
 
 //Requiriendo funcionalidad del controlador
-const productsController = require('../controllers/productsController');
+import { buscar } from '../controllers/productsController.js';
+
+router.get("/buscar", buscar);
 
 
-
-router.get("/buscar", productsController.buscar);
-
-
-
-module.exports = router;
+export default router

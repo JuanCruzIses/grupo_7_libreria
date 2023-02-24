@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
-const apisController = require("../controllers/api/apisController");
+import {Router} from 'express';
+const router = Router();
+
+import {updateCart} from "../controllers/api/apisController.js";
 
 /* GET home page. */
-router.post("/carrito/update", apisController.updateCart);
+router.post("/carrito/update", updateCart);
 
 
 
-
-module.exports = router;
+export default router;

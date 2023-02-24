@@ -1,36 +1,40 @@
-const express = require('express')
-const session = require('express-session')
+import express from 'express'
+// import session from 'express-session'
 const app = express()
-const createError = require('http-errors');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const methodOverride = require('method-override')
-const cors = require("cors");
+// const createError = require('http-errors');
+// import cookieParser from 'cookie-parser';
+// import logger from 'morgan';
+// import methodOverride from 'method-override'
+import cors from "cors";
+
+import path from 'path';
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 
-
-///-----Rutas de APIS-------////
-const userAPIRouter = require('./routes/api/userAPIRouter');
-const productsAPIRouter = require('./routes/api/productsAPIRouter');
+// ///-----Rutas de APIS-------////
+// import userAPIRouter from './routes/api/userAPIRouter';
+// import productsAPIRouter from './routes/api/productsAPIRouter';
 
 //Declarando rutas
-const indexRouter = require('./routes/indexRoute');
-const userRouter = require('./routes/usersRoute')
-const productRouter = require('./routes/productRoute');
-const libroListRouter = require('./routes/libroListRoute')
-const carritoRouter = require('./routes/carritoRoute');
-const pedidosRouter = require('./routes/pedidosRoute');
-const detallesdepedidosRouter = require('./routes/detallespedidosRoute');
-const aboutUsRouter = require('./routes/aboutUsRoute');
-const questionsRouter = require('./routes/questionsRoute');
-const adminRouter = require('./routes/adminRoute');
-const apiRouter = require('./routes/api')
+import indexRoute from './routes/indexRoute.js';
+import usersRoute from './routes/usersRoute.js'
+import productRoute from './routes/productRoute.js';
+import libroListRoute from './routes/libroListRoute.js'
+import carritoRoute from './routes/carritoRoute.js';
+import pedidosRoute from './routes/pedidosRoute.js';
+import detallesdepedidosRoute from './routes/detallespedidosRoute.js';
+import aboutUsRoute from './routes/aboutUsRoute.js';
+import questionsRoute from './routes/questionsRoute.js';
+import adminRoute from './routes/adminRoute.js';
+// import apiRouter from './routes/api'
 
 
 
-//Cors para integrar Api al Dasboard de React
+// Cors para integrar Api al Dasboard de React
 app.use(cors())
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -42,43 +46,41 @@ app.use((req, res, next) => {
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
+// app.use(logger('dev'));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'));
-app.use(session({
-  secret: "Somos el sombrero loco",
-  resave: false,
-  saveUninitialized: false
-}));
+// app.use(methodOverride('_method'));
+// app.use(session({
+//   secret: "Somos el sombrero loco",
+//   resave: false,
+//   saveUninitialized: false
+// }));
 
 
 ///-----Requiriendo middlewares----///
-const userLoggedMiddlewares = require('./middlewares/userLoggedMiddlewares');
+// import userLoggedMiddlewares from './middlewares/userLoggedMiddlewares';
 //const recordameMiddleware = require('./middlewares/recordameMiddleware')
 
 // Uso de middlewares
-app.use(userLoggedMiddlewares);
+// app.use(userLoggedMiddlewares);
 //app.use(recordameMiddleware);
 
 
 //Uso de rutas
-app.use('/', indexRouter);
-app.use('/user', userRouter)
-app.use('/products', productRouter);
-app.use('/libroList', libroListRouter);
-app.use('/carrito', carritoRouter);
-app.use('/pedidos', pedidosRouter);
-app.use('/detallesdepedidos', detallesdepedidosRouter);
-app.use('/aboutUs', aboutUsRouter);
-app.use('/questions', questionsRouter);
-app.use('/admin', adminRouter);
+app.use('/', indexRoute);
+app.use('/user', usersRoute)
+app.use('/products', productRoute);
+app.use('/libroList', libroListRoute);
+app.use('/carrito', carritoRoute);
+app.use('/pedidos', pedidosRoute);
+app.use('/detallesdepedidos', detallesdepedidosRoute);
+app.use('/aboutUs', aboutUsRoute);
+app.use('/questions', questionsRoute);
+app.use('/admin', adminRoute);
 
 
 //Uso de rutas APIS
@@ -103,4 +105,8 @@ app.use('/admin', adminRouter);
 //   res.render('error');
 // });
 
-module.exports = app;
+
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+// export default app;

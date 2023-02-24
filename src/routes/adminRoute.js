@@ -1,36 +1,31 @@
-// ************ Require's ************
-const express = require('express');
-const router = express.Router();
-const multer = require('multer');
-const path = require('path');
+import {Router} from 'express';
+const router = Router();
 
 // ************ Controller Require ************
-const adminController = require('../controllers/adminController');
+import { indexCreate, create, addAuthor, indexAuthor, indexEdit, update, indexDelete, destroy } from '../controllers/adminController.js';
 
 // ************ MiddleWares Require ************
 
-const portadasMulter = require('../middlewares/portadasMulter');
-const adminMiddlewares = require('../middlewares/adminMiddlewares')
+import {upload} from '../middlewares/portadasMulter.js';
+import {adminMiddlewares} from '../middlewares/adminMiddlewares.js'
 
 // ************ CREATE *************
 
-router.get('/create', adminMiddlewares, adminController.indexCreate); 
-router.post('/create', portadasMulter.single('img'), adminController.create); 
+// router.get('/create', adminMiddlewares, indexCreate); 
+// router.post('/create', upload.single('img'), create); 
 
-// ************ CREATE *************
+// ************ CREATE AUTHOR *************
 
-router.get('/addAuthor', adminMiddlewares, adminController.indexAuthor); 
-router.post('/addAuthor', portadasMulter.single('img'), adminController.addAuthor); 
+// router.get('/addAuthor', adminMiddlewares, indexAuthor); 
+// router.post('/addAuthor', upload.single('img'), addAuthor); 
 
 // ************ EDIT *************
-
-router.get('/edit/:id', adminMiddlewares, adminController.indexEdit); 
-router.post('/edit/:id', portadasMulter.single('img'), adminController.update); 
+// router.get('/edit/:id', adminMiddlewares, indexEdit); 
+// router.post('/edit/:id', upload.single('img'), update); 
 
 
  // *** DELETE ONE PRODUCT ***
-router.get('/delete/:id', adminMiddlewares, adminController.indexDelete); 
-router.post('/delete/:id', adminController.destroy);
+// router.get('/delete/:id', adminMiddlewares, indexDelete); 
+// router.post('/delete/:id', destroy);
  
-
-module.exports = router;
+export default router
