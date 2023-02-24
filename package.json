@@ -26,6 +26,7 @@
     "mysql2": "^2.3.3",
     "netlify-cli": "^11.5.1",
     "netlify-lambda": "^2.0.15",
+    "node": "^19.7.0",
     "parser": "^0.1.4",
     "sequelize": "^6.12.0-beta.3",
     "session": "^0.1.0",
